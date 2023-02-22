@@ -1,8 +1,9 @@
-Year,blockchain data privacy,blockchain (consent OR permission),blockchain selective (share OR sharing OR disclosure) 
-2015,15,0,0
-2016,12,7,0
-2017,20,5,0
-2018,57,21,0
-2019,90,27,0
-2020,107,50,1
-2021,185,51,2
+Year,blockchain data privacy,blockchain (consent OR permission),blockchain federated learning,blockchain (decentralized OR self-sovereign) identity
+2015,14,0,0,0
+2016,9,10,0,0
+2017,14,3,0,0
+2018,45,13,1,0
+2019,62,15,17,0
+2020,72,30,59,4
+2021,127,29,111,8
+2022,142,24,203,4
