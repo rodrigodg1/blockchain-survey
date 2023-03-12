@@ -50,7 +50,7 @@ Google Scholar:
 
 ```console
 
-allintitle:"blockchain (decentralized OR self-sovereign) identity"
+allintitle:blockchain (decentralized OR self-sovereign) identity
 ```
 
 Scopus: 
@@ -73,7 +73,7 @@ Google Scholar:
 
 ```console
 
-allintitle: blockchain federated learning"
+allintitle: blockchain federated learning
 
 ```
 
