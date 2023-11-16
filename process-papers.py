@@ -31,11 +31,6 @@ consent_from_google = "consent/google.csv"
 consent_from_scopus = "consent/scopus.csv"
 consent_output = "consent/consent_merged_dataset.csv"
 
-
-FL_from_google = "federated-learning/google.csv"
-FL_from_scopus = "federated-learning/scopus.csv"
-FL_output = "federated-learning/fl_merged_dataset.csv"
-
 identity_from_google = "identity/google.csv"
 identity_from_scopus = "identity/scopus.csv"
 identity_output = "identity/fl_merged_dataset.csv"
