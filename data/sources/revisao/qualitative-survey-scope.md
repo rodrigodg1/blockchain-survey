@@ -22,7 +22,7 @@ The survey compares how confidentiality, consent or permission, and identity con
 | Extraction | Year, application, approach/contribution, platform, reported implementation, primary locations, evaluation scope, and limits for recent records. The additive `source_table` field identifies the exact manuscript table. |
 | Synthesis | Operations, actors, control objects, enforcement points, trust, and reported evidence support G1–G8. The matrix's selection was retrospective and source-specific; it does not uniformly recode all included applications. |
 | Contextual expansion | Official policy standards and foundational output-privacy/provenance sources test interpretation of existing boundaries. They are separately documented, not an exhaustive second search or application additions. |
-| Regulation | Technical responsibility, supervisory evidence, and corrective-action questions within the four instruments already discussed. No broad legal review or compliance certification. |
+| Regulation | Technical responsibility, supervisory evidence, and corrective-action questions under the data-protection instruments discussed, with a targeted EUDI wallet comparison. No broad legal review or compliance certification. |
 | Permitted inference | Source-specific design contrasts, derived requirements, and proposed evaluations. No new proof, experiment, global ranking, or quantitative frequency of complete integration. |
 
 Current application counts are generated in `../output/dataset/survey-dataset-2026-10-01/counts.json`. The initial 98 historical and eight supplementary identities are preserved. Further eligible applications result from assessment of the same observed records; usefulness to the thesis, FHE, and QoE are not additional eligibility conditions.
