@@ -1,88 +1,89 @@
-# Blockchain Survey
+# Governance of Blockchain-Assisted Data Sharing
 
+Companion data for **Governance of Blockchain-Assisted Data Sharing: A Survey of Privacy, Consent, and Self-Sovereign Identity**.
 
-This repository contains search strings for Google Scholar and Scopus based on specific title keywords. Each search string is provided with the appropriate code to use for the search engines.
+**Public survey data repository:** [https://github.com/rodrigodg1/blockchain-survey](https://github.com/rodrigodg1/blockchain-survey).
 
+**Current manuscript workspace:** `/Users/rodrigodgarcia/Desktop/phd-thesis/publications/survey-atualizar`, with `main.tex` as the canonical manuscript source. The manuscript is developed within the thesis repository; this companion repository distributes its documented data, source records and portable validation scripts.
 
-## Privacy Search Strings
+Updated on **1 October 2026** to match the revised manuscript. The survey is a **structured qualitative survey**. It examines decision authority, confidentiality, consent, identity, access enforcement, and accountability in blockchain-assisted data sharing. It does not claim an exhaustive systematic review or PRISMA compliance.
 
-Title keywords: blockchain data privacy
+The current manuscript maps eight requirements (G1–G8) to control points and assessment evidence: identity and authority; authorization scope and state; key custody and result release; confidentiality and correctness; audit completeness and disclosure; withdrawal and credential status; repeated-output inference; and input provenance versus truth. The 53-record supplementary synthesis matrix traces the reviewed and contextual evidence supporting this interpretation. It is a bounded qualitative evidence audit, not uniform coding of all 122 application records or validation of a reference architecture. The comparison with the published [QoE survey](https://doi.org/10.1016/j.comnet.2025.111899) acknowledges overlapping governance and identity themes; that survey is contextual and does not change the application denominator.
 
-Google Scholar:
-```console
-allintitle: blockchain data privacy
+## Current application-study collection
+
+Use [data/survey-dataset.csv](data/survey-dataset.csv), not the historical merged search exports.
+
+| Accounting group | Historical | Supplementary update | Combined |
+|---|---:|---:|---:|
+| Privacy | 40 | 4 | 44 |
+| Consent | 33 | 15 | 48 |
+| Identity | 25 | 5 | 30 |
+| **Total** | **98** | **24** | **122** |
+
+These groups track the historical extraction or the query family that retrieved a recent study. They are not mutually exclusive categories of system capabilities. Related surveys, standards, regulations, and platform documentation are contextual sources and are excluded from the 122 application records.
+
+The supplementary search on **30 September 2026** observed **50 Google Scholar records** using the original title predicates, a 2024–2026 filter and that publication cutoff. Follow-up assessment on **1 October 2026** examined the 35 initially pending records and retained **16 additional application records**, preserving the original eight update inclusions and the 98 historical identities. The current 50-record accounting is **24 included, 18 pending, one excluded and seven other dispositions**. Of the 18 pending records, 17 await sufficient primary text and one has unresolved full-text/version assessment. Pending records are not completed exclusions. No new retrieval denominator or inclusion predicate was introduced. Scopus and the ACM advanced title queries were not rerun because the available session required additional access. The update remains partial.
+
+## Files
+
+| File | Purpose |
+|---|---|
+| [data/survey-dataset.csv](data/survey-dataset.csv) | One row per included application study, with metadata, provenance and evidence boundaries |
+| [data/study-counts.csv](data/study-counts.csv), [data/counts.json](data/counts.json) | Collection counts and the limits of their interpretation |
+| [data/search-decision-counts.csv](data/search-decision-counts.csv) | Dispositions of the 50 observed update records |
+| [data/studies-by-year.csv](data/studies-by-year.csv) | Annual counts, separately by extraction year and bibliography year |
+| [data/application-references.bib](data/application-references.bib) | Bibliographic entries for the 122 application records |
+| [data/sources/](data/sources/) | Historical/recent extractions, query and follow-up assessment records, eligibility notes, retrieval status, source-linked synthesis evidence and the manuscript bibliography |
+| [docs/data-dictionary.json](docs/data-dictionary.json) | Definition of every exported field and missing-value semantics |
+| [data/source-snapshot.json](data/source-snapshot.json) | Source version, manuscript fingerprint, expected collection and preserved historical-file fingerprints |
+| [data/manifest.json](data/manifest.json) | SHA-256 fingerprints of build inputs and generated outputs |
+
+`revisao/recent-extraction.csv` in the source snapshot has 15 fields: the 13 original mechanism/evidence fields plus `verified_publication_title` and the additive `source_table` provenance field. `source_table` identifies the specific manuscript comparison table, including the three additional table parts. This addition does not change study identity or the normalized dataset schema.
+
+`source_extraction_file` resolves relative to **data/sources/**. `source_record_number` is a one-based CSV data-record index, excluding the header; it is not a physical line number. Primary-text URLs and section/page locations are recorded for the recent studies. Article full texts are not redistributed here.
+
+The bibliography under `data/sources/` includes contextual citations. Its entry count is not the number of included studies. Fields ending in `_bibtex` retain BibTeX braces and escapes; some extraction fields retain LaTeX notation.
+
+## Reproduce and validate
+
+Requires **Python 3.9 or newer**, with no third-party packages, network access, sibling repository, LaTeX installation, or image tools.
+
+From this repository:
+
+```sh
+python3 run.py --check
+python3 run.py
+python3 run.py --check
+python3 -m unittest discover -s tests -v
 ```
 
-Scopus: 
-```console
-( TITLE ( blockchain ) AND TITLE ( data ) AND TITLE ( privacy ) )
+- `--check` verifies the input snapshot, study identities, counts, decisions, source mapping and generated files without rewriting the data files. Python may create its usual ignored bytecode cache.
+- Running without `--check` rebuilds the seven generated files directly under `data/`. All input and collection checks complete before writing. It does not rewrite the historical CSVs, perform searches, select additional studies, or generate images.
+- Paths are resolved from the scripts, so `python3 /path/to/blockchain-survey/run.py --check` also works from another directory.
+
+The canonical dataset fingerprint and expected collection counts are recorded in [data/source-snapshot.json](data/source-snapshot.json). The builder requires the exported CSV to match that deliberately synchronized manuscript snapshot; the fingerprint is kept there rather than duplicated in this README.
+
+Included records encompass implemented systems, conceptual designs, version-identified preprints and a commentary containing an original proposed workflow. Their genres and evaluation limits are recorded explicitly. Inclusion does not establish implementation, publication acceptance, secure deployment or regulatory compliance.
+
+These checks establish artifact consistency. They do not establish exhaustive coverage, independent scientific validation, regulatory compliance, or reproducibility of the reviewed implementations.
+
+## Method and historical material
+
+Read [docs/protocol.md](docs/protocol.md) for scope, queries, eligibility, extraction and limitations, and [docs/legacy-data.md](docs/legacy-data.md) for the historical export audit.
+
+The existing `privacy/`, `consent/`, `identity/`, and `total_works_by_year.csv` files are preserved unchanged. They contain historical retrieval/processing records, not the current included-study dataset. The old federated-learning search description is not an additional search family in the current three-topic protocol. The misleading historical filename `identity/fl_merged_dataset.csv` is retained for provenance.
+
+The old `process-papers.py` has been replaced by a **read-only audit**. It identifies candidate duplicate groups without dropping records or overwriting merged exports:
+
+```sh
+python3 process-papers.py > /tmp/blockchain-survey-legacy-audit.json
 ```
 
+The original deduplication treated missing DOIs as duplicates. The replacement never groups empty DOIs as a matching identifier and reports title matches with conflicting DOIs for review. Candidate groups can overlap and are not screening decisions.
 
+## Updating this snapshot
 
-## Consent Management Search Strings
+Do not edit generated files to adjust a total. Update the evidence and extraction records first, then deliberately revise the snapshot fingerprints, collection expectations and documented date together with the manuscript. The generator intentionally rejects changes that no longer match this release. See [docs/maintenance.md](docs/maintenance.md).
 
-Title keywords: blockchain (consent OR permission)
-
-Google Scholar:
-
-```console
-
-allintitle: blockchain (consent OR permission)
-
-```
-
-Scopus: 
-
-```console
-
-TITLE ( blockchain ) AND (TITLE ( consent ) OR TITLE ( permission ) )
-
-```
-
-
-
-## Self-sovereign Identity Search Strings
-
-Title keywords: blockchain (decentralized OR self-sovereign) identity
-
-Google Scholar:
-
-```console
-
-allintitle:blockchain (decentralized OR self-sovereign) identity
-```
-
-Scopus: 
-
-```console
-
-( TITLE ( blockchain ) AND TITLE ( ( decentralized OR self-sovereign ) ) AND TITLE ( identity ) )
-
-```
-
-
-
-
-
-## Federated Learning Search Strings
-
-Title keywords: blockchain federated learning
-
-Google Scholar:
-
-```console
-
-allintitle: blockchain federated learning
-
-```
-
-Scopus: 
-
-```console
-
-( TITLE ( blockchain )  AND  TITLE ( federated )  AND  TITLE ( learning ) )
-
-```
-
-
+The repository retains its [Apache 2.0 license](LICENSE). Bibliographic descriptions and links do not transfer rights to the cited publications.

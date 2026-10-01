@@ -1,0 +1,12 @@
+{
+  "date": "2026-10-01",
+  "paths": {
+    "main.tex": "4d6d630df44ed0460c690e31d56032df98dfa406b7afdd6d84931386b7a87d98",
+    "references-revised.bib": "2b6609f7830278a56059414237b1c3d50989688a1ffa87171d81ed748caf1acd",
+    "historical-extraction.csv": "ad6994d799e7e69867b75a76048ea284690a654f02ad55bbe51f4e7c7a900338",
+    "revisao/recent-extraction.csv": "ea15737d9793f6be86d75a84e1e96d572d6a7af8784722b18a8a885b66d54dbb",
+    "revisao/protocol-search-records.csv": "788d35dc203bd5e391c187d78ce4e9e458f7962f19109cb42efb3aa4fd60acfb",
+    "revisao/protocol-eligibility.csv": "1fe6ede31ce321f824dbe47b433f19de417cf62934c9ea65da70376cc92096b1",
+    "output/dataset/survey-dataset-2026-10-01/survey-dataset.csv": "bf5de30a6ec57ea245cb26c263186333e5d72fa706f2a3d477664ed24c6a26ce"
+  }
+}

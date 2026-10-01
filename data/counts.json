@@ -1,0 +1,74 @@
+{
+  "artifact_date": "2026-10-01",
+  "study_update_search_date": "2026-09-30",
+  "historical": {
+    "selected_studies": 98,
+    "by_group": {
+      "privacy": 40,
+      "consent": 33,
+      "identity": 25
+    },
+    "complete_retrieval_and_screening_counts_reconstructed": false
+  },
+  "supplementary_update": {
+    "year_filter": "2024-2026",
+    "observed_query_records": 50,
+    "query_record_counts": {
+      "S01": 10,
+      "S04": 30,
+      "S07": 10
+    },
+    "selected_studies": 24,
+    "selected_by_group": {
+      "privacy": 4,
+      "consent": 15,
+      "identity": 5
+    },
+    "decision_counts": {
+      "retained_after_primary_text_check": 24,
+      "candidate_full_text_assessment_not_completed": 1,
+      "pending_primary_full_text": 17,
+      "same_manuscript_not_new_study": 1,
+      "review_protocol_not_application": 1,
+      "related_work_review": 1,
+      "review_not_primary_application": 3,
+      "excluded_out_of_scope_copyright_business_process": 1,
+      "review_candidate_for_positioning": 1
+    },
+    "other_recorded_dispositions": {
+      "same_manuscript_not_new_study": 1,
+      "review_protocol_not_application": 1,
+      "related_work_review": 1,
+      "review_not_primary_application": 3,
+      "review_candidate_for_positioning": 1
+    },
+    "excluded_application_records": 1,
+    "excluded_decision_counts": {
+      "excluded_out_of_scope_copyright_business_process": 1
+    },
+    "pending_records": 18,
+    "coverage": "Partial Google Scholar retrieval: S01 page 1, S04 pages 1-3, S07 page 1",
+    "Scopus": "S02/S05/S08 not executed; institutional authentication required",
+    "ACM_DL": "S03/S06/S09 not executed; advanced title search required Premium access",
+    "complete_search": false,
+    "complete_screening": false
+  },
+  "combined": {
+    "application_studies": 122,
+    "by_group": {
+      "privacy": 44,
+      "consent": 48,
+      "identity": 30
+    },
+    "group_interpretation": "Accounting groups, not disjoint system-capability classes",
+    "contextual_references_counted_as_application_studies": false
+  },
+  "identity_checks": {
+    "unique_citation_keys": 122,
+    "nonempty_dois": 113,
+    "unique_nonempty_dois": 113,
+    "missing_dois": 9,
+    "unique_normalized_titles": 122,
+    "scope": "Metadata identity checks; not new independent review of all historical studies"
+  }
+}

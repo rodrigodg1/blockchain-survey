@@ -1,0 +1,188 @@
+{
+  "date": "2026-10-01",
+  "scope": "Content-preservation audit; does not establish scientific validity, independent human review or inter-rater reliability.",
+  "all_requested_checks_pass": true,
+  "manuscript_baseline": {
+    "path": "revisao/main-before-analysis-expansion.tex",
+    "sha256": "4d6d630df44ed0460c690e31d56032df98dfa406b7afdd6d84931386b7a87d98"
+  },
+  "manuscript_current": {
+    "path": "main.tex",
+    "sha256": "7910466b6f8126dce231e5f3be50f7956a35c425cdbe756f4fff5e7a30934408"
+  },
+  "comparison_boundary": "Protected complete table environments and four RQ question lines are compared as raw bytes; revised narrative is outside these preservation checks.",
+  "six_historical_study_tables": [
+    {
+      "label": "tab:privacy-works",
+      "byte_identical": true,
+      "byte_count": 5968,
+      "sha256": "10edf4721425bd9b96664c5b7bd4bc2497168530f93f57413a8cfe55772f1d18",
+      "current_sha256": "10edf4721425bd9b96664c5b7bd4bc2497168530f93f57413a8cfe55772f1d18"
+    },
+    {
+      "label": "tab:privacy-works-2",
+      "byte_identical": true,
+      "byte_count": 6884,
+      "sha256": "ff7e0c41ae1aeaa23b4af8a52ffce983375315648e6f558d31b66b0723dd7841",
+      "current_sha256": "ff7e0c41ae1aeaa23b4af8a52ffce983375315648e6f558d31b66b0723dd7841"
+    },
+    {
+      "label": "tab:consent-works",
+      "byte_identical": true,
+      "byte_count": 11074,
+      "sha256": "ddf41dd74e5b39c0fc7f69e1eb91294f1e773203054b7f075e1176acb6324d0b",
+      "current_sha256": "ddf41dd74e5b39c0fc7f69e1eb91294f1e773203054b7f075e1176acb6324d0b"
+    },
+    {
+      "label": "tab:consent-works-2",
+      "byte_identical": true,
+      "byte_count": 10369,
+      "sha256": "6630cb553400b19da71eef118c8d2df740ea1bfc98bc08de7495b8b14b0cef01",
+      "current_sha256": "6630cb553400b19da71eef118c8d2df740ea1bfc98bc08de7495b8b14b0cef01"
+    },
+    {
+      "label": "tab:ssi-works-part-1",
+      "byte_identical": true,
+      "byte_count": 10628,
+      "sha256": "02b55b664070c81db46bebedc4163de68306a21944f12f39cb67ff583fc30e1e",
+      "current_sha256": "02b55b664070c81db46bebedc4163de68306a21944f12f39cb67ff583fc30e1e"
+    },
+    {
+      "label": "tab:ssi-works-part-2",
+      "byte_identical": true,
+      "byte_count": 6242,
+      "sha256": "6b3be6b294b75ed9b15ae3def6b4a734e19eb7e642e588ca9e87e4a6c3bbe14c",
+      "current_sha256": "6b3be6b294b75ed9b15ae3def6b4a734e19eb7e642e588ca9e87e4a6c3bbe14c"
+    }
+  ],
+  "historical_search_strings_table": {
+    "label": "tab:search-strings",
+    "byte_identical": true,
+    "byte_count": 1168,
+    "sha256": "c565582c5c8c4ab4002b3cd171a3ca48a10803606abe8aca4278e7b542ebe269",
+    "current_sha256": "c565582c5c8c4ab4002b3cd171a3ca48a10803606abe8aca4278e7b542ebe269"
+  },
+  "original_eight_study_focused_update_table": {
+    "label": "tab:focused-update",
+    "byte_identical": true,
+    "byte_count": 3928,
+    "sha256": "f09643a8dec848c6a7f9a16ce74112b7ddd3d631b64563eac6df1b4c02aca4a6",
+    "current_sha256": "f09643a8dec848c6a7f9a16ce74112b7ddd3d631b64563eac6df1b4c02aca4a6"
+  },
+  "additional_historical_mechanism_table": {
+    "label": "tab:privacy-techniques-works",
+    "byte_identical": true,
+    "byte_count": 3125,
+    "sha256": "bddf1390c0178a750c81b1225e270aac1c0a3678327c5a60118e6c1f5f7b321b",
+    "current_sha256": "bddf1390c0178a750c81b1225e270aac1c0a3678327c5a60118e6c1f5f7b321b"
+  },
+  "four_research_question_wordings": [
+    {
+      "id": "RQ1",
+      "byte_identical": true,
+      "sha256": "57ece22e8ed88fb3f033a79ecfe0c78f3c320288bd80b20cd4c8677af99ee0d8",
+      "current_sha256": "57ece22e8ed88fb3f033a79ecfe0c78f3c320288bd80b20cd4c8677af99ee0d8"
+    },
+    {
+      "id": "RQ2",
+      "byte_identical": true,
+      "sha256": "24af6883b79ae259d0d70d38aa9dbf9043da49c56c06985821d4296d2af03a15",
+      "current_sha256": "24af6883b79ae259d0d70d38aa9dbf9043da49c56c06985821d4296d2af03a15"
+    },
+    {
+      "id": "RQ3",
+      "byte_identical": true,
+      "sha256": "df8cf201138214317ebe704067bcaf23f4e91cf851b7439307bce8d31551a876",
+      "current_sha256": "df8cf201138214317ebe704067bcaf23f4e91cf851b7439307bce8d31551a876"
+    },
+    {
+      "id": "RQ4",
+      "byte_identical": true,
+      "sha256": "8b229b2f8473fbff87f2590be503654983e4ce01133430dbf53f9fd165300082",
+      "current_sha256": "8b229b2f8473fbff87f2590be503654983e4ce01133430dbf53f9fd165300082"
+    }
+  ],
+  "historical_extraction": {
+    "path": "historical-extraction.csv",
+    "baseline_hash_from": "revisao/analysis-expansion-before.json",
+    "expected_sha256": "ad6994d799e7e69867b75a76048ea284690a654f02ad55bbe51f4e7c7a900338",
+    "current_sha256": "ad6994d799e7e69867b75a76048ea284690a654f02ad55bbe51f4e7c7a900338",
+    "byte_identical_to_recorded_baseline": true
+  },
+  "original_eight_recent_records": {
+    "baseline": "revisao/recent-extraction-before-assessment.csv",
+    "current": "revisao/recent-extraction.csv",
+    "baseline_records": 8,
+    "current_records": 24,
+    "comparison": "Exact values of every initial field, matched by citation_key; source_table is an allowed additive column.",
+    "initial_fields": [
+      "citation_key",
+      "year",
+      "application",
+      "approach",
+      "contribution",
+      "blockchain_platform",
+      "implementation_link",
+      "evaluation",
+      "boundary",
+      "source_url",
+      "evidence_location",
+      "doi",
+      "native_record",
+      "verified_publication_title"
+    ],
+    "added_columns": [
+      "source_table"
+    ],
+    "initial_citation_keys": [
+      "updateAgarkar2024BADIMAC",
+      "updateCan2024AuditableConsent",
+      "updateDhasaratha2024IoMT",
+      "updateJaved2024SecureConsent",
+      "updateMaZhang2024Rollup",
+      "updateMasood2024Patient",
+      "updatePhuyal2026Architecture",
+      "updateZeydan2024SSI"
+    ],
+    "initial_records_unchanged": true,
+    "changed_initial_fields": [],
+    "baseline_file_sha256": "ea15737d9793f6be86d75a84e1e96d572d6a7af8784722b18a8a885b66d54dbb",
+    "current_file_sha256": "178398352681abb87ad20fbaa8b9b3924dab06cb4415e564deab93a906e91cb9",
+    "baseline_projection_sha256": "8dac04b72280b7e604beca9b4c6494e41536e9ef45c4dd622b3548245a6c8f4a",
+    "current_initial_projection_sha256": "8dac04b72280b7e604beca9b4c6494e41536e9ef45c4dd622b3548245a6c8f4a",
+    "projection_hash_encoding": "UTF-8 JSON, keys sorted, no whitespace, records sorted by citation_key; only initial fields."
+  },
+  "fifty_native_observations": {
+    "baseline": "revisao/protocol-search-records-before-assessment.csv",
+    "current": "revisao/protocol-search-records.csv",
+    "baseline_records": 50,
+    "current_records": 50,
+    "observed_fields": [
+      "query_id",
+      "query",
+      "observed_rank",
+      "observed_page",
+      "date",
+      "year_filter",
+      "title_as_displayed",
+      "result_url"
+    ],
+    "comparison": "Exact observed-field values in native row order; assessment decision and citation_key may change.",
+    "observed_fields_unchanged": true,
+    "baseline_file_sha256": "788d35dc203bd5e391c187d78ce4e9e458f7962f19109cb42efb3aa4fd60acfb",
+    "current_file_sha256": "fd7bb43f0a062cc7ab75fe04f28629473662b9df07b54538c2f2fd738078441f",
+    "baseline_observation_projection_sha256": "81aa0b7b04974b5e73550329fa31e450af30ac630abba806b2230f707cd04267",
+    "current_observation_projection_sha256": "81aa0b7b04974b5e73550329fa31e450af30ac630abba806b2230f707cd04267",
+    "projection_hash_encoding": "UTF-8 JSON, keys sorted, no whitespace, native row order; only observed fields."
+  },
+  "synthesis_matrix_unchanged_sha256": "c3d4ec61baf716d15b6edf8536e2e5e9ddf8e9d745bc3d7ee45cc9ba7d77f183",
+  "coverage_source_hash_updates": [
+    {
+      "field": "assessment_provenance_sha256",
+      "path": "revisao/update-assessment-2026-10-01.md",
+      "before": "2b8c0db88de85c1c02d7434f8ce08ce9f27828408ac85a26dac7d01b9c360e7a",
+      "current": "9a0ecc5f9ebfa531315044416e63be95ded70cc05003d350472da631f31e259e"
+    }
+  ],
+  "coverage_json_sha256": "69b8bb60c5ef8d28be842846d87f41d63e7f2ee4134f6d6dd57ae3e5d93ba83f"
+}

@@ -1,18 +1,5 @@
-# -*- coding: utf-8 -*-
-"""
-Spyder Editor
+"""Modified 2026-10-01: build/check the current survey dataset, not raw search results."""
+from scripts.build_dataset import main
 
-This is a temporary script file.
-"""
-
-import pandas as pd
-
-df = pd.read_csv("blockchain_data_privacy_SCHOLAR.csv",sep=",")
-
-
-#df_2015 = df['Year']==2015
-#df_2015 = df[df_2015]
-
-#only_title = df['Title'].to_frame()
-
-only_title_after = df.drop_duplicates('Title')
+if __name__ == '__main__':
+    raise SystemExit(main())
