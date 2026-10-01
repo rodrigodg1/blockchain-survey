@@ -3,7 +3,7 @@
   "selection_timing": "retrospective analytical extension documented in current revision",
   "baseline_required_sources": 32,
   "initial_application_collection_size": 106,
-  "current_application_collection_size": 122,
+  "current_application_collection_size": 136,
   "initial_update_studies": 8,
   "subsequent_accepted_additions": 16,
   "coverage_of_all_accepted_additions": [
@@ -25,10 +25,12 @@
     "updateZeydan2024ABSIdentity"
   ],
   "assessment_provenance_sha256": {
-    "revisao/update-assessment-additions.csv": "90f7f57c977f8f73715cd05416ff218ef5abebba91b3aa0fb8289f695fec7655",
-    "revisao/update-assessment-2026-10-01.md": "9a0ecc5f9ebfa531315044416e63be95ded70cc05003d350472da631f31e259e"
+    "revisao/update-assessment-additions.csv": "72df55008ccdcf1b473442c7ae722bee628545a3e9577606d13921e7d7dae282",
+    "revisao/update-assessment-2026-10-01.md": "122858cb9ad0cbf5ba605f103bbe4a8a7d1d7a44cc8304536e1a01950dfce9e0",
+    "revisao/search-completion-inclusions.csv": "1ba94fca9e7f069f50280467a9feb9c2ce1acee7c158da5f5c3d1f5e2f42044e",
+    "revisao/search-completion-primary-evidence.md": "12304b2c2aaea8bdf5edc32c771cda6b2636d9f652e01510f6171114b6205951"
   },
-  "sources": 53,
+  "sources": 67,
   "coverage_of_initial_source_set": [
     "10.1016/j.hcc.2022.100084",
     "2015-decentralizing-privacy",
@@ -72,30 +74,49 @@
     "context-xacml30"
   ],
   "role_counts": {
+    "recent_application": 8,
+    "historical_application": 12,
+    "context_theory": 3,
     "context_protocol": 1,
-    "context_regulation": 8,
     "context_specification": 1,
     "context_standard": 4,
-    "context_theory": 3,
-    "historical_application": 12,
-    "recent_application": 8,
-    "recent_application_addition": 16
+    "context_regulation": 8,
+    "recent_application_addition": 16,
+    "recent_application_search_completion": 14
   },
   "verification_status_counts": {
-    "not_verified": 1,
-    "primary_fulltext_verified": 35,
-    "primary_fulltext_verified_via_assessment": 9,
-    "primary_indexed_sections_verified": 1,
-    "primary_local_text_verified": 1,
-    "primary_preview_only": 3,
+    "primary_fulltext_verified": 49,
     "retained_extraction_not_reverified": 2,
-    "retained_legal_reference_not_reverified": 1
+    "primary_preview_only": 3,
+    "primary_indexed_sections_verified": 1,
+    "not_verified": 1,
+    "retained_legal_reference_not_reverified": 1,
+    "primary_local_text_verified": 1,
+    "primary_fulltext_verified_via_assessment": 9
   },
-  "matrix_sha256": "c3d4ec61baf716d15b6edf8536e2e5e9ddf8e9d745bc3d7ee45cc9ba7d77f183",
+  "matrix_sha256": "add4e4c01805561e1a8e7b08a451adbf1512dc62fc39dc7deed8998c6cf02666",
   "protected_inputs_sha256": {
     "historical-extraction.csv": "ad6994d799e7e69867b75a76048ea284690a654f02ad55bbe51f4e7c7a900338",
     "revisao/recent-extraction-before-assessment.csv": "ea15737d9793f6be86d75a84e1e96d572d6a7af8784722b18a8a885b66d54dbb"
   },
   "not_uniform_recoding_of_study_collection": true,
-  "counterexamples_are_analytical_not_observed_incidents": true
+  "counterexamples_are_analytical_not_observed_incidents": true,
+  "search_completion_accepted_additions": [
+    "updateGuan2025Healthcare",
+    "updateGupta2024LungFL",
+    "updateGhosh2024Banking",
+    "updateQu2025ConsentEMR",
+    "updateRao2024Genomic",
+    "updateScaramuzza2026ZKConsent",
+    "updateFerreira2025MCPFHIR",
+    "updateAyala2024DataConsent",
+    "updateDeepthika2024ConsentLSTM",
+    "updateGupta2024CertificatePermission",
+    "updateHemlata2026DualCare",
+    "updateLu2025RedactableEducation",
+    "updateLiu2024SSDID",
+    "updateSeidi2025HealthcareSSI"
+  ],
+  "current_update_studies": 38,
+  "current_accepted_application_additions": 30
 }

@@ -34,14 +34,14 @@ def rows(path):
 
 def write_csv(path, records, columns=None):
     with path.open('w', newline='', encoding='utf-8') as f:
-        writer = csv.DictWriter(f, fieldnames=columns or list(records[0]))
+        writer = csv.DictWriter(f, fieldnames=columns or list(records[0]), lineterminator='\n')
         writer.writeheader()
         writer.writerows(records)
 
 def digest(path):
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
-bib = (ROOT / 'references-revised.bib').read_text()
+bib = (ROOT / 'references-revised.bib').read_text(encoding='utf-8')
 starts = list(re.finditer(r'@\w+\s*\{\s*([^,\s]+)\s*,', bib))
 blocks = {m[1]: bib[m.start():starts[i+1].start() if i+1 < len(starts) else len(bib)]
           for i, m in enumerate(starts)}
@@ -71,6 +71,9 @@ recent = rows('revisao/recent-extraction.csv')
 additions_path = ROOT / 'revisao/update-assessment-additions.csv'
 addition_keys = {r['citation_key'] for r in rows('revisao/update-assessment-additions.csv')} if additions_path.exists() else set()
 observed = rows('revisao/protocol-search-records.csv')
+retrieval_status = json.loads((ROOT / 'revisao/protocol-retrieval-status.json').read_text(encoding='utf-8'))
+expansion_status_path = ROOT / 'revisao/search-completion-status.json'
+expansion_status = json.loads(expansion_status_path.read_text(encoding='utf-8')) if expansion_status_path.exists() else {}
 retained = {r['citation_key']: r for r in observed
             if r['decision'] == 'retained_after_primary_text_check'}
 query_groups = {'S01': 'privacy', 'S04': 'consent', 'S07': 'identity'}
@@ -159,10 +162,11 @@ counts = {
         'excluded_application_records': sum(excluded.values()), 'excluded_decision_counts': excluded,
         'pending_records': pending,
         'coverage': 'Partial Google Scholar retrieval: S01 page 1, S04 pages 1-3, S07 page 1',
-        'Scopus': 'S02/S05/S08 not executed; institutional authentication required',
-        'ACM_DL': 'S03/S06/S09 not executed; advanced title search required Premium access',
+        'Scopus': retrieval_status['Scopus'],
+        'ACM_DL': retrieval_status['ACM_DL'],
         'complete_search': False, 'complete_screening': False,
     },
+    'additional_retrieval': expansion_status,
     'combined': {'application_studies': len(collection), 'by_group': dict(cc),
                  'group_interpretation': 'Accounting groups, not disjoint system-capability classes',
                  'contextual_references_counted_as_application_studies': False},
@@ -172,8 +176,8 @@ counts = {
                         'unique_normalized_titles': len(set(titles)),
                         'scope': 'Metadata identity checks; not new independent review of all historical studies'},
 }
-(OUT / 'counts.json').write_text(json.dumps(counts, indent=2, ensure_ascii=False)+'\n')
-(OUT / 'application-references.bib').write_text('\n\n'.join(blocks[r['study_id']].strip() for r in collection)+'\n')
+(OUT / 'counts.json').write_text(json.dumps(counts, indent=2, ensure_ascii=False)+'\n', encoding='utf-8')
+(OUT / 'application-references.bib').write_text('\n\n'.join(blocks[r['study_id']].strip() for r in collection)+'\n', encoding='utf-8')
 
 # Preserve evidence in its source schema alongside the normalized export.
 source_paths = [
@@ -198,7 +202,15 @@ optional_sources = [
     'revisao/analysis-expansion-preservation.json',
     'revisao/recent-extraction-before-assessment.csv',
     'revisao/protocol-search-records-before-assessment.csv',
+    'revisao/search-completion-inclusions.csv', 'revisao/search-completion-inclusions.bib',
+    'revisao/search-completion-inclusions.json', 'revisao/search-completion-publication-metadata.json',
+    'revisao/search-completion-primary-evidence.md', 'revisao/search-completion-2026-10-01.md',
+    'revisao/search-completion-candidates.csv', 'revisao/search-completion-status.json',
+    'revisao/consolidate_search_completion.py', 'revisao/integrate_search_completion.py',
 ]
+optional_sources.extend(p.relative_to(ROOT).as_posix() for p in
+                        sorted((ROOT / 'revisao').glob('search-expansion-*20261001*'))
+                        if p.suffix in {'.csv', '.tsv'})
 source_paths.extend(name for name in optional_sources if (ROOT / name).exists())
 for name in source_paths:
     target = OUT / 'sources' / name
@@ -232,7 +244,7 @@ dictionary = {
     'source_record_number': 'One-based data-record index in that CSV, excluding header; not physical line number.',
     'verification_scope': 'Explicit distinction between inherited historical extraction and checked recent descriptions.',
 }
-(OUT / 'data-dictionary.json').write_text(json.dumps(dictionary, indent=2, ensure_ascii=False)+'\n')
+(OUT / 'data-dictionary.json').write_text(json.dumps(dictionary, indent=2, ensure_ascii=False)+'\n', encoding='utf-8')
 
 # A new vector count diagram, generated from the same values as the dataset.
 # This is a collection inventory, not a reconstructed PRISMA/search flow.
@@ -240,7 +252,7 @@ PDF = ROOT / 'output/pdf/selection-criteria-updated.pdf'
 PDF.parent.mkdir(parents=True, exist_ok=True)
 W, H = 640, 412
 c = canvas.Canvas(str(PDF), pagesize=(W, H), invariant=1)
-c.setTitle('Documented study collection and partial update')
+c.setTitle('Documented application study collection')
 c.setAuthor('Survey revision: generated from documented extraction records')
 ink, muted, rule = HexColor('#183342'), HexColor('#50626e'), HexColor('#c4cfd4')
 blue, teal, pale = HexColor('#edf3f8'), HexColor('#e3f1ed'), HexColor('#f6f7f8')
@@ -258,41 +270,21 @@ def box(x, y, w, h, fill):
     c.setFillColor(fill); c.setStrokeColor(rule); c.setLineWidth(.7)
     c.roundRect(x, y, w, h, radius=5, stroke=1, fill=1)
 
-text(18, 390, 'Documented application collection', 16, True)
-text(18, 371, 'Historical studies and the bounded update are reported separately.', 10, color=muted)
-box(18, 147, 242, 206, blue)
-box(276, 147, 346, 206, pale)
-text(32, 331, 'HISTORICAL COLLECTION', 10, True)
-text(32, 293, str(len(historical)), 31, True)
-text(92, 299, 'retained application studies', 10)
-for i, (label, group) in enumerate([('Privacy','privacy'), ('Consent','consent'), ('Identity / SSI','identity')]):
-    text(32, 272 - i*19, label, 11)
-    text(215, 272 - i*19, str(hc[group]), 11, True)
-wrapped(32, 205, 'Original extraction preserved. Complete historical retrieval and screening counts cannot be reconstructed from available records.', 212, 9, 12)
-
-text(290, 331, 'SUPPLEMENTARY UPDATE: 2024-2026', 10, True)
-text(290, 309, f'{len(observed)} observed Google Scholar result records', 12, True)
-text(290, 292, 'S01: 10  |  S04: 30  |  S07: 10  (30 September 2026)', 9, color=muted)
-box(288, 247, 322, 32, teal)
-text(298, 258, 'Included applications', 11, True)
-text(588, 256, str(len(recent)), 16, True)
-for i, (label, value) in enumerate([
-    ('Full-text assessment incomplete', decisions['candidate_full_text_assessment_not_completed']),
-    ('Awaiting primary full text', decisions['pending_primary_full_text']),
-    ('Excluded application records', sum(excluded.values())),
-    ('Other recorded dispositions', sum(other.values())),
-]):
-    text(298, 229-i*20, label, 10)
-    text(588, 229-i*20, str(value), 10, True)
-text(290, 152, f'Added: privacy {uc["privacy"]}  |  consent {uc["consent"]}  |  identity / SSI {uc["identity"]}', 9, color=muted)
-
-box(18, 51, 604, 79, teal)
-text(32, 106, 'COMBINED APPLICATION COLLECTION', 10, True)
-text(32, 77, f'{len(historical)} historical + {len(recent)} recent = {len(collection)} studies', 19, True)
-text(423, 99, f'Privacy: {cc["privacy"]}   Consent: {cc["consent"]}', 11)
-text(423, 79, f'Identity / SSI: {cc["identity"]}', 11)
-text(18, 32, 'Partial retrieval and screening; Scopus and ACM DL title queries were not rerun.', 9, color=muted)
-text(18, 17, f'{pending} pending records are not exclusions; {sum(other.values())} other dispositions exclude review/protocol/self records.', 9, color=muted)
+text(18, 390, 'Blockchain-assisted data sharing: application collection', 16, True)
+box(18, 282, 604, 85, teal)
+text(36, 322, str(len(collection)), 35, True)
+text(125, 331, 'application records', 17, True)
+text(125, 305, 'Privacy, consent, and decentralized identity in one thematic comparison', 11)
+for x, label, group in [(18, 'PRIVACY', 'privacy'), (224, 'CONSENT', 'consent'), (430, 'IDENTITY / SSI', 'identity')]:
+    box(x, 166, 192, 94, blue)
+    text(x+14, 236, label, 11, True)
+    text(x+14, 192, str(cc[group]), 29, True)
+text(18, 145, 'Search-family groups are not mutually exclusive classes of system capabilities.', 10, color=muted)
+box(18, 35, 604, 93, pale)
+text(32, 108, 'COVERAGE AND EVIDENCE LIMITS', 10, True)
+wrapped(32, 90, 'Title-only searches limit coverage. Scopus and ACM Full-Text Collection queries were executed. Google Scholar pagination and assessment of additional retrieved candidates remain incomplete.', 570, 10, 13)
+text(32, 47, f'{pending} original observed record remains pending. Additional candidates await screening.', 10)
+text(18, 16, f'{len(collection)} application records; contextual sources are excluded. This is an inventory, not a PRISMA flow.', 9, color=muted)
 c.showPage(); c.save()
 shutil.copy2(PDF, OUT / PDF.name)
 
@@ -325,7 +317,7 @@ The 30 September 2026 retrieval observed {len(observed)} Google Scholar records:
 
 Current accounting is {len(recent)} included applications, {sum(excluded.values())} concluded application exclusions, {pending} pending assessments/texts and {sum(other.values())} other dispositions. Pending records are not exclusions. The observed records are not the complete search results across the three databases and are not a count of unique studies discovered.
 
-Scopus and ACM DL title queries were not rerun. The update remains partial, and no global retrieval or deduplication total is reconstructed. The figure is a collection inventory, not a complete PRISMA flow.
+Scopus title queries S02/S05/S08 were executed on 1 October 2026 and all 496/47/175 observations were exported. ACM title queries S03/S06/S09 retrieved 15/12/8 observations from the Full-Text Collection. The Guide to Computing Literature was not searched. Google Scholar pagination and scientific assessment of the additional candidates remain incomplete. `sources/revisao/search-completion-status.json` reports the retained raw observations and consolidation counts. These counts do not reconstruct the original collection's retrieval or screening history. The figure is a collection inventory, not a complete PRISMA flow.
 
 ## Files and evidence
 
@@ -348,21 +340,23 @@ Historical blank evaluation/source-location fields mean they were not uniformly 
 
 After manuscript table edits, compile the manuscript and run `revisao/export_and_validate.py`, then `revisao/build_updated_dataset.py` with Python, pypdf and ReportLab, followed by `revisao/validate_updated_dataset.py`. Identities, provenance, disposition accounting and arithmetic are checked before export. Do not rerun old manuscript-rewrite scripts to recreate this package.
 """
-(OUT / 'README.md').write_text(README)
+(OUT / 'README.md').write_text(README, encoding='utf-8')
 
 manifest = {
     'generated_on': DATE,
     'generator': 'revisao/build_updated_dataset.py',
     'input_sha256': {name: digest(ROOT / name) for name in source_paths + ['references-revised.bib', 'main.tex']},
-    'files': {str(p.relative_to(OUT)): digest(p) for p in sorted(OUT.rglob('*'))
+    'files': {p.relative_to(OUT).as_posix(): digest(p) for p in sorted(OUT.rglob('*'))
               if p.is_file() and p.name != 'manifest.json'},
 }
-(OUT / 'manifest.json').write_text(json.dumps(manifest, indent=2)+'\n')
+(OUT / 'manifest.json').write_text(json.dumps(manifest, indent=2)+'\n', encoding='utf-8')
 archive = OUT.with_suffix('.zip')
-with zipfile.ZipFile(archive, 'w', compression=zipfile.ZIP_DEFLATED) as z:
+archive_temporary = OUT.with_suffix('.zip.tmp')
+with zipfile.ZipFile(archive_temporary, 'w', compression=zipfile.ZIP_DEFLATED) as z:
     for path in sorted(OUT.rglob('*')):
         if path.is_file():
-            z.write(path, path.relative_to(OUT.parent))
+            z.write(path, path.relative_to(OUT.parent).as_posix())
+archive_temporary.replace(archive)
 print(json.dumps({'dataset_rows': len(collection), 'counts': count_rows,
                   'observed_records': len(observed), 'figure': str(PDF),
                   'archive': str(archive)}, ensure_ascii=False))

@@ -35,7 +35,7 @@ def json_bytes(value):
 
 def csv_bytes(records, columns):
     stream = io.StringIO(newline='')
-    writer = csv.DictWriter(stream, fieldnames=columns)
+    writer = csv.DictWriter(stream, fieldnames=columns, lineterminator='\n')
     writer.writeheader()
     writer.writerows(records)
     return stream.getvalue().encode('utf-8')
@@ -95,6 +95,8 @@ def build_artifacts(root=ROOT):
     historical = rows('historical-extraction.csv')
     recent = rows('revisao/recent-extraction.csv')
     observed = rows('revisao/protocol-search-records.csv')
+    retrieval_status = json.loads((source_root / 'revisao/protocol-retrieval-status.json').read_text(encoding='utf-8'))
+    expansion_status = json.loads((source_root / 'revisao/search-completion-status.json').read_text(encoding='utf-8'))
     retained = {r['citation_key']: r for r in observed
                 if r['decision'] == 'retained_after_primary_text_check'}
     query_groups = {'S01': 'privacy', 'S04': 'consent', 'S07': 'identity'}
@@ -195,10 +197,11 @@ def build_artifacts(root=ROOT):
             'excluded_application_records': sum(excluded.values()), 'excluded_decision_counts': excluded,
             'pending_records': pending,
             'coverage': 'Partial Google Scholar retrieval: S01 page 1, S04 pages 1-3, S07 page 1',
-            'Scopus': 'S02/S05/S08 not executed; institutional authentication required',
-            'ACM_DL': 'S03/S06/S09 not executed; advanced title search required Premium access',
+            'Scopus': retrieval_status['Scopus'],
+            'ACM_DL': retrieval_status['ACM_DL'],
             'complete_search': False, 'complete_screening': False,
         },
+        'additional_retrieval': expansion_status,
         'combined': {'application_studies': len(collection), 'by_group': dict(cc),
                      'group_interpretation': 'Accounting groups, not disjoint system-capability classes',
                      'contextual_references_counted_as_application_studies': False},

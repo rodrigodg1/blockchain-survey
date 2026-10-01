@@ -4,11 +4,11 @@ Companion data for **Governance of Blockchain-Assisted Data Sharing: A Survey of
 
 **Public survey data repository:** [https://github.com/rodrigodg1/blockchain-survey](https://github.com/rodrigodg1/blockchain-survey).
 
-**Current manuscript workspace:** `/Users/rodrigodgarcia/Desktop/phd-thesis/publications/survey-atualizar`, with `main.tex` as the canonical manuscript source. The manuscript is developed within the thesis repository; this companion repository distributes its documented data, source records and portable validation scripts.
+**Current manuscript workspace:** `publications/survey-atualizar` in [the thesis repository](https://github.com/rodrigodg1/phd-thesis), with `main.tex` as the canonical manuscript source. The manuscript is developed within the thesis repository; this companion repository distributes its documented data, source records and portable validation scripts.
 
 Updated on **1 October 2026** to match the revised manuscript. The survey is a **structured qualitative survey**. It examines decision authority, confidentiality, consent, identity, access enforcement, and accountability in blockchain-assisted data sharing. It does not claim an exhaustive systematic review or PRISMA compliance.
 
-The current manuscript maps eight requirements (G1–G8) to control points and assessment evidence: identity and authority; authorization scope and state; key custody and result release; confidentiality and correctness; audit completeness and disclosure; withdrawal and credential status; repeated-output inference; and input provenance versus truth. The 53-record supplementary synthesis matrix traces the reviewed and contextual evidence supporting this interpretation. It is a bounded qualitative evidence audit, not uniform coding of all 122 application records or validation of a reference architecture. The comparison with the published [QoE survey](https://doi.org/10.1016/j.comnet.2025.111899) acknowledges overlapping governance and identity themes; that survey is contextual and does not change the application denominator.
+The current manuscript maps eight requirements (G1–G8) to control points and assessment evidence: identity and authority; authorization scope and state; key custody and result release; confidentiality and correctness; audit completeness and disclosure; withdrawal and credential status; repeated-output inference; and input provenance versus truth. The 67-record supplementary synthesis matrix traces the reviewed and contextual evidence supporting this interpretation. It is a bounded qualitative evidence audit, not uniform coding of all 136 application records or validation of a reference architecture. The comparison with the published [QoE survey](https://doi.org/10.1016/j.comnet.2025.111899) acknowledges overlapping governance and identity themes; that survey is contextual and does not change the application denominator.
 
 ## Current application-study collection
 
@@ -16,14 +16,18 @@ Use [data/survey-dataset.csv](data/survey-dataset.csv), not the historical merge
 
 | Accounting group | Historical | Supplementary update | Combined |
 |---|---:|---:|---:|
-| Privacy | 40 | 4 | 44 |
-| Consent | 33 | 15 | 48 |
-| Identity | 25 | 5 | 30 |
-| **Total** | **98** | **24** | **122** |
+| Privacy | 40 | 6 | 46 |
+| Consent | 33 | 25 | 58 |
+| Identity | 25 | 7 | 32 |
+| **Total** | **98** | **38** | **136** |
 
-These groups track the historical extraction or the query family that retrieved a recent study. They are not mutually exclusive categories of system capabilities. Related surveys, standards, regulations, and platform documentation are contextual sources and are excluded from the 122 application records.
+These groups track the historical extraction or the query family that retrieved a recent study. They are not mutually exclusive categories of system capabilities. Related surveys, standards, regulations, and platform documentation are contextual sources and are excluded from the 136 application records.
 
-The supplementary search on **30 September 2026** observed **50 Google Scholar records** using the original title predicates, a 2024–2026 filter and that publication cutoff. Follow-up assessment on **1 October 2026** examined the 35 initially pending records and retained **16 additional application records**, preserving the original eight update inclusions and the 98 historical identities. The current 50-record accounting is **24 included, 18 pending, one excluded and seven other dispositions**. Of the 18 pending records, 17 await sufficient primary text and one has unresolved full-text/version assessment. Pending records are not completed exclusions. No new retrieval denominator or inclusion predicate was introduced. Scopus and the ACM advanced title queries were not rerun because the available session required additional access. The update remains partial.
+Searches used the original title predicates, a 2024--2026 filter and a **30 September 2026 publication cutoff**. The preserved original 50-record Scholar observation set now contains **38 included, one pending, three excluded and eight other dispositions**. Of the 18 observations still unresolved after the first assessment, 14 were included after reading primary methods, two were excluded for application scope, one was identified as a review and one still requires primary text. Pending access is not an exclusion. The application collection contains 136 studies and proposals, with evidence limits recorded per recent study.
+
+Scopus queries S02/S05/S08 were executed on **1 October 2026** and all **496/47/175 observations** were exported. ACM queries S03/S06/S09 returned **15/12/8 observations** from the **Full-Text Collection**, using January 2024 through September 2026. ACM's Guide to Computing Literature was not searched. Expanded Scholar S01 pages **19--27** are retained (90 observations). Other expanded pages are not claimed as preserved results.
+
+The additional retrieval contains **843 raw observations and 817 provisionally consolidated candidate records**. These are separate from the 136 included applications. Additional-candidate scientific screening and Scholar pagination remain incomplete. Candidate metadata, identifiers and current dispositions are distributed in [search-completion-candidates-metadata.csv](data/sources/revisao/search-completion-candidates-metadata.csv). Indexed abstracts are not redistributed. Raw-file fingerprints and the manuscript fingerprint are recorded in [source-snapshot.json](data/source-snapshot.json).
 
 ## Files
 
@@ -33,13 +37,13 @@ The supplementary search on **30 September 2026** observed **50 Google Scholar r
 | [data/study-counts.csv](data/study-counts.csv), [data/counts.json](data/counts.json) | Collection counts and the limits of their interpretation |
 | [data/search-decision-counts.csv](data/search-decision-counts.csv) | Dispositions of the 50 observed update records |
 | [data/studies-by-year.csv](data/studies-by-year.csv) | Annual counts, separately by extraction year and bibliography year |
-| [data/application-references.bib](data/application-references.bib) | Bibliographic entries for the 122 application records |
+| [data/application-references.bib](data/application-references.bib) | Bibliographic entries for the 136 application records |
 | [data/sources/](data/sources/) | Historical/recent extractions, query and follow-up assessment records, eligibility notes, retrieval status, source-linked synthesis evidence and the manuscript bibliography |
 | [docs/data-dictionary.json](docs/data-dictionary.json) | Definition of every exported field and missing-value semantics |
 | [data/source-snapshot.json](data/source-snapshot.json) | Source version, manuscript fingerprint, expected collection and preserved historical-file fingerprints |
 | [data/manifest.json](data/manifest.json) | SHA-256 fingerprints of build inputs and generated outputs |
 
-`revisao/recent-extraction.csv` in the source snapshot has 15 fields: the 13 original mechanism/evidence fields plus `verified_publication_title` and the additive `source_table` provenance field. `source_table` identifies the specific manuscript comparison table, including the three additional table parts. This addition does not change study identity or the normalized dataset schema.
+`revisao/recent-extraction.csv` in the source snapshot has 15 fields: the 13 original mechanism/evidence fields plus `verified_publication_title` and the additive `source_table` provenance field. `source_table` identifies the specific manuscript comparison table, across the privacy, consent and identity application tables. This addition does not change study identity or the normalized dataset schema.
 
 `source_extraction_file` resolves relative to **data/sources/**. `source_record_number` is a one-based CSV data-record index, excluding the header; it is not a physical line number. Primary-text URLs and section/page locations are recorded for the recent studies. Article full texts are not redistributed here.
 

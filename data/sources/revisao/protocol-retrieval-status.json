@@ -1,15 +1,16 @@
 {
   "date": "2026-09-30",
   "retrieved_result_records": 50,
-  "included_primary_studies": 24,
+  "included_primary_studies": 38,
   "decision_counts": {
-    "retained_after_primary_text_check": 24,
-    "candidate_full_text_assessment_not_completed": 1,
-    "pending_primary_full_text": 17,
+    "retained_after_primary_text_check": 38,
+    "excluded_out_of_scope_platform_comparison": 1,
+    "pending_primary_full_text": 1,
+    "review_not_primary_application": 4,
+    "excluded_out_of_scope_generic_intrusion_detection": 1,
     "same_manuscript_not_new_study": 1,
     "review_protocol_not_application": 1,
     "related_work_review": 1,
-    "review_not_primary_application": 3,
     "excluded_out_of_scope_copyright_business_process": 1,
     "review_candidate_for_positioning": 1
   },
@@ -19,14 +20,16 @@
     "S07": "page 1",
     "coverage": "partial"
   },
-  "Scopus": "document search requires institutional authentication; S02/S05/S08 not executed",
-  "ACM_DL": "advanced title search requires Premium access; S03/S06/S09 not executed",
+  "Scopus": "S02/S05/S08 executed on 1 October 2026 with institutional access, complete raw CSV exports of 496/47/175 observations. Scientific screening is separate.",
+  "ACM_DL": "S03/S06/S09 executed on 1 October 2026 in ACM Full-Text Collection, January 2024--September 2026: 15/12/8 observations. Guide to Computing Literature not searched.",
   "ACM_exploratory_query": "AllField=blockchain data privacy; not counted as original title query",
   "historical_screening_reconstructed": false,
   "PRISMA_claimed": false,
   "human_IRR_claimed": false,
   "assessment_date": "2026-10-01",
-  "pending_records": 18,
-  "completed_exclusions": 1,
-  "followup_assessment_record": "revisao/update-assessment-2026-10-01.csv"
+  "pending_records": 1,
+  "completed_exclusions": 3,
+  "followup_assessment_record": "revisao/update-assessment-2026-10-01.csv",
+  "original_retrieval_scope": "The preserved 50 observations were retrieved on 30 September 2026. Subsequent searches have separate raw exports.",
+  "search_expansion_status": "revisao/search-completion-status.json"
 }

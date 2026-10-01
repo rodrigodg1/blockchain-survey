@@ -83,6 +83,20 @@ class CollectionTests(unittest.TestCase):
         expected = json.loads((ROOT / 'data/source-snapshot.json').read_text())['counts']['combined']
         self.assertEqual(totals, {'extraction_year': expected, 'bibliography_year': expected})
 
+    def test_retrieved_candidates_are_separate_from_included_studies(self):
+        counts = json.loads(self.artifacts['counts.json'])
+        status = json.loads((ROOT / 'data/sources/revisao/search-completion-status.json').read_text())
+        self.assertEqual(counts['additional_retrieval'], status)
+        self.assertEqual(sum(status['raw_observations_by_query'].values()), status['raw_observations'])
+        self.assertFalse(status['complete_scientific_screening'])
+        with (ROOT / 'data/sources/revisao/search-completion-candidates-metadata.csv').open(newline='', encoding='utf-8') as stream:
+            candidates = list(csv.DictReader(stream))
+        self.assertEqual(len(candidates), status['consolidated_candidates'])
+        self.assertEqual(len({r['record_id'] for r in candidates}), len(candidates))
+        self.assertEqual(dict(Counter(r['decision'] for r in candidates)), status['decision_counts'])
+        self.assertNotEqual(counts['combined']['application_studies'], len(candidates))
+        self.assertNotIn('abstract_indexed', candidates[0])
+
     def test_output_corruption_is_detected_without_repair(self):
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)

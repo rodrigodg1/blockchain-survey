@@ -18,57 +18,119 @@
       "S04": 30,
       "S07": 10
     },
-    "selected_studies": 24,
+    "selected_studies": 38,
     "selected_by_group": {
-      "privacy": 4,
-      "consent": 15,
-      "identity": 5
+      "privacy": 6,
+      "consent": 25,
+      "identity": 7
     },
     "decision_counts": {
-      "retained_after_primary_text_check": 24,
-      "candidate_full_text_assessment_not_completed": 1,
-      "pending_primary_full_text": 17,
+      "retained_after_primary_text_check": 38,
+      "excluded_out_of_scope_platform_comparison": 1,
+      "pending_primary_full_text": 1,
+      "review_not_primary_application": 4,
+      "excluded_out_of_scope_generic_intrusion_detection": 1,
       "same_manuscript_not_new_study": 1,
       "review_protocol_not_application": 1,
       "related_work_review": 1,
-      "review_not_primary_application": 3,
       "excluded_out_of_scope_copyright_business_process": 1,
       "review_candidate_for_positioning": 1
     },
     "other_recorded_dispositions": {
+      "review_not_primary_application": 4,
       "same_manuscript_not_new_study": 1,
       "review_protocol_not_application": 1,
       "related_work_review": 1,
-      "review_not_primary_application": 3,
       "review_candidate_for_positioning": 1
     },
-    "excluded_application_records": 1,
+    "excluded_application_records": 3,
     "excluded_decision_counts": {
+      "excluded_out_of_scope_platform_comparison": 1,
+      "excluded_out_of_scope_generic_intrusion_detection": 1,
       "excluded_out_of_scope_copyright_business_process": 1
     },
-    "pending_records": 18,
+    "pending_records": 1,
     "coverage": "Partial Google Scholar retrieval: S01 page 1, S04 pages 1-3, S07 page 1",
-    "Scopus": "S02/S05/S08 not executed; institutional authentication required",
-    "ACM_DL": "S03/S06/S09 not executed; advanced title search required Premium access",
+    "Scopus": "S02/S05/S08 executed on 1 October 2026 with institutional access, complete raw CSV exports of 496/47/175 observations. Scientific screening is separate.",
+    "ACM_DL": "S03/S06/S09 executed on 1 October 2026 in ACM Full-Text Collection, January 2024--September 2026: 15/12/8 observations. Guide to Computing Literature not searched.",
     "complete_search": false,
     "complete_screening": false
   },
+  "additional_retrieval": {
+    "retrieval_date": "2026-10-01",
+    "publication_cutoff": "2026-09-30",
+    "raw_observations_by_query": {
+      "S02": 496,
+      "S05": 47,
+      "S08": 175,
+      "S03": 15,
+      "S06": 12,
+      "S09": 8,
+      "S01": 90
+    },
+    "raw_observations": 843,
+    "consolidated_candidates": 817,
+    "decision_counts": {
+      "awaiting_title_abstract_screening": 781,
+      "duplicate_current_application": 36
+    },
+    "Scopus": {
+      "S02": 496,
+      "S05": 47,
+      "S08": 175,
+      "raw_export_complete": true,
+      "year_only_filter_requires_primary_date_check": true
+    },
+    "ACM_DL": {
+      "S03": 15,
+      "S06": 12,
+      "S09": 8,
+      "collection": "ACM Full-Text Collection",
+      "observed_result_pages_complete": true,
+      "Guide_to_Computing_Literature_searched": false
+    },
+    "Google_Scholar": {
+      "complete_pagination": false,
+      "retained_page_ranges": {
+        "S01": [
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27
+        ],
+        "S04": [],
+        "S07": []
+      },
+      "ordering": "relevance",
+      "year_filter": "2024-2026",
+      "record_count_estimates_are_not_exact": true
+    },
+    "complete_scientific_screening": false,
+    "identity_rule": "Match nonempty DOI. Normalized-title matches are provisional. DOI-less records are not silently merged into DOI-bearing records.",
+    "application_counts_not_changed_by_retrieval": true,
+    "original_screening_reconstructed": false
+  },
   "combined": {
-    "application_studies": 122,
+    "application_studies": 136,
     "by_group": {
-      "privacy": 44,
-      "consent": 48,
-      "identity": 30
+      "privacy": 46,
+      "consent": 58,
+      "identity": 32
     },
     "group_interpretation": "Accounting groups, not disjoint system-capability classes",
     "contextual_references_counted_as_application_studies": false
   },
   "identity_checks": {
-    "unique_citation_keys": 122,
-    "nonempty_dois": 113,
-    "unique_nonempty_dois": 113,
+    "unique_citation_keys": 136,
+    "nonempty_dois": 127,
+    "unique_nonempty_dois": 127,
     "missing_dois": 9,
-    "unique_normalized_titles": 122,
+    "unique_normalized_titles": 136,
     "scope": "Metadata identity checks; not new independent review of all historical studies"
   }
 }

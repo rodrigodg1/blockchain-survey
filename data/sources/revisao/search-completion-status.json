@@ -1,0 +1,59 @@
+{
+  "retrieval_date": "2026-10-01",
+  "publication_cutoff": "2026-09-30",
+  "raw_observations_by_query": {
+    "S02": 496,
+    "S05": 47,
+    "S08": 175,
+    "S03": 15,
+    "S06": 12,
+    "S09": 8,
+    "S01": 90
+  },
+  "raw_observations": 843,
+  "consolidated_candidates": 817,
+  "decision_counts": {
+    "awaiting_title_abstract_screening": 781,
+    "duplicate_current_application": 36
+  },
+  "Scopus": {
+    "S02": 496,
+    "S05": 47,
+    "S08": 175,
+    "raw_export_complete": true,
+    "year_only_filter_requires_primary_date_check": true
+  },
+  "ACM_DL": {
+    "S03": 15,
+    "S06": 12,
+    "S09": 8,
+    "collection": "ACM Full-Text Collection",
+    "observed_result_pages_complete": true,
+    "Guide_to_Computing_Literature_searched": false
+  },
+  "Google_Scholar": {
+    "complete_pagination": false,
+    "retained_page_ranges": {
+      "S01": [
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27
+      ],
+      "S04": [],
+      "S07": []
+    },
+    "ordering": "relevance",
+    "year_filter": "2024-2026",
+    "record_count_estimates_are_not_exact": true
+  },
+  "complete_scientific_screening": false,
+  "identity_rule": "Match nonempty DOI. Normalized-title matches are provisional. DOI-less records are not silently merged into DOI-bearing records.",
+  "application_counts_not_changed_by_retrieval": true,
+  "original_screening_reconstructed": false
+}
