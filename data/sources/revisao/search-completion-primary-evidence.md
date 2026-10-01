@@ -48,7 +48,7 @@ Ethereum contracts register participants and encrypted permission requests, veri
 
 Sections IV.E and VII report black-box requirement tests and single-machine benchmarks using Ganache/Truffle on an i7-8700 with 16 GB RAM. Five measured cryptographic/encoding operations were repeated 10 times. Proof and public-signal generation account for 98.8% of measured computation, with nearly 10 seconds reported in VIII.C. The authors report 15 of 17 functional requirements satisfied. Age verification and formal notification remain unresolved. No public project repository was identified in the inspected article links.
 
-The paper explicitly recognizes that RSA-512 compromises metadata confidentiality, setup-secret retention enables proof forgery, approval exposes participant links, and off-chain erasure remains an act of trust. Its absence-of-consent argument depends on complete ledger records and the assumed account/permission linkage. The circuit proves a commitment relation, not factual data use, complete audit capture, or regulatory compliance. Evidence supports G1, G2, G3, G5, G6, and G8.
+The paper explicitly recognizes that RSA-512 compromises metadata confidentiality, setup-secret retention enables proof forgery, approval exposes participant links, and off-chain erasure remains an act of trust. Its absence-of-consent argument depends on complete ledger records and the assumed account/permission linkage. The circuit proves a commitment relation, not factual data use, complete audit capture, or regulatory compliance. Evidence supports G1, G2, G3, G4, G5, G6, and G8.
 
 ## Ferreira et al.: MCP/FHIR consent
 
@@ -76,7 +76,7 @@ Regular shards process signed DID registration, updates, deactivation, and crede
 
 The security argument assumes unforgeable signatures, authenticated channels, partial synchrony, and a Byzantine fraction below one third within committees. Its stated goals are DID-message unforgeability and system liveness. These do not establish selective disclosure or unlinkability. Credential-use transactions record DIDs, credential hashes, issuer and verifier identifiers, permitting linkage within the recorded workflow.
 
-Section VI presents simulations with 100 Mb/s bandwidth, 50 ms communication delay, 1 kB requests, batches of 2,000, and 30–60 nodes per shard. Comparators are PBFT and HotStuff variants. The best reported overall throughput is 90,000 requests/s for five fields, 20 shards per field, and 30 nodes per shard. This is a simulation result, not deployed throughput. No public project repository was identified in the inspected primary text. Evidence supports G2, G5, G6, and G8.
+Section VI presents simulations with 100 Mb/s bandwidth, 50 ms communication delay, 1 kB requests, batches of 2,000, and 30–60 nodes per shard. Comparators are PBFT and HotStuff variants. The best reported overall throughput is 90,000 requests/s for five fields, 20 shards per field, and 30 nodes per shard. This is a simulation result, not deployed throughput. No public project repository was identified in the inspected primary text. Evidence supports G1, G2, G5, G6, and G8.
 
 ## Kadar et al.: native record resolved, outside application scope
 

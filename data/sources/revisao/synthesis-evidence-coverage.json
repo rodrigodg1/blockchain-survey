@@ -28,7 +28,7 @@
     "revisao/update-assessment-additions.csv": "72df55008ccdcf1b473442c7ae722bee628545a3e9577606d13921e7d7dae282",
     "revisao/update-assessment-2026-10-01.md": "122858cb9ad0cbf5ba605f103bbe4a8a7d1d7a44cc8304536e1a01950dfce9e0",
     "revisao/search-completion-inclusions.csv": "1ba94fca9e7f069f50280467a9feb9c2ce1acee7c158da5f5c3d1f5e2f42044e",
-    "revisao/search-completion-primary-evidence.md": "12304b2c2aaea8bdf5edc32c771cda6b2636d9f652e01510f6171114b6205951"
+    "revisao/search-completion-primary-evidence.md": "40c2caebfb6b1acb6222e83afe9050c02be6e824c3155f804d6c56205bc9d22c"
   },
   "sources": 67,
   "coverage_of_initial_source_set": [
@@ -94,10 +94,9 @@
     "primary_local_text_verified": 1,
     "primary_fulltext_verified_via_assessment": 9
   },
-  "matrix_sha256": "add4e4c01805561e1a8e7b08a451adbf1512dc62fc39dc7deed8998c6cf02666",
+  "matrix_sha256": "94b6bfeedada0d0ca6d05f30eaf0bd06a1eb389e5aeedcfdcb3b98b2748cea89",
   "protected_inputs_sha256": {
-    "historical-extraction.csv": "ad6994d799e7e69867b75a76048ea284690a654f02ad55bbe51f4e7c7a900338",
-    "revisao/recent-extraction-before-assessment.csv": "ea15737d9793f6be86d75a84e1e96d572d6a7af8784722b18a8a885b66d54dbb"
+    "revisao/recent-extraction-before-assessment.csv": "a7050ce6b3551ffcf6d6936f12d50813c5e162a71a763e738f8c883a28dbfa94"
   },
   "not_uniform_recoding_of_study_collection": true,
   "counterexamples_are_analytical_not_observed_incidents": true,
@@ -118,5 +117,12 @@
     "updateSeidi2025HealthcareSSI"
   ],
   "current_update_studies": 38,
-  "current_accepted_application_additions": 30
+  "current_accepted_application_additions": 30,
+  "prior_audit_input_sha256": {
+    "historical-extraction.csv": "ad6994d799e7e69867b75a76048ea284690a654f02ad55bbe51f4e7c7a900338"
+  },
+  "current_inputs_sha256": {
+    "historical-extraction.csv": "27a275574883afadf47e19dc23ceb195e2d0bc8fb7348e9bcb7859e1604474b4"
+  },
+  "prior_audit_input_note": "Historical-extraction digest inherited from an earlier audit snapshot. It is retained as prior provenance, not asserted to match the maintained extraction or to be independently replayable from this release."
 }

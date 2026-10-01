@@ -195,6 +195,7 @@ optional_sources = [
     'revisao/update-assessment-additions.bib',
     'revisao/synthesis-evidence-matrix.csv', 'revisao/synthesis-evidence-method.md',
     'revisao/synthesis-evidence-coverage.json',
+    'revisao/thesis-alignment-evidence.md',
     'revisao/update-assessment-2026-10-01.csv', 'revisao/update-assessment-2026-10-01.md',
     'revisao/contextual-evidence-expansion.md', 'revisao/policy-context-sources.bib',
     'revisao/contextual-verification-additions.bib',
