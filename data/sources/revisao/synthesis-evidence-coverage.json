@@ -1,5 +1,5 @@
 {
-  "date": "2026-10-01",
+  "date": "2026-10-02",
   "selection_timing": "retrospective analytical extension documented in current revision",
   "baseline_required_sources": 32,
   "initial_application_collection_size": 106,
@@ -26,7 +26,7 @@
   ],
   "assessment_provenance_sha256": {
     "revisao/update-assessment-additions.csv": "72df55008ccdcf1b473442c7ae722bee628545a3e9577606d13921e7d7dae282",
-    "revisao/update-assessment-2026-10-01.md": "122858cb9ad0cbf5ba605f103bbe4a8a7d1d7a44cc8304536e1a01950dfce9e0",
+    "revisao/update-assessment-2026-10-01.md": "385510b754169d24955f25cb4072c5b5be168f8c421e0fa1f0f2b3fd79e972f5",
     "revisao/search-completion-inclusions.csv": "1ba94fca9e7f069f50280467a9feb9c2ce1acee7c158da5f5c3d1f5e2f42044e",
     "revisao/search-completion-primary-evidence.md": "40c2caebfb6b1acb6222e83afe9050c02be6e824c3155f804d6c56205bc9d22c"
   },
@@ -124,5 +124,6 @@
   "current_inputs_sha256": {
     "historical-extraction.csv": "27a275574883afadf47e19dc23ceb195e2d0bc8fb7348e9bcb7859e1604474b4"
   },
-  "prior_audit_input_note": "Historical-extraction digest inherited from an earlier audit snapshot. It is retained as prior provenance, not asserted to match the maintained extraction or to be independently replayable from this release."
+  "prior_audit_input_note": "Historical-extraction digest inherited from an earlier audit snapshot. It is retained as prior provenance, not asserted to match the maintained extraction or to be independently replayable from this release.",
+  "snapshot_note": "Current membership and source-access counts are unchanged. Current/protected/assessment hashes identify the distributed LF-normalized inputs; prior_audit_input_sha256 retains its explicitly historical meaning."
 }

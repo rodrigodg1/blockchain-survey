@@ -1,12 +1,12 @@
 # Operation, trust, and verification in the survey synthesis
 
-Date: 1 October 2026. This focused revision concerns the survey's introduction, existing comparisons, requirements G1–G8, and conclusion. It does not change application eligibility, the 136 selected identities, or the thesis research questions. No new manuscript section or application classification was introduced.
+Date: 1 October 2026. This focused revision concerns the survey's introduction, existing comparisons, requirements G1–G8, and conclusion. It does not change application eligibility or the 136 selected identities. No new manuscript section or application classification was introduced.
 
 ## Interpretation tested
 
 The proposed connection is that private data-sharing and analytics require distinct decisions about contribution, authorization, custody, execution, release, and review. Multiple participants are relevant when these responsibilities cross trust or organizational boundaries. A single organization can exercise several roles. Several ledger nodes do not establish independent administration, distributed decryption authority, or distrust of every processor.
 
-The strongest existing thesis contribution is an interpretation of granular control (RQ2). Audit reconstruction provides a complementary connection to transparency (RQ1). Binding a claimed result to specified inputs and an operation provides a conditional connection to computation integrity (RQ3). These connections existed in G1–G8 but were obscured by organizing the contribution mainly as three topic families followed by requirements.
+The synthesis distinguishes granular control, audit reconstruction, and relations binding claimed results to specified inputs and operations. G1–G8 connect these comparisons across the reviewed sharing operations.
 
 ## Source-specific verification boundaries
 
@@ -21,7 +21,7 @@ The locators below refer to the existing synthesis matrix and the primary eviden
 | EBDA, SM16, III.A and V.A/D/Eqs. 32–34, and Kang, SM20, §§4.2–4.3.1/5–6 | Producers, authority or distributor, processor, recipient. Encrypted aggregation or licensed encrypted regression. | EBDA retains a fully trusted authority and decrypting center. Kang relies on a manager/distributor and identifies further monitoring. | Confidential processing is described. Independent result checking is potentially needed if the processor can deviate and another party must rely on its result. Encryption alone does not establish that property. |
 | Gupta2026, SM50, IV–VI, PDF pp. 3–9 | Patient, controller, processor/prover, synchronization and verification services. Five implemented RISC0 checks over supplied private inputs. | External input origin, timestamps, and disclosure of all processing require separate evidence. Raw data are released to processors. | Direct implemented computation checks for negotiated technical predicates. They do not certify consent validity, arbitrary analytics, or legal compliance. |
 | Scaramuzza, SC06, IV–IX, and Al-Sabahi, SM47, §§4.1/4.6/4.8–4.9/5.1 | Prover and contract verify commitment knowledge. Authors, issuers, and journal propose affiliation-set non-intersection. | Scaramuzza recognizes setup and metadata/erasure limits. Al-Sabahi relies on attestation completeness and reports no complete implementation. | An implemented knowledge relation and a proposed set relation, respectively. Neither proves actual subsequent data use or the absence of every conflict of interest. |
-| PrivDA, SM18, §§4/5.1/5.6–5.7/6–7 | Producer, aggregator, key node, consumer. Identity/hash checks and encrypted aggregation. | Legitimate-device measurements are assumed trustworthy. | Origin authentication and even correct transformation leave physical measurement truth unresolved. This is a common boundary for the thesis RQs. |
+| PrivDA, SM18, §§4/5.1/5.6–5.7/6–7 | Producer, aggregator, key node, consumer. Identity/hash checks and encrypted aggregation. | Legitimate-device measurements are assumed trustworthy. | Origin authentication and even correct transformation leave physical measurement truth unresolved. |
 
 The checked primary descriptions and their access limits remain in synthesis-evidence-matrix.csv, contextual-evidence-expansion.md, update-assessment-2026-10-01.md, and search-completion-primary-evidence.md. The refined requirement links are SC06/G4, SC13/G1 and SC12/G5. The last link identifies Lu's partially trusted review roles and permission to correct a disputed record, not evidence of the corrected score's truth or erasure of external copies.
 
@@ -29,7 +29,7 @@ The checked primary descriptions and their access limits remain in synthesis-evi
 
 Li2025 already covers identity, authenticity, and integrity verification at a sharing stage (§4.2.3), as well as privacy techniques and maturity. Phuyal2026 already connects dynamic consent, withdrawal, identity, and enforcement. Mazzocca2025 discusses DID/VC privacy, trust, and authorization. Ramić2024 compares credential disclosure. Nguyen2025 and Sandyawan2026 already connect sharing controls and governance.
 
-An additional close comparator is Ernstberger et al., *SoK: Data Sovereignty*, EuroS&P 2023, pp. 122–143, DOI [10.1109/EuroSP57164.2023.00017](https://doi.org/10.1109/EuroSP57164.2023.00017). Its [author-deposited primary abstract](https://eprint.iacr.org/2023/967) identifies decentralized identity, access control, and policy-compliant decentralized computation and their formal definitions. [UCL's institutional record](https://discovery.ucl.ac.uk/id/eprint/10182319/) verifies the nine authors, venue, pages, and DOI. These HTML records were checked on 1 October 2026. No new complete PDF was read for this comparator. The comparison is limited to that documented scope. It replaces the weaker Sandyawan table row, while Sandyawan remains discussed in the text.
+An additional close comparator is Ernstberger et al., *SoK: Data Sovereignty*, EuroS&P 2023, pp. 122–143, DOI [10.1109/EuroSP57164.2023.00017](https://doi.org/10.1109/EuroSP57164.2023.00017). Its [author-deposited primary abstract](https://eprint.iacr.org/2023/967) identifies decentralized identity, access control, and policy-compliant decentralized computation and their formal definitions. [UCL's institutional record](https://discovery.ucl.ac.uk/id/eprint/10182319/) verifies the nine authors, venue, pages, and DOI. These HTML records were checked on 1 October 2026. No new complete PDF was read for this comparator. The comparison is limited to that documented scope. At the 1 October comparison stage, Ernstberger replaced a Sandyawan table row while Sandyawan remained discussed in the text. The later targeted comparator checks are documented in `synthesis-evidence-method.md`.
 
 The survey does not claim the first connection between governance, identity, and computation. Its specific analytical output is a comparative synthesis derived from selected reviewed applications. The following contrasts illustrate the derivation rather than define three mutually exclusive categories:
 
@@ -41,17 +41,15 @@ The payoff is separating evaluation cases for permission, result correctness, re
 
 The open-problem agenda derives research questions from these observed limits. It adds human comprehension versus recorded or predicted consent, interaction metadata versus confidential content, review evidence versus corrective authority, and continued enforcement across service and credential changes. These refine G1-G8 without introducing another taxonomy or application filter. Continuity, recovery and migration are proposed evaluation cases, not observed deployment failures. The agenda remains conditional on the application and adversary, preserves input-truth and output-disclosure limits, and requires common-workflow measurements rather than rankings across incompatible component benchmarks.
 
-## Minimal connection to the thesis
+## Boundaries of applying the comparison criteria
 
-The manuscript contains one compact application bridge to QoE analytics, supported by the published QoE survey's discussion of sensitive user observations and provider analysis. It does not claim that QoE scenarios always require FHE, SSI, blockchain, or computation proofs.
-
-| Canonical thesis question | Survey contribution | Limit |
+| Comparison purpose | Relevant criteria | Limit |
 |---|---|---|
-| RQ1, transparency and auditability of encrypted QoE records | G5 separates record integrity, event capture, evidence access, and responsibility for correction. | A ledger cannot establish complete capture of external processing. |
-| RQ2, granular control and private analytics | G1/G2/G3/G6 distinguish credentials, current permission, custody, release, and withdrawal. G7 bounds privacy of authorized outputs. | Interface permission does not prevent public ciphertext evaluation elsewhere. Withdrawal cannot recall plaintext. Authorized outputs can enable inference. |
-| RQ3, operation history and result integrity | G4 requires a specified input/operation/output relation, verifier, and acceptance assumptions. G5 identifies review and dispute evidence. | Auditability or consensus alone does not prove computation. Where no result check is established, the connection remains conditional or absent. |
-| Shared input boundary | G8 separates origin, transformation, and observation truth. | Authentic inputs and correct computation do not establish accurate physical measurements. |
+| Transparency and auditability | G5 separates record integrity, event capture, evidence access, and responsibility for correction. | A ledger cannot establish complete capture of external processing. |
+| Granular control and private analytics | G1/G2/G3/G6 distinguish credentials, current permission, custody, release, and withdrawal. G7 bounds privacy of authorized outputs. | Interface permission does not prevent evaluation elsewhere when ciphertexts and public evaluation material are available. Withdrawal cannot recall plaintext. Authorized outputs can enable inference. |
+| Operation history and result integrity | G4 requires a specified input/operation/output relation, verifier, and acceptance assumptions. G5 identifies review and dispute evidence. | Auditability or consensus alone does not prove computation. Where no result check is established, the connection remains conditional or absent. |
+| Input truth | G8 separates origin, transformation, and observation truth. | Authentic inputs and correct computation do not establish accurate physical measurements. |
 
-The current thesis already has thesis_defense/tex/governance_survey_integration.tex, which applies G1–G8 retrospectively to the architectural iterations. No thesis chapter or metadata was edited in this task. The survey supplies interpretation and assessment requirements. The technical manuscripts supply their own bounded mechanisms and evidence. Its developing status does not imply that it originally caused earlier published design decisions.
+Applying the criteria to a system requires that system's bounded mechanisms, evidence, and assumptions. The dataset and synthesis do not implement or validate a combined system.
 
 The scientific-screening limitations are unchanged: partial Scholar pagination, one original record pending primary text, and additional retrieved candidates awaiting screening. The 67-source matrix covers 50 application examples and 17 contextual sources. Neither this conceptual refinement nor successful dataset validation resolves those coverage limits.

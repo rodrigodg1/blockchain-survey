@@ -1,59 +1,55 @@
-# Governance of Blockchain-Assisted Data Sharing
+# Survey dataset: blockchain-assisted data sharing
 
-Companion data for **Governance of Blockchain-Assisted Data Sharing: A Survey of Privacy, Consent, and Self-Sovereign Identity**.
+Dataset and source records for **Governance of Blockchain-Assisted Data Sharing: A Survey of Privacy, Consent, and Self-Sovereign Identity**.
 
-**Public survey data repository:** [https://github.com/rodrigodg1/blockchain-survey](https://github.com/rodrigodg1/blockchain-survey).
+Snapshot: **2 October 2026**, with a **30 September 2026 publication cutoff**. The survey is a structured qualitative survey. It does not claim exhaustive retrieval or a systematic review.
 
-**Current manuscript workspace:** `publications/survey-atualizar` in [the thesis repository](https://github.com/rodrigodg1/phd-thesis), with `main.tex` as the canonical manuscript source. The manuscript is developed within the thesis repository; this companion repository distributes its documented data, source records and portable validation scripts.
+## Included works
 
-Updated on **1 October 2026** to match the revised manuscript. The survey is a **structured qualitative survey**. It examines decision authority, confidentiality, consent, identity, access enforcement, and accountability in blockchain-assisted data sharing. It does not claim an exhaustive systematic review or PRISMA compliance.
+[data/survey-dataset.csv](data/survey-dataset.csv) contains **136 included studies and proposals**, with one row per work.
 
-The current manuscript relates sharing and processing operations to the actors who authorize, execute, release and review information. Eight requirements (G1–G8) separate identity/authority, authorization scope/state, custody/release, confidentiality/correctness, audit/accountability, withdrawal/status, output inference, and provenance/truth. The 67-record synthesis matrix covers 50 application examples and 17 contextual sources. It is a bounded evidence audit, not uniform coding of all 136 records or validation of a reference architecture. The [alignment evidence](data/sources/revisao/thesis-alignment-evidence.md) distinguishes credential and record checks from specific computation relations, records conditional links to private QoE analytics, and compares the contribution with existing data-sovereignty work. The application selection and counts are unchanged.
+| Search-topic group | Included works | Detailed-comparison examples |
+|---|---:|---:|
+| Privacy | 46 | 12 |
+| Consent and permission | 58 | 27 |
+| Identity | 32 | 11 |
+| **Total** | **136** | **50** |
 
-## Current application-study collection
+The groups follow the recorded extraction or retrieval-query family; they are not exclusive categories of technical capabilities. The 136 works comprise 98 initial records and 38 additions. The detailed comparison uses 50 of these works. The remaining 86 were not uniformly assessed against the survey's eight design requirements.
 
-Use [data/survey-dataset.csv](data/survey-dataset.csv), not the historical merged search exports.
+The [synthesis matrix](data/sources/revisao/synthesis-evidence-matrix.csv) contains those **50 examples and 17 contextual sources**, for 67 rows. Contextual theory, specifications and legal guidance are excluded from the 136-work total. The six privacy evaluation summaries in the manuscript refer to already included works and add no studies. Essential methods, comparisons and limitations are presented in the manuscript; this repository records their dataset provenance.
 
-| Accounting group | Historical | Supplementary update | Combined |
-|---|---:|---:|---:|
-| Privacy | 40 | 6 | 46 |
-| Consent | 33 | 25 | 58 |
-| Identity | 25 | 7 | 32 |
-| **Total** | **98** | **38** | **136** |
+[manuscript-membership.json](data/sources/revisao/manuscript-membership.json) records the identifiers and Appendix A table labels extracted from the dated manuscript, including its detailed examples, contextual sources and privacy evaluation entries. Validation compares these identities with the exported dataset and matrix. The manuscript fingerprint identifies the reconciled version; validation cannot detect changes to a manuscript held outside this repository.
 
-These groups track the historical extraction or the query family that retrieved a recent study. They are not mutually exclusive categories of system capabilities. Related surveys, standards, regulations, and platform documentation are contextual sources and are excluded from the 136 application records.
+## Evidence and extraction
 
-Searches used the original title predicates, a 2024--2026 filter and a **30 September 2026 publication cutoff**. The preserved original 50-record Scholar observation set now contains **38 included, one pending, three excluded and eight other dispositions**. Of the 18 observations still unresolved after the first assessment, 14 were included after reading primary methods, two were excluded for application scope, one was identified as a review and one still requires primary text. Pending access is not an exclusion. The application collection contains 136 studies and proposals, with evidence limits recorded per recent study.
+The survey compares protection targets and constructions (RQ1), authorization and enforcement (RQ2), and checked relations and evaluation evidence (RQ3). The [codebook](data/sources/revisao/synthesis-codebook.md), [requirement derivations](data/sources/revisao/requirement-derivation.csv) and [compact comparisons](data/sources/revisao/rq-application-comparisons.csv) document the analytical attributes and their source locations.
 
-Scopus queries S02/S05/S08 were executed on **1 October 2026** and all **496/47/175 observations** were exported. ACM queries S03/S06/S09 returned **15/12/8 observations** from the **Full-Text Collection**, using January 2024 through September 2026. ACM's Guide to Computing Literature was not searched. Expanded Scholar S01 pages **19--27** are retained (90 observations). Other expanded pages are not claimed as preserved results.
+Among the 50 examples, 35 have direct full-text checks, nine use source-specific full-text assessments and six retain more limited evidence. Access status is recorded per source. A described control, a reported evaluation and a derived assessment question remain distinct; inclusion does not establish deployment, regulatory compliance or every claimed security property. Historical evaluation fields were not extracted uniformly. Empty cells mean unextracted information, not absence of an evaluation or limitation.
 
-The additional retrieval contains **843 raw observations and 817 provisionally consolidated candidate records**. These are separate from the 136 included applications. Additional-candidate scientific screening and Scholar pagination remain incomplete. Candidate metadata, identifiers and current dispositions are distributed in [search-completion-candidates-metadata.csv](data/sources/revisao/search-completion-candidates-metadata.csv). Indexed abstracts are not redistributed. Raw-file fingerprints and the manuscript fingerprint are recorded in [source-snapshot.json](data/source-snapshot.json).
+The original update assessment covers 50 Google Scholar observations: 38 included, one pending primary text, three excluded for scope and eight other dispositions. These 50 search observations are different from the 50 detailed-comparison examples. Additional retrieval contains 843 raw observations and 817 provisionally consolidated candidates; their scientific screening and complete Scholar pagination remain unfinished. They add no works to the included dataset. See [docs/protocol.md](docs/protocol.md) for exact queries, dates and limitations.
 
 ## Files
 
 | File | Purpose |
 |---|---|
-| [data/survey-dataset.csv](data/survey-dataset.csv) | One row per included application study, with metadata, provenance and evidence boundaries |
-| [data/study-counts.csv](data/study-counts.csv), [data/counts.json](data/counts.json) | Collection counts and the limits of their interpretation |
-| [data/search-decision-counts.csv](data/search-decision-counts.csv) | Dispositions of the 50 observed update records |
-| [data/studies-by-year.csv](data/studies-by-year.csv) | Annual counts, separately by extraction year and bibliography year |
-| [data/application-references.bib](data/application-references.bib) | Bibliographic entries for the 136 application records |
-| [data/sources/](data/sources/) | Historical/recent extractions, query and follow-up assessment records, eligibility notes, retrieval status, source-linked synthesis evidence and the manuscript bibliography |
-| [docs/data-dictionary.json](docs/data-dictionary.json) | Definition of every exported field and missing-value semantics |
-| [data/source-snapshot.json](data/source-snapshot.json) | Source version, manuscript fingerprint, expected collection and preserved historical-file fingerprints |
-| [data/manifest.json](data/manifest.json) | SHA-256 fingerprints of build inputs and generated outputs |
+| [data/survey-dataset.csv](data/survey-dataset.csv) | One row per included work, with metadata, provenance and evidence limits |
+| [data/counts.json](data/counts.json), [data/study-counts.csv](data/study-counts.csv) | Included-work counts and detailed-comparison counts, with their interpretation limits |
+| [data/search-decision-counts.csv](data/search-decision-counts.csv) | Dispositions of the original 50 update observations |
+| [data/studies-by-year.csv](data/studies-by-year.csv) | Annual counts by extraction year and bibliography year |
+| [data/application-references.bib](data/application-references.bib) | Bibliography of the 136 included works |
+| [data/sources/](data/sources/) | Extractions, assessments, search records, synthesis evidence and manuscript bibliography |
+| [docs/data-dictionary.json](docs/data-dictionary.json) | Exported fields and missing-value definitions |
+| [data/source-snapshot.json](data/source-snapshot.json) | Manuscript and input fingerprints, expected counts and preserved historical-file fingerprints |
+| [data/manifest.json](data/manifest.json) | Build-input and generated-output SHA-256 fingerprints |
 
-`revisao/recent-extraction.csv` in the source snapshot has 15 fields: the 13 original mechanism/evidence fields plus `verified_publication_title` and the additive `source_table` provenance field. `source_table` identifies the specific manuscript comparison table, across the privacy, consent and identity application tables. This addition does not change study identity or the normalized dataset schema.
+`source_extraction_file` resolves relative to `data/sources/`. `source_record_number` is a one-based CSV data-record index excluding the header, not a physical line number. `source_table` identifies the Appendix A work table. Source URLs and section/page locations identify examined passages; article full texts and indexed abstracts are not redistributed.
 
-`source_extraction_file` resolves relative to **data/sources/**. `source_record_number` is a one-based CSV data-record index, excluding the header; it is not a physical line number. Primary-text URLs and section/page locations are recorded for the recent studies. Article full texts are not redistributed here.
-
-The bibliography under `data/sources/` includes contextual citations. Its entry count is not the number of included studies. Fields ending in `_bibtex` retain BibTeX braces and escapes; some extraction fields retain LaTeX notation.
+The complete manuscript bibliography includes contextual and background references. Its entry count is not the number of included works. Fields ending in `_bibtex` retain BibTeX braces and escapes; some extraction fields retain LaTeX notation. Internal `historical` and `supplementary_update` values preserve extraction provenance, not separate submission documents or evidence-quality classes.
 
 ## Reproduce and validate
 
-Requires **Python 3.9 or newer**, with no third-party packages, network access, sibling repository, LaTeX installation, or image tools.
-
-From this repository:
+Requires **Python 3.9 or newer**, with no third-party packages, network access, external repository or LaTeX installation.
 
 ```sh
 python3 run.py --check
@@ -62,32 +58,20 @@ python3 run.py --check
 python3 -m unittest discover -s tests -v
 ```
 
-- `--check` verifies the input snapshot, study identities, counts, decisions, source mapping and generated files without rewriting the data files. Python may create its usual ignored bytecode cache.
-- Running without `--check` rebuilds the seven generated files directly under `data/`. All input and collection checks complete before writing. It does not rewrite the historical CSVs, perform searches, select additional studies, or generate images.
-- Paths are resolved from the scripts, so `python3 /path/to/blockchain-survey/run.py --check` also works from another directory.
+`--check` verifies fingerprints, study identities, group and table assignments, detailed/context membership, counts, decisions and generated outputs without rewriting data. Running without `--check` rebuilds the seven generated files under `data/` after validation. Neither command searches, screens additional candidates or changes historical CSVs. Paths resolve from the scripts and manifest paths use `/` across platforms.
 
-The canonical dataset fingerprint and expected collection counts are recorded in [data/source-snapshot.json](data/source-snapshot.json). The builder requires the exported CSV to match that deliberately synchronized manuscript snapshot; the fingerprint is kept there rather than duplicated in this README.
+These checks establish consistency of the recorded dataset. They do not independently validate source interpretations, reproduce reviewed systems or establish exhaustive coverage.
 
-Included records encompass implemented systems, conceptual designs, version-identified preprints and a commentary containing an original proposed workflow. Their genres and evaluation limits are recorded explicitly. Inclusion does not establish implementation, publication acceptance, secure deployment or regulatory compliance.
+## Historical records and maintenance
 
-These checks establish artifact consistency. They do not establish exhaustive coverage, independent scientific validation, regulatory compliance, or reproducibility of the reviewed implementations.
+The existing `privacy/`, `consent/`, `identity/` and `total_works_by_year.csv` files are preserved unchanged as historical retrieval/processing records. They are not the current included-work dataset. The retained `analysis-expansion-*` and earlier revision records describe dated preparation stages, not the current manuscript or current RQs. Read [docs/legacy-data.md](docs/legacy-data.md) before using them. The old federated-learning description is not an additional search family; `identity/fl_merged_dataset.csv` retains its historical filename.
 
-## Method and historical material
-
-Read [docs/protocol.md](docs/protocol.md) for scope, queries, eligibility, extraction and limitations, and [docs/legacy-data.md](docs/legacy-data.md) for the historical export audit.
-
-The existing `privacy/`, `consent/`, `identity/`, and `total_works_by_year.csv` files are preserved unchanged. They contain historical retrieval/processing records, not the current included-study dataset. The old federated-learning search description is not an additional search family in the current three-topic protocol. The misleading historical filename `identity/fl_merged_dataset.csv` is retained for provenance.
-
-The old `process-papers.py` has been replaced by a **read-only audit**. It identifies candidate duplicate groups without dropping records or overwriting merged exports:
+`process-papers.py` performs a read-only duplicate audit. Missing DOIs are never grouped as a shared identifier, and conflicting DOI/title matches remain candidates for review:
 
 ```sh
 python3 process-papers.py > /tmp/blockchain-survey-legacy-audit.json
 ```
 
-The original deduplication treated missing DOIs as duplicates. The replacement never groups empty DOIs as a matching identifier and reports title matches with conflicting DOIs for review. Candidate groups can overlap and are not screening decisions.
-
-## Updating this snapshot
-
-Do not edit generated files to adjust a total. Update the evidence and extraction records first, then deliberately revise the snapshot fingerprints, collection expectations and documented date together with the manuscript. The generator intentionally rejects changes that no longer match this release. See [docs/maintenance.md](docs/maintenance.md).
+Do not edit generated files to force a total. Reconcile study identities with the manuscript, update source records and snapshot expectations deliberately, then rebuild and check. See [docs/maintenance.md](docs/maintenance.md).
 
 The repository retains its [Apache 2.0 license](LICENSE). Bibliographic descriptions and links do not transfer rights to the cited publications.

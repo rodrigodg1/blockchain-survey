@@ -1,5 +1,5 @@
 {
-  "artifact_date": "2026-10-01",
+  "artifact_date": "2026-10-02",
   "study_update_search_date": "2026-09-30",
   "historical": {
     "selected_studies": 98,
@@ -124,6 +124,20 @@
     },
     "group_interpretation": "Accounting groups, not disjoint system-capability classes",
     "contextual_references_counted_as_application_studies": false
+  },
+  "detailed_analysis": {
+    "application_examples": 50,
+    "contextual_sources": 17,
+    "matrix_records": 67,
+    "included_works_not_detailed": 86,
+    "application_examples_by_group": {
+      "consent": 27,
+      "privacy": 12,
+      "identity": 11
+    },
+    "privacy_evaluation_summaries": 6,
+    "contextual_sources_in_application_denominator": false,
+    "scope": "Source-linked qualitative comparisons; not uniform assessment of all included works"
   },
   "identity_checks": {
     "unique_citation_keys": 136,

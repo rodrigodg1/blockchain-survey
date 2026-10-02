@@ -9,7 +9,7 @@ import tempfile
 import unittest
 
 from scripts.audit_legacy_exports import candidate_groups, normal_doi
-from scripts.build_dataset import ROOT, ORIGINAL_UPDATE_KEYS, build_artifacts, check_artifacts, digest
+from scripts.build_dataset import ROOT, ORIGINAL_UPDATE_KEYS, MEMBERSHIP_SOURCE, build_artifacts, check_artifacts, digest
 
 
 class DuplicateAuditTests(unittest.TestCase):
@@ -74,6 +74,78 @@ class CollectionTests(unittest.TestCase):
         self.assertEqual(counts['decision_counts'], dict(decisions))
         self.assertEqual(counts['pending_records'], decisions['candidate_full_text_assessment_not_completed'] + decisions['pending_primary_full_text'])
         self.assertEqual(counts['selected_studies'] + counts['pending_records'] + counts['excluded_application_records'] + sum(counts['other_recorded_dispositions'].values()), len(observed))
+
+    def test_detailed_analysis_keeps_context_out_of_application_counts(self):
+        counts = json.loads(self.artifacts['counts.json'])
+        detail = counts['detailed_analysis']
+        snapshot = json.loads((ROOT / 'data/source-snapshot.json').read_text())
+        membership = json.loads((ROOT / 'data/sources' / MEMBERSHIP_SOURCE).read_text())
+        included = {r['study_id'] for r in membership['included_works']}
+        detailed = set(membership['detailed_example_ids'])
+        context = set(membership['contextual_source_ids'])
+        self.assertTrue(detailed <= included)
+        self.assertFalse(included & context)
+        self.assertFalse(detailed & context)
+        self.assertEqual(detail['application_examples'], snapshot['counts']['detailed_application_examples'])
+        self.assertEqual(detail['contextual_sources'], snapshot['counts']['contextual_sources'])
+        self.assertEqual(detail['matrix_records'], len(detailed | context))
+        self.assertEqual(detail['included_works_not_detailed'], len(included - detailed))
+        self.assertEqual(detail['application_examples_by_group'], {'privacy': 12, 'consent': 27, 'identity': 11})
+        self.assertEqual(detail['privacy_evaluation_summaries'], snapshot['counts']['privacy_evaluation_summaries'])
+        self.assertFalse(detail['contextual_sources_in_application_denominator'])
+
+    def copy_source_snapshot(self, root):
+        snapshot = json.loads((ROOT / 'data/source-snapshot.json').read_text())
+        files = ['data/source-snapshot.json', 'docs/data-dictionary.json',
+                 'scripts/build_dataset.py',
+                 *['data/sources/' + p for p in snapshot['source_files']],
+                 *snapshot['legacy_csv_sha256']]
+        for name in files:
+            target = root / name
+            target.parent.mkdir(parents=True, exist_ok=True)
+            shutil.copyfile(ROOT / name, target)
+
+    def write_membership_with_updated_fingerprint(self, root, membership):
+        path = root / 'data/sources' / MEMBERSHIP_SOURCE
+        path.write_text(json.dumps(membership, indent=2) + '\n', encoding='utf-8')
+        snapshot_path = root / 'data/source-snapshot.json'
+        snapshot = json.loads(snapshot_path.read_text())
+        snapshot['source_files'][MEMBERSHIP_SOURCE] = digest(path.read_bytes())
+        snapshot_path.write_text(json.dumps(snapshot, indent=2) + '\n', encoding='utf-8')
+
+    def test_contextual_source_cannot_enter_included_or_detailed_denominator(self):
+        for target in ('included_works', 'detailed_example_ids'):
+            with self.subTest(target=target), tempfile.TemporaryDirectory() as tmp:
+                root = Path(tmp)
+                self.copy_source_snapshot(root)
+                membership = json.loads((root / 'data/sources' / MEMBERSHIP_SOURCE).read_text())
+                key = membership['contextual_source_ids'][0]
+                if target == 'included_works':
+                    membership[target].append({'study_id': key, 'review_group': 'privacy',
+                                               'source_table': 'tab:privacy-works'})
+                else:
+                    membership[target][0] = key
+                self.write_membership_with_updated_fingerprint(root, membership)
+                with self.assertRaisesRegex(ValueError, 'Contextual sources cannot enter'):
+                    build_artifacts(root)
+                self.assertFalse((root / 'data/survey-dataset.csv').exists())
+
+    def test_replacing_a_detailed_example_is_rejected_with_counts_unchanged(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            self.copy_source_snapshot(root)
+            membership = json.loads((root / 'data/sources' / MEMBERSHIP_SOURCE).read_text())
+            detailed = set(membership['detailed_example_ids'])
+            replaced = membership['detailed_example_ids'][0]
+            group = next(r['review_group'] for r in membership['included_works']
+                         if r['study_id'] == replaced)
+            replacement = next(r['study_id'] for r in membership['included_works']
+                               if r['study_id'] not in detailed and r['review_group'] == group)
+            membership['detailed_example_ids'][0] = replacement
+            self.write_membership_with_updated_fingerprint(root, membership)
+            with self.assertRaisesRegex(ValueError, 'Detailed application membership differs from synthesis matrix'):
+                build_artifacts(root)
+            self.assertFalse((root / 'data/survey-dataset.csv').exists())
 
     def test_each_annual_basis_counts_each_study_once(self):
         rows = csv.DictReader(io.StringIO(self.artifacts['studies-by-year.csv'].decode()))

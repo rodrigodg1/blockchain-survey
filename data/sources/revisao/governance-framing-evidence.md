@@ -1,6 +1,6 @@
 # Título de governança: implementação e evidência
 
-Data: 01/10/2026. Pedido dos autores: aplicar o primeiro título recomendado e manter coerência científica. Esta é uma revisão de enquadramento e posicionamento, não nova seleção de estudos de aplicação.
+Historical framing revision dated 1 October 2026, at the initial 106-application stage. This note preserves the contextual source checks and search record from that stage; its counts and manuscript organization do not describe the current release. Current counts are in [counts.json](../../counts.json). The framing revision did not add an application selection criterion.
 
 ## Título aplicado
 
@@ -18,7 +18,7 @@ Governança refere-se às decisões de compartilhamento, à autoridade para tom�
 | Liu et al., JSS 197, 111576 (2023), [DOI](https://doi.org/10.1016/j.jss.2022.111576) | Introdução e metadados da publicação pelo resultado primário ScienceDirect; Introdução da [versão autoral v3](https://arxiv.org/html/2105.05460v3), que também explicita a distinção. | Delimitar o objeto: governança da blockchain versus atividades apoiadas por ela. O ano citado é o da edição final. |
 | Sandyawan et al., Mathematics 14(16), 3009 (2026), [artigo](https://www.mdpi.com/2227-7390/14/16/3009) | Texto fornecido pela busca no domínio primário, incluindo §§3.1–3.3, 4, 5.1–5.3; acessos diretos à página e a /htm falharam. | Comparador próximo: Five Safes aplicado ao compartilhamento no setor público, com modelos destinados a institutos de estatística. Não se infere ausência de tópicos, validação empírica das arquiteturas ou conformidade automática. |
 
-São três fontes de contexto em `governance-sources.bib`, incorporadas à bibliografia canônica. Nenhuma entra no total de 106 aplicações. A fonte de Sandyawan antes pendente de leitura teve texto substantivo acessível nesta consulta; não foi obtido um PDF local nem acesso direto bem-sucedido à página.
+Three contextual sources in `governance-sources.bib` were incorporated into the bibliography at this stage. None entered its 106-application denominator. Substantive passages of the previously pending Sandyawan source were accessible through this query; no local PDF or successful direct page access was obtained.
 
 ## Consultas documentadas
 
@@ -36,12 +36,12 @@ Busca web de 01/10/2026, destinada apenas a fundamentar o enquadramento:
 
 O conteúdo recuperado em resultados primários é distinguido do acesso direto, e cada atribuição é limitada ao trecho inspecionado. Não houve busca exaustiva sobre governança nem alteração dos predicados de inclusão das aplicações.
 
-## Coerência aplicada
+## Historical framing changes, 1 October 2026
 
 - Título completo, título curto e palavras-chave alinhados.
 - Resumo e introdução definem o objeto e a contribuição; a definição conceitual tem referência.
 - Related Work mantém os quatro comparadores anteriores e acrescenta Sandyawan à tabela; Liu delimita um campo adjacente.
-- RQ4 trata autoridade, aplicação da autorização e responsabilização. Sua resposta remete às comparações técnicas e regulatórias existentes.
+- The former RQ4 concerned authority, authorization enforcement, and accountability through existing technical and regulatory comparisons. This label belongs to the 1 October organization, superseded by the current three RQs.
 - Método mantém o survey qualitativo estruturado, as buscas parciais e as limitações; governança não foi acrescentada como filtro retrospectivo.
 - A síntese e as direções futuras distinguem identidade, permissão, controles e evidência para revisão/correção. Não são resultados de uma nova codificação uniforme da coleção.
 - Conclusão explicita o alcance da perspectiva de governança e preserva os limites científicos.

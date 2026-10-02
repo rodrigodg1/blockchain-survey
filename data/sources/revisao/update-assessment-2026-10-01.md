@@ -2,7 +2,7 @@
 
 Assessment date: **1 October 2026**. The native observations are the 50 records already logged on **30 September 2026**. This document evaluates all 35 records that were pending at the start of this pass. It is a subsequent source-access and eligibility assessment, **not a new Scholar/Scopus/ACM search**, and it does not alter the native query, rank, page, observed title, URL or retrieval date. The publication/version cutoff remains **30 September 2026**, with the existing update interval beginning on 1 January 2024.
 
-The controlling conditions are the original title families, an in-scope data-sharing/consent/permission/decentralized-identity application or mechanism, a verifiable publication/version date, and accessible primary methods that identify the proposed workflow. Empirical evaluation, available code, a successful privacy proof and implementation of all three functions are not additional admission gates. Conceptual proposals are extracted as proposals; reported experiments are attributed and bounded. Reviews and generic agenda text without an identifiable application mechanism are not admitted as application studies. The thesis connection did not determine these decisions.
+The controlling conditions are the original title families, an in-scope data-sharing/consent/permission/decentralized-identity application or mechanism, a verifiable publication/version date, and accessible primary methods that identify the proposed workflow. Empirical evaluation, available code, a successful privacy proof and implementation of all three functions are not additional admission gates. Conceptual proposals are extracted as proposals; reported experiments are attributed and bounded. Reviews and generic agenda text without an identifiable application mechanism are not admitted as application studies. Analytical use did not add an application eligibility condition.
 
 ## Results
 
@@ -102,7 +102,7 @@ Each included row below links the actual examined source. The CSV also retains t
 
 **Evaluation:** Four-Linux-PC Fabric prototype; functional consent/access cases and reported latency/cost comparisons.
 
-**Boundary:** Clinical deployment and downstream use are not established; Ethereum-style gas accounting in a Fabric comparison lacks an identified mapping, so quantitative cost advantages are not imported.
+**Boundary:** Clinical deployment and downstream use are not established; Ethereum-style gas accounting in a Fabric comparison lacks an identified mapping. Quantitative cost advantages are not imported.
 
 ### updateBonotis2025CONSENT
 

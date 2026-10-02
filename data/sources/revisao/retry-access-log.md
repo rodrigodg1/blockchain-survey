@@ -1,6 +1,6 @@
 # Nova tentativa de acesso — 30/09/2026
 
-Esta etapa responde à solicitação de tentar novamente obter os artigos. Mantém os títulos e a origem das consultas S01/S04/S07. Acessibilidade não substitui elegibilidade ou avaliação dos métodos; resumos não são usados para preencher a extração técnica.
+This historical access-retry stage preserves the titles and query origins S01/S04/S07. Its pending statuses and eight-study update describe this earlier stage, rather than the current extraction. Later access and eligibility assessments are recorded in `search-completion-primary-evidence.md` and `protocol-search-records.csv`. Accessibility does not replace eligibility or assessment of methods; abstracts are not used to fill unavailable technical details.
 
 ## Textos integrais acessados
 

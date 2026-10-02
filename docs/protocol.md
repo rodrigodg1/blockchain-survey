@@ -1,16 +1,22 @@
 # Scope and documented protocol
 
-Version: 1 October 2026. This document describes the current manuscript and its available records; it does not reconstruct undocumented historical procedures.
+Version: 2 October 2026. This document describes the current manuscript and its available records; it does not reconstruct undocumented historical procedures.
 
 ## Review design and scope
 
 The review is a structured qualitative survey of privacy, consent/permission management and decentralized or self-sovereign identity in blockchain-assisted data sharing. Governance is an analytical perspective on authority, enforcement, responsibility and evidence, not a new eligibility predicate or a claim to review all organizational or blockchain-protocol governance.
 
-The research questions concern mechanisms for privacy and selective sharing; individual control of decentralized identity; platforms and their assumptions; and how identity, permission and confidentiality connect decision authority, enforcement and accountability. Comparison follows the protected information, the authorizing party, the enforcement component, remaining trust assumptions and the operation actually evaluated.
+The three research questions distinguish the following comparisons:
+
+- **RQ1, Protection:** cryptographic and privacy controls for retrieval, disclosure and processing; protected and exposed information under the stated assumptions.
+- **RQ2, Authorization and enforcement:** credentials and permission rules; on-chain/off-chain enforcement; authority over data, keys and permission changes.
+- **RQ3, Verification and evidence:** relations checked by credentials, proofs and audits; evaluated operations and limits of claims about data use and results.
+
+These questions organize the retained evidence by operation, control target, enforcing component and checked relation. They do not change study eligibility or imply algorithm-level extraction where the examined source does not support it.
 
 The application collection contains **136 studies and proposals: 46 privacy, 58 consent/permission and 32 identity records**. These groups follow the recorded extraction or retrieval-query family. They are accounting groups rather than mutually exclusive technical capabilities. Source provenance identifies 98 retained and 38 recent applications. The application collection is not uniformly recoded into a new governance taxonomy.
 
-The public companion repository is [rodrigodg1/blockchain-survey](https://github.com/rodrigodg1/blockchain-survey). The canonical manuscript is `publications/survey-atualizar/main.tex` in the thesis repository.
+The [manuscript membership record](../data/sources/revisao/manuscript-membership.json) identifies the 136 included works, their groups and Appendix A table labels, the 50 detailed examples, the 17 contextual sources and the six repeated privacy evaluation entries. Its manuscript fingerprint matches the source snapshot. The builder checks identifiers as well as totals; the manuscript itself is not distributed here.
 
 ## Reported title queries
 
@@ -28,7 +34,7 @@ The historical search description uses Google Scholar, Scopus and ACM Digital Li
 | S08 | Scopus | `TITLE(blockchain) AND TITLE(decentralized OR self-sovereign) AND TITLE(identity)` |
 | S09 | ACM DL | `[Title: blockchain] AND [[Title: decentralized] OR [Title: self-sovereign]] AND [Title: identity]` |
 
-## Supplementary retrieval
+## Update retrieval
 
 On 30 September 2026, S01, S04 and S07 were rerun with a 2024–2026 publication-year filter and a cutoff of that date. The inspected pages were S01 page 1, S04 pages 1–3, and S07 page 1: respectively 10, 30 and 10 observed records. These are recorded observations, not estimates of all results returned or counts of unique publications across databases.
 
@@ -60,7 +66,7 @@ Empirical benchmarking and validation of every announced security property are n
 
 [protocol-eligibility.csv](../data/sources/revisao/protocol-eligibility.csv) is an ancillary eligibility record: its 38 `include` entries agree with the recent extraction. Five prior exploratory title-predicate exclusions remain separate from the original 50 observed records and the additional retrieval. They are not added to either retrieval denominator.
 
-The historical extraction records year, application, mechanism/contribution, platform and reported software availability. The recent extraction also records evaluation, evidence boundary, primary source URL and source location. Its 15-field source schema consists of the original 13 fields, the verified publication title and the additive `source_table` field linking each record to its specific comparison table. The normalized study CSV retains its existing schema. These describe the publications; the reviewed implementations were not independently rerun. A repository link does not establish maintenance, deployment or reproducible results.
+The historical extraction records year, application, mechanism/contribution, platform and reported software availability. The recent extraction also records evaluation, evidence boundary, primary source URL and source location. Its 15-field source schema consists of the original 13 fields, the verified publication title and the additive `source_table` field linking each record to its specific Appendix A work table. The normalized study CSV retains its existing schema. These describe the publications; the reviewed implementations were not independently rerun. A repository link does not establish maintenance, deployment or reproducible results.
 
 Each exported study links to its original extraction record. Bibliographic title, author, year and DOI are resolved through the manuscript bibliography. Missing DOI is not a duplicate identifier. The exported collection has 136 distinct citation keys and normalized titles. Nonempty DOI uniqueness and missing-DOI counts are derived from the source records and reported in [counts.json](../data/counts.json), rather than imposed as fixed release-independent expectations.
 
@@ -68,11 +74,11 @@ Each exported study links to its original extraction record. Bibliographic title
 
 Related reviews, standards, legislation, regulatory guidance and official platform documentation support interpretation. They are not additional application studies and do not form a separately exhaustive legal or governance review. The manuscript's regulatory context was checked on 1 October 2026; the new retrieval is documented separately from these contextual checks.
 
-The 67-record [synthesis matrix](../data/sources/revisao/synthesis-evidence-matrix.csv) and its [method note](../data/sources/revisao/synthesis-evidence-method.md) distinguish source version and access level, described mechanism, evaluated operation, boundary and requirement derivation. The bounded source selection supports G1–G8: identity/authority, authorization scope/state, key custody/release, confidentiality/correctness, audit/accountability, withdrawal/status, repeated-output inference and input provenance/truth. It is not uniform recoding of all 136 application records, a prevalence estimate or an evaluated reference architecture. Contextual standards and foundational research are not added applications.
+The 67-row [synthesis matrix](../data/sources/revisao/synthesis-evidence-matrix.csv) and its [method note](../data/sources/revisao/synthesis-evidence-method.md) distinguish source version and access level, described mechanism, evaluated operation, boundary and requirement derivation. The matrix contains 50 included-work examples and 17 contextual sources. The other 86 included works were not uniformly assessed against the eight design requirements. The [codebook](../data/sources/revisao/synthesis-codebook.md) defines coding and inference rules for RQ1–RQ3. The selected evidence informs eight conditional assessment criteria (G1–G8): identity/authority, authorization scope/state, key custody/release, confidentiality/correctness, audit/accountability, withdrawal/status, repeated-output inference and input provenance/truth. It is not uniform recoding of all 136 included works, a prevalence estimate or an evaluated reference architecture. Contextual standards and foundational research are not added applications.
 
 The follow-up comparison identifies evidence genres and versions: Barnes is commentary proposing an original biobanking workflow without a functioning prototype; Oke is extracted from TechRxiv v1, with v2 explicitly unexamined; Al-Sabahi reports a formative questionnaire and extrapolated costs rather than measured registry deployment; Gupta verifies selected technical predicates on supplied inputs rather than determining legal compliance. These distinctions preserve descriptive eligibility while limiting the claims supported by each source.
 
-The synthesis distinguishes a credential from authority, a permission record from its application, and an audit record from evidence of correct computation or lawful processing. Each computation check must identify its relation, inputs, claimed output, verifier and acceptance assumptions. The [alignment evidence](../data/sources/revisao/thesis-alignment-evidence.md) records selected implemented, proposed and potential connections. Multiple participants do not establish distributed trust or a universal need for computation proofs. Historical examples and recent comparisons identify design dependencies; they do not measure how prevalent complete integration is among all 136 records or in the wider literature.
+The synthesis distinguishes a credential from authority, a permission record from its application, and an audit record from evidence of correct computation or lawful processing. Each computation check must identify its relation, inputs, claimed output, verifier and acceptance assumptions. The [compact comparisons](../data/sources/revisao/rq-application-comparisons.csv) and [requirement derivations](../data/sources/revisao/requirement-derivation.csv) retain source identifiers and locations for the corresponding manuscript tables. Multiple participants do not establish distributed trust or a universal need for computation proofs. The selected examples identify design dependencies; they do not measure how prevalent complete integration is among all 136 records or in the wider literature.
 
 ## Limits
 

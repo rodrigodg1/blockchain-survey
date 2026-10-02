@@ -1,0 +1,767 @@
+{
+  "snapshot_date": "2026-10-02",
+  "manuscript_sha256": "5c2db383277a1345a4b93657a4a59d9462a2e74f2189de3c055662c251fe0866",
+  "publication_cutoff": "2026-09-30",
+  "derivation": "Included identities, search-topic groups and table anchors extracted from the six Appendix A work tables; detailed examples extracted from dagger markers; contextual sources extracted from the Survey Method citation groups; privacy evaluation identities extracted from their separate table. This records membership, not uniform extraction or independent source validation.",
+  "included_works": [
+    {
+      "study_id": "2015-decentralizing-privacy",
+      "review_group": "privacy",
+      "source_table": "tab:privacy-works"
+    },
+    {
+      "study_id": "2016-healthcare-data-gateways",
+      "review_group": "privacy",
+      "source_table": "tab:privacy-works"
+    },
+    {
+      "study_id": "2017-provchain",
+      "review_group": "privacy",
+      "source_table": "tab:privacy-works"
+    },
+    {
+      "study_id": "2017-Medibchain",
+      "review_group": "privacy",
+      "source_table": "tab:privacy-works"
+    },
+    {
+      "study_id": "2018-BPDS",
+      "review_group": "privacy",
+      "source_table": "tab:privacy-works"
+    },
+    {
+      "study_id": "2018-towards-secure",
+      "review_group": "privacy",
+      "source_table": "tab:privacy-works"
+    },
+    {
+      "study_id": "2020-privacy-remote-iot",
+      "review_group": "privacy",
+      "source_table": "tab:privacy-works"
+    },
+    {
+      "study_id": "2020-privy-sharing",
+      "review_group": "privacy",
+      "source_table": "tab:privacy-works"
+    },
+    {
+      "study_id": "2021-edge-light-smart-grid",
+      "review_group": "privacy",
+      "source_table": "tab:privacy-works"
+    },
+    {
+      "study_id": "2021-privacy-fog-iot",
+      "review_group": "privacy",
+      "source_table": "tab:privacy-works"
+    },
+    {
+      "study_id": "2021-data-priv-iot",
+      "review_group": "privacy",
+      "source_table": "tab:privacy-works"
+    },
+    {
+      "study_id": "2021-data-sec-sharing",
+      "review_group": "privacy",
+      "source_table": "tab:privacy-works"
+    },
+    {
+      "study_id": "2021-drone-big-data",
+      "review_group": "privacy",
+      "source_table": "tab:privacy-works"
+    },
+    {
+      "study_id": "2021-homomo-enc-smart-grid",
+      "review_group": "privacy",
+      "source_table": "tab:privacy-works"
+    },
+    {
+      "study_id": "2021-hOCBS",
+      "review_group": "privacy",
+      "source_table": "tab:privacy-works"
+    },
+    {
+      "study_id": "2021-sp-chain",
+      "review_group": "privacy",
+      "source_table": "tab:privacy-works"
+    },
+    {
+      "study_id": "2021-priv-gov-soc",
+      "review_group": "privacy",
+      "source_table": "tab:privacy-works"
+    },
+    {
+      "study_id": "2021-data-privacy-based-iot",
+      "review_group": "privacy",
+      "source_table": "tab:privacy-works-2"
+    },
+    {
+      "study_id": "2021-priv-iot-homo",
+      "review_group": "privacy",
+      "source_table": "tab:privacy-works-2"
+    },
+    {
+      "study_id": "2021-system-medical-data-privacy",
+      "review_group": "privacy",
+      "source_table": "tab:privacy-works-2"
+    },
+    {
+      "study_id": "2021-medical-data-sharing",
+      "review_group": "privacy",
+      "source_table": "tab:privacy-works-2"
+    },
+    {
+      "study_id": "2020-covid-privacy",
+      "review_group": "privacy",
+      "source_table": "tab:privacy-works-2"
+    },
+    {
+      "study_id": "2022-enterprise-ds-fabric-iot",
+      "review_group": "privacy",
+      "source_table": "tab:privacy-works-2"
+    },
+    {
+      "study_id": "2022-scalable-bc-model-ipfs",
+      "review_group": "privacy",
+      "source_table": "tab:privacy-works-2"
+    },
+    {
+      "study_id": "2021-cp-bdhca",
+      "review_group": "privacy",
+      "source_table": "tab:privacy-works-2"
+    },
+    {
+      "study_id": "2022-bc-based-privacy-pres-reward",
+      "review_group": "privacy",
+      "source_table": "tab:privacy-works-2"
+    },
+    {
+      "study_id": "2021-medshare",
+      "review_group": "privacy",
+      "source_table": "tab:privacy-works-2"
+    },
+    {
+      "study_id": "10.1109/tr.2022.3190932",
+      "review_group": "privacy",
+      "source_table": "tab:privacy-works-2"
+    },
+    {
+      "study_id": "10.1109/jiot.2023.3242959",
+      "review_group": "privacy",
+      "source_table": "tab:privacy-works-2"
+    },
+    {
+      "study_id": "10.1109/tifs.2023.3297327",
+      "review_group": "privacy",
+      "source_table": "tab:privacy-works-2"
+    },
+    {
+      "study_id": "10.1007/s12083-023-01521-w",
+      "review_group": "privacy",
+      "source_table": "tab:privacy-works-2"
+    },
+    {
+      "study_id": "10.1109/jiot.2023.3287636",
+      "review_group": "privacy",
+      "source_table": "tab:privacy-works-2"
+    },
+    {
+      "study_id": "10.1109/jiot.2023.3295763",
+      "review_group": "privacy",
+      "source_table": "tab:privacy-works-2"
+    },
+    {
+      "study_id": "10.1109/jiot.2021.3134755",
+      "review_group": "privacy",
+      "source_table": "tab:privacy-works-2"
+    },
+    {
+      "study_id": "10.1109/jiot.2023.3247487",
+      "review_group": "privacy",
+      "source_table": "tab:privacy-works-2"
+    },
+    {
+      "study_id": "10.1109/tsc.2022.3199111",
+      "review_group": "privacy",
+      "source_table": "tab:privacy-works-2"
+    },
+    {
+      "study_id": "10.1109/tits.2022.3190487",
+      "review_group": "privacy",
+      "source_table": "tab:privacy-works-2"
+    },
+    {
+      "study_id": "10.1109/tc.2023.3251846",
+      "review_group": "privacy",
+      "source_table": "tab:privacy-works-2"
+    },
+    {
+      "study_id": "10.1109/jiot.2023.3307073",
+      "review_group": "privacy",
+      "source_table": "tab:privacy-works-2"
+    },
+    {
+      "study_id": "10.1109/jiot.2023.3296460",
+      "review_group": "privacy",
+      "source_table": "tab:privacy-works-2"
+    },
+    {
+      "study_id": "updateDhasaratha2024IoMT",
+      "review_group": "privacy",
+      "source_table": "tab:privacy-works-2"
+    },
+    {
+      "study_id": "updateMaZhang2024Rollup",
+      "review_group": "privacy",
+      "source_table": "tab:privacy-works-2"
+    },
+    {
+      "study_id": "updateMasood2024Patient",
+      "review_group": "privacy",
+      "source_table": "tab:privacy-works-2"
+    },
+    {
+      "study_id": "updateGupta2024LungFL",
+      "review_group": "privacy",
+      "source_table": "tab:privacy-works-2"
+    },
+    {
+      "study_id": "updateHussain2025ZeroTrust",
+      "review_group": "privacy",
+      "source_table": "tab:privacy-works-2"
+    },
+    {
+      "study_id": "updateGuan2025Healthcare",
+      "review_group": "privacy",
+      "source_table": "tab:privacy-works-2"
+    },
+    {
+      "study_id": "2016-medrec",
+      "review_group": "consent",
+      "source_table": "tab:consent-works"
+    },
+    {
+      "study_id": "10.1109/ICCCI.2018.8441445",
+      "review_group": "consent",
+      "source_table": "tab:consent-works"
+    },
+    {
+      "study_id": "2017-clinical-trials",
+      "review_group": "consent",
+      "source_table": "tab:consent-works"
+    },
+    {
+      "study_id": "10.1109/INISTA.2018.8466268",
+      "review_group": "consent",
+      "source_table": "tab:consent-works"
+    },
+    {
+      "study_id": "2018-double-blind",
+      "review_group": "consent",
+      "source_table": "tab:consent-works"
+    },
+    {
+      "study_id": "2019-unichain-blockchain-acad-records",
+      "review_group": "consent",
+      "source_table": "tab:consent-works"
+    },
+    {
+      "study_id": "2019-medchain",
+      "review_group": "consent",
+      "source_table": "tab:consent-works"
+    },
+    {
+      "study_id": "2018-advocate",
+      "review_group": "consent",
+      "source_table": "tab:consent-works"
+    },
+    {
+      "study_id": "2019-blockchain-permission-iot",
+      "review_group": "consent",
+      "source_table": "tab:consent-works"
+    },
+    {
+      "study_id": "2020-blockchain-assisted-living",
+      "review_group": "consent",
+      "source_table": "tab:consent-works"
+    },
+    {
+      "study_id": "2020-consent-design-bc-based-consent-manag",
+      "review_group": "consent",
+      "source_table": "tab:consent-works"
+    },
+    {
+      "study_id": "2020-consent-health",
+      "review_group": "consent",
+      "source_table": "tab:consent-works"
+    },
+    {
+      "study_id": "2020-patient-consent-e-health",
+      "review_group": "consent",
+      "source_table": "tab:consent-works"
+    },
+    {
+      "study_id": "2020-consent-biobanking",
+      "review_group": "consent",
+      "source_table": "tab:consent-works"
+    },
+    {
+      "study_id": "2020-consent-clinical-trials",
+      "review_group": "consent",
+      "source_table": "tab:consent-works"
+    },
+    {
+      "study_id": "10.1109/ICICT50521.2020.00054",
+      "review_group": "consent",
+      "source_table": "tab:consent-works"
+    },
+    {
+      "study_id": "10.1109/COMSNETS51098.2021.9352817",
+      "review_group": "consent",
+      "source_table": "tab:consent-works-2"
+    },
+    {
+      "study_id": "10.1007/978-3-030-78621-2_54",
+      "review_group": "consent",
+      "source_table": "tab:consent-works-2"
+    },
+    {
+      "study_id": "10.1109/QRS-C55045.2021.00159",
+      "review_group": "consent",
+      "source_table": "tab:consent-works-2"
+    },
+    {
+      "study_id": "10.1109/SMDS53860.2021.00015",
+      "review_group": "consent",
+      "source_table": "tab:consent-works-2"
+    },
+    {
+      "study_id": "10.1136/medethics-2019-105963",
+      "review_group": "consent",
+      "source_table": "tab:consent-works-2"
+    },
+    {
+      "study_id": "10.3837/tiis.2021.12.008",
+      "review_group": "consent",
+      "source_table": "tab:consent-works-2"
+    },
+    {
+      "study_id": "2021-dynamic-consent-genomic",
+      "review_group": "consent",
+      "source_table": "tab:consent-works-2"
+    },
+    {
+      "study_id": "2021-dynamichain",
+      "review_group": "consent",
+      "source_table": "tab:consent-works-2"
+    },
+    {
+      "study_id": "10.1007/978-981-15-9317-8_3",
+      "review_group": "consent",
+      "source_table": "tab:consent-works-2"
+    },
+    {
+      "study_id": "10.1145/3511616.3513100",
+      "review_group": "consent",
+      "source_table": "tab:consent-works-2"
+    },
+    {
+      "study_id": "10.1016/j.hcc.2022.100084",
+      "review_group": "consent",
+      "source_table": "tab:consent-works-2"
+    },
+    {
+      "study_id": "10.3389/fmed.2022.837197",
+      "review_group": "consent",
+      "source_table": "tab:consent-works-2"
+    },
+    {
+      "study_id": "2022-crowmedII-consent",
+      "review_group": "consent",
+      "source_table": "tab:consent-works-2"
+    },
+    {
+      "study_id": "2022-BDSS-blockchain-data-sharing",
+      "review_group": "consent",
+      "source_table": "tab:consent-works-2"
+    },
+    {
+      "study_id": "10.1145/3576842.3582379",
+      "review_group": "consent",
+      "source_table": "tab:consent-works-2"
+    },
+    {
+      "study_id": "10.1016/j.jlamp.2023.100886",
+      "review_group": "consent",
+      "source_table": "tab:consent-works-2"
+    },
+    {
+      "study_id": "10.1109/ICOIN56518.2023.10048920",
+      "review_group": "consent",
+      "source_table": "tab:consent-works-2"
+    },
+    {
+      "study_id": "updateCan2024AuditableConsent",
+      "review_group": "consent",
+      "source_table": "tab:consent-works-2"
+    },
+    {
+      "study_id": "updateJaved2024SecureConsent",
+      "review_group": "consent",
+      "source_table": "tab:consent-works-2"
+    },
+    {
+      "study_id": "updateRohini2024SmartConsent",
+      "review_group": "consent",
+      "source_table": "tab:consent-works-2"
+    },
+    {
+      "study_id": "updateGhosh2024Banking",
+      "review_group": "consent",
+      "source_table": "tab:consent-works-2"
+    },
+    {
+      "study_id": "updateRao2024Genomic",
+      "review_group": "consent",
+      "source_table": "tab:consent-works-2"
+    },
+    {
+      "study_id": "updateAyala2024DataConsent",
+      "review_group": "consent",
+      "source_table": "tab:consent-works-2"
+    },
+    {
+      "study_id": "updateDeepthika2024ConsentLSTM",
+      "review_group": "consent",
+      "source_table": "tab:consent-works-2"
+    },
+    {
+      "study_id": "updateGupta2024CertificatePermission",
+      "review_group": "consent",
+      "source_table": "tab:consent-works-2"
+    },
+    {
+      "study_id": "updateBarnes2025DemonstratedConsent",
+      "review_group": "consent",
+      "source_table": "tab:consent-works-2"
+    },
+    {
+      "study_id": "updateBonotis2025CONSENT",
+      "review_group": "consent",
+      "source_table": "tab:consent-works-2"
+    },
+    {
+      "study_id": "updateDauden2025RTBConsent",
+      "review_group": "consent",
+      "source_table": "tab:consent-works-2"
+    },
+    {
+      "study_id": "updateObodo2025MultiProviderConsent",
+      "review_group": "consent",
+      "source_table": "tab:consent-works-2"
+    },
+    {
+      "study_id": "updateOke2025FHIRConsent",
+      "review_group": "consent",
+      "source_table": "tab:consent-works-2"
+    },
+    {
+      "study_id": "updateTomaz2025PrivacHer",
+      "review_group": "consent",
+      "source_table": "tab:consent-works-2"
+    },
+    {
+      "study_id": "updateQu2025ConsentEMR",
+      "review_group": "consent",
+      "source_table": "tab:consent-works-2"
+    },
+    {
+      "study_id": "updateFerreira2025MCPFHIR",
+      "review_group": "consent",
+      "source_table": "tab:consent-works-2"
+    },
+    {
+      "study_id": "updateLu2025RedactableEducation",
+      "review_group": "consent",
+      "source_table": "tab:consent-works-2"
+    },
+    {
+      "study_id": "updateAlSabahi2026AuthorshipConsent",
+      "review_group": "consent",
+      "source_table": "tab:consent-works-2"
+    },
+    {
+      "study_id": "updateCh2026ConsentOffloading",
+      "review_group": "consent",
+      "source_table": "tab:consent-works-2"
+    },
+    {
+      "study_id": "updateGupta2026ScalableConsent",
+      "review_group": "consent",
+      "source_table": "tab:consent-works-2"
+    },
+    {
+      "study_id": "updateMiao2026PermissionSupervision",
+      "review_group": "consent",
+      "source_table": "tab:consent-works-2"
+    },
+    {
+      "study_id": "updateNaghmouchi2026ClinConNet",
+      "review_group": "consent",
+      "source_table": "tab:consent-works-2"
+    },
+    {
+      "study_id": "updatePhuyal2026Architecture",
+      "review_group": "consent",
+      "source_table": "tab:consent-works-2"
+    },
+    {
+      "study_id": "updateScaramuzza2026ZKConsent",
+      "review_group": "consent",
+      "source_table": "tab:consent-works-2"
+    },
+    {
+      "study_id": "updateHemlata2026DualCare",
+      "review_group": "consent",
+      "source_table": "tab:consent-works-2"
+    },
+    {
+      "study_id": "2018-bc-ssi",
+      "review_group": "identity",
+      "source_table": "tab:ssi-works-part-1"
+    },
+    {
+      "study_id": "2019-everssdi",
+      "review_group": "identity",
+      "source_table": "tab:ssi-works-part-1"
+    },
+    {
+      "study_id": "2019-ssi-digital-identity-bc",
+      "review_group": "identity",
+      "source_table": "tab:ssi-works-part-1"
+    },
+    {
+      "study_id": "10.1109/ACCESS.2019.2931173",
+      "review_group": "identity",
+      "source_table": "tab:ssi-works-part-1"
+    },
+    {
+      "study_id": "2020-emission-vehicles-ssi",
+      "review_group": "identity",
+      "source_table": "tab:ssi-works-part-1"
+    },
+    {
+      "study_id": "2020-uport-ims-ssi",
+      "review_group": "identity",
+      "source_table": "tab:ssi-works-part-1"
+    },
+    {
+      "study_id": "10.1109/MobileCloud48802.2020.00021",
+      "review_group": "identity",
+      "source_table": "tab:ssi-works-part-1"
+    },
+    {
+      "study_id": "10.1109/ISSE49799.2020.9272212",
+      "review_group": "identity",
+      "source_table": "tab:ssi-works-part-1"
+    },
+    {
+      "study_id": "2020-bbm-ssi",
+      "review_group": "identity",
+      "source_table": "tab:ssi-works-part-1"
+    },
+    {
+      "study_id": "2020-enhancing-ssi",
+      "review_group": "identity",
+      "source_table": "tab:ssi-works-part-1"
+    },
+    {
+      "study_id": "2021-ssi-public-transport",
+      "review_group": "identity",
+      "source_table": "tab:ssi-works-part-1"
+    },
+    {
+      "study_id": "2021-an-innovative-did",
+      "review_group": "identity",
+      "source_table": "tab:ssi-works-part-1"
+    },
+    {
+      "study_id": "2021-did-prevent-secondary",
+      "review_group": "identity",
+      "source_table": "tab:ssi-works-part-1"
+    },
+    {
+      "study_id": "2021-health-ID-decentralized-id",
+      "review_group": "identity",
+      "source_table": "tab:ssi-works-part-1"
+    },
+    {
+      "study_id": "2021-dec-cross-net-idm",
+      "review_group": "identity",
+      "source_table": "tab:ssi-works-part-1"
+    },
+    {
+      "study_id": "2021-SSI-food-supply-chain",
+      "review_group": "identity",
+      "source_table": "tab:ssi-works-part-1"
+    },
+    {
+      "study_id": "10.1109/ISCC53001.2021.9631518",
+      "review_group": "identity",
+      "source_table": "tab:ssi-works-part-2"
+    },
+    {
+      "study_id": "2021-ssi-cyber-threat",
+      "review_group": "identity",
+      "source_table": "tab:ssi-works-part-2"
+    },
+    {
+      "study_id": "2022-ssi-kyc",
+      "review_group": "identity",
+      "source_table": "tab:ssi-works-part-2"
+    },
+    {
+      "study_id": "2022-a-ssi-idm-bc",
+      "review_group": "identity",
+      "source_table": "tab:ssi-works-part-2"
+    },
+    {
+      "study_id": "2022-ssi-patient-centric-healthcare",
+      "review_group": "identity",
+      "source_table": "tab:ssi-works-part-2"
+    },
+    {
+      "study_id": "2022-towards-ssi-privacy-fl",
+      "review_group": "identity",
+      "source_table": "tab:ssi-works-part-2"
+    },
+    {
+      "study_id": "10.1109/LCN53696.2022.9843700",
+      "review_group": "identity",
+      "source_table": "tab:ssi-works-part-2"
+    },
+    {
+      "study_id": "2022-hei-bct-ssi",
+      "review_group": "identity",
+      "source_table": "tab:ssi-works-part-2"
+    },
+    {
+      "study_id": "10.15439/2022F194",
+      "review_group": "identity",
+      "source_table": "tab:ssi-works-part-2"
+    },
+    {
+      "study_id": "updateAgarkar2024BADIMAC",
+      "review_group": "identity",
+      "source_table": "tab:ssi-works-part-2"
+    },
+    {
+      "study_id": "updateZeydan2024ABSIdentity",
+      "review_group": "identity",
+      "source_table": "tab:ssi-works-part-2"
+    },
+    {
+      "study_id": "updateZeydan2024SSI",
+      "review_group": "identity",
+      "source_table": "tab:ssi-works-part-2"
+    },
+    {
+      "study_id": "updateLiu2024SSDID",
+      "review_group": "identity",
+      "source_table": "tab:ssi-works-part-2"
+    },
+    {
+      "study_id": "updateRamirez2025IOTAIdentity",
+      "review_group": "identity",
+      "source_table": "tab:ssi-works-part-2"
+    },
+    {
+      "study_id": "updateRen2025AIoTIdentity",
+      "review_group": "identity",
+      "source_table": "tab:ssi-works-part-2"
+    },
+    {
+      "study_id": "updateSeidi2025HealthcareSSI",
+      "review_group": "identity",
+      "source_table": "tab:ssi-works-part-2"
+    }
+  ],
+  "detailed_example_ids": [
+    "10.1016/j.hcc.2022.100084",
+    "2015-decentralizing-privacy",
+    "2018-double-blind",
+    "2020-enhancing-ssi",
+    "2021-did-prevent-secondary",
+    "2021-edge-light-smart-grid",
+    "2021-homomo-enc-smart-grid",
+    "2021-medshare",
+    "2021-priv-iot-homo",
+    "2021-sp-chain",
+    "2022-a-ssi-idm-bc",
+    "2022-towards-ssi-privacy-fl",
+    "updateAgarkar2024BADIMAC",
+    "updateAlSabahi2026AuthorshipConsent",
+    "updateAyala2024DataConsent",
+    "updateBarnes2025DemonstratedConsent",
+    "updateBonotis2025CONSENT",
+    "updateCan2024AuditableConsent",
+    "updateCh2026ConsentOffloading",
+    "updateDauden2025RTBConsent",
+    "updateDeepthika2024ConsentLSTM",
+    "updateDhasaratha2024IoMT",
+    "updateFerreira2025MCPFHIR",
+    "updateGhosh2024Banking",
+    "updateGuan2025Healthcare",
+    "updateGupta2024CertificatePermission",
+    "updateGupta2024LungFL",
+    "updateGupta2026ScalableConsent",
+    "updateHemlata2026DualCare",
+    "updateHussain2025ZeroTrust",
+    "updateJaved2024SecureConsent",
+    "updateLiu2024SSDID",
+    "updateLu2025RedactableEducation",
+    "updateMaZhang2024Rollup",
+    "updateMasood2024Patient",
+    "updateMiao2026PermissionSupervision",
+    "updateNaghmouchi2026ClinConNet",
+    "updateObodo2025MultiProviderConsent",
+    "updateOke2025FHIRConsent",
+    "updatePhuyal2026Architecture",
+    "updateQu2025ConsentEMR",
+    "updateRamirez2025IOTAIdentity",
+    "updateRao2024Genomic",
+    "updateRen2025AIoTIdentity",
+    "updateRohini2024SmartConsent",
+    "updateScaramuzza2026ZKConsent",
+    "updateSeidi2025HealthcareSSI",
+    "updateTomaz2025PrivacHer",
+    "updateZeydan2024ABSIdentity",
+    "updateZeydan2024SSI"
+  ],
+  "contextual_source_ids": [
+    "bg-edpb-consent",
+    "bg-gdpr-law",
+    "bg-hhs-privacy",
+    "bg-lgpd-law",
+    "bg-vc-data-model-2",
+    "context-dinur-nissim2003",
+    "context-dwork-roth2014",
+    "context-odrl22",
+    "context-xacml30",
+    "homenc",
+    "platform-anoncreds",
+    "platform-status-list2025",
+    "reg-cnil-blockchain",
+    "reg-cppa-faq",
+    "reg-edpb-authorities",
+    "reg-edpb-blockchain2026",
+    "revision-zerocash"
+  ],
+  "privacy_evaluation_ids": [
+    "updateDhasaratha2024IoMT",
+    "updateGuan2025Healthcare",
+    "updateGupta2024LungFL",
+    "updateHussain2025ZeroTrust",
+    "updateMaZhang2024Rollup",
+    "updateMasood2024Patient"
+  ]
+}

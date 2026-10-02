@@ -1,4 +1,4 @@
-"""Rebuild the documented 2026-10-01 collection; no searching or screening.
+"""Rebuild the documented survey snapshot; no searching or screening.
 
 The collection mapping is adapted from revisao/build_updated_dataset.py in the
 revised manuscript workspace. This portable edition uses only Python's standard
@@ -22,6 +22,12 @@ ORIGINAL_UPDATE_KEYS = {
     'updateJaved2024SecureConsent', 'updatePhuyal2026Architecture',
     'updateZeydan2024SSI', 'updateAgarkar2024BADIMAC',
     'updateMaZhang2024Rollup', 'updateDhasaratha2024IoMT',
+}
+MEMBERSHIP_SOURCE = 'revisao/manuscript-membership.json'
+MATRIX_SOURCE = 'revisao/synthesis-evidence-matrix.csv'
+APPLICATION_MATRIX_ROLES = {
+    'historical_application', 'recent_application',
+    'recent_application_addition', 'recent_application_search_completion',
 }
 
 
@@ -52,10 +58,85 @@ def load_snapshot(root):
     return snapshot
 
 
+def validate_manuscript_membership(collection, matrix, recent, retained, snapshot, membership):
+    if membership['manuscript_sha256'] != snapshot['manuscript_sha256']:
+        raise ValueError('Manuscript membership fingerprint differs from source snapshot')
+
+    def unique_ids(values, description):
+        if any(not isinstance(key, str) or not key.strip() for key in values):
+            raise ValueError(f'Invalid identity in {description}')
+        if len(values) != len(set(values)):
+            raise ValueError(f'Duplicate identities in {description}')
+        return set(values)
+
+    works = membership['included_works']
+    included_ids = unique_ids([r['study_id'] for r in works], 'manuscript application membership')
+    detailed_ids = unique_ids(membership['detailed_example_ids'], 'detailed application membership')
+    contextual_ids = unique_ids(membership['contextual_source_ids'], 'contextual membership')
+    privacy_evaluation_ids = unique_ids(membership['privacy_evaluation_ids'], 'privacy evaluation membership')
+    collection_by_id = {r['study_id']: r for r in collection}
+    if contextual_ids & (included_ids | detailed_ids | set(collection_by_id)):
+        raise ValueError('Contextual sources cannot enter included or detailed application membership')
+    if included_ids != set(collection_by_id):
+        raise ValueError('Included application membership differs from manuscript')
+    for work in works:
+        row = collection_by_id[work['study_id']]
+        if (work['review_group'], work['source_table']) != (row['review_group'], row['source_table']):
+            raise ValueError('Manuscript group or table differs for study: ' + work['study_id'])
+    if not detailed_ids <= included_ids:
+        raise ValueError('Detailed examples must belong to the included application collection')
+
+    matrix_ids = unique_ids([r['citation_key'] for r in matrix], 'synthesis matrix')
+    matrix_applications, matrix_context = set(), set()
+    for row in matrix:
+        role = row['collection_role']
+        if role in APPLICATION_MATRIX_ROLES:
+            matrix_applications.add(row['citation_key'])
+        elif role.startswith('context_'):
+            matrix_context.add(row['citation_key'])
+        else:
+            raise ValueError('Unrecognized synthesis collection role: ' + role)
+    if detailed_ids != matrix_applications:
+        raise ValueError('Detailed application membership differs from synthesis matrix')
+    if contextual_ids != matrix_context:
+        raise ValueError('Contextual membership differs from synthesis matrix')
+    if matrix_ids != detailed_ids | contextual_ids:
+        raise ValueError('Synthesis matrix contains identities outside the declared membership')
+
+    expected_privacy = {r['citation_key'] for r in recent
+                        if retained[r['citation_key']]['query_id'] == 'S01'
+                        and r['evaluation'].strip()}
+    if privacy_evaluation_ids != expected_privacy:
+        raise ValueError('Privacy evaluation membership differs from primary extraction')
+    if not privacy_evaluation_ids <= detailed_ids:
+        raise ValueError('Privacy evaluation summaries must belong to the detailed application examples')
+    expected = snapshot['counts']
+    if (len(detailed_ids), len(contextual_ids), len(privacy_evaluation_ids)) != (
+            expected['detailed_application_examples'], expected['contextual_sources'],
+            expected['privacy_evaluation_summaries']):
+        raise ValueError('Snapshot detailed/contextual/evaluation counts disagree with membership')
+
+    return {
+        'application_examples': len(detailed_ids),
+        'contextual_sources': len(contextual_ids),
+        'matrix_records': len(matrix_ids),
+        'included_works_not_detailed': len(included_ids - detailed_ids),
+        'application_examples_by_group': dict(Counter(collection_by_id[key]['review_group']
+                                                     for key in sorted(detailed_ids))),
+        'privacy_evaluation_summaries': len(privacy_evaluation_ids),
+        'contextual_sources_in_application_denominator': False,
+        'scope': 'Source-linked qualitative comparisons; not uniform assessment of all included works',
+    }
+
+
 def build_artifacts(root=ROOT):
     root = Path(root)
     snapshot = load_snapshot(root)
     source_root = root / 'data/sources'
+    for name in (MEMBERSHIP_SOURCE, MATRIX_SOURCE):
+        if name not in snapshot['source_files']:
+            raise ValueError('Required membership source is not fingerprinted in snapshot: ' + name)
+    membership = json.loads((source_root / MEMBERSHIP_SOURCE).read_text(encoding='utf-8'))
     DATE = snapshot['artifact_date']
     OUT = Path('.')
     artifacts = {}
@@ -178,6 +259,9 @@ def build_artifacts(root=ROOT):
     if len(recent) + pending + sum(excluded.values()) + sum(other.values()) != len(observed):
         raise ValueError('Disposition categories do not account for all observed records')
 
+    detailed_analysis = validate_manuscript_membership(
+        collection, rows(MATRIX_SOURCE), recent, retained, snapshot, membership)
+
     write_csv(OUT / 'survey-dataset.csv', collection)
     count_rows = [{'review_group': g, 'historical': hc[g], 'supplementary_update': uc[g],
                    'combined': cc[g]} for g in groups]
@@ -205,6 +289,7 @@ def build_artifacts(root=ROOT):
         'combined': {'application_studies': len(collection), 'by_group': dict(cc),
                      'group_interpretation': 'Accounting groups, not disjoint system-capability classes',
                      'contextual_references_counted_as_application_studies': False},
+        'detailed_analysis': detailed_analysis,
         'identity_checks': {'unique_citation_keys': len(collection), 'nonempty_dois': len(dois),
                             'unique_nonempty_dois': len(set(dois)),
                             'missing_dois': len(collection)-len(dois),
@@ -250,7 +335,7 @@ def build_artifacts(root=ROOT):
         'artifact_date': DATE,
         'generator': 'scripts/build_dataset.py',
         'scope': 'Artifact consistency, not independent screening or scientific validation',
-        'inputs': {str(p.relative_to(root)): digest(p.read_bytes()) for p in sorted([
+        'inputs': {p.relative_to(root).as_posix(): digest(p.read_bytes()) for p in sorted([
             root / 'data/source-snapshot.json', root / 'docs/data-dictionary.json',
             root / 'scripts/build_dataset.py',
             *[source_root / name for name in snapshot['source_files']],
