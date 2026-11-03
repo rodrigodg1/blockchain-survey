@@ -1,6 +1,6 @@
 {
   "snapshot_date": "2026-11-04",
-  "manuscript_sha256": "10465b7d6fa6d21f130d47f335fd4a3e838e76f31076e5a6e6a83ac9cd4412c6",
+  "manuscript_sha256": "f3b645d93fcaf82aa1f7cfeeb8aa493ffab423ff059fad7278be5b7a6e04b1a8",
   "dataset_sha256": "80cd8d7b5938bf1c7b105e7b6518e9a87f52ec7da07a4fc180031a75039b96c8",
   "generator": "scripts/reproduce_plots.py",
   "python": "3.14.7",
