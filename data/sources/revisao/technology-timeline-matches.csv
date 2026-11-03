@@ -1,56 +1,56 @@
 citation_key,publication_year,feature,source_field,matched_term,extracted_description,source_access
-2018-BPDS,2018,ABE,main.tex:control_method,CP-ABE,"Cloud and blockchain storage of EMRs, with public-key encryption and CP-ABE access control. \\ \hline",inventory_only
+2018-BPDS,2018,ABE,main.tex:control_method,CP-ABE,"Cloud and blockchain storage of EMRs, with public-key encryption and CP-ABE access control. \\",inventory_only
 2018-BPDS,2018,ABE,historical-extraction.csv:reported_technique,CP-ABE,Public Key Encryption and CP-ABE-based Access Control,inventory_only
 2018-BPDS,2018,ABE,historical-extraction.csv:reported_contribution,CP-ABE,A system that utilizes both cloud storage and blockchain technology to protect EMRs with CP-ABE-based Access Control Mechanism,inventory_only
-2018-towards-secure,2018,SEARCH,main.tex:control_method,encryption with keyword search,Public-key encryption with keyword search for protected health records. Ethereum. \\ \hline,inventory_only
+2018-towards-secure,2018,SEARCH,main.tex:control_method,encryption with keyword search,Public-key encryption with keyword search for protected health records. Ethereum. \\,inventory_only
 2018-towards-secure,2018,SEARCH,historical-extraction.csv:reported_technique,Encryption with Keyword Search,Public Key Encryption with Keyword Search (PEKS),inventory_only
-2021-edge-light-smart-grid,2021,HE,main.tex:control_method,homomorphic,Smart-grid data aggregation using homomorphic encryption. \\ \hline,primary_fulltext_verified
+2021-edge-light-smart-grid,2021,HE,main.tex:control_method,homomorphic,Smart-grid data aggregation using homomorphic encryption. \\,primary_fulltext_verified
 2021-edge-light-smart-grid,2021,HE,historical-extraction.csv:reported_technique,Homomorphic,Homomorphic Encryption,primary_fulltext_verified
-2021-homomo-enc-smart-grid,2021,HE,main.tex:control_method,homomorphic,Blockchain and homomorphic encryption-based data aggregation (BHDA). \\ \hline,primary_preview_only
+2021-homomo-enc-smart-grid,2021,HE,main.tex:control_method,homomorphic,Blockchain and homomorphic encryption-based data aggregation (BHDA). \\,primary_preview_only
 2021-homomo-enc-smart-grid,2021,HE,historical-extraction.csv:reported_technique,Homomorphic,Homomorphic Encryption,primary_preview_only
 2021-homomo-enc-smart-grid,2021,HE,historical-extraction.csv:reported_contribution,Homomorphic,Homomorphic encryption-based data aggregation (BHDA) scheme,primary_preview_only
 2021-homomo-enc-smart-grid,2021,HE,synthesis-evidence-matrix.csv:reported_mechanism,homomorphic,Preview describes homomorphic encryption and blockchain/cloud aggregation,primary_preview_only
-2021-sp-chain,2021,PRE,main.tex:control_method,proxy re-encryption,Patient--doctor data sharing using proxy re-encryption. \\ \hline,primary_fulltext_verified
+2021-sp-chain,2021,PRE,main.tex:control_method,proxy re-encryption,Patient--doctor data sharing using proxy re-encryption. \\,primary_fulltext_verified
 2021-sp-chain,2021,PRE,historical-extraction.csv:reported_technique,Proxy Re-encryption,Proxy Re-encryption Scheme,primary_fulltext_verified
-2021-priv-iot-homo,2021,HE,main.tex:control_method,homomorphic,IoT data aggregation using homomorphic encryption. Ethereum. \\ \hline,primary_fulltext_verified
+2021-priv-iot-homo,2021,HE,main.tex:control_method,homomorphic,IoT data aggregation using homomorphic encryption. Ethereum. \\,primary_fulltext_verified
 2021-priv-iot-homo,2021,HE,historical-extraction.csv:reported_technique,Homomorphic,Homomorphic Encryption,primary_fulltext_verified
 2021-priv-iot-homo,2021,HE,historical-extraction.csv:reported_contribution,Homomorphic,Homomorphic encryption-based privacy-preserving IoT data aggregation scheme,primary_fulltext_verified
 2021-priv-iot-homo,2021,HE,synthesis-evidence-matrix.csv:reported_mechanism,Paillier,Off-chain semantic policy matching; Paillier aggregation; consumer receives group secret key,primary_fulltext_verified
-2021-system-medical-data-privacy,2021,PRE,main.tex:control_method,proxy re-encryption,"Medical-data collection, storage, querying, and sharing using proxy re-encryption. Hyperledger Fabric. \\ \hline",inventory_only
+2021-system-medical-data-privacy,2021,PRE,main.tex:control_method,proxy re-encryption,"Medical-data collection, storage, querying, and sharing using proxy re-encryption. Hyperledger Fabric. \\",inventory_only
 2021-system-medical-data-privacy,2021,PRE,historical-extraction.csv:reported_technique,Proxy Re-encryption,Proxy Re-encryption Scheme,inventory_only
-2021-medical-data-sharing,2021,SEARCH,main.tex:control_method,searchable encryption,"Medical-data sharing with k-anonymity, searchable encryption, and attribute-based access control. Hyperledger Fabric. \\ \hline",inventory_only
+2021-medical-data-sharing,2021,SEARCH,main.tex:control_method,searchable encryption,"Medical-data sharing with k-anonymity, searchable encryption, and attribute-based access control. Hyperledger Fabric. \\",inventory_only
 2021-medical-data-sharing,2021,SEARCH,historical-extraction.csv:reported_technique,Searchable Encryption,K-anonymity and Searchable Encryption,inventory_only
 2021-medical-data-sharing,2021,SEARCH,historical-extraction.csv:reported_contribution,searchable encryption,"Privacy-preserving medical data sharing scheme using K-anonymity, searchable encryption, and ABAC",inventory_only
-2020-covid-privacy,2022,ABE,main.tex:control_method,attribute-based encryption,Storage and sharing of COVID-19 EMRs using attribute-based encryption. Ethereum. \\ \hline,inventory_only
+2020-covid-privacy,2022,ABE,main.tex:control_method,attribute-based encryption,Storage and sharing of COVID-19 EMRs using attribute-based encryption. Ethereum. \\,inventory_only
 2020-covid-privacy,2022,ABE,historical-extraction.csv:reported_technique,Attribute-based encryption,Attribute-based encryption scheme,inventory_only
-2021-medshare,2023,ABE,main.tex:control_method,Attribute-based encryption,Attribute-based encryption and implemented Boolean multi-keyword search over EHRs. Ethereum. \\ \hline,primary_preview_only
+2021-medshare,2023,ABE,main.tex:control_method,Attribute-based encryption,Attribute-based encryption and implemented Boolean multi-keyword search over EHRs. Ethereum. \\,primary_preview_only
 2021-medshare,2023,ABE,historical-extraction.csv:reported_technique,Attribute-based Encryption,Attribute-based Encryption Scheme,primary_preview_only
 2021-medshare,2023,ABE,synthesis-evidence-matrix.csv:reported_mechanism,ABE,Constant-size ABE and multi-keyword Boolean encrypted search reported in abstract,primary_preview_only
-2021-medshare,2023,SEARCH,main.tex:control_method,keyword search over,Attribute-based encryption and implemented Boolean multi-keyword search over EHRs. Ethereum. \\ \hline,primary_preview_only
+2021-medshare,2023,SEARCH,main.tex:control_method,keyword search over,Attribute-based encryption and implemented Boolean multi-keyword search over EHRs. Ethereum. \\,primary_preview_only
 2021-medshare,2023,SEARCH,synthesis-evidence-matrix.csv:reported_mechanism,encrypted search,Constant-size ABE and multi-keyword Boolean encrypted search reported in abstract,primary_preview_only
-10.1109/tr.2022.3190932,2023,HE,main.tex:control_method,Homomorphic,Homomorphic encryption. \\ \hline,inventory_only
+10.1109/tr.2022.3190932,2023,HE,main.tex:control_method,Homomorphic,Homomorphic encryption. \\,inventory_only
 10.1109/tr.2022.3190932,2023,HE,historical-extraction.csv:reported_technique,Homomorphic,Homomorphic Encryption,inventory_only
-10.1109/jiot.2023.3287636,2023,SEARCH,main.tex:control_method,Searchable encryption,Searchable encryption. \\ \hline,inventory_only
+10.1109/jiot.2023.3287636,2023,SEARCH,main.tex:control_method,Searchable encryption,Searchable encryption. \\,inventory_only
 10.1109/jiot.2023.3287636,2023,SEARCH,historical-extraction.csv:reported_technique,Searchable Encryption,Searchable Encryption Scheme,inventory_only
-10.1109/jiot.2023.3295763,2023,FL,main.tex:control_method,Federated,Federated learning. \\ \hline,inventory_only
+10.1109/jiot.2023.3295763,2023,FL,main.tex:control_method,Federated,Federated learning. \\,inventory_only
 10.1109/jiot.2023.3295763,2023,FL,historical-extraction.csv:reported_technique,Federated,Federated Learning,inventory_only
-10.1109/jiot.2021.3134755,2023,FL,main.tex:control_method,Federated,Federated learning. \\ \hline,inventory_only
+10.1109/jiot.2021.3134755,2023,FL,main.tex:control_method,Federated,Federated learning. \\,inventory_only
 10.1109/jiot.2021.3134755,2023,FL,historical-extraction.csv:reported_technique,Federated,Federated Learning,inventory_only
-10.1109/jiot.2023.3247487,2023,HE,main.tex:control_method,Homomorphic,Homomorphic encryption. \\ \hline,inventory_only
+10.1109/jiot.2023.3247487,2023,HE,main.tex:control_method,Homomorphic,Homomorphic encryption. \\,inventory_only
 10.1109/jiot.2023.3247487,2023,HE,historical-extraction.csv:reported_technique,Homomorphic,Homomorphic Encryption,inventory_only
-10.1109/tsc.2022.3199111,2023,SEARCH,main.tex:control_method,Encrypted index,Encrypted index storage and stealth authorization. \\ \hline,inventory_only
+10.1109/tsc.2022.3199111,2023,SEARCH,main.tex:control_method,Encrypted index,Encrypted index storage and stealth authorization. \\,inventory_only
 10.1109/tsc.2022.3199111,2023,SEARCH,historical-extraction.csv:reported_technique,Encrypted Index,Encrypted Index Storage and Stealth Authorization Scheme,inventory_only
-10.1109/tits.2022.3190487,2023,ZK,main.tex:control_method,zk,zk-SNARKs and commitments. \\ \hline,inventory_only
+10.1109/tits.2022.3190487,2023,ZK,main.tex:control_method,zk,zk-SNARKs and commitments. \\,inventory_only
 10.1109/tits.2022.3190487,2023,ZK,historical-extraction.csv:reported_technique,zk,zk-SNARK and Commitment-related technologies,inventory_only
-10.1109/tc.2023.3251846,2023,ZK,main.tex:control_method,zero-knowledge,"Attribute-based credentials, encryption, and zero-knowledge proofs. \\ \hline",inventory_only
+10.1109/tc.2023.3251846,2023,ZK,main.tex:control_method,zero-knowledge,"Attribute-based credentials, encryption, and zero-knowledge proofs. \\",inventory_only
 10.1109/tc.2023.3251846,2023,ZK,historical-extraction.csv:reported_technique,ZK,"Attribute-based credentials, encryption, and ZK proofs",inventory_only
-10.1109/tc.2023.3251846,2023,CREDENTIAL,main.tex:control_method,credentials,"Attribute-based credentials, encryption, and zero-knowledge proofs. \\ \hline",inventory_only
+10.1109/tc.2023.3251846,2023,CREDENTIAL,main.tex:control_method,credentials,"Attribute-based credentials, encryption, and zero-knowledge proofs. \\",inventory_only
 10.1109/tc.2023.3251846,2023,CREDENTIAL,historical-extraction.csv:reported_technique,credentials,"Attribute-based credentials, encryption, and ZK proofs",inventory_only
-10.1109/jiot.2023.3296460,2024,PRE,main.tex:control_method,proxy re-encryption,"Hash-based anonymous identity, zk-SNARKs, and proxy re-encryption. \\ \hline",inventory_only
+10.1109/jiot.2023.3296460,2024,PRE,main.tex:control_method,proxy re-encryption,"Hash-based anonymous identity, zk-SNARKs, and proxy re-encryption. \\",inventory_only
 10.1109/jiot.2023.3296460,2024,PRE,historical-extraction.csv:reported_technique,Proxy Re-Encryption,"Hash Anonymous Identity, zk-SNARKs and Proxy Re-Encryption",inventory_only
-10.1109/jiot.2023.3296460,2024,ZK,main.tex:control_method,zk,"Hash-based anonymous identity, zk-SNARKs, and proxy re-encryption. \\ \hline",inventory_only
+10.1109/jiot.2023.3296460,2024,ZK,main.tex:control_method,zk,"Hash-based anonymous identity, zk-SNARKs, and proxy re-encryption. \\",inventory_only
 10.1109/jiot.2023.3296460,2024,ZK,historical-extraction.csv:reported_technique,zk,"Hash Anonymous Identity, zk-SNARKs and Proxy Re-Encryption",inventory_only
-updateDhasaratha2024IoMT,2024,FL,main.tex:control_method,federated,Proposed distributed reinforcement/federated learning and blockchain resource identification; ledger variant unspecified. \\ \hline,retained_extraction_not_reverified
+updateDhasaratha2024IoMT,2024,FL,main.tex:control_method,federated,Proposed distributed reinforcement/federated learning and blockchain resource identification; ledger variant unspecified. \\,retained_extraction_not_reverified
 updateDhasaratha2024IoMT,2024,FL,recent-extraction.csv:approach,federated,Proposes distributed reinforcement/federated learning and blockchain-assisted resource identification,retained_extraction_not_reverified
 updateDhasaratha2024IoMT,2024,FL,synthesis-evidence-matrix.csv:operation,federated,Coordinate distributed reinforcement/federated IoMT learning,retained_extraction_not_reverified
 updateGupta2024LungFL,2024,FL,main.tex:application,Federated,Federated lung-disease detection,primary_fulltext_verified
@@ -59,16 +59,16 @@ updateGupta2024LungFL,2024,FL,synthesis-evidence-matrix.csv:operation,Federated,
 updateHussain2025ZeroTrust,2025,FL,synthesis-evidence-matrix.csv:reported_mechanism,FL,Proposed LDP/FL update workflow; permissioned Ethereum bids/offers; IPFS specifications; SSI proof exchange,primary_fulltext_verified
 updateHussain2025ZeroTrust,2025,DP,synthesis-evidence-matrix.csv:reported_mechanism,LDP,Proposed LDP/FL update workflow; permissioned Ethereum bids/offers; IPFS specifications; SSI proof exchange,primary_fulltext_verified
 updateHussain2025ZeroTrust,2025,SSI,synthesis-evidence-matrix.csv:reported_mechanism,SSI,Proposed LDP/FL update workflow; permissioned Ethereum bids/offers; IPFS specifications; SSI proof exchange,primary_fulltext_verified
-updateGuan2025Healthcare,2025,HE,main.tex:control_method,Paillier,"Paillier additive encryption, searchable encryption, Bloom indexes, and access policies; Hyperledger Fabric 2.2. \\ \hline",primary_fulltext_verified
+updateGuan2025Healthcare,2025,HE,main.tex:control_method,Paillier,"Paillier additive encryption, searchable encryption, Bloom indexes, and access policies; Hyperledger Fabric 2.2. \\",primary_fulltext_verified
 updateGuan2025Healthcare,2025,HE,recent-extraction.csv:approach,Paillier,"Paillier additive encryption, searchable encryption, Bloom indexes, and Fabric access policies",primary_fulltext_verified
 updateGuan2025Healthcare,2025,HE,synthesis-evidence-matrix.csv:reported_mechanism,Paillier,"Paillier additive encryption, searchable encryption, Bloom indexes, and Fabric access policies",primary_fulltext_verified
-updateGuan2025Healthcare,2025,SEARCH,main.tex:control_method,searchable encryption,"Paillier additive encryption, searchable encryption, Bloom indexes, and access policies; Hyperledger Fabric 2.2. \\ \hline",primary_fulltext_verified
+updateGuan2025Healthcare,2025,SEARCH,main.tex:control_method,searchable encryption,"Paillier additive encryption, searchable encryption, Bloom indexes, and access policies; Hyperledger Fabric 2.2. \\",primary_fulltext_verified
 updateGuan2025Healthcare,2025,SEARCH,recent-extraction.csv:approach,searchable encryption,"Paillier additive encryption, searchable encryption, Bloom indexes, and Fabric access policies",primary_fulltext_verified
 updateGuan2025Healthcare,2025,SEARCH,synthesis-evidence-matrix.csv:reported_mechanism,searchable encryption,"Paillier additive encryption, searchable encryption, Bloom indexes, and Fabric access policies",primary_fulltext_verified
-updateHu2024InvisiReveal,2024,ZK,main.tex:control_method,zero-knowledge,InvisiReveal: anonymous authorization with zero-knowledge credentials and committed tags for conditional identification. Indexed primary description only. \\ \hline,primary_indexed_sections_verified
+updateHu2024InvisiReveal,2024,ZK,main.tex:control_method,zero-knowledge,InvisiReveal: anonymous authorization with zero-knowledge credentials and committed tags for conditional identification. Indexed primary description only. \\,primary_indexed_sections_verified
 updateHu2024InvisiReveal,2024,ZK,recent-extraction.csv:approach,ZK,Anonymous credentials; ZK access requests; committed traceable tags,primary_indexed_sections_verified
 updateHu2024InvisiReveal,2024,ZK,synthesis-evidence-matrix.csv:reported_mechanism,ZK,Anonymous credentials; ZK access requests; committed traceable tags,primary_indexed_sections_verified
-updateHu2024InvisiReveal,2024,CREDENTIAL,main.tex:control_method,credentials,InvisiReveal: anonymous authorization with zero-knowledge credentials and committed tags for conditional identification. Indexed primary description only. \\ \hline,primary_indexed_sections_verified
+updateHu2024InvisiReveal,2024,CREDENTIAL,main.tex:control_method,credentials,InvisiReveal: anonymous authorization with zero-knowledge credentials and committed tags for conditional identification. Indexed primary description only. \\,primary_indexed_sections_verified
 updateHu2024InvisiReveal,2024,CREDENTIAL,recent-extraction.csv:approach,credentials,Anonymous credentials; ZK access requests; committed traceable tags,primary_indexed_sections_verified
 updateHu2024InvisiReveal,2024,CREDENTIAL,synthesis-evidence-matrix.csv:reported_mechanism,credentials,Anonymous credentials; ZK access requests; committed traceable tags,primary_indexed_sections_verified
 updateRen2024DistributedKMS,2024,ABE,main.tex:control_method,CP-ABE,CP-ABE and verifiable threshold proxy re-encryption. The authorized recipient reconstructs the master secret in the described flow. Ethereum/Ganache; IPFS. \\,primary_fulltext_verified
@@ -79,140 +79,140 @@ updateRen2024DistributedKMS,2024,PRE,recent-extraction.csv:approach,proxy re-enc
 updateRen2024DistributedKMS,2024,PRE,synthesis-evidence-matrix.csv:reported_mechanism,proxy re-encryption,CP-ABE; threshold proxy re-encryption; ZK checks,primary_fulltext_verified
 updateRen2024DistributedKMS,2024,ZK,recent-extraction.csv:approach,ZK,CP-ABE; threshold proxy re-encryption; ZK checks,primary_fulltext_verified
 updateRen2024DistributedKMS,2024,ZK,synthesis-evidence-matrix.csv:reported_mechanism,ZK,CP-ABE; threshold proxy re-encryption; ZK checks,primary_fulltext_verified
-10.1016/j.hcc.2022.100084,2022,ABE,main.tex:control_method,ABE,Multi-hop permission delegation using PRE and ABE. Ethereum. \\ \hline,primary_indexed_sections_verified
+10.1016/j.hcc.2022.100084,2022,ABE,main.tex:control_method,ABE,Multi-hop permission delegation using PRE and ABE. Ethereum. \\,primary_indexed_sections_verified
 10.1016/j.hcc.2022.100084,2022,ABE,historical-extraction.csv:reported_contribution,ABE,Multi-hop permission delegation scheme using PRE and ABE,primary_indexed_sections_verified
 10.1016/j.hcc.2022.100084,2022,ABE,synthesis-evidence-matrix.csv:reported_mechanism,CP-ABE,CP-ABE protects symmetric key; PRE transforms ciphertext while retaining policy,primary_indexed_sections_verified
-10.1016/j.hcc.2022.100084,2022,PRE,main.tex:control_method,PRE,Multi-hop permission delegation using PRE and ABE. Ethereum. \\ \hline,primary_indexed_sections_verified
+10.1016/j.hcc.2022.100084,2022,PRE,main.tex:control_method,PRE,Multi-hop permission delegation using PRE and ABE. Ethereum. \\,primary_indexed_sections_verified
 10.1016/j.hcc.2022.100084,2022,PRE,historical-extraction.csv:reported_contribution,PRE,Multi-hop permission delegation scheme using PRE and ABE,primary_indexed_sections_verified
 10.1016/j.hcc.2022.100084,2022,PRE,synthesis-evidence-matrix.csv:reported_mechanism,PRE,CP-ABE protects symmetric key; PRE transforms ciphertext while retaining policy,primary_indexed_sections_verified
-updateFerreira2025MCPFHIR,2025,SSI,main.tex:control_method,DID,"DID/VC identity, issuer allowlists, purpose/time permissions, bundle hashes, and provenance logs; Fabric/EVM layer-2 alternatives, inconsistent deployment identification. \\ \hline",primary_fulltext_verified
+updateFerreira2025MCPFHIR,2025,SSI,main.tex:control_method,DID,"DID/VC identity, issuer allowlists, purpose/time permissions, bundle hashes, and provenance logs; Fabric/EVM layer-2 alternatives, inconsistent deployment identification. \\",primary_fulltext_verified
 updateFerreira2025MCPFHIR,2025,SSI,recent-extraction.csv:approach,DID,"DID/VC identity, issuer allowlists, purpose/time consent checks, bundle hashes, and provenance logs",primary_fulltext_verified
 updateFerreira2025MCPFHIR,2025,SSI,synthesis-evidence-matrix.csv:reported_mechanism,DID,"DID/VC identity, issuer allowlists, purpose/time consent checks, bundle hashes, and provenance logs",primary_fulltext_verified
-updateFerreira2025MCPFHIR,2025,CREDENTIAL,main.tex:control_method,VC,"DID/VC identity, issuer allowlists, purpose/time permissions, bundle hashes, and provenance logs; Fabric/EVM layer-2 alternatives, inconsistent deployment identification. \\ \hline",primary_fulltext_verified
+updateFerreira2025MCPFHIR,2025,CREDENTIAL,main.tex:control_method,VC,"DID/VC identity, issuer allowlists, purpose/time permissions, bundle hashes, and provenance logs; Fabric/EVM layer-2 alternatives, inconsistent deployment identification. \\",primary_fulltext_verified
 updateFerreira2025MCPFHIR,2025,CREDENTIAL,recent-extraction.csv:approach,VC,"DID/VC identity, issuer allowlists, purpose/time consent checks, bundle hashes, and provenance logs",primary_fulltext_verified
 updateFerreira2025MCPFHIR,2025,CREDENTIAL,synthesis-evidence-matrix.csv:reported_mechanism,VC,"DID/VC identity, issuer allowlists, purpose/time consent checks, bundle hashes, and provenance logs",primary_fulltext_verified
-updateFerreira2026SportsConsent,2026,CREDENTIAL,main.tex:control_method,VC,"MCP retrieval with VC scope validation and status checks, consent contracts, and bundle-hash anchoring; permissioned consortium design. \\ \hline",primary_fulltext_verified
+updateFerreira2026SportsConsent,2026,CREDENTIAL,main.tex:control_method,VC,"MCP retrieval with VC scope validation and status checks, consent contracts, and bundle-hash anchoring; permissioned consortium design. \\",primary_fulltext_verified
 updateFerreira2026SportsConsent,2026,CREDENTIAL,recent-extraction.csv:approach,VC,"MCP query-time VC scope/status checks, athlete wallets, consent contracts, and anchored bundle hashes",primary_fulltext_verified
 updateFerreira2026SportsConsent,2026,CREDENTIAL,synthesis-evidence-matrix.csv:reported_mechanism,VC,"MCP query-time VC scope/status checks, athlete wallets, consent contracts, and anchored bundle hashes",primary_fulltext_verified
-updateAlSabahi2026AuthorshipConsent,2026,ZK,main.tex:control_method,zero-knowledge,"Manuscript-bound consent VCs, status checks, attested-affiliation zero-knowledge non-intersection proofs, and permissioned receipts. \\ \hline",primary_fulltext_verified
+updateAlSabahi2026AuthorshipConsent,2026,ZK,main.tex:control_method,zero-knowledge,"Manuscript-bound consent VCs, status checks, attested-affiliation zero-knowledge non-intersection proofs, and permissioned receipts. \\",primary_fulltext_verified
 updateAlSabahi2026AuthorshipConsent,2026,ZK,recent-extraction.csv:approach,ZK,Manuscript-bound consent VCs; off-chain status checks and ZK affiliation non-intersection; permissioned registry anchors receipt hashes and status,primary_fulltext_verified
 updateAlSabahi2026AuthorshipConsent,2026,ZK,synthesis-evidence-matrix.csv:reported_mechanism,ZK,VC consent and trusted issuer/status checking; proposed ZK affiliation-set non-intersection and receipt registry,primary_fulltext_verified
-updateAlSabahi2026AuthorshipConsent,2026,CREDENTIAL,main.tex:control_method,VCs,"Manuscript-bound consent VCs, status checks, attested-affiliation zero-knowledge non-intersection proofs, and permissioned receipts. \\ \hline",primary_fulltext_verified
+updateAlSabahi2026AuthorshipConsent,2026,CREDENTIAL,main.tex:control_method,VCs,"Manuscript-bound consent VCs, status checks, attested-affiliation zero-knowledge non-intersection proofs, and permissioned receipts. \\",primary_fulltext_verified
 updateAlSabahi2026AuthorshipConsent,2026,CREDENTIAL,recent-extraction.csv:approach,VCs,Manuscript-bound consent VCs; off-chain status checks and ZK affiliation non-intersection; permissioned registry anchors receipt hashes and status,primary_fulltext_verified
 updateAlSabahi2026AuthorshipConsent,2026,CREDENTIAL,synthesis-evidence-matrix.csv:reported_mechanism,VC,VC consent and trusted issuer/status checking; proposed ZK affiliation-set non-intersection and receipt registry,primary_fulltext_verified
-updateNaghmouchi2026ClinConNet,2026,SSI,main.tex:control_method,DIDs,"DIDs, encrypted DIDComm forms, and contract consent-proof status; Fabric/Veramo proof of concept; arXiv preprint v1. \\ \hline",primary_fulltext_verified
+updateNaghmouchi2026ClinConNet,2026,SSI,main.tex:control_method,DIDs,"DIDs, encrypted DIDComm forms, and contract consent-proof status; Fabric/Veramo proof of concept; arXiv preprint v1. \\",primary_fulltext_verified
 updateNaghmouchi2026ClinConNet,2026,SSI,recent-extraction.csv:approach,DIDs,Public/pairwise DIDs and encrypted DIDComm forms; proxy publishes hashes; contracts record valid/revoked state; updates revoke and replace old proofs,primary_fulltext_verified
 updateNaghmouchi2026ClinConNet,2026,SSI,synthesis-evidence-matrix.csv:reported_mechanism,DID,DID-Auth/DIDComm wallet interactions; hash/encrypted consent proof; supersede-and-replace consent,primary_fulltext_verified
-updateNaghmouchi2026ClinConNet,2026,VERAMO,main.tex:control_method,Veramo,"DIDs, encrypted DIDComm forms, and contract consent-proof status; Fabric/Veramo proof of concept; arXiv preprint v1. \\ \hline",primary_fulltext_verified
-updatePhuyal2026Architecture,2026,SSI,main.tex:control_method,DID,"DID/VC wallets, FHIR consent resources, gateway authorization, off-chain records, and on-chain audit references; Ethereum-compatible design. \\ \hline",primary_fulltext_verified
+updateNaghmouchi2026ClinConNet,2026,VERAMO,main.tex:control_method,Veramo,"DIDs, encrypted DIDComm forms, and contract consent-proof status; Fabric/Veramo proof of concept; arXiv preprint v1. \\",primary_fulltext_verified
+updatePhuyal2026Architecture,2026,SSI,main.tex:control_method,DID,"DID/VC wallets, FHIR consent resources, gateway authorization, off-chain records, and on-chain audit references; Ethereum-compatible design. \\",primary_fulltext_verified
 updatePhuyal2026Architecture,2026,SSI,recent-extraction.csv:approach,DID,DID/VC wallets; FHIR consent metadata; off-chain gateway consent checks; on-chain audit references,primary_fulltext_verified
 updatePhuyal2026Architecture,2026,SSI,synthesis-evidence-matrix.csv:reported_mechanism,DID,DID/VC wallet with FHIR consent metadata and off-chain records,primary_fulltext_verified
-updatePhuyal2026Architecture,2026,CREDENTIAL,main.tex:control_method,VC,"DID/VC wallets, FHIR consent resources, gateway authorization, off-chain records, and on-chain audit references; Ethereum-compatible design. \\ \hline",primary_fulltext_verified
+updatePhuyal2026Architecture,2026,CREDENTIAL,main.tex:control_method,VC,"DID/VC wallets, FHIR consent resources, gateway authorization, off-chain records, and on-chain audit references; Ethereum-compatible design. \\",primary_fulltext_verified
 updatePhuyal2026Architecture,2026,CREDENTIAL,recent-extraction.csv:approach,VC,DID/VC wallets; FHIR consent metadata; off-chain gateway consent checks; on-chain audit references,primary_fulltext_verified
 updatePhuyal2026Architecture,2026,CREDENTIAL,synthesis-evidence-matrix.csv:reported_mechanism,VC,DID/VC wallet with FHIR consent metadata and off-chain records,primary_fulltext_verified
-updateScaramuzza2026ZKConsent,2026,ZK,main.tex:control_method,zk,"Contract permission states; zk-SNARK proving knowledge of a Pedersen-committed secret; Ethereum, Circom/snarkjs, Ganache, Truffle. \\ \hline",primary_fulltext_verified
+updateScaramuzza2026ZKConsent,2026,ZK,main.tex:control_method,zk,"Contract permission states; zk-SNARK proving knowledge of a Pedersen-committed secret; Ethereum, Circom/snarkjs, Ganache, Truffle. \\",primary_fulltext_verified
 updateScaramuzza2026ZKConsent,2026,ZK,recent-extraction.csv:approach,zk,Contract permission states and a zk-SNARK proving knowledge of a Pedersen-committed secret,primary_fulltext_verified
 updateScaramuzza2026ZKConsent,2026,ZK,synthesis-evidence-matrix.csv:reported_mechanism,zk,Contract permission states and a zk-SNARK proving knowledge of a Pedersen-committed secret,primary_fulltext_verified
-2018-bc-ssi,2018,SSI,main.tex:control_method,SSI,SSI for passport-level attributes. \\ \hline,inventory_only
+2018-bc-ssi,2018,SSI,main.tex:control_method,SSI,SSI for passport-level attributes. \\,inventory_only
 2018-bc-ssi,2018,SSI,historical-extraction.csv:reported_contribution,SSI,SSI architecture for passport-level attributes.,inventory_only
-2019-everssdi,2019,SSI,main.tex:control_method,SSI,Smart-contract SSI with recovery using social networking services and Ethereum oracles. Ethereum. \\ \hline,inventory_only
+2019-everssdi,2019,SSI,main.tex:control_method,SSI,Smart-contract SSI with recovery using social networking services and Ethereum oracles. Ethereum. \\,inventory_only
 2019-everssdi,2019,SSI,historical-extraction.csv:reported_contribution,SSI,SSI framework using smart contracts with identity recovery using SNS and Ethereum Oracles.,inventory_only
-2019-ssi-digital-identity-bc,2019,SSI,main.tex:control_method,SSI,Dynamic SSI model that allows identity changes over time. \\ \hline,inventory_only
+2019-ssi-digital-identity-bc,2019,SSI,main.tex:control_method,SSI,Dynamic SSI model that allows identity changes over time. \\,inventory_only
 2019-ssi-digital-identity-bc,2019,SSI,historical-extraction.csv:reported_contribution,SSI,A dynamic SSI scheme that could vary or evolve over time.,inventory_only
-10.1109/ACCESS.2019.2931173,2019,SSI,main.tex:control_method,SSI,Formal mathematical model of SSI. \\ \hline,inventory_only
+10.1109/ACCESS.2019.2931173,2019,SSI,main.tex:control_method,SSI,Formal mathematical model of SSI. \\,inventory_only
 10.1109/ACCESS.2019.2931173,2019,SSI,historical-extraction.csv:reported_contribution,SSI,A formal and mathematical model for understanding the concept of SSI.,inventory_only
-2020-emission-vehicles-ssi,2020,SSI,main.tex:control_method,SSI,SSI for IoT and smart vehicles. Hyperledger Indy. \\ \hline,inventory_only
+2020-emission-vehicles-ssi,2020,SSI,main.tex:control_method,SSI,SSI for IoT and smart vehicles. Hyperledger Indy. \\,inventory_only
 2020-emission-vehicles-ssi,2020,SSI,historical-extraction.csv:reported_contribution,SSI,SSI architecture for IoT and Smart Vehicles.,inventory_only
-2020-emission-vehicles-ssi,2020,INDY,main.tex:control_method,Indy,SSI for IoT and smart vehicles. Hyperledger Indy. \\ \hline,inventory_only
-10.1109/MobileCloud48802.2020.00021,2020,SSI,main.tex:control_method,SSI,Specifications for evaluating SSI systems. \\ \hline,inventory_only
+2020-emission-vehicles-ssi,2020,INDY,main.tex:control_method,Indy,SSI for IoT and smart vehicles. Hyperledger Indy. \\,inventory_only
+10.1109/MobileCloud48802.2020.00021,2020,SSI,main.tex:control_method,SSI,Specifications for evaluating SSI systems. \\,inventory_only
 10.1109/MobileCloud48802.2020.00021,2020,SSI,historical-extraction.csv:reported_contribution,SSI,Specifications for evaluating SSI solutions.,inventory_only
-10.1109/ISSE49799.2020.9272212,2020,SSI,main.tex:control_method,SSI,SSI governance principles used to assess uPort and Sovrin. \\ \hline,inventory_only
+10.1109/ISSE49799.2020.9272212,2020,SSI,main.tex:control_method,SSI,SSI governance principles used to assess uPort and Sovrin. \\,inventory_only
 10.1109/ISSE49799.2020.9272212,2020,SSI,historical-extraction.csv:reported_contribution,SSI,Governing principles of SSI for analyzing the effectiveness of SSI ecosystems.,inventory_only
-2020-bbm-ssi,2020,SSI,main.tex:control_method,SSI,SSI management for open banking. \\ \hline,inventory_only
+2020-bbm-ssi,2020,SSI,main.tex:control_method,SSI,SSI management for open banking. \\,inventory_only
 2020-bbm-ssi,2020,SSI,historical-extraction.csv:reported_contribution,SSI,SSI management for open banking.,inventory_only
 2020-enhancing-ssi,2020,SSI,historical-extraction.csv:reported_contribution,SSI,SSI model for attribute sensitivity in credential exchanges.,not_verified
-2020-enhancing-ssi,2020,CREDENTIAL,main.tex:control_method,credential,Attribute-sensitivity model for credential exchange. Hyperledger Indy. \\ \hline,not_verified
+2020-enhancing-ssi,2020,CREDENTIAL,main.tex:control_method,credential,Attribute-sensitivity model for credential exchange. Hyperledger Indy. \\,not_verified
 2020-enhancing-ssi,2020,CREDENTIAL,historical-extraction.csv:reported_contribution,credential,SSI model for attribute sensitivity in credential exchanges.,not_verified
-2020-enhancing-ssi,2020,INDY,main.tex:control_method,Indy,Attribute-sensitivity model for credential exchange. Hyperledger Indy. \\ \hline,not_verified
-2021-ssi-public-transport,2021,SSI,main.tex:control_method,SSI,SSI model supporting multiple travel credentials. Hyperledger Indy. \\ \hline,inventory_only
+2020-enhancing-ssi,2020,INDY,main.tex:control_method,Indy,Attribute-sensitivity model for credential exchange. Hyperledger Indy. \\,not_verified
+2021-ssi-public-transport,2021,SSI,main.tex:control_method,SSI,SSI model supporting multiple travel credentials. Hyperledger Indy. \\,inventory_only
 2021-ssi-public-transport,2021,SSI,historical-extraction.csv:reported_contribution,SSI,SSI model for multiple credentials for travel.,inventory_only
-2021-ssi-public-transport,2021,CREDENTIAL,main.tex:control_method,credentials,SSI model supporting multiple travel credentials. Hyperledger Indy. \\ \hline,inventory_only
+2021-ssi-public-transport,2021,CREDENTIAL,main.tex:control_method,credentials,SSI model supporting multiple travel credentials. Hyperledger Indy. \\,inventory_only
 2021-ssi-public-transport,2021,CREDENTIAL,historical-extraction.csv:reported_contribution,credentials,SSI model for multiple credentials for travel.,inventory_only
-2021-ssi-public-transport,2021,INDY,main.tex:control_method,Indy,SSI model supporting multiple travel credentials. Hyperledger Indy. \\ \hline,inventory_only
-2021-an-innovative-did,2021,SSI,main.tex:control_method,SSI,SSI and certificate management using elliptic-curve cryptography. \\ \hline,inventory_only
+2021-ssi-public-transport,2021,INDY,main.tex:control_method,Indy,SSI model supporting multiple travel credentials. Hyperledger Indy. \\,inventory_only
+2021-an-innovative-did,2021,SSI,main.tex:control_method,SSI,SSI and certificate management using elliptic-curve cryptography. \\,inventory_only
 2021-an-innovative-did,2021,SSI,historical-extraction.csv:reported_contribution,SSI,SSI management framework with Elliptic Curve Cryptography.,inventory_only
-2021-did-prevent-secondary,2021,HE,main.tex:control_method,CKKS,Decentralized identity with Cheon--Kim--Kim--Song (CKKS) fully homomorphic encryption. Hyperledger Indy. \\ \hline,primary_fulltext_verified
+2021-did-prevent-secondary,2021,HE,main.tex:control_method,CKKS,Decentralized identity with Cheon--Kim--Kim--Song (CKKS) fully homomorphic encryption. Hyperledger Indy. \\,primary_fulltext_verified
 2021-did-prevent-secondary,2021,HE,historical-extraction.csv:reported_contribution,CKKS,Decentralized Identity System with Cheon-Kim-Kim-Song (CKKS) fully homomorphic encryption to protect user privacy.,primary_fulltext_verified
 2021-did-prevent-secondary,2021,HE,synthesis-evidence-matrix.csv:reported_mechanism,FHE,Indy/Aries credentials; AES/FHE; temporary URL; further managed-computation monitoring is proposed,primary_fulltext_verified
-2021-did-prevent-secondary,2021,SSI,main.tex:control_method,Decentralized identity,Decentralized identity with Cheon--Kim--Kim--Song (CKKS) fully homomorphic encryption. Hyperledger Indy. \\ \hline,primary_fulltext_verified
+2021-did-prevent-secondary,2021,SSI,main.tex:control_method,Decentralized identity,Decentralized identity with Cheon--Kim--Kim--Song (CKKS) fully homomorphic encryption. Hyperledger Indy. \\,primary_fulltext_verified
 2021-did-prevent-secondary,2021,SSI,historical-extraction.csv:reported_contribution,Decentralized Identity,Decentralized Identity System with Cheon-Kim-Kim-Song (CKKS) fully homomorphic encryption to protect user privacy.,primary_fulltext_verified
 2021-did-prevent-secondary,2021,CREDENTIAL,synthesis-evidence-matrix.csv:reported_mechanism,credentials,Indy/Aries credentials; AES/FHE; temporary URL; further managed-computation monitoring is proposed,primary_fulltext_verified
-2021-did-prevent-secondary,2021,INDY,main.tex:control_method,Indy,Decentralized identity with Cheon--Kim--Kim--Song (CKKS) fully homomorphic encryption. Hyperledger Indy. \\ \hline,primary_fulltext_verified
+2021-did-prevent-secondary,2021,INDY,main.tex:control_method,Indy,Decentralized identity with Cheon--Kim--Kim--Song (CKKS) fully homomorphic encryption. Hyperledger Indy. \\,primary_fulltext_verified
 2021-did-prevent-secondary,2021,INDY,synthesis-evidence-matrix.csv:reported_mechanism,Indy,Indy/Aries credentials; AES/FHE; temporary URL; further managed-computation monitoring is proposed,primary_fulltext_verified
-2021-dec-cross-net-idm,2021,INDY,main.tex:control_method,Indy,Ledger-independent identity model and protocols. Hyperledger Indy. \\ \hline,inventory_only
+2021-dec-cross-net-idm,2021,INDY,main.tex:control_method,Indy,Ledger-independent identity model and protocols. Hyperledger Indy. \\,inventory_only
 2021-SSI-food-supply-chain,2021,SSI,main.tex:control_method,SSI,SSI for food-supply-chain processes and certifications. Ethereum. \\,inventory_only
 2021-SSI-food-supply-chain,2021,SSI,historical-extraction.csv:reported_contribution,SSI,An SSI management system for process and certifications in the food supply chain.,inventory_only
-10.1109/ISCC53001.2021.9631518,2021,SSI,main.tex:control_method,SSI,SSI platform for user-managed identities. Hyperledger Fabric. \\ \hline,inventory_only
+10.1109/ISCC53001.2021.9631518,2021,SSI,main.tex:control_method,SSI,SSI platform for user-managed identities. Hyperledger Fabric. \\,inventory_only
 10.1109/ISCC53001.2021.9631518,2021,SSI,historical-extraction.csv:reported_contribution,SSI,An SSI platform to allow users to control their identities autonomously.,inventory_only
-2021-ssi-cyber-threat,2021,SSI,main.tex:control_method,SSI,SSI for cyber-threat information sharing. Rahasak with Aplos smart contracts. \\ \hline,inventory_only
+2021-ssi-cyber-threat,2021,SSI,main.tex:control_method,SSI,SSI for cyber-threat information sharing. Rahasak with Aplos smart contracts. \\,inventory_only
 2021-ssi-cyber-threat,2021,SSI,historical-extraction.csv:reported_contribution,SSI,An SSI platform to share Cyber threat information.,inventory_only
-2022-ssi-kyc,2022,SSI,main.tex:control_method,SSI,SSI for KYC. \\ \hline,inventory_only
+2022-ssi-kyc,2022,SSI,main.tex:control_method,SSI,SSI for KYC. \\,inventory_only
 2022-ssi-kyc,2022,SSI,historical-extraction.csv:reported_contribution,SSI,An SSI-based framework for KYC process.,inventory_only
-2022-a-ssi-idm-bc,2022,SSI,main.tex:control_method,SSI,"SSI with encryption, blockchain, and IPFS storage. \\ \hline",primary_fulltext_verified
+2022-a-ssi-idm-bc,2022,SSI,main.tex:control_method,SSI,"SSI with encryption, blockchain, and IPFS storage. \\",primary_fulltext_verified
 2022-a-ssi-idm-bc,2022,SSI,historical-extraction.csv:reported_contribution,SSI,An SSI management system with data encryption combining blockchain and IPFS.,primary_fulltext_verified
 2022-ssi-patient-centric-healthcare,2022,SSI,historical-extraction.csv:reported_contribution,SSI,An SSI patient-centric healthcare identity wallet.,inventory_only
-2022-ssi-patient-centric-healthcare,2022,INDY,main.tex:control_method,Indy,Patient-centered identity wallet. Hyperledger Indy. \\ \hline,inventory_only
-2022-towards-ssi-privacy-fl,2022,FL,main.tex:control_method,federated,SSI with differential privacy and federated learning. \\ \hline,primary_preview_only
+2022-ssi-patient-centric-healthcare,2022,INDY,main.tex:control_method,Indy,Patient-centered identity wallet. Hyperledger Indy. \\,inventory_only
+2022-towards-ssi-privacy-fl,2022,FL,main.tex:control_method,federated,SSI with differential privacy and federated learning. \\,primary_preview_only
 2022-towards-ssi-privacy-fl,2022,FL,historical-extraction.csv:reported_contribution,federated,An SSI framework with privacy protection using differential privacy and federated learning.,primary_preview_only
 2022-towards-ssi-privacy-fl,2022,FL,synthesis-evidence-matrix.csv:operation,FL,Authenticate FL devices and learn from distributed data,primary_preview_only
 2022-towards-ssi-privacy-fl,2022,FL,synthesis-evidence-matrix.csv:reported_mechanism,FL,Publisher abstract reports SSI with DP-based FL,primary_preview_only
-2022-towards-ssi-privacy-fl,2022,DP,main.tex:control_method,differential privacy,SSI with differential privacy and federated learning. \\ \hline,primary_preview_only
+2022-towards-ssi-privacy-fl,2022,DP,main.tex:control_method,differential privacy,SSI with differential privacy and federated learning. \\,primary_preview_only
 2022-towards-ssi-privacy-fl,2022,DP,historical-extraction.csv:reported_contribution,differential privacy,An SSI framework with privacy protection using differential privacy and federated learning.,primary_preview_only
-2022-towards-ssi-privacy-fl,2022,SSI,main.tex:control_method,SSI,SSI with differential privacy and federated learning. \\ \hline,primary_preview_only
+2022-towards-ssi-privacy-fl,2022,SSI,main.tex:control_method,SSI,SSI with differential privacy and federated learning. \\,primary_preview_only
 2022-towards-ssi-privacy-fl,2022,SSI,historical-extraction.csv:reported_contribution,SSI,An SSI framework with privacy protection using differential privacy and federated learning.,primary_preview_only
 2022-towards-ssi-privacy-fl,2022,SSI,synthesis-evidence-matrix.csv:reported_mechanism,SSI,Publisher abstract reports SSI with DP-based FL,primary_preview_only
 10.1109/LCN53696.2022.9843700,2022,SSI,historical-extraction.csv:reported_contribution,decentralized identity,A decentralized identity management framework for IIoT.,inventory_only
-10.1109/LCN53696.2022.9843700,2022,INDY,main.tex:control_method,Indy,Decentralized IIoT identity management. Ethereum and Hyperledger Indy. \\ \hline,inventory_only
-2022-hei-bct-ssi,2022,SSI,main.tex:control_method,SSI,SSI for student credentials. \\ \hline,inventory_only
+10.1109/LCN53696.2022.9843700,2022,INDY,main.tex:control_method,Indy,Decentralized IIoT identity management. Ethereum and Hyperledger Indy. \\,inventory_only
+2022-hei-bct-ssi,2022,SSI,main.tex:control_method,SSI,SSI for student credentials. \\,inventory_only
 2022-hei-bct-ssi,2022,SSI,historical-extraction.csv:reported_contribution,SSI,An SSI management framework for student credentials.,inventory_only
-2022-hei-bct-ssi,2022,CREDENTIAL,main.tex:control_method,credentials,SSI for student credentials. \\ \hline,inventory_only
+2022-hei-bct-ssi,2022,CREDENTIAL,main.tex:control_method,credentials,SSI for student credentials. \\,inventory_only
 2022-hei-bct-ssi,2022,CREDENTIAL,historical-extraction.csv:reported_contribution,credentials,An SSI management framework for student credentials.,inventory_only
-10.15439/2022F194,2022,SSI,main.tex:control_method,SSI,SSI for inter-organizational pharmaceutical supply-chain processes. Ethereum. \\ \hline,inventory_only
+10.15439/2022F194,2022,SSI,main.tex:control_method,SSI,SSI for inter-organizational pharmaceutical supply-chain processes. Ethereum. \\,inventory_only
 10.15439/2022F194,2022,SSI,historical-extraction.csv:reported_contribution,SSI,An SSI approach for Inter-Organizational Business Processes (IOBP).,inventory_only
-updateZeydan2024ABSIdentity,2024,SSI,main.tex:control_method,DIDComm,"Indy/Aries credentials, DIDComm, and issuer revocation; proposed aerial/ground operator authentication and handover. \\ \hline",primary_fulltext_verified_via_assessment
+updateZeydan2024ABSIdentity,2024,SSI,main.tex:control_method,DIDComm,"Indy/Aries credentials, DIDComm, and issuer revocation; proposed aerial/ground operator authentication and handover. \\",primary_fulltext_verified_via_assessment
 updateZeydan2024ABSIdentity,2024,SSI,recent-extraction.csv:approach,DID,DID/credential presentation and DIDComm messaging; issuer-controlled revocation; proposed credential checks during ABS authentication/handover,primary_fulltext_verified_via_assessment
 updateZeydan2024ABSIdentity,2024,SSI,synthesis-evidence-matrix.csv:reported_mechanism,DID,DID/credential presentation and DIDComm messaging; issuer-controlled revocation; proposed credential checks during ABS authentication/handover,primary_fulltext_verified_via_assessment
-updateZeydan2024ABSIdentity,2024,CREDENTIAL,main.tex:control_method,credentials,"Indy/Aries credentials, DIDComm, and issuer revocation; proposed aerial/ground operator authentication and handover. \\ \hline",primary_fulltext_verified_via_assessment
+updateZeydan2024ABSIdentity,2024,CREDENTIAL,main.tex:control_method,credentials,"Indy/Aries credentials, DIDComm, and issuer revocation; proposed aerial/ground operator authentication and handover. \\",primary_fulltext_verified_via_assessment
 updateZeydan2024ABSIdentity,2024,CREDENTIAL,recent-extraction.csv:approach,credential,DID/credential presentation and DIDComm messaging; issuer-controlled revocation; proposed credential checks during ABS authentication/handover,primary_fulltext_verified_via_assessment
 updateZeydan2024ABSIdentity,2024,CREDENTIAL,synthesis-evidence-matrix.csv:reported_mechanism,credential,DID/credential presentation and DIDComm messaging; issuer-controlled revocation; proposed credential checks during ABS authentication/handover,primary_fulltext_verified_via_assessment
-updateZeydan2024ABSIdentity,2024,INDY,main.tex:control_method,Indy,"Indy/Aries credentials, DIDComm, and issuer revocation; proposed aerial/ground operator authentication and handover. \\ \hline",primary_fulltext_verified_via_assessment
+updateZeydan2024ABSIdentity,2024,INDY,main.tex:control_method,Indy,"Indy/Aries credentials, DIDComm, and issuer revocation; proposed aerial/ground operator authentication and handover. \\",primary_fulltext_verified_via_assessment
 updateZeydan2024SSI,2024,FL,main.tex:application,federated,Vehicular federated learning,primary_fulltext_verified
 updateZeydan2024SSI,2024,FL,recent-extraction.csv:application,federated,Vehicular federated learning,primary_fulltext_verified
 updateZeydan2024SSI,2024,FL,synthesis-evidence-matrix.csv:operation,FL,Authenticate vehicular FL participants and present/revoke credentials,primary_fulltext_verified
-updateZeydan2024SSI,2024,SSI,main.tex:control_method,SSI,"SSI registration and credentials for participant authentication, distinct from model-update privacy; Hyperledger Indy. \\ \hline",primary_fulltext_verified
+updateZeydan2024SSI,2024,SSI,main.tex:control_method,SSI,"SSI registration and credentials for participant authentication, distinct from model-update privacy; Hyperledger Indy. \\",primary_fulltext_verified
 updateZeydan2024SSI,2024,SSI,recent-extraction.csv:approach,SSI,SSI registration/authentication and credential presentation/signing/revocation; ECC-based authentication protocol,primary_fulltext_verified
-updateZeydan2024SSI,2024,CREDENTIAL,main.tex:control_method,credentials,"SSI registration and credentials for participant authentication, distinct from model-update privacy; Hyperledger Indy. \\ \hline",primary_fulltext_verified
+updateZeydan2024SSI,2024,CREDENTIAL,main.tex:control_method,credentials,"SSI registration and credentials for participant authentication, distinct from model-update privacy; Hyperledger Indy. \\",primary_fulltext_verified
 updateZeydan2024SSI,2024,CREDENTIAL,recent-extraction.csv:approach,credential,SSI registration/authentication and credential presentation/signing/revocation; ECC-based authentication protocol,primary_fulltext_verified
 updateZeydan2024SSI,2024,CREDENTIAL,synthesis-evidence-matrix.csv:operation,credentials,Authenticate vehicular FL participants and present/revoke credentials,primary_fulltext_verified
 updateZeydan2024SSI,2024,CREDENTIAL,synthesis-evidence-matrix.csv:reported_mechanism,credentials,Indy credentials and ECC-based authentication,primary_fulltext_verified
-updateZeydan2024SSI,2024,INDY,main.tex:control_method,Indy,"SSI registration and credentials for participant authentication, distinct from model-update privacy; Hyperledger Indy. \\ \hline",primary_fulltext_verified
+updateZeydan2024SSI,2024,INDY,main.tex:control_method,Indy,"SSI registration and credentials for participant authentication, distinct from model-update privacy; Hyperledger Indy. \\",primary_fulltext_verified
 updateZeydan2024SSI,2024,INDY,synthesis-evidence-matrix.csv:reported_mechanism,Indy,Indy credentials and ECC-based authentication,primary_fulltext_verified
-updateLiu2024SSDID,2024,SSI,main.tex:control_method,DID,"Sharded DID/credential events, aggregate Byzantine fault-tolerant certificates, and Merkle cross-field proofs; permissioned sharding simulation. \\ \hline",primary_fulltext_verified
+updateLiu2024SSDID,2024,SSI,main.tex:control_method,DID,"Sharded DID/credential events, aggregate Byzantine fault-tolerant certificates, and Merkle cross-field proofs; permissioned sharding simulation. \\",primary_fulltext_verified
 updateLiu2024SSDID,2024,SSI,recent-extraction.csv:approach,DID,"Sharded DID/credential events, aggregate BFT certificates, and Merkle cross-field proofs",primary_fulltext_verified
 updateLiu2024SSDID,2024,SSI,synthesis-evidence-matrix.csv:reported_mechanism,DID,"Sharded DID/credential events, aggregate BFT certificates, and Merkle cross-field proofs",primary_fulltext_verified
 updateLiu2024SSDID,2024,CREDENTIAL,main.tex:application,credential,Cross-shard credential verification,primary_fulltext_verified
-updateLiu2024SSDID,2024,CREDENTIAL,main.tex:control_method,credential,"Sharded DID/credential events, aggregate Byzantine fault-tolerant certificates, and Merkle cross-field proofs; permissioned sharding simulation. \\ \hline",primary_fulltext_verified
+updateLiu2024SSDID,2024,CREDENTIAL,main.tex:control_method,credential,"Sharded DID/credential events, aggregate Byzantine fault-tolerant certificates, and Merkle cross-field proofs; permissioned sharding simulation. \\",primary_fulltext_verified
 updateLiu2024SSDID,2024,CREDENTIAL,recent-extraction.csv:application,credential,Cross-shard credential verification,primary_fulltext_verified
 updateLiu2024SSDID,2024,CREDENTIAL,recent-extraction.csv:approach,credential,"Sharded DID/credential events, aggregate BFT certificates, and Merkle cross-field proofs",primary_fulltext_verified
 updateLiu2024SSDID,2024,CREDENTIAL,synthesis-evidence-matrix.csv:operation,credential,Cross-shard credential verification,primary_fulltext_verified
 updateLiu2024SSDID,2024,CREDENTIAL,synthesis-evidence-matrix.csv:reported_mechanism,credential,"Sharded DID/credential events, aggregate BFT certificates, and Merkle cross-field proofs",primary_fulltext_verified
 updateRamirez2025IOTAIdentity,2025,SSI,recent-extraction.csv:approach,DIDs,IOTA Identity DIDs/VCs/VPs; Streams encrypted channels; Stronghold key custody; issuer credential revocation,primary_fulltext_verified_via_assessment
 updateRamirez2025IOTAIdentity,2025,SSI,synthesis-evidence-matrix.csv:reported_mechanism,DIDs,IOTA Identity DIDs/VCs/VPs; Streams encrypted channels; Stronghold key custody; issuer credential revocation,primary_fulltext_verified_via_assessment
-updateRamirez2025IOTAIdentity,2025,CREDENTIAL,main.tex:control_method,credentials,"IOTA credentials, Streams encrypted channels, Stronghold key custody, and issuer revocation; Tangle distributed ledger technology. \\ \hline",primary_fulltext_verified_via_assessment
+updateRamirez2025IOTAIdentity,2025,CREDENTIAL,main.tex:control_method,credentials,"IOTA credentials, Streams encrypted channels, Stronghold key custody, and issuer revocation; Tangle distributed ledger technology. \\",primary_fulltext_verified_via_assessment
 updateRamirez2025IOTAIdentity,2025,CREDENTIAL,recent-extraction.csv:approach,VCs,IOTA Identity DIDs/VCs/VPs; Streams encrypted channels; Stronghold key custody; issuer credential revocation,primary_fulltext_verified_via_assessment
 updateRamirez2025IOTAIdentity,2025,CREDENTIAL,synthesis-evidence-matrix.csv:operation,credentials,Present IoT device credentials and establish authorized data channels,primary_fulltext_verified_via_assessment
 updateRamirez2025IOTAIdentity,2025,CREDENTIAL,synthesis-evidence-matrix.csv:reported_mechanism,VCs,IOTA Identity DIDs/VCs/VPs; Streams encrypted channels; Stronghold key custody; issuer credential revocation,primary_fulltext_verified_via_assessment
-updateRamirez2025IOTAIdentity,2025,IOTA,main.tex:control_method,IOTA,"IOTA credentials, Streams encrypted channels, Stronghold key custody, and issuer revocation; Tangle distributed ledger technology. \\ \hline",primary_fulltext_verified_via_assessment
+updateRamirez2025IOTAIdentity,2025,IOTA,main.tex:control_method,IOTA,"IOTA credentials, Streams encrypted channels, Stronghold key custody, and issuer revocation; Tangle distributed ledger technology. \\",primary_fulltext_verified_via_assessment
 updateRamirez2025IOTAIdentity,2025,IOTA,recent-extraction.csv:approach,IOTA,IOTA Identity DIDs/VCs/VPs; Streams encrypted channels; Stronghold key custody; issuer credential revocation,primary_fulltext_verified_via_assessment
 updateRamirez2025IOTAIdentity,2025,IOTA,synthesis-evidence-matrix.csv:reported_mechanism,IOTA,IOTA Identity DIDs/VCs/VPs; Streams encrypted channels; Stronghold key custody; issuer credential revocation,primary_fulltext_verified_via_assessment
 updateRen2025AIoTIdentity,2025,CREDENTIAL,recent-extraction.csv:approach,credential,User/KGC partial keys; selective-disclosure credential construction/aggregation; context and lifetime rules generate access permissions,primary_fulltext_verified_via_assessment

@@ -3,7 +3,7 @@
   "title": "Blockchain-Aided Data Sharing: A Survey of Privacy, Consent, and Identity",
   "study_update_search_date": "2026-09-30",
   "source_description": "139 included publications (48 privacy, 59 consent, 32 identity), reconciled by identity and table label with the current manuscript. Detailed comparisons cover 53 included publications and 17 contextual sources. Evaluation tables repeat 8 privacy, 26 consent and 7 identity publications. The 41 additions have distinct provenance: 38 from the original 50 Scholar observations, two from additional Scopus exports and one targeted S04 follow-up. Retrieval and unfinished screening remain separate from inclusion. The current chronology plot describes the full inventory. The excluded two-study processing-cost illustration is retained for historical reproduction.",
-  "manuscript_sha256": "2d84521cc25c524df9de5b76fb87aa9cb72237f9218404a21988b5206a316836",
+  "manuscript_sha256": "d347c81ff03fc041fe63f52c708d418eeb6f86435041bc1dedbfff82a52c0efb",
   "canonical_dataset_sha256": "80cd8d7b5938bf1c7b105e7b6518e9a87f52ec7da07a4fc180031a75039b96c8",
   "source_files": {
     "historical-extraction.csv": "27a275574883afadf47e19dc23ceb195e2d0bc8fb7348e9bcb7859e1604474b4",
@@ -21,7 +21,7 @@
     "revisao/governance-sources.bib": "7bac267a7fe148e54a3a87f830a450ffe805172064f2f685276eab853702f2f4",
     "revisao/historical-method-audit.md": "b4c3ec5f370d79552917f47a7f4568e81aa19008d0c26c54e8aa62b9e2c18a1f",
     "revisao/literature-search-log.md": "2470ef7134152d66dad6976ae2a031db3b35be3cc9328b208144f0794ac38311",
-    "revisao/manuscript-membership.json": "6ef264ce8bfe42ba964062384ff1b5310711795328d49b00dd8228caefb97961",
+    "revisao/manuscript-membership.json": "683211c80d63bac0409b071c129180e0bb5e128768c9398c941c78174164ad81",
     "revisao/policy-context-sources.bib": "e49436ee243d482ca764d353496dd4c8e9cbcb39ba3d76be53ca0d639941d457",
     "revisao/protocol-eligibility.csv": "f089f458fc61d371ab21b9bccf9cdefa9fc9a35ecc702787eee1b5b4e009196c",
     "revisao/protocol-retrieval-status.json": "983c11e19f4f977f13154495638c3a01f54dbe5ead7a181b8c077b9b95997ff6",
@@ -62,11 +62,11 @@
     "revisao/plot_technology_timeline.py": "0960877f43c519960f63fea371555a0d46f1b0fea160139a00bbb3801b59446a",
     "revisao/technology-timeline-method.md": "fd1c9edb0df66626202e4fa21b47f95376fbfb63d914b5a1d4d07606ab04c62f",
     "revisao/technology-timeline-records.csv": "266360fa514d5c3e94ed4ba054c4048f108f070f0111f365ac58991bc8b3ad56",
-    "revisao/technology-timeline-matches.csv": "113df85545b30f28dd22efdb600379c36ce2c4f23f833ad2784fcc93410f21a1",
+    "revisao/technology-timeline-matches.csv": "338800d8fc1bae69f96a6317ddb9f047f1c66e17aa81c3b65a5b2bffe5f95aa2",
     "revisao/technology-timeline-counts.csv": "c241e9968ff162b11d70f231965bf81ee8e46d2ab37d30b48548f35a2fbbced5",
     "revisao/technology-timeline-periods.csv": "8c600e9834c5b8c6e87ac72a4bd0e68e93654016af9cb1b1309b962f0f877d99",
     "revisao/technology-timeline-combinations.csv": "781a0090c712c2210c878e4ca816a4d66bc9f0e4d0b05ed1b4984199171edacc",
-    "revisao/manuscript-inventory.tex": "0b24fef1436b0e19337514fc2ebe848a90ded687c2b774b485b32c86f24226b2"
+    "revisao/manuscript-inventory.tex": "44055f0afdde6c9a4b7adfec14b5be3b961fbac0e2f96c785202a8f331fc3338"
   },
   "legacy_base_commit": "67acd264f6eeecbc9dda91d3027d1c875295f4ec",
   "legacy_csv_sha256": {
