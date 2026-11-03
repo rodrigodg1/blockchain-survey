@@ -13,8 +13,10 @@
   "raw_observations": 843,
   "consolidated_candidates": 817,
   "decision_counts": {
-    "awaiting_title_abstract_screening": 781,
-    "duplicate_current_application": 36
+    "awaiting_title_abstract_screening": 777,
+    "retained_after_primary_text_check": 2,
+    "duplicate_current_application": 36,
+    "pending_primary_full_text": 2
   },
   "Scopus": {
     "S02": 496,
@@ -55,5 +57,8 @@
   "complete_scientific_screening": false,
   "identity_rule": "Match nonempty DOI. Normalized-title matches are provisional. DOI-less records are not silently merged into DOI-bearing records.",
   "application_counts_not_changed_by_retrieval": true,
-  "original_screening_reconstructed": false
+  "original_screening_reconstructed": false,
+  "assessment_date": "2026-10-26",
+  "selected_studies": 2,
+  "application_count_change_requires_assessment": "Two Scopus S02 records included after primary-description assessment; not from retrieval alone."
 }

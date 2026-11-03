@@ -28,7 +28,11 @@ MATRIX_SOURCE = 'revisao/synthesis-evidence-matrix.csv'
 APPLICATION_MATRIX_ROLES = {
     'historical_application', 'recent_application',
     'recent_application_addition', 'recent_application_search_completion',
+    'recent_application_database_update', 'recent_application_protocol_followup',
 }
+QUERY_GROUPS = {f'S{i:02}': group for group, start in
+                [('privacy', 1), ('consent', 4), ('identity', 7)]
+                for i in range(start, start + 3)}
 
 
 def digest(data):
@@ -58,7 +62,8 @@ def load_snapshot(root):
     return snapshot
 
 
-def validate_manuscript_membership(collection, matrix, recent, retained, snapshot, membership):
+def validate_manuscript_membership(collection, matrix, recent, retained, snapshot, membership,
+                                   inventory_text, derivations):
     if membership['manuscript_sha256'] != snapshot['manuscript_sha256']:
         raise ValueError('Manuscript membership fingerprint differs from source snapshot')
 
@@ -103,13 +108,62 @@ def validate_manuscript_membership(collection, matrix, recent, retained, snapsho
     if matrix_ids != detailed_ids | contextual_ids:
         raise ValueError('Synthesis matrix contains identities outside the declared membership')
 
-    expected_privacy = {r['citation_key'] for r in recent
-                        if retained[r['citation_key']]['query_id'] == 'S01'
+    evaluation_counts = {}
+    for group in ('privacy', 'consent', 'identity'):
+        ids = unique_ids(membership['evaluation_ids_by_group'][group], group + ' evaluation membership')
+        expected_ids = {r['citation_key'] for r in recent
+                        if QUERY_GROUPS[retained[r['citation_key']]['query_id']] == group
                         and r['evaluation'].strip()}
-    if privacy_evaluation_ids != expected_privacy:
-        raise ValueError('Privacy evaluation membership differs from primary extraction')
-    if not privacy_evaluation_ids <= detailed_ids:
-        raise ValueError('Privacy evaluation summaries must belong to the detailed application examples')
+        if ids != expected_ids or not ids <= detailed_ids:
+            raise ValueError(group + ' evaluation membership differs from primary extraction')
+        evaluation_counts[group] = len(ids)
+    if privacy_evaluation_ids != set(membership['evaluation_ids_by_group']['privacy']):
+        raise ValueError('Privacy evaluation membership fields disagree')
+    if evaluation_counts != snapshot['counts']['evaluation_summaries_by_group']:
+        raise ValueError('Evaluation counts disagree with manuscript membership')
+
+    # Plot inputs retain the exact six inventory tables without redistributing
+    # the complete manuscript. Check their identities and detailed markers.
+    excerpt_works, excerpt_detailed = [], set()
+    table_groups = {r['source_table']: r['review_group'] for r in works}
+    for block in re.findall(r'\\begin\{longtable\}.*?\\end\{longtable\}', inventory_text, re.S):
+        label = re.search(r'\\label\{([^}]+)\}', block)
+        if not label or label[1] not in table_groups:
+            raise ValueError('Unknown table in manuscript inventory excerpt')
+        for line in block.splitlines():
+            if not line.startswith(r'\cite{'):
+                continue
+            key = re.match(r'\\cite\{([^}]+)\}', line)[1]
+            excerpt_works.append({'study_id': key, 'review_group': table_groups[label[1]],
+                                  'source_table': label[1]})
+            if r'\dagger' in line:
+                excerpt_detailed.add(key)
+    if excerpt_works != works or excerpt_detailed != detailed_ids:
+        raise ValueError('Manuscript inventory excerpt differs from recorded membership')
+
+    objectives = {f'G{i}' for i in range(1, 9)}
+    matrix_by_id = {r['matrix_id']: r for r in matrix}
+    if set(membership['research_questions']) != {'RQ1', 'RQ2', 'RQ3'}:
+        raise ValueError('Manuscript research questions are missing or duplicated')
+    if {r['requirement_id'] for r in derivations} != objectives or len(derivations) != 8:
+        raise ValueError('Missing or duplicate objective derivation')
+    if set(membership['objective_source_ids']) != objectives:
+        raise ValueError('Manuscript objective citations are incomplete')
+    for row in derivations:
+        anchors = row['application_matrix_ids'].split(';')
+        if len(set(anchors)) < 2:
+            raise ValueError('Each objective requires its recorded application contrast')
+        expected_keys = {matrix_by_id[a]['citation_key'] for a in anchors}
+        if not expected_keys <= set(membership['objective_source_ids'][row['requirement_id']]):
+            raise ValueError('Objective citations differ from manuscript derivation')
+        for anchor in anchors:
+            source = matrix_by_id[anchor]
+            if source['citation_key'] not in detailed_ids or source['verification_status'] != 'primary_fulltext_verified':
+                raise ValueError('Objective anchor lacks its recorded direct primary-text check')
+
+    statuses = Counter(r['verification_status'] for r in matrix
+                       if r['citation_key'] in detailed_ids)
+    fulltext = statuses['primary_fulltext_verified'] + statuses['primary_fulltext_verified_via_assessment']
     expected = snapshot['counts']
     if (len(detailed_ids), len(contextual_ids), len(privacy_evaluation_ids)) != (
             expected['detailed_application_examples'], expected['contextual_sources'],
@@ -124,6 +178,10 @@ def validate_manuscript_membership(collection, matrix, recent, retained, snapsho
         'application_examples_by_group': dict(Counter(collection_by_id[key]['review_group']
                                                      for key in sorted(detailed_ids))),
         'privacy_evaluation_summaries': len(privacy_evaluation_ids),
+        'evaluation_summaries_by_group': evaluation_counts,
+        'application_source_access': dict(statuses),
+        'fulltext_direct_or_assessment': fulltext,
+        'limited_or_unverified': len(detailed_ids) - fulltext,
         'contextual_sources_in_application_denominator': False,
         'scope': 'Source-linked qualitative comparisons; not uniform assessment of all included works',
     }
@@ -137,6 +195,7 @@ def build_artifacts(root=ROOT):
         if name not in snapshot['source_files']:
             raise ValueError('Required membership source is not fingerprinted in snapshot: ' + name)
     membership = json.loads((source_root / MEMBERSHIP_SOURCE).read_text(encoding='utf-8'))
+    inventory_text = (source_root / 'revisao/manuscript-inventory.tex').read_text(encoding='utf-8')
     DATE = snapshot['artifact_date']
     OUT = Path('.')
     artifacts = {}
@@ -178,9 +237,31 @@ def build_artifacts(root=ROOT):
     observed = rows('revisao/protocol-search-records.csv')
     retrieval_status = json.loads((source_root / 'revisao/protocol-retrieval-status.json').read_text(encoding='utf-8'))
     expansion_status = json.loads((source_root / 'revisao/search-completion-status.json').read_text(encoding='utf-8'))
-    retained = {r['citation_key']: r for r in observed
+    scholar_retained = {r['citation_key']: r for r in observed
                 if r['decision'] == 'retained_after_primary_text_check'}
-    query_groups = {'S01': 'privacy', 'S04': 'consent', 'S07': 'identity'}
+    retained = dict(scholar_retained)
+    candidates = rows('revisao/search-completion-candidates-metadata.csv')
+    additional = []
+    for record in candidates:
+        if record['decision'] != 'retained_after_primary_text_check':
+            continue
+        queries = json.loads(record['query_ids'])
+        if len({QUERY_GROUPS[q] for q in queries}) != 1 or not record['primary_text_url']:
+            raise ValueError('Additional inclusion lacks an unambiguous query family or primary source')
+        additional.append({'citation_key': record['current_citation_key'],
+                           'query_id': queries[0], 'record_id': record['record_id']})
+    followup = [r for r in rows('revisao/protocol-followup-records-2026-10-26.csv')
+                if r['decision'] == 'retained_after_primary_text_check']
+    for record in additional + followup:
+        key = record['citation_key']
+        if not key or key in retained:
+            raise ValueError('Duplicate or missing inclusion identity across retrieval strata')
+        if 'review_group' in record and QUERY_GROUPS[record['query_id']] != record['review_group']:
+            raise ValueError('Follow-up query family disagrees with recorded group')
+        retained[key] = record
+    if len(candidates) != expansion_status['consolidated_candidates'] or dict(Counter(r['decision'] for r in candidates)) != expansion_status['decision_counts']:
+        raise ValueError('Additional retrieval dispositions disagree with candidate metadata')
+    query_groups = QUERY_GROUPS
     groups = ['privacy', 'consent', 'identity']
     collection = []
 
@@ -249,18 +330,19 @@ def build_artifacts(root=ROOT):
         raise ValueError('Invalid source data: len(observed) == 50')
     if not (Counter(r['query_id'] for r in observed) == {'S01': 10, 'S04': 30, 'S07': 10}):
         raise ValueError("Invalid source data: Counter((r['query_id'] for r in observed)) == {'S01': 10, 'S04': 30, 'S07': 10}")
-    if decisions['retained_after_primary_text_check'] != len(recent):
-        raise ValueError('Retained decision count disagrees with included studies')
+    if decisions['retained_after_primary_text_check'] != len(scholar_retained):
+        raise ValueError('Scholar decision count disagrees with its own retrieval stratum')
     excluded = {k: v for k, v in decisions.items() if k.startswith('excluded_')}
     pending = decisions['candidate_full_text_assessment_not_completed'] + decisions['pending_primary_full_text']
     other = {k: v for k, v in decisions.items() if k not in {
         'retained_after_primary_text_check', 'candidate_full_text_assessment_not_completed',
         'pending_primary_full_text'} and k not in excluded}
-    if len(recent) + pending + sum(excluded.values()) + sum(other.values()) != len(observed):
+    if len(scholar_retained) + pending + sum(excluded.values()) + sum(other.values()) != len(observed):
         raise ValueError('Disposition categories do not account for all observed records')
 
     detailed_analysis = validate_manuscript_membership(
-        collection, rows(MATRIX_SOURCE), recent, retained, snapshot, membership)
+        collection, rows(MATRIX_SOURCE), recent, retained, snapshot, membership,
+        inventory_text, rows('revisao/requirement-derivation.csv'))
 
     write_csv(OUT / 'survey-dataset.csv', collection)
     count_rows = [{'review_group': g, 'historical': hc[g], 'supplementary_update': uc[g],
@@ -276,7 +358,8 @@ def build_artifacts(root=ROOT):
         'supplementary_update': {
             'year_filter': '2024-2026', 'observed_query_records': len(observed),
             'query_record_counts': dict(Counter(r['query_id'] for r in observed)),
-            'selected_studies': len(recent), 'selected_by_group': dict(uc),
+            'selected_studies': len(scholar_retained),
+            'selected_by_group': dict(Counter(query_groups[r['query_id']] for r in scholar_retained.values())),
             'decision_counts': dict(decisions), 'other_recorded_dispositions': other,
             'excluded_application_records': sum(excluded.values()), 'excluded_decision_counts': excluded,
             'pending_records': pending,
@@ -286,10 +369,15 @@ def build_artifacts(root=ROOT):
             'complete_search': False, 'complete_screening': False,
         },
         'additional_retrieval': expansion_status,
+        'targeted_protocol_followup': {
+            'date': '2026-10-26', 'query_id': 'S04', 'assessed_records': 1,
+            'selected_studies': len(followup), 'observed_rank': 54,
+            'outside_original_50_and_exported_817': True, 'complete_screening': False},
         'combined': {'application_studies': len(collection), 'by_group': dict(cc),
                      'group_interpretation': 'Accounting groups, not disjoint system-capability classes',
                      'contextual_references_counted_as_application_studies': False},
         'detailed_analysis': detailed_analysis,
+        'research_questions': membership['research_questions'],
         'identity_checks': {'unique_citation_keys': len(collection), 'nonempty_dois': len(dois),
                             'unique_nonempty_dois': len(set(dois)),
                             'missing_dois': len(collection)-len(dois),
@@ -303,18 +391,20 @@ def build_artifacts(root=ROOT):
         raise ValueError('Collection differs from the verified manuscript dataset')
     eligibility = rows('revisao/protocol-eligibility.csv')
     included = [r['citation_key'] for r in eligibility if r['decision'] == 'include']
-    if len(included) != len(retained) or set(included) != set(retained):
-        raise ValueError('Eligibility records disagree with included update studies')
+    if len(included) != len(scholar_retained) or set(included) != set(scholar_retained):
+        raise ValueError('Ancillary eligibility records disagree with original Scholar inclusions')
     status = json.loads((source_root / 'revisao/protocol-retrieval-status.json').read_text(encoding='utf-8'))
     if status['decision_counts'] != counts['supplementary_update']['decision_counts']:
         raise ValueError('Retrieval summary disagrees with query records')
-    if status['retrieved_result_records'] != len(observed) or status['included_primary_studies'] != len(recent):
+    if status['retrieved_result_records'] != len(observed) or status['included_primary_studies'] != len(scholar_retained):
         raise ValueError('Retrieval summary counts disagree with extraction')
     expected = snapshot['counts']
     if (expected['historical'], expected['recent'], expected['combined'], expected['observed_records']) != (len(historical), len(recent), len(collection), len(observed)):
         raise ValueError('Snapshot counts disagree with extraction')
     if expected['by_group'] != dict(cc) or expected['pending_records'] != pending:
         raise ValueError('Snapshot group/pending counts disagree with records')
+    if (expected['scholar_inclusions'], expected['additional_export_inclusions'], expected['targeted_followup_inclusions']) != (len(scholar_retained), len(additional), len(followup)):
+        raise ValueError('Snapshot inclusion counts disagree with separate retrieval strata')
     if snapshot['complete_search'] or snapshot['complete_screening'] or snapshot['contextual_references_in_application_denominator']:
         raise ValueError('Snapshot overstates the documented scope')
     dictionary = json.loads((root / 'docs/data-dictionary.json').read_text(encoding='utf-8'))
@@ -386,7 +476,7 @@ def main(argv=None):
     print(json.dumps({'status': 'validated' if args.check else 'rebuilt_and_validated',
                       'studies': counts['combined']['application_studies'],
                       'historical': counts['historical']['selected_studies'],
-                      'recent': counts['supplementary_update']['selected_studies'],
+                      'recent': counts['combined']['application_studies'] - counts['historical']['selected_studies'],
                       'generated_files': len(artifacts),
                       'dataset_sha256': digest(artifacts['survey-dataset.csv'])}))
     return 0

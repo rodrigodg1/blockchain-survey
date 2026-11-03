@@ -1,26 +1,18 @@
-# Scope and documented protocol
+# Survey protocol and evidence scope
 
-Version: 2 October 2026. This document describes the current manuscript and its available records; it does not reconstruct undocumented historical procedures.
+Snapshot: 4 November 2026. The publication cutoff remains 30 September 2026. This document describes recorded procedures and preserves unresolved historical and retrieval limitations.
 
-## Review design and scope
+## Review design and accounting
 
-The review is a structured qualitative survey of privacy, consent/permission management and decentralized or self-sovereign identity in blockchain-assisted data sharing. Governance is an analytical perspective on authority, enforcement, responsibility and evidence, not a new eligibility predicate or a claim to review all organizational or blockchain-protocol governance.
+The qualitative survey covers privacy, consent/permission management and decentralized identity. Its 139 included publications comprise 48 privacy, 59 consent and 32 identity records. Search-topic groups support counting and do not imply disjoint capabilities. The analytical unit is a sharing or processing operation; one publication may describe several operations.
 
-The three research questions distinguish the following comparisons:
+RQ1 concerns privacy, consent and selective sharing. RQ2 concerns individual identity control. RQ3 concerns enabling platforms and protocols. The exact manuscript questions are recorded in [manuscript-membership.json](../data/sources/revisao/manuscript-membership.json), together with the six inventory-table memberships and repeated evaluation entries.
 
-- **RQ1, Protection:** cryptographic and privacy controls for retrieval, disclosure and processing; protected and exposed information under the stated assumptions.
-- **RQ2, Authorization and enforcement:** credentials and permission rules; on-chain/off-chain enforcement; authority over data, keys and permission changes.
-- **RQ3, Verification and evidence:** relations checked by credentials, proofs and audits; evaluated operations and limits of claims about data use and results.
+The historical collection contains 98 records (40/33/25). The 41 additions contain 8 privacy, 26 consent and 7 identity publications. Search decisions, not retrieval counts or bibliography size, establish inclusion.
 
-These questions organize the retained evidence by operation, control target, enforcing component and checked relation. They do not change study eligibility or imply algorithm-level extraction where the examined source does not support it.
+## Title queries
 
-The application collection contains **136 studies and proposals: 46 privacy, 58 consent/permission and 32 identity records**. These groups follow the recorded extraction or retrieval-query family. They are accounting groups rather than mutually exclusive technical capabilities. Source provenance identifies 98 retained and 38 recent applications. The application collection is not uniformly recoded into a new governance taxonomy.
-
-The [manuscript membership record](../data/sources/revisao/manuscript-membership.json) identifies the 136 included works, their groups and Appendix A table labels, the 50 detailed examples, the 17 contextual sources and the six repeated privacy evaluation entries. Its manuscript fingerprint matches the source snapshot. The builder checks identifiers as well as totals; the manuscript itself is not distributed here.
-
-## Reported title queries
-
-The historical search description uses Google Scholar, Scopus and ACM Digital Library, with no publication-year restriction. These are the reported predicates; listing a query does not establish that it was rerun for the update.
+The historical description has no lower publication-year limit. The contemporary searches applied 2024–2026 filters and the publication cutoff above. Listing a predicate does not establish complete retrieval or screening.
 
 | ID | Source | Reported query |
 |---|---|---|
@@ -34,59 +26,50 @@ The historical search description uses Google Scholar, Scopus and ACM Digital Li
 | S08 | Scopus | `TITLE(blockchain) AND TITLE(decentralized OR self-sovereign) AND TITLE(identity)` |
 | S09 | ACM DL | `[Title: blockchain] AND [[Title: decentralized] OR [Title: self-sovereign]] AND [Title: identity]` |
 
-## Update retrieval
+## Recorded retrieval and decisions
 
-On 30 September 2026, S01, S04 and S07 were rerun with a 2024–2026 publication-year filter and a cutoff of that date. The inspected pages were S01 page 1, S04 pages 1–3, and S07 page 1: respectively 10, 30 and 10 observed records. These are recorded observations, not estimates of all results returned or counts of unique publications across databases.
+On 30 September 2026, the original Scholar observations covered S01 page 1, S04 pages 1–3 and S07 page 1: 10, 30 and 10 records. Their current decisions remain separate from later retrieval:
 
-On 1 October 2026, institutional access enabled Scopus S02/S05/S08, with 496/47/175 exported observations, and ACM S03/S06/S09, with 15/12/8 observations in the Full-Text Collection. The ACM date filter was January 2024 through September 2026. The Guide to Computing Literature was not searched. Scopus year-only matches require a primary publication-date check before admission. Expanded Scholar S01 pages 19--27 are retained (90 observations), while complete Scholar pagination remains unfinished.
-
-The original [50 observations](../data/sources/revisao/protocol-search-records.csv) retain their native query/rank/date linkage and have the following current decisions:
-
-| Disposition | Observed records |
+| Original Scholar disposition | Records |
 |---|---:|
-| Included after primary-text check | 38 |
-| Awaiting sufficient primary full text | 1 |
-| Completed application-scope exclusions | 3 |
-| Review records | 6 |
+| Included | 38 |
+| Pending sufficient primary text | 1 |
+| Excluded for application scope | 3 |
+| Reviews | 6 |
 | Review protocol | 1 |
 | This manuscript | 1 |
-| Total | 50 |
+| **Total** | **50** |
 
-The 35-row follow-up assessment now records 30 inclusions, three application-scope exclusions, one review and one pending primary text. The original eight update inclusions are preserved. Seventeen of the 18 observations pending after the initial assessment are now resolved. Exact primary methods and boundaries for the latest 14 inclusions are in [search-completion-primary-evidence.md](../data/sources/revisao/search-completion-primary-evidence.md).
+On 1 October 2026, Scopus S02/S05/S08 exports contained 496/47/175 observations. ACM S03/S06/S09 contained 15/12/8 observations in the Full-Text Collection, filtered to January 2024 through September 2026. ACM's Guide to Computing Literature was not searched. Scopus year-only matches required primary publication-date checking. Retained expanded Scholar S01 pages 19–27 contain 90 observations; complete Scholar pagination remains unfinished.
 
-Additional exports contain 843 raw observations and 817 provisionally consolidated candidates. DOI matching applies only to nonempty normalized identifiers. Title-only matching remains provisional, and DOI-less observations are not silently merged with DOI-bearing records. Candidate retrieval and consolidation are separate from application eligibility. Their scientific screening is incomplete. The public metadata file omits indexed abstracts; the original raw-file hashes are retained in the snapshot. No complete historical search or screening total is reconstructed from these new counts.
+These additional exports contain 843 observations and 817 provisionally consolidated candidates. Their current dispositions are 777 awaiting title/abstract screening, 36 matches to existing included publications, two pending primary text and two retained after assessment. The two retained Scopus S02 publications are InvisiReveal and the distributed-KMS study, assessed on 26 October 2026. [Assessment records](../data/sources/revisao/database-update-extraction-2026-10-26.csv).
 
-## Eligibility and extraction
+A separate targeted S04 follow-up on 26 October assessed one author-suggested sports-data paper at observed rank 54 (page 6). It met the same cutoff and eligibility conditions. Intervening results were not systematically screened. This inclusion is outside both the original 50 observations and the 817 additional candidates. [Native follow-up record](../data/sources/revisao/protocol-followup-records-2026-10-26.csv).
 
-Recent inclusions must satisfy an original title predicate, concern a mechanism in the review's data-sharing scope, have a verifiable publication date/version, and provide accessible primary text supporting the extracted description. An identifiable workflow or mechanism and a source location are required. A study need not implement privacy, consent and identity simultaneously.
+The included total is therefore **98 + 38 + 2 + 1 = 139**. `run.py` verifies the three addition strata independently. The ancillary `protocol-eligibility.csv` documents the original 38 inclusions and separate exploratory exclusions; it is not the master log for every retrieval stratum. Indexed abstracts are omitted from public candidate metadata; raw-export fingerprints remain in the source snapshot.
 
-Assessment initially prioritized accessible primary texts and topics under revision. This affects the composition of a partial update and is documented as a selection limitation, not an additional eligibility criterion. Neither FHE nor QoE is a retrieval or inclusion requirement. The title interpretation distinguishes standalone `permission`/`permissions` from `permissionless` consensus terminology alone.
+## Eligibility, identities and extraction
 
-Empirical benchmarking and validation of every announced security property are not inclusion conditions. Descriptive eligibility and appraisal of claims are separate. Reviews are contextual related work rather than new application studies. Duplicate versions, out-of-window sources, sources outside title/scope requirements and candidates without sufficient primary evidence are not included in the recent comparison. Incomplete assessments are recorded as pending rather than completed exclusions.
+Available recent screening records require a matching title family, a blockchain-assisted application or control involving user-data protection, consent/permission or decentralized identity, an accessible primary description and a verifiable date/version. A paper need not implement all three functions. Conceptual designs, commentary containing an original workflow, preprints and evaluated systems are eligible. Reviews are contextual related work. Incomplete assessments remain pending.
 
-[protocol-eligibility.csv](../data/sources/revisao/protocol-eligibility.csv) is an ancillary eligibility record: its 38 `include` entries agree with the recent extraction. Five prior exploratory title-predicate exclusions remain separate from the original 50 observed records and the additional retrieval. They are not added to either retrieval denominator.
+Assessment prioritized accessible primary descriptions and topics under comparison. Neither FHE nor QoE is an inclusion requirement. Standalone permission/permissions is distinguished from permissionless consensus terminology. Selection was not exhaustive, and historical selection decisions cannot be reconstructed completely.
 
-The historical extraction records year, application, mechanism/contribution, platform and reported software availability. The recent extraction also records evaluation, evidence boundary, primary source URL and source location. Its 15-field source schema consists of the original 13 fields, the verified publication title and the additive `source_table` field linking each record to its specific Appendix A work table. The normalized study CSV retains its existing schema. These describe the publications; the reviewed implementations were not independently rerun. A repository link does not establish maintenance, deployment or reproducible results.
+DOI matching uses nonempty normalized identifiers. Missing DOI is not a duplicate identifier. Title matches remain provisional where metadata or versions conflict. The current included dataset has 139 unique citation keys and normalized titles, including 130 distinct nonempty DOIs. Every exported row links to its extraction record, native retrieval reference where available, bibliography and inventory table. Date bases remain separate: extraction year and final bibliography year can differ without creating a new inclusion.
 
-Each exported study links to its original extraction record. Bibliographic title, author, year and DOI are resolved through the manuscript bibliography. Missing DOI is not a duplicate identifier. The exported collection has 136 distinct citation keys and normalized titles. Nonempty DOI uniqueness and missing-DOI counts are derived from the source records and reported in [counts.json](../data/counts.json), rather than imposed as fixed release-independent expectations.
+The source bibliography classifies 137 works as journal articles, conference contributions or book chapters, plus two preprints: ClinConNet arXiv v1 and the FHIR oncology consent proposal TechRxiv v1. Peer review was not individually verified for all 137 published records. Source access is distinct from independent reproduction or endorsement of a security claim.
 
-## Context and synthesis
+## Detailed synthesis and figures
 
-Related reviews, standards, legislation, regulatory guidance and official platform documentation support interpretation. They are not additional application studies and do not form a separately exhaustive legal or governance review. The manuscript's regulatory context was checked on 1 October 2026; the new retrieval is documented separately from these contextual checks.
+The [70-row matrix](../data/sources/revisao/synthesis-evidence-matrix.csv) contains 53 application publications and 17 contextual sources. The 53 comprise all 41 additions and 12 historical examples, chosen retrospectively to compare contrasting operations and control points. They are not a representative sample. The other 86 publications were not uniformly coded against G1–G8.
 
-The 67-row [synthesis matrix](../data/sources/revisao/synthesis-evidence-matrix.csv) and its [method note](../data/sources/revisao/synthesis-evidence-method.md) distinguish source version and access level, described mechanism, evaluated operation, boundary and requirement derivation. The matrix contains 50 included-work examples and 17 contextual sources. The other 86 included works were not uniformly assessed against the eight design requirements. The [codebook](../data/sources/revisao/synthesis-codebook.md) defines coding and inference rules for RQ1–RQ3. The selected evidence informs eight conditional assessment criteria (G1–G8): identity/authority, authorization scope/state, key custody/release, confidentiality/correctness, audit/accountability, withdrawal/status, repeated-output inference and input provenance/truth. It is not uniform recoding of all 136 included works, a prevalence estimate or an evaluated reference architecture. Contextual standards and foundational research are not added applications.
+Application access records distinguish 37 direct full-text checks, nine source-specific assessment-stage full-text checks and seven limited or unverified sources. The latter do not support new algorithm-level or performance claims. The [codebook](../data/sources/revisao/synthesis-codebook.md) and [derivation register](../data/sources/revisao/requirement-derivation.csv) preserve the path from source observations and their limits to conditional evaluation objectives. Stored associations do not independently validate interpretation or establish requirement satisfaction.
 
-The follow-up comparison identifies evidence genres and versions: Barnes is commentary proposing an original biobanking workflow without a functioning prototype; Oke is extracted from TechRxiv v1, with v2 explicitly unexamined; Al-Sabahi reports a formative questionnaire and extrapolated costs rather than measured registry deployment; Gupta verifies selected technical predicates on supplied inputs rather than determining legal compliance. These distinctions preserve descriptive eligibility while limiting the claims supported by each source.
+Separate evaluation tables repeat 8 privacy, 26 consent and 7 identity publications. These 41 summaries add no publications to the inventory. Omission means no evaluation/limit detail was extracted for that table, not that the study has no evaluation.
 
-The synthesis distinguishes a credential from authority, a permission record from its application, and an audit record from evidence of correct computation or lawful processing. Each computation check must identify its relation, inputs, claimed output, verifier and acceptance assumptions. The [compact comparisons](../data/sources/revisao/rq-application-comparisons.csv) and [requirement derivations](../data/sources/revisao/requirement-derivation.csv) retain source identifiers and locations for the corresponding manuscript tables. Multiple participants do not establish distributed trust or a universal need for computation proofs. The selected examples identify design dependencies; they do not measure how prevalent complete integration is among all 136 records or in the wider literature.
+The timeline counts explicit names in existing descriptions, using all 139 publications in its denominators. It does not measure adoption or effectiveness. Processing-cost plots reuse two included papers' reported measurements without pooling performance across systems. [Plot method](../data/sources/revisao/technology-timeline-method.md), [measurement records](../data/sources/revisao/processing-costs-data.json), [reproduction instructions](../REPRODUCE.md).
 
-## Limits
+## Inference limits
 
-- Title-only retrieval, result ranking, access restrictions and incomplete assessment limit coverage, including coverage of 2024–2026.
-- Complete historical screening counts, exclusions, reviewer assignments and agreement statistics are unavailable. The passage from raw exports to all 98 historical selections cannot be reproduced from those exports alone.
-- Historical search totals differ between the former figure and available exports. The former deduplication incorrectly collapsed missing DOIs. Correcting the current script does not retroactively establish an improved historical selection.
-- Evaluation fields were not extracted uniformly across historical and recent records. Empty historical fields mean unpopulated, not absence of limitations or evaluations.
-- Extraction year and final bibliography year can differ because of publication-version metadata. A historical study with a later final issue year remains historical.
-- The collection supports source-specific qualitative comparisons, not pooled performance rankings, completeness claims, compliance certification or endorsement of every security claim.
+Title-only retrieval, ranking, access restrictions and incomplete screening limit coverage. Historical reviewer assignments, complete exclusions and agreement statistics are unavailable. The historical DOI-empty deduplication error does not become a valid selection rule through preservation; correcting current processing does not reconstruct the historical selection.
 
-No PRISMA flow, independent human screening or inter-rater agreement is claimed. The current totals describe the documented collection and partial update.
+The synthesis is retrospective and had automated research/extraction assistance. No independent human double coding, inter-rater reliability, literature saturation assessment, new primary experiment, exhaustive search or compliance certification is claimed. Missing evidence is not an observed attack. The dataset supports bounded qualitative comparisons and descriptive counts, not prevalence estimates or system-performance rankings.

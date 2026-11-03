@@ -1,8 +1,8 @@
 {
-  "snapshot_date": "2026-10-02",
-  "manuscript_sha256": "5c2db383277a1345a4b93657a4a59d9462a2e74f2189de3c055662c251fe0866",
+  "snapshot_date": "2026-11-04",
+  "manuscript_sha256": "e8e80e53e4adfe02270dddd7135de85a6694e87a7b6df3a6efd7e2ebde470c00",
   "publication_cutoff": "2026-09-30",
-  "derivation": "Included identities, search-topic groups and table anchors extracted from the six Appendix A work tables; detailed examples extracted from dagger markers; contextual sources extracted from the Survey Method citation groups; privacy evaluation identities extracted from their separate table. This records membership, not uniform extraction or independent source validation.",
+  "derivation": "Included identities, search-topic groups and table labels extracted from the six application-inventory tables; detailed examples from dagger markers; evaluation identities from three separate evaluation tables; RQs and objective citations from the current manuscript. This records membership and statements, not independent source validation.",
   "included_works": [
     {
       "study_id": "2015-decentralizing-privacy",
@@ -231,6 +231,16 @@
     },
     {
       "study_id": "updateGuan2025Healthcare",
+      "review_group": "privacy",
+      "source_table": "tab:privacy-works-2"
+    },
+    {
+      "study_id": "updateHu2024InvisiReveal",
+      "review_group": "privacy",
+      "source_table": "tab:privacy-works-2"
+    },
+    {
+      "study_id": "updateRen2024DistributedKMS",
       "review_group": "privacy",
       "source_table": "tab:privacy-works-2"
     },
@@ -485,6 +495,11 @@
       "source_table": "tab:consent-works-2"
     },
     {
+      "study_id": "updateFerreira2026SportsConsent",
+      "review_group": "consent",
+      "source_table": "tab:consent-works-2"
+    },
+    {
       "study_id": "updateAlSabahi2026AuthorshipConsent",
       "review_group": "consent",
       "source_table": "tab:consent-works-2"
@@ -709,12 +724,14 @@
     "updateDeepthika2024ConsentLSTM",
     "updateDhasaratha2024IoMT",
     "updateFerreira2025MCPFHIR",
+    "updateFerreira2026SportsConsent",
     "updateGhosh2024Banking",
     "updateGuan2025Healthcare",
     "updateGupta2024CertificatePermission",
     "updateGupta2024LungFL",
     "updateGupta2026ScalableConsent",
     "updateHemlata2026DualCare",
+    "updateHu2024InvisiReveal",
     "updateHussain2025ZeroTrust",
     "updateJaved2024SecureConsent",
     "updateLiu2024SSDID",
@@ -729,6 +746,7 @@
     "updateQu2025ConsentEMR",
     "updateRamirez2025IOTAIdentity",
     "updateRao2024Genomic",
+    "updateRen2024DistributedKMS",
     "updateRen2025AIoTIdentity",
     "updateRohini2024SmartConsent",
     "updateScaramuzza2026ZKConsent",
@@ -758,10 +776,101 @@
   ],
   "privacy_evaluation_ids": [
     "updateDhasaratha2024IoMT",
-    "updateGuan2025Healthcare",
+    "updateMaZhang2024Rollup",
+    "updateMasood2024Patient",
     "updateGupta2024LungFL",
     "updateHussain2025ZeroTrust",
-    "updateMaZhang2024Rollup",
-    "updateMasood2024Patient"
-  ]
+    "updateGuan2025Healthcare",
+    "updateHu2024InvisiReveal",
+    "updateRen2024DistributedKMS"
+  ],
+  "evaluation_ids_by_group": {
+    "privacy": [
+      "updateDhasaratha2024IoMT",
+      "updateMaZhang2024Rollup",
+      "updateMasood2024Patient",
+      "updateGupta2024LungFL",
+      "updateHussain2025ZeroTrust",
+      "updateGuan2025Healthcare",
+      "updateHu2024InvisiReveal",
+      "updateRen2024DistributedKMS"
+    ],
+    "consent": [
+      "updateCan2024AuditableConsent",
+      "updateJaved2024SecureConsent",
+      "updateRohini2024SmartConsent",
+      "updateGhosh2024Banking",
+      "updateRao2024Genomic",
+      "updateAyala2024DataConsent",
+      "updateDeepthika2024ConsentLSTM",
+      "updateGupta2024CertificatePermission",
+      "updateBarnes2025DemonstratedConsent",
+      "updateBonotis2025CONSENT",
+      "updateDauden2025RTBConsent",
+      "updateObodo2025MultiProviderConsent",
+      "updateOke2025FHIRConsent",
+      "updateTomaz2025PrivacHer",
+      "updateQu2025ConsentEMR",
+      "updateFerreira2025MCPFHIR",
+      "updateLu2025RedactableEducation",
+      "updateFerreira2026SportsConsent",
+      "updateAlSabahi2026AuthorshipConsent",
+      "updateCh2026ConsentOffloading",
+      "updateGupta2026ScalableConsent",
+      "updateMiao2026PermissionSupervision",
+      "updateNaghmouchi2026ClinConNet",
+      "updatePhuyal2026Architecture",
+      "updateScaramuzza2026ZKConsent",
+      "updateHemlata2026DualCare"
+    ],
+    "identity": [
+      "updateAgarkar2024BADIMAC",
+      "updateZeydan2024ABSIdentity",
+      "updateZeydan2024SSI",
+      "updateLiu2024SSDID",
+      "updateRamirez2025IOTAIdentity",
+      "updateRen2025AIoTIdentity",
+      "updateSeidi2025HealthcareSSI"
+    ]
+  },
+  "research_questions": {
+    "RQ1": "What mechanisms or strategies are used in blockchain applications to ensure privacy, consent management, and selective sharing among multiple stakeholders?",
+    "RQ2": "How can individuals control their identity in a decentralized infrastructure?",
+    "RQ3": "What are the existing blockchain platforms and protocols enabling user privacy and identity management?"
+  },
+  "objective_source_ids": {
+    "G1": [
+      "updateLiu2024SSDID",
+      "updateSeidi2025HealthcareSSI"
+    ],
+    "G2": [
+      "updateCan2024AuditableConsent",
+      "updateDauden2025RTBConsent"
+    ],
+    "G3": [
+      "2021-edge-light-smart-grid",
+      "updateHemlata2026DualCare"
+    ],
+    "G4": [
+      "updateScaramuzza2026ZKConsent",
+      "updateGupta2026ScalableConsent"
+    ],
+    "G5": [
+      "updateGhosh2024Banking",
+      "updateLu2025RedactableEducation"
+    ],
+    "G6": [
+      "updateHemlata2026DualCare",
+      "2021-did-prevent-secondary"
+    ],
+    "G7": [
+      "updateZeydan2024SSI",
+      "updateHussain2025ZeroTrust",
+      "context-dwork-roth2014"
+    ],
+    "G8": [
+      "2021-priv-iot-homo",
+      "updateAlSabahi2026AuthorshipConsent"
+    ]
+  }
 }

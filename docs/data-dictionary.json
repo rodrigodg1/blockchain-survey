@@ -19,8 +19,8 @@
   "primary_text_source_url": "Recent primary-text access source; blank historical field is unpopulated, not evidence of absence.",
   "primary_text_evidence_location": "Recent section/table/page attribution; not uniformly available for historical studies.",
   "query_id_observed": "Recent native query identifier; not retrospectively assigned to historical selections.",
-  "native_record": "Recent query/rank/page linkage to the 50 observed records.",
-  "source_table": "LaTeX label of the Appendix A work table containing the study.",
+  "native_record": "Native query/rank/page or export identifier for recent inclusions; original Scholar, additional-export and targeted-follow-up strata remain separate.",
+  "source_table": "LaTeX label of the Section 5 application-inventory table containing the publication.",
   "source_extraction_file": "Original CSV supplying the study-specific extracted fields.",
   "source_record_number": "One-based data-record index in that CSV, excluding header; not physical line number.",
   "verification_scope": "Explicit distinction between inherited historical extraction and checked recent descriptions."

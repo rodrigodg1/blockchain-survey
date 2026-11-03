@@ -90,9 +90,27 @@ class CollectionTests(unittest.TestCase):
         self.assertEqual(detail['contextual_sources'], snapshot['counts']['contextual_sources'])
         self.assertEqual(detail['matrix_records'], len(detailed | context))
         self.assertEqual(detail['included_works_not_detailed'], len(included - detailed))
-        self.assertEqual(detail['application_examples_by_group'], {'privacy': 12, 'consent': 27, 'identity': 11})
+        self.assertEqual(detail['application_examples_by_group'], {'privacy': 14, 'consent': 28, 'identity': 11})
         self.assertEqual(detail['privacy_evaluation_summaries'], snapshot['counts']['privacy_evaluation_summaries'])
+        self.assertEqual(detail['evaluation_summaries_by_group'], {'privacy': 8, 'consent': 26, 'identity': 7})
+        self.assertEqual(detail['fulltext_direct_or_assessment'], 46)
+        self.assertEqual(detail['limited_or_unverified'], 7)
         self.assertFalse(detail['contextual_sources_in_application_denominator'])
+
+    def test_added_retrieval_strata_do_not_inflate_original_scholar_denominator(self):
+        counts = json.loads(self.artifacts['counts.json'])
+        self.assertEqual(counts['supplementary_update']['selected_studies'], 38)
+        self.assertEqual(counts['supplementary_update']['observed_query_records'], 50)
+        self.assertEqual(counts['additional_retrieval']['selected_studies'], 2)
+        self.assertEqual(counts['targeted_protocol_followup']['selected_studies'], 1)
+        rows = list(csv.DictReader(io.StringIO(self.artifacts['survey-dataset.csv'].decode())))
+        by_id = {r['study_id']: r for r in rows}
+        for key, query in [('updateHu2024InvisiReveal', 'S02'),
+                           ('updateRen2024DistributedKMS', 'S02'),
+                           ('updateFerreira2026SportsConsent', 'S04')]:
+            self.assertEqual(by_id[key]['query_id_observed'], query)
+            self.assertTrue(by_id[key]['native_record'])
+        self.assertEqual(sum(r['collection'] == 'supplementary_update' for r in rows), 41)
 
     def copy_source_snapshot(self, root):
         snapshot = json.loads((ROOT / 'data/source-snapshot.json').read_text())
@@ -154,6 +172,48 @@ class CollectionTests(unittest.TestCase):
             totals[row['year_basis']] += int(row['combined'])
         expected = json.loads((ROOT / 'data/source-snapshot.json').read_text())['counts']['combined']
         self.assertEqual(totals, {'extraction_year': expected, 'bibliography_year': expected})
+
+    def test_swapping_evaluation_groups_is_rejected_without_changing_totals(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            self.copy_source_snapshot(root)
+            membership = json.loads((root / 'data/sources' / MEMBERSHIP_SOURCE).read_text())
+            groups = membership['evaluation_ids_by_group']
+            groups['privacy'][0], groups['consent'][0] = groups['consent'][0], groups['privacy'][0]
+            membership['privacy_evaluation_ids'] = groups['privacy']
+            self.write_membership_with_updated_fingerprint(root, membership)
+            with self.assertRaisesRegex(ValueError, 'evaluation membership differs'):
+                build_artifacts(root)
+
+    def test_dropping_an_inventory_row_is_rejected_even_with_updated_source_hash(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            self.copy_source_snapshot(root)
+            name = 'revisao/manuscript-inventory.tex'
+            path = root / 'data/sources' / name
+            path.write_text(path.read_text().replace('\\cite{2015-decentralizing-privacy}',
+                                                     '% \\cite{2015-decentralizing-privacy}', 1))
+            snapshot_path = root / 'data/source-snapshot.json'
+            snapshot = json.loads(snapshot_path.read_text())
+            snapshot['source_files'][name] = digest(path.read_bytes())
+            snapshot_path.write_text(json.dumps(snapshot))
+            with self.assertRaisesRegex(ValueError, 'inventory excerpt differs'):
+                build_artifacts(root)
+
+    def test_repeated_followup_identity_cannot_override_a_scholar_inclusion(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            self.copy_source_snapshot(root)
+            name = 'revisao/protocol-followup-records-2026-10-26.csv'
+            path = root / 'data/sources' / name
+            path.write_text(path.read_text().replace('updateFerreira2026SportsConsent',
+                                                     'updateCan2024AuditableConsent'))
+            snapshot_path = root / 'data/source-snapshot.json'
+            snapshot = json.loads(snapshot_path.read_text())
+            snapshot['source_files'][name] = digest(path.read_bytes())
+            snapshot_path.write_text(json.dumps(snapshot))
+            with self.assertRaisesRegex(ValueError, 'Duplicate or missing inclusion identity'):
+                build_artifacts(root)
 
     def test_retrieved_candidates_are_separate_from_included_studies(self):
         counts = json.loads(self.artifacts['counts.json'])

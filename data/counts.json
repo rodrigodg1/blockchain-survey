@@ -1,5 +1,5 @@
 {
-  "artifact_date": "2026-10-02",
+  "artifact_date": "2026-11-04",
   "study_update_search_date": "2026-09-30",
   "historical": {
     "selected_studies": 98,
@@ -71,8 +71,10 @@
     "raw_observations": 843,
     "consolidated_candidates": 817,
     "decision_counts": {
-      "awaiting_title_abstract_screening": 781,
-      "duplicate_current_application": 36
+      "awaiting_title_abstract_screening": 777,
+      "retained_after_primary_text_check": 2,
+      "duplicate_current_application": 36,
+      "pending_primary_full_text": 2
     },
     "Scopus": {
       "S02": 496,
@@ -113,38 +115,70 @@
     "complete_scientific_screening": false,
     "identity_rule": "Match nonempty DOI. Normalized-title matches are provisional. DOI-less records are not silently merged into DOI-bearing records.",
     "application_counts_not_changed_by_retrieval": true,
-    "original_screening_reconstructed": false
+    "original_screening_reconstructed": false,
+    "assessment_date": "2026-10-26",
+    "selected_studies": 2,
+    "application_count_change_requires_assessment": "Two Scopus S02 records included after primary-description assessment; not from retrieval alone."
+  },
+  "targeted_protocol_followup": {
+    "date": "2026-10-26",
+    "query_id": "S04",
+    "assessed_records": 1,
+    "selected_studies": 1,
+    "observed_rank": 54,
+    "outside_original_50_and_exported_817": true,
+    "complete_screening": false
   },
   "combined": {
-    "application_studies": 136,
+    "application_studies": 139,
     "by_group": {
-      "privacy": 46,
-      "consent": 58,
+      "privacy": 48,
+      "consent": 59,
       "identity": 32
     },
     "group_interpretation": "Accounting groups, not disjoint system-capability classes",
     "contextual_references_counted_as_application_studies": false
   },
   "detailed_analysis": {
-    "application_examples": 50,
+    "application_examples": 53,
     "contextual_sources": 17,
-    "matrix_records": 67,
+    "matrix_records": 70,
     "included_works_not_detailed": 86,
     "application_examples_by_group": {
-      "consent": 27,
-      "privacy": 12,
+      "consent": 28,
+      "privacy": 14,
       "identity": 11
     },
-    "privacy_evaluation_summaries": 6,
+    "privacy_evaluation_summaries": 8,
+    "evaluation_summaries_by_group": {
+      "privacy": 8,
+      "consent": 26,
+      "identity": 7
+    },
+    "application_source_access": {
+      "primary_fulltext_verified": 37,
+      "retained_extraction_not_reverified": 1,
+      "primary_preview_only": 3,
+      "primary_indexed_sections_verified": 2,
+      "not_verified": 1,
+      "primary_fulltext_verified_via_assessment": 9
+    },
+    "fulltext_direct_or_assessment": 46,
+    "limited_or_unverified": 7,
     "contextual_sources_in_application_denominator": false,
     "scope": "Source-linked qualitative comparisons; not uniform assessment of all included works"
   },
+  "research_questions": {
+    "RQ1": "What mechanisms or strategies are used in blockchain applications to ensure privacy, consent management, and selective sharing among multiple stakeholders?",
+    "RQ2": "How can individuals control their identity in a decentralized infrastructure?",
+    "RQ3": "What are the existing blockchain platforms and protocols enabling user privacy and identity management?"
+  },
   "identity_checks": {
-    "unique_citation_keys": 136,
-    "nonempty_dois": 127,
-    "unique_nonempty_dois": 127,
+    "unique_citation_keys": 139,
+    "nonempty_dois": 130,
+    "unique_nonempty_dois": 130,
     "missing_dois": 9,
-    "unique_normalized_titles": 136,
+    "unique_normalized_titles": 139,
     "scope": "Metadata identity checks; not new independent review of all historical studies"
   }
 }

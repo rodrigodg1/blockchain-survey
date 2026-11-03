@@ -5,6 +5,8 @@ when the manuscript tables have changed, then run this script with the bundled
 Python runtime. Counts come from the extraction and observed-query records.
 """
 from pathlib import Path
+from current_retrieval import additional_retained, QUERY_GROUPS
+from datetime import date
 from collections import Counter
 import csv
 import hashlib
@@ -41,6 +43,13 @@ def write_csv(path, records, columns=None):
 def digest(path):
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
+
+def write_text_if_changed(path, value):
+    # Retain existing bytes when only platform newline conversion would differ.
+    if path.exists() and path.read_text(encoding='utf-8') == value:
+        return
+    path.write_text(value, encoding='utf-8')
+
 bib = (ROOT / 'references-revised.bib').read_text(encoding='utf-8')
 starts = list(re.finditer(r'@\w+\s*\{\s*([^,\s]+)\s*,', bib))
 blocks = {m[1]: bib[m.start():starts[i+1].start() if i+1 < len(starts) else len(bib)]
@@ -76,7 +85,9 @@ expansion_status_path = ROOT / 'revisao/search-completion-status.json'
 expansion_status = json.loads(expansion_status_path.read_text(encoding='utf-8')) if expansion_status_path.exists() else {}
 retained = {r['citation_key']: r for r in observed
             if r['decision'] == 'retained_after_primary_text_check'}
-query_groups = {'S01': 'privacy', 'S04': 'consent', 'S07': 'identity'}
+scholar_selected = len(retained)
+retained.update({r['citation_key']: r for r in additional_retained()})
+query_groups = QUERY_GROUPS
 groups = ['privacy', 'consent', 'identity']
 collection = []
 
@@ -135,13 +146,13 @@ assert len(titles) == len(set(titles)), 'Duplicate normalized title in applicati
 decisions = Counter(r['decision'] for r in observed)
 assert len(observed) == 50
 assert Counter(r['query_id'] for r in observed) == {'S01': 10, 'S04': 30, 'S07': 10}
-assert decisions['retained_after_primary_text_check'] == len(recent)
+assert decisions['retained_after_primary_text_check'] == scholar_selected
 excluded = {k: v for k, v in decisions.items() if k.startswith('excluded_')}
 pending = decisions['candidate_full_text_assessment_not_completed'] + decisions['pending_primary_full_text']
 other = {k: v for k, v in decisions.items() if k not in {
     'retained_after_primary_text_check', 'candidate_full_text_assessment_not_completed',
     'pending_primary_full_text'} and k not in excluded}
-assert len(recent) + pending + sum(excluded.values()) + sum(other.values()) == len(observed)
+assert scholar_selected + pending + sum(excluded.values()) + sum(other.values()) == len(observed)
 
 write_csv(OUT / 'survey-dataset.csv', collection)
 count_rows = [{'review_group': g, 'historical': hc[g], 'supplementary_update': uc[g],
@@ -157,7 +168,8 @@ counts = {
     'supplementary_update': {
         'year_filter': '2024-2026', 'observed_query_records': len(observed),
         'query_record_counts': dict(Counter(r['query_id'] for r in observed)),
-        'selected_studies': len(recent), 'selected_by_group': dict(uc),
+        'selected_studies': scholar_selected,
+        'selected_by_group': dict(Counter(query_groups[r['query_id']] for r in observed if r['decision'] == 'retained_after_primary_text_check')),
         'decision_counts': dict(decisions), 'other_recorded_dispositions': other,
         'excluded_application_records': sum(excluded.values()), 'excluded_decision_counts': excluded,
         'pending_records': pending,
@@ -167,6 +179,7 @@ counts = {
         'complete_search': False, 'complete_screening': False,
     },
     'additional_retrieval': expansion_status,
+    'targeted_protocol_followup': {'date': '2026-10-26', 'query_id': 'S04', 'assessed_records': 1, 'selected_studies': 1, 'observed_rank': 54, 'outside_original_50_and_exported_817': True, 'complete_screening': False},
     'combined': {'application_studies': len(collection), 'by_group': dict(cc),
                  'group_interpretation': 'Accounting groups, not disjoint system-capability classes',
                  'contextual_references_counted_as_application_studies': False},
@@ -176,11 +189,15 @@ counts = {
                         'unique_normalized_titles': len(set(titles)),
                         'scope': 'Metadata identity checks; not new independent review of all historical studies'},
 }
-(OUT / 'counts.json').write_text(json.dumps(counts, indent=2, ensure_ascii=False)+'\n', encoding='utf-8')
-(OUT / 'application-references.bib').write_text('\n\n'.join(blocks[r['study_id']].strip() for r in collection)+'\n', encoding='utf-8')
+write_text_if_changed(OUT / 'counts.json', json.dumps(counts, indent=2, ensure_ascii=False)+'\n')
+write_text_if_changed(OUT / 'application-references.bib', '\n\n'.join(blocks[r['study_id']].strip() for r in collection)+'\n')
 
 # Preserve evidence in its source schema alongside the normalized export.
 source_paths = [
+    'main.tex', 'references-revised.bib',
+    'supplementary-inventory.tex',
+    'sn-jnl.cls', 'sn-mathphys-num.bst',
+    'output/pdf/supplementary-inventory.pdf',
     'historical-extraction.csv', 'revisao/recent-extraction.csv',
     'revisao/protocol-search-records.csv', 'revisao/protocol-eligibility.csv',
     'revisao/protocol-retrieval-status.json', 'revisao/historical-method-audit.md',
@@ -191,10 +208,25 @@ source_paths = [
     'revisao/architecture-context-sources.bib', 'revisao/architecture-synthesis-evidence.md',
 ]
 optional_sources = [
+    'imgs/synthesis-operation-disclosure.pdf', 'imgs/synthesis-operation-disclosure.png',
+    'revisao/gen_synthesis_figures.py', 'revisao/synthesis-figure-data.json',
+    'revisao/synthesis-figure-cells.csv', 'revisao/synthesis-figures-evidence.md',
+    'revisao/protocol-followup-records-2026-10-26.csv',
+    'revisao/protocol-followup-extraction-2026-10-26.csv',
+    'revisao/sports-analytics-assessment-2026-10-26.md',
+    'revisao/database-update-extraction-2026-10-26.csv',
+    'revisao/current_retrieval.py',
+    'revisao/platform-update-sources-2026-10-26.csv',
+    'revisao/platform-candidate-assessment-2026-10-26.csv',
+    'revisao/update-evidence-2026-10-26.md',
     'revisao/update-assessment-additions.csv',
     'revisao/update-assessment-additions.bib',
     'revisao/synthesis-evidence-matrix.csv', 'revisao/synthesis-evidence-method.md',
     'revisao/synthesis-evidence-coverage.json',
+    'revisao/synthesis-codebook.md', 'revisao/requirement-derivation.csv',
+    'revisao/rq-application-comparisons.csv',
+    'revisao/audit_synthesis.py', 'revisao/synthesis-sensitivity.csv',
+    'revisao/synthesis-sensitivity.json', 'revisao/methodological-audit.md',
     'revisao/thesis-alignment-evidence.md',
     'revisao/did-ssi-state-2026.md',
     'revisao/update-assessment-2026-10-01.csv', 'revisao/update-assessment-2026-10-01.md',
@@ -240,13 +272,13 @@ dictionary = {
     'primary_text_source_url': 'Recent primary-text access source; blank historical field is unpopulated, not evidence of absence.',
     'primary_text_evidence_location': 'Recent section/table/page attribution; not uniformly available for historical studies.',
     'query_id_observed': 'Recent native query identifier; not retrospectively assigned to historical selections.',
-    'native_record': 'Recent query/rank/page linkage to the 50 observed records.',
-    'source_table': 'LaTeX label of the manuscript table containing the study.',
+    'native_record': 'Recent query/rank/page or stable export-record linkage; the 50 Scholar observations remain a separate stratum.',
+    'source_table': 'LaTeX label of the inventory table in main.tex containing the study.',
     'source_extraction_file': 'Original CSV supplying the study-specific extracted fields.',
     'source_record_number': 'One-based data-record index in that CSV, excluding header; not physical line number.',
     'verification_scope': 'Explicit distinction between inherited historical extraction and checked recent descriptions.',
 }
-(OUT / 'data-dictionary.json').write_text(json.dumps(dictionary, indent=2, ensure_ascii=False)+'\n', encoding='utf-8')
+write_text_if_changed(OUT / 'data-dictionary.json', json.dumps(dictionary, indent=2, ensure_ascii=False)+'\n')
 
 # A new vector count diagram, generated from the same values as the dataset.
 # This is a collection inventory, not a reconstructed PRISMA/search flow.
@@ -276,17 +308,17 @@ text(18, 390, 'Blockchain-assisted data sharing: application collection', 16, Tr
 box(18, 282, 604, 85, teal)
 text(36, 322, str(len(collection)), 35, True)
 text(125, 331, 'application records', 17, True)
-text(125, 305, 'Privacy, consent, and decentralized identity in one thematic comparison', 11)
+text(125, 305, 'Descriptive inventory for the qualitative comparison', 11)
 for x, label, group in [(18, 'PRIVACY', 'privacy'), (224, 'CONSENT', 'consent'), (430, 'IDENTITY / SSI', 'identity')]:
     box(x, 166, 192, 94, blue)
     text(x+14, 236, label, 11, True)
     text(x+14, 192, str(cc[group]), 29, True)
 text(18, 145, 'Search-family groups are not mutually exclusive classes of system capabilities.', 10, color=muted)
 box(18, 35, 604, 93, pale)
-text(32, 108, 'COVERAGE AND EVIDENCE LIMITS', 10, True)
-wrapped(32, 90, 'Title-only searches limit coverage. Scopus and ACM Full-Text Collection queries were executed. Google Scholar pagination and assessment of additional retrieved candidates remain incomplete.', 570, 10, 13)
-text(32, 47, f'{pending} original observed record remains pending. Additional candidates await screening.', 10)
-text(18, 16, f'{len(collection)} application records; contextual sources are excluded. This is an inventory, not a PRISMA flow.', 9, color=muted)
+text(32, 108, 'ANALYTICAL SUBSET AND EVIDENCE LIMITS', 10, True)
+wrapped(32, 90, 'Detailed synthesis: 53 application examples (41 supplementary, 12 historical) and 17 contextual sources. Inventory records retain heterogeneous evidence.', 570, 10, 13)
+text(32, 47, 'Non-exhaustive selection supports qualitative contrasts, without prevalence or effectiveness estimates.', 10)
+text(18, 16, f'{len(collection)} application records; contextual references are outside the application count.', 9, color=muted)
 c.showPage(); c.save()
 shutil.copy2(PDF, OUT / PDF.name)
 
@@ -317,9 +349,9 @@ The 30 September 2026 retrieval observed {len(observed)} Google Scholar records:
 |---|---:|
 {decision_table}
 
-Current accounting is {len(recent)} included applications, {sum(excluded.values())} concluded application exclusions, {pending} pending assessments/texts and {sum(other.values())} other dispositions. Pending records are not exclusions. The observed records are not the complete search results across the three databases and are not a count of unique studies discovered.
+The original 50 Scholar observations account for {scholar_selected} included applications, {sum(excluded.values())} concluded application exclusions, {pending} pending assessments/texts and {sum(other.values())} other dispositions. Pending records are not exclusions. The observed records are not the complete search results across the three databases and are not a count of unique studies discovered.
 
-Scopus title queries S02/S05/S08 were executed on 1 October 2026 and all 496/47/175 observations were exported. ACM title queries S03/S06/S09 retrieved 15/12/8 observations from the Full-Text Collection. The Guide to Computing Literature was not searched. Google Scholar pagination and scientific assessment of the additional candidates remain incomplete. `sources/revisao/search-completion-status.json` reports the retained raw observations and consolidation counts. These counts do not reconstruct the original collection's retrieval or screening history. The figure is a collection inventory, not a complete PRISMA flow.
+Scopus title queries S02/S05/S08 were executed on 1 October 2026 and all 496/47/175 observations were exported. ACM title queries S03/S06/S09 retrieved 15/12/8 observations from the Full-Text Collection. The Guide to Computing Literature was not searched. Two Scopus applications were included after primary-description assessment on 26 October 2026. One author-suggested sports-data paper was separately retrieved with unchanged S04 on that date (page 6, observed rank 54) and included after primary HTML assessment; it is outside the original 50 observations and 817 exported candidates. Intervening results were not systematically screened. Google Scholar pagination and assessment of the remaining additional candidates remain incomplete. `sources/revisao/search-completion-status.json` reports the retained raw observations and consolidation counts. These counts do not reconstruct the original collection's retrieval or screening history. The figure is a collection inventory, not a complete PRISMA flow.
 
 ## Files and evidence
 
@@ -329,7 +361,10 @@ Scopus title queries S02/S05/S08 were executed on 1 October 2026 and all 496/47/
 - `application-references.bib`: bibliography entries for the {len(collection)} application studies.
 - `data-dictionary.json`: field meanings and missing-value semantics.
 - `selection-criteria-updated.pdf`: vector inventory generated from the same counts.
-- `sources/`: source-schema extractions, methodological records and contextual synthesis evidence when available.
+- `sources/imgs/synthesis-*.pdf`: the two numerical plots. Data and generation code are in `sources/revisao/synthesis-figure-data.json`, `synthesis-figure-counts.csv`, and `gen_synthesis_figures.py` (matplotlib required).
+- `sources/main.tex`: the current manuscript, including all six inventory tables and the separate privacy evaluation table. The shared bibliography is `sources/references-revised.bib`.
+- `sources/supplementary-inventory.tex` and its PDF: preserved earlier inventory presentation; these are not submission files. This local evidence package is not a submitted supplementary document.
+- `sources/`: source-schema extractions, methodological records and contextual synthesis evidence when available. The codebook, eight requirement derivations and source-dependence audit are included with their recomputation script.
 - `manifest.json`: SHA-256 fingerprints of every packaged file and input.
 
 The 98 historical identities and the original eight update identities are preserved. Newly retained records require matching native retrieval decisions, primary-text locations and the same title/year predicates. Synthesis examples and contextual references are not automatically application additions. The generator performs no searching, screening or independent reproduction.
@@ -340,18 +375,18 @@ Historical blank evaluation/source-location fields mean they were not uniformly 
 
 ## Reproduction
 
-After manuscript table edits, compile the manuscript and run `revisao/export_and_validate.py`, then `revisao/build_updated_dataset.py` with Python, pypdf and ReportLab, followed by `revisao/validate_updated_dataset.py`. Identities, provenance, disposition accounting and arithmetic are checked before export. Do not rerun old manuscript-rewrite scripts to recreate this package.
+After matrix or derivation edits, run `revisao/audit_synthesis.py` to check traceability and recompute source-dependence results. After manuscript or inventory edits, compile `main.tex` with `latexmk -pdf -outdir=output/pdf`, then run `revisao/export_and_validate.py`, then `revisao/build_updated_dataset.py` with Python, pypdf and ReportLab, followed by `revisao/validate_updated_dataset.py`. Identities, provenance, disposition accounting and arithmetic are checked before export. Do not rerun old manuscript-rewrite scripts to recreate this package.
 """
-(OUT / 'README.md').write_text(README, encoding='utf-8')
+write_text_if_changed(OUT / 'README.md', README)
 
 manifest = {
-    'generated_on': DATE,
+    'generated_on': date.today().isoformat(),
     'generator': 'revisao/build_updated_dataset.py',
     'input_sha256': {name: digest(ROOT / name) for name in source_paths + ['references-revised.bib', 'main.tex']},
     'files': {p.relative_to(OUT).as_posix(): digest(p) for p in sorted(OUT.rglob('*'))
               if p.is_file() and p.name != 'manifest.json'},
 }
-(OUT / 'manifest.json').write_text(json.dumps(manifest, indent=2)+'\n', encoding='utf-8')
+write_text_if_changed(OUT / 'manifest.json', json.dumps(manifest, indent=2)+'\n')
 archive = OUT.with_suffix('.zip')
 archive_temporary = OUT.with_suffix('.zip.tmp')
 with zipfile.ZipFile(archive_temporary, 'w', compression=zipfile.ZIP_DEFLATED) as z:

@@ -1,27 +1,24 @@
-# Maintaining the documented snapshot
+# Maintaining correspondence with the manuscript
 
-The 2 October 2026 snapshot contains **136 included works** (46 privacy, 58 consent and 32 identity), including **50 detailed-comparison examples**. The synthesis matrix adds 17 contextual sources outside the included-work total. Six privacy evaluation summaries repeat included works. Additional retrieval and unfinished candidate screening remain separate from all these counts.
+The 4 November 2026 snapshot contains 139 publications (48/59/32), 53 detailed application examples, 17 contextual sources, and evaluation-table memberships of 8/26/7. The original 50 Scholar observations, 817 additional candidates and one targeted follow-up retain separate provenance and denominators.
 
-## Rebuilding unchanged inputs
+## Rebuild unchanged inputs
 
-Run `python3 run.py`, followed by `python3 run.py --check`. Both validate source fingerprints, included identities and detailed/context membership before accepting outputs. The check compares every generated file with its in-memory reconstruction. Manifest paths use `/` on every operating system.
+Run `python3 run.py`, then `python3 run.py --check` and the tests in `REPRODUCE.md`. The seven generated dataset files must match their reconstruction. Historical retrieval CSVs remain fingerprinted and unchanged. Do not edit generated totals manually.
 
-The seven generated files are `survey-dataset.csv`, `study-counts.csv`, `search-decision-counts.csv`, `counts.json`, `application-references.bib`, `studies-by-year.csv` and `manifest.json`, all under `data/`. Do not edit them manually.
+## Incorporate a manuscript revision
 
-## Incorporating a manuscript revision
+1. Verify the external manuscript with `python3 verify_manuscript.py /path/to/main.tex`. A different source SHA-256 requires deliberate reconciliation, even when totals match.
+2. Extract the six inventory memberships, detailed dagger markers, three evaluation-table memberships, RQs and objective citations. Update `data/sources/revisao/manuscript-membership.json` from those identities, not from bibliography size. Preserve the exact application-inventory excerpt used by the timeline plotter.
+3. Update source extractions and bibliography only where recorded evidence changed. Retain primary locations, versions, access limits and native query identifiers. New candidate retrieval alone does not establish inclusion. Source text must use LF newlines, as specified in `.gitattributes`, before fingerprinting.
+4. Reconcile the original Scholar, additional-export and targeted-follow-up decisions separately. Retain pending decisions and do not treat duplicate candidate matches as new studies. Public candidate metadata excludes indexed abstracts.
+5. Keep the matrix, codebook, compact comparisons, objective derivations and source-access records aligned. Contextual sources stay outside application counts. Proposed behavior, reported measurements and analytical objectives remain distinct.
+6. Deliberately update `data/source-snapshot.json`: date, exact title, manuscript fingerprint, source fingerprints, expected counts and canonical dataset fingerprint. Investigate every changed source. Historical CSV fingerprints must remain unchanged unless their preservation task is explicitly reopened.
+7. Rebuild data, run checks and tests, regenerate plots with the unchanged scientific input values, and verify the external manuscript again. Changes to original plot scripts or input descriptions must be reviewed as code or evidence changes, not accepted solely by replacing output hashes.
+8. Inspect the diff, including the README and protocol. Publish the synchronized snapshot and verify it from a fresh clone.
 
-1. Verify the manuscript's included-work identities, search-topic groups and Appendix A table labels. Separately identify detailed examples, contextual sources and repeated evaluation entries. Do not treat every bibliography citation or retrieved candidate as an included work.
-2. Update the extraction and bibliography under `data/sources/` only where the evidence changed. Retain source locations, versions, access limits, native query references and pending statuses. A new citation or automated duplicate match does not establish eligibility.
-3. Update `data/sources/revisao/manuscript-membership.json` from the manuscript's work tables and stated evidence sets. Record the SHA-256 of the exact manuscript source. Preserve identity-level correspondence; matching totals alone is insufficient.
-4. Reconcile search observations, eligibility notes and retrieval status separately. The current original observation set contains 50 records: 38 included, one pending, three excluded and eight other dispositions. The five exploratory exclusions in the ancillary eligibility record and the additional candidate exports have separate provenance and denominators.
-5. Deliberately update `data/source-snapshot.json`: dated description, manuscript fingerprint, source fingerprints, expected counts and canonical dataset fingerprint. Its manuscript fingerprint must match the membership record. Preserve historical CSV fingerprints. Investigate changes before accepting new fingerprints; do not change hashes merely to silence a mismatch.
-6. Keep the matrix, codebook, compact comparisons and requirement derivations aligned with the retained evidence. Contextual sources remain outside application denominators. Proposed behavior, source-reported measurements, source-access limits and derived assessment questions must remain distinct.
-7. Update documentation where the evidence or exported schema changed. Rebuild, run `--check` and `python3 -m unittest discover -s tests -v`, then inspect the diff. Verify that unrelated historical records were preserved.
+The complete manuscript is not distributed here. The membership record and inventory excerpt support identity and plotting checks; the source SHA-256 identifies the exact external manuscript. `verify_manuscript.py` compares the local manuscript when it is available. Repository-only checks cannot detect a later external edit without that file.
 
-The manuscript is not distributed in this dataset repository. `manuscript_sha256` and the membership record identify the reconciled snapshot; local checks cannot establish whether an external manuscript subsequently changed. Re-extract membership and recompute its fingerprint whenever a manuscript revision affects the recorded evidence sets.
+`source_table` records Section 5 inventory labels. Historical `Appendix A` wording in dated preparation records belongs to older manuscript structure. Dated historical snapshots retain their original counts and are not assertions about the current collection.
 
-The recent extraction has 15 fields. Its `source_table` field identifies one of the six Appendix A work-table parts; update labels when those tables move or split. A provenance-field correction does not create new study evidence or change the normalized CSV schema.
-
-Keep genre and version qualifiers for conceptual proposals, formative surveys, preprints and commentary containing an original workflow. Full-text access is not independent reproduction. The 67-row matrix is a selected qualitative comparison, not uniform coding of all 136 works.
-
-Annual summaries expose both `extraction_year` and `bibliography_year`. Use one basis per analysis. Publication-version corrections do not create new inclusions. The full bibliography includes contextual references; included study keys alone determine `application-references.bib` and the normalized dataset.
+The plotting wrapper stages the existing plotters' original directory layout in a temporary directory. The original plotters remain available under `data/sources/revisao/`. Their regenerated trace tables are checked before figure outputs are written. No iteration or sample-size knob applies to these deterministic descriptions of the fixed survey collection.

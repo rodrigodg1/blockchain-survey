@@ -1,0 +1,50 @@
+{
+  "selection": "Two already-included encrypted-processing examples with explicit numerical results. Not a representative sample or a cross-system benchmark.",
+  "privda": {
+    "matrix_id": "SM18",
+    "citation_key": "2021-priv-iot-homo",
+    "url": "https://doi.org/10.3390/s21072452",
+    "locator": "Section 7.2, prose describing Figure 7; workload in Section 7.2",
+    "artifact_sha256": "833560a784b18296e1b20c249b8c007a82269c2eec54569fb265753f8fa68f23",
+    "producer_range": [
+      5,
+      50
+    ],
+    "hardware": "Intel Core i5 2.30 GHz, 8 GB RAM; Ethereum/Truffle test setup",
+    "ranges_ms": {
+      "Homomorphic addition": [
+        7,
+        30
+      ],
+      "Contract interaction": [
+        45,
+        412
+      ]
+    },
+    "statistic": "Reported ranges over workloads, not confidence intervals or paired endpoint measurements"
+  },
+  "kang": {
+    "matrix_id": "SM20",
+    "citation_key": "2021-did-prevent-secondary",
+    "url": "https://doi.org/10.5195/ledger.2021.239",
+    "locator": "Section 6.3, printed pages 144 and 146; Table 1 and preceding paragraph",
+    "artifact_sha256": "cde77104923a77dfff39a9c9dfed417841386f1188f332e70e55a7ee68860fc5",
+    "dataset": "METABRIC, 1309 samples, 582 features; logistic regression; 5-fold cross-validation",
+    "hardware": "Intel i7-9700K 4.70 GHz, 32 GB RAM, RTX 2070 Super 8 GB listed in setup",
+    "measurements": [
+      {
+        "method": "Plaintext",
+        "training_minutes": 3,
+        "accuracy": 0.752,
+        "auc": 0.746
+      },
+      {
+        "method": "Encrypted",
+        "training_minutes": 105,
+        "accuracy": 0.74,
+        "auc": 0.719
+      }
+    ],
+    "statistic": "Source-reported training durations and Table 1 point estimates; no variance supplied with these values"
+  }
+}
