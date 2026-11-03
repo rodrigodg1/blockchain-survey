@@ -2,8 +2,8 @@
   "artifact_date": "2026-11-04",
   "title": "Blockchain-Aided Data Sharing: A Survey of Privacy, Consent, and Identity",
   "study_update_search_date": "2026-09-30",
-  "source_description": "139 included publications (48 privacy, 59 consent, 32 identity), reconciled by identity and table label with the current manuscript. Detailed comparisons cover 53 included publications and 17 contextual sources. Evaluation tables repeat 8 privacy, 26 consent and 7 identity publications. The 41 additions have distinct provenance: 38 from the original 50 Scholar observations, two from additional Scopus exports and one targeted S04 follow-up. Retrieval and unfinished screening remain separate from inclusion. The original plotting scripts and their input records reproduce the two current quantitative figures.",
-  "manuscript_sha256": "f3b645d93fcaf82aa1f7cfeeb8aa493ffab423ff059fad7278be5b7a6e04b1a8",
+  "source_description": "139 included publications (48 privacy, 59 consent, 32 identity), reconciled by identity and table label with the current manuscript. Detailed comparisons cover 53 included publications and 17 contextual sources. Evaluation tables repeat 8 privacy, 26 consent and 7 identity publications. The 41 additions have distinct provenance: 38 from the original 50 Scholar observations, two from additional Scopus exports and one targeted S04 follow-up. Retrieval and unfinished screening remain separate from inclusion. The current chronology plot describes the full inventory. The excluded two-study processing-cost illustration is retained for historical reproduction.",
+  "manuscript_sha256": "2d84521cc25c524df9de5b76fb87aa9cb72237f9218404a21988b5206a316836",
   "canonical_dataset_sha256": "80cd8d7b5938bf1c7b105e7b6518e9a87f52ec7da07a4fc180031a75039b96c8",
   "source_files": {
     "historical-extraction.csv": "27a275574883afadf47e19dc23ceb195e2d0bc8fb7348e9bcb7859e1604474b4",
@@ -21,7 +21,7 @@
     "revisao/governance-sources.bib": "7bac267a7fe148e54a3a87f830a450ffe805172064f2f685276eab853702f2f4",
     "revisao/historical-method-audit.md": "b4c3ec5f370d79552917f47a7f4568e81aa19008d0c26c54e8aa62b9e2c18a1f",
     "revisao/literature-search-log.md": "2470ef7134152d66dad6976ae2a031db3b35be3cc9328b208144f0794ac38311",
-    "revisao/manuscript-membership.json": "76c58b450d34da7e3c576454d586f8343da1a37f3b4148626053097c4f0ac63f",
+    "revisao/manuscript-membership.json": "6ef264ce8bfe42ba964062384ff1b5310711795328d49b00dd8228caefb97961",
     "revisao/policy-context-sources.bib": "e49436ee243d482ca764d353496dd4c8e9cbcb39ba3d76be53ca0d639941d457",
     "revisao/protocol-eligibility.csv": "f089f458fc61d371ab21b9bccf9cdefa9fc9a35ecc702787eee1b5b4e009196c",
     "revisao/protocol-retrieval-status.json": "983c11e19f4f977f13154495638c3a01f54dbe5ead7a181b8c077b9b95997ff6",
@@ -119,5 +119,11 @@
     "search-expansion-Scholar-S01-20261001-pages22-27.tsv": "06e3b9390637db918dcf0e93f844f1ce0a8c5702a4447dc44bed8e7d4ef011e0",
     "search-expansion-Scholar-S01-20261001.tsv": "5c9c927a0e89db162a8099fb885f69aa94691180f355e5fdb1ec610cffadfedc"
   },
-  "retrieval_publication_scope": "Candidate metadata and decisions are distributed. Original dated Scopus CSVs containing indexed abstracts and raw ACM/Scholar observations are not redistributed; their fingerprints identify the retained retrieval files."
+  "retrieval_publication_scope": "Candidate metadata and decisions are distributed. Original dated Scopus CSVs containing indexed abstracts and raw ACM/Scholar observations are not redistributed; their fingerprints identify the retained retrieval files.",
+  "current_plot_files": [
+    "technology-timeline.pdf"
+  ],
+  "excluded_plot_files": [
+    "synthesis-processing-costs.pdf"
+  ]
 }

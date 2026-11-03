@@ -46,6 +46,7 @@ def extract_membership(source):
         'included_works': works, 'detailed_example_ids': sorted(detailed),
         'evaluation_ids_by_group': evaluations, 'research_questions': questions,
         'objective_source_ids': objectives,
+        'current_plot_files': re.findall(r'\\includegraphics(?:\[[^]]*\])?\{imgs/([^}]+\.pdf)\}', text),
     }, '\n\n'.join(fragments)
 
 

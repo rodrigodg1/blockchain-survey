@@ -9,7 +9,7 @@ Run `python3 run.py`, then `python3 run.py --check` and the tests in `REPRODUCE.
 ## Incorporate a manuscript revision
 
 1. Verify the external manuscript with `python3 verify_manuscript.py /path/to/main.tex`. A different source SHA-256 requires deliberate reconciliation, even when totals match.
-2. Extract the six inventory memberships, detailed dagger markers, three evaluation-table memberships, RQs and objective citations. Update `data/sources/revisao/manuscript-membership.json` from those identities, not from bibliography size. Preserve the exact application-inventory excerpt used by the timeline plotter.
+2. Extract the six inventory memberships, detailed dagger markers, three evaluation-table memberships, RQs, objective citations and current plot files. Update `data/sources/revisao/manuscript-membership.json` from those identities, not from bibliography size. Preserve the exact application-inventory excerpt used by the timeline plotter.
 3. Update source extractions and bibliography only where recorded evidence changed. Retain primary locations, versions, access limits and native query identifiers. New candidate retrieval alone does not establish inclusion. Source text must use LF newlines, as specified in `.gitattributes`, before fingerprinting.
 4. Reconcile the original Scholar, additional-export and targeted-follow-up decisions separately. Retain pending decisions and do not treat duplicate candidate matches as new studies. Public candidate metadata excludes indexed abstracts.
 5. Keep the matrix, codebook, compact comparisons, objective derivations and source-access records aligned. Contextual sources stay outside application counts. Proposed behavior, reported measurements and analytical objectives remain distinct.
@@ -22,3 +22,5 @@ The complete manuscript is not distributed here. The membership record and inven
 `source_table` records Section 5 inventory labels. Historical `Appendix A` wording in dated preparation records belongs to older manuscript structure. Dated historical snapshots retain their original counts and are not assertions about the current collection.
 
 The plotting wrapper stages the existing plotters' original directory layout in a temporary directory. The original plotters remain available under `data/sources/revisao/`. Their regenerated trace tables are checked before figure outputs are written. No iteration or sample-size knob applies to these deterministic descriptions of the fixed survey collection.
+
+The default plotting command generates only figures used in the current manuscript. Excluded illustrations keep their original files and are labelled as historical in `data/figures/README.md`; use `--include-legacy` with a separate output directory to reproduce them.

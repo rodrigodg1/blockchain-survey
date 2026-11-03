@@ -1,4 +1,4 @@
-"""Reproduce the article's two current quantitative plots. See REPRODUCE.md."""
+"""Reproduce the current chronology plot; optionally render the excluded illustration."""
 from scripts.reproduce_plots import main
 
 if __name__ == '__main__':

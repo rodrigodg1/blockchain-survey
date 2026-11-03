@@ -66,6 +66,8 @@ def validate_manuscript_membership(collection, matrix, recent, retained, snapsho
                                    inventory_text, derivations):
     if membership['manuscript_sha256'] != snapshot['manuscript_sha256']:
         raise ValueError('Manuscript membership fingerprint differs from source snapshot')
+    if membership['current_plot_files'] != snapshot['current_plot_files']:
+        raise ValueError('Current plot membership differs from manuscript snapshot')
 
     def unique_ids(values, description):
         if any(not isinstance(key, str) or not key.strip() for key in values):

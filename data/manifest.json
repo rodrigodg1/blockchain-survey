@@ -7,7 +7,7 @@
     "consent/consent_merged_dataset.csv": "f9825fc3d40ad1b286f6e6c5f3091d1b4fa2282b002c9982d67bb318a0f80b73",
     "consent/google.csv": "9130ba81157557c607cdd864165667c349c990ef316a4b9b80dce620f2853d21",
     "consent/scopus.csv": "4ebdba0eb8dcc2dcc2a6eb68a3dafba898dc5bbf0179a9a81494cb68292464c0",
-    "data/source-snapshot.json": "0d84cfc1577d46ea27bd7933324c02db53f26d7cbde1094294f477a0bc6332e0",
+    "data/source-snapshot.json": "81cd88794aabe1ce9533f63445d17868087fc675f0285276df0b12758348b0a5",
     "data/sources/historical-extraction.csv": "27a275574883afadf47e19dc23ceb195e2d0bc8fb7348e9bcb7859e1604474b4",
     "data/sources/references-revised.bib": "fd1e61bca355e0c048266f7c7533949022254062da2ab5ceaffddfb62f0568b5",
     "data/sources/revisao/analysis-expansion-before.json": "3b4e0fc0b33861f199570bad5313adddad9855f82bdfb81a4eba172648277c9f",
@@ -25,7 +25,7 @@
     "data/sources/revisao/historical-method-audit.md": "b4c3ec5f370d79552917f47a7f4568e81aa19008d0c26c54e8aa62b9e2c18a1f",
     "data/sources/revisao/literature-search-log.md": "2470ef7134152d66dad6976ae2a031db3b35be3cc9328b208144f0794ac38311",
     "data/sources/revisao/manuscript-inventory.tex": "0b24fef1436b0e19337514fc2ebe848a90ded687c2b774b485b32c86f24226b2",
-    "data/sources/revisao/manuscript-membership.json": "76c58b450d34da7e3c576454d586f8343da1a37f3b4148626053097c4f0ac63f",
+    "data/sources/revisao/manuscript-membership.json": "6ef264ce8bfe42ba964062384ff1b5310711795328d49b00dd8228caefb97961",
     "data/sources/revisao/platform-candidate-assessment-2026-10-26.csv": "5ccd6bf0da5455fd01dbd316a7f5ed49c2f74c70d78e7d47a78006d440138b09",
     "data/sources/revisao/platform-update-sources-2026-10-26.csv": "fc46d9e2706f7835d64441acd939dcb507671456ffdeae22afb1b35dc6f7fcb1",
     "data/sources/revisao/plot_processing_costs.py": "379bada6e1b0f722418c2febe4699c5ee0b0cedc0823d61b1560254c883a6553",
@@ -79,7 +79,7 @@
     "privacy/merged.csv": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
     "privacy/privacy_merged_dataset.csv": "bc0d4094dda0e6f3282cf63eb2c2bed7de3417553f477ce57fe0e1d13cb627a4",
     "privacy/scopus.csv": "a9c1593f495293ba69ec94631d8d3ed2a5f77838ad8254ac00dad816832c54dd",
-    "scripts/build_dataset.py": "164848ebd5dac35e9fc5b5a822c6ed8d29858e025c4f2f21d1d313388a5c54b2",
+    "scripts/build_dataset.py": "aae393b3e2e60c05e2ae43f98ad97c5dc8e3f5f693ed3ba2015b326ef595c8a9",
     "total_works_by_year.csv": "1569686e15d42d9579165bbfab2b7eb8b1971028b94e1495d4f125d7003617ea"
   },
   "files": {

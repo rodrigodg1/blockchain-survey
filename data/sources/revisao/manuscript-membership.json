@@ -1,6 +1,6 @@
 {
   "snapshot_date": "2026-11-04",
-  "manuscript_sha256": "f3b645d93fcaf82aa1f7cfeeb8aa493ffab423ff059fad7278be5b7a6e04b1a8",
+  "manuscript_sha256": "2d84521cc25c524df9de5b76fb87aa9cb72237f9218404a21988b5206a316836",
   "publication_cutoff": "2026-09-30",
   "derivation": "Included identities, search-topic groups and table labels extracted from the six application-inventory tables; detailed examples from dagger markers; evaluation identities from three separate evaluation tables; RQs and objective citations from the current manuscript. This records membership and statements, not independent source validation.",
   "included_works": [
@@ -872,5 +872,8 @@
       "2021-priv-iot-homo",
       "updateAlSabahi2026AuthorshipConsent"
     ]
-  }
+  },
+  "current_plot_files": [
+    "technology-timeline.pdf"
+  ]
 }

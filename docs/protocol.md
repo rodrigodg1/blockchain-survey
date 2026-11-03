@@ -66,7 +66,7 @@ Application access records distinguish 37 direct full-text checks, nine source-s
 
 Separate evaluation tables repeat 8 privacy, 26 consent and 7 identity publications. These 41 summaries add no publications to the inventory. Omission means no evaluation/limit detail was extracted for that table, not that the study has no evaluation.
 
-The timeline counts explicit names in existing descriptions, using all 139 publications in its denominators. It does not measure adoption or effectiveness. Processing-cost plots reuse two included papers' reported measurements without pooling performance across systems. [Plot method](../data/sources/revisao/technology-timeline-method.md), [measurement records](../data/sources/revisao/processing-costs-data.json), [reproduction instructions](../REPRODUCE.md).
+The timeline counts explicit names in existing descriptions, using all 139 publications in its denominators. It does not measure adoption or effectiveness. The earlier two-study processing-cost illustration is excluded from the manuscript because it does not synthesize the survey. Its retained inputs and original generator support optional historical reproduction. [Plot method](../data/sources/revisao/technology-timeline-method.md), [measurement records](../data/sources/revisao/processing-costs-data.json), [reproduction instructions](../REPRODUCE.md).
 
 ## Inference limits
 

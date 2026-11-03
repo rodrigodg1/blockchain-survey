@@ -37,7 +37,7 @@ python3 run.py
 python3 -m unittest discover -s tests -v
 ```
 
-The two current quantitative figures use the manuscript's unchanged Matplotlib scripts:
+The current quantitative figure uses the manuscript's unchanged chronology script:
 
 ```sh
 python3 -m venv .venv
@@ -46,21 +46,21 @@ python3 -m venv .venv
 .venv/bin/python reproduce_plots.py --check
 ```
 
-The plotting environment was checked with Python 3.14.7 and the pinned packages. The generated PDFs match the current manuscript figures byte for byte in that environment. [REPRODUCE.md](REPRODUCE.md) documents prerequisites, outputs, manuscript verification and the scope of these checks.
+The plotting environment was checked with Python 3.14.7 and the pinned packages. The generated chronology PDF matches the current manuscript figure byte for byte in that environment. [REPRODUCE.md](REPRODUCE.md) documents prerequisites, outputs, manuscript verification and the scope of these checks.
 
-| Current figure | Original generator | Reproduced PDF |
+| Figure status | Original generator | Retained PDF |
 |---|---|---|
-| Reported approaches over publication windows | [plot_technology_timeline.py](data/sources/revisao/plot_technology_timeline.py) | [technology-timeline.pdf](data/figures/technology-timeline.pdf) |
-| PrivDA component costs and Kang encrypted-learning results | [plot_processing_costs.py](data/sources/revisao/plot_processing_costs.py) | [synthesis-processing-costs.pdf](data/figures/synthesis-processing-costs.pdf) |
+| Current: reported approaches over publication windows | [plot_technology_timeline.py](data/sources/revisao/plot_technology_timeline.py) | [technology-timeline.pdf](data/figures/technology-timeline.pdf) |
+| Excluded: earlier two-study illustration (PrivDA/Kang) | [plot_processing_costs.py](data/sources/revisao/plot_processing_costs.py) | [synthesis-processing-costs.pdf](data/figures/synthesis-processing-costs.pdf) |
 
-The timeline uses all 139 publications as denominators: 5, 29, 62 and 43 per publication window. Sixty-one name at least one plotted approach. Processing-cost values retain their source locations and measurement limits in [processing-costs-data.json](data/sources/revisao/processing-costs-data.json). Replotting these values does not rerun the reviewed experiments.
+The timeline uses all 139 publications as denominators: 5, 29, 62 and 43 per publication window. Sixty-one name at least one plotted approach. The excluded processing-cost illustration uses only two studies and does not synthesize survey-wide performance. Its retained values and measurement limits are in [processing-costs-data.json](data/sources/revisao/processing-costs-data.json). Its original generator remains available through the optional legacy command in `REPRODUCE.md`; it is not run by default.
 
 ## Data and provenance
 
 - [counts.json](data/counts.json), [study-counts.csv](data/study-counts.csv) and [studies-by-year.csv](data/studies-by-year.csv): regenerated totals, detailed membership and date bases.
 - [application-references.bib](data/application-references.bib): the 139 included publications. The full source bibliography also contains background and contextual references.
 - [data/sources/](data/sources/): extractions, source locations, search decisions, access limits, coding rules and objective derivations.
-- [data/manifest.json](data/manifest.json): source and generated-data fingerprints. [Figure manifest](data/figures/manifest.json): plotting inputs, environment and output fingerprints.
+- [data/manifest.json](data/manifest.json): source and generated-data fingerprints. [Figure manifest](data/figures/manifest.json): current plotting inputs, environment and output fingerprints. [Figure status](data/figures/README.md) distinguishes the current plot from the excluded illustration.
 - [Data dictionary](docs/data-dictionary.json) and [maintenance procedure](docs/maintenance.md).
 
 Empty extraction fields mean unextracted information. Full-text access does not establish correct interpretation, security, deployment, regulatory compliance or independent reproduction. No exhaustive retrieval, independent human double screening, inter-rater agreement or pooled performance ranking is claimed.
