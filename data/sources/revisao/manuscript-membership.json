@@ -1,6 +1,6 @@
 {
   "snapshot_date": "2026-11-04",
-  "manuscript_sha256": "e8e80e53e4adfe02270dddd7135de85a6694e87a7b6df3a6efd7e2ebde470c00",
+  "manuscript_sha256": "10465b7d6fa6d21f130d47f335fd4a3e838e76f31076e5a6e6a83ac9cd4412c6",
   "publication_cutoff": "2026-09-30",
   "derivation": "Included identities, search-topic groups and table labels extracted from the six application-inventory tables; detailed examples from dagger markers; evaluation identities from three separate evaluation tables; RQs and objective citations from the current manuscript. This records membership and statements, not independent source validation.",
   "included_works": [
