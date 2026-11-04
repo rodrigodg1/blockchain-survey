@@ -74,7 +74,7 @@ When the external manuscript source is available:
 python3 verify_manuscript.py /path/to/main.tex
 ```
 
-This checks the complete source SHA-256, all 139 inventory identities and table assignments, the detailed markers, evaluation memberships, RQs, objective citations, current plot membership and inventory descriptions. A later editorial change produces a source mismatch and requires reconciliation through [docs/maintenance.md](docs/maintenance.md).
+This checks the complete source SHA-256, all 139 inventory identities and table assignments, evaluation memberships, RQs, objective citations, current plot membership and inventory descriptions. The 53 detailed application identities are checked against the synthesis matrix and the included inventory, independently of table formatting. A later editorial change produces a source mismatch and requires reconciliation through [docs/maintenance.md](docs/maintenance.md).
 
 ## Other retained records
 

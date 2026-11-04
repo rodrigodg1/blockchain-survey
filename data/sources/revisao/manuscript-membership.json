@@ -1,8 +1,8 @@
 {
   "snapshot_date": "2026-11-04",
-  "manuscript_sha256": "513d6fd404cf11b52970e9674e1fec8ccc40d6a5858280c31f420c11ab1db4e4",
+  "manuscript_sha256": "7afad32fb773f554b32204dd85b849bc3845a5ee66e5c0a5faa864e70cb531c7",
   "publication_cutoff": "2026-09-30",
-  "derivation": "Included identities, search-topic groups and table labels extracted from the six application-inventory tables; detailed examples from dagger markers; evaluation identities from three separate evaluation tables; RQs and objective citations from the current manuscript. This records membership and statements, not independent source validation.",
+  "derivation": "Included identities, search-topic groups and table labels extracted from the six application-inventory tables; detailed application identities recorded in the synthesis matrix and checked against the included inventory; evaluation identities from three separate evaluation tables; RQs and objective citations from the current manuscript. This records membership and statements, not independent source validation.",
   "included_works": [
     {
       "study_id": "2015-decentralizing-privacy",

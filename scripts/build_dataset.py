@@ -125,8 +125,8 @@ def validate_manuscript_membership(collection, matrix, recent, retained, snapsho
         raise ValueError('Evaluation counts disagree with manuscript membership')
 
     # Plot inputs retain the exact six inventory tables without redistributing
-    # the complete manuscript. Check their identities and detailed markers.
-    excerpt_works, excerpt_detailed = [], set()
+    # the complete manuscript. Detailed membership is checked against the matrix above.
+    excerpt_works = []
     table_groups = {r['source_table']: r['review_group'] for r in works}
     for block in re.findall(r'\\begin\{longtable\}.*?\\end\{longtable\}', inventory_text, re.S):
         label = re.search(r'\\label\{([^}]+)\}', block)
@@ -138,9 +138,7 @@ def validate_manuscript_membership(collection, matrix, recent, retained, snapsho
             key = re.match(r'\\cite\{([^}]+)\}', line)[1]
             excerpt_works.append({'study_id': key, 'review_group': table_groups[label[1]],
                                   'source_table': label[1]})
-            if r'\dagger' in line:
-                excerpt_detailed.add(key)
-    if excerpt_works != works or excerpt_detailed != detailed_ids:
+    if excerpt_works != works:
         raise ValueError('Manuscript inventory excerpt differs from recorded membership')
 
     objectives = {f'G{i}' for i in range(1, 9)}

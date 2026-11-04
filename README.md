@@ -25,7 +25,7 @@ The manuscript RQs are:
 2. How can individuals control their identity in a decentralized infrastructure?
 3. What are the existing blockchain platforms and protocols enabling user privacy and identity management?
 
-[Manuscript membership](data/sources/revisao/manuscript-membership.json) records the included identities, six inventory-table assignments, detailed markers, three evaluation-table memberships, RQs and objective citations. [Source snapshot](data/source-snapshot.json) records the exact manuscript source SHA-256. The complete manuscript is not redistributed; its [application-inventory excerpt](data/sources/revisao/manuscript-inventory.tex) supplies the original timeline generator.
+[Manuscript membership](data/sources/revisao/manuscript-membership.json) records the included identities, six inventory-table assignments, detailed application identities from the synthesis matrix, three evaluation-table memberships, RQs and objective citations. [Source snapshot](data/source-snapshot.json) records the exact manuscript source SHA-256. The complete manuscript is not redistributed; its [application-inventory excerpt](data/sources/revisao/manuscript-inventory.tex) supplies the original timeline generator.
 
 ## Reproduce
 

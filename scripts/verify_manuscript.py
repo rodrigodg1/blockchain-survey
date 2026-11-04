@@ -16,8 +16,9 @@ TABLE_GROUPS = {
 
 
 def extract_membership(source):
+    """Extract identities and statements present in the manuscript source."""
     text = source.decode('utf-8')
-    works, detailed, evaluations, fragments = [], [], {}, []
+    works, evaluations, fragments = [], {}, []
     for label, group in TABLE_GROUPS.items():
         position = text.index('\\label{' + label + '}')
         start = text.rindex(r'\begingroup', 0, position)
@@ -29,8 +30,6 @@ def extract_membership(source):
                 continue
             key = re.match(r'\\cite\{([^}]+)\}', line)[1]
             works.append({'study_id': key, 'review_group': group, 'source_table': label})
-            if r'\dagger' in line:
-                detailed.append(key)
     for group, label in [('privacy', 'tab:privacy-evaluation'),
                          ('consent', 'tab:consent-evaluation'), ('identity', 'tab:ssi-evaluation')]:
         position = text.index('\\label{' + label + '}')
@@ -43,7 +42,7 @@ def extract_membership(source):
                   for m in re.finditer(r'^(G[1-8]):([^\n]+)', text, re.M)}
     return {
         'manuscript_sha256': hashlib.sha256(source).hexdigest(),
-        'included_works': works, 'detailed_example_ids': sorted(detailed),
+        'included_works': works,
         'evaluation_ids_by_group': evaluations, 'research_questions': questions,
         'objective_source_ids': objectives,
         'current_plot_files': re.findall(r'\\includegraphics(?:\[[^]]*\])?\{imgs/([^}]+\.pdf)\}', text),
@@ -68,12 +67,14 @@ def main(argv=None):
     parser.add_argument('manuscript', type=Path)
     args = parser.parse_args(argv)
     try:
-        build_artifacts()
+        artifacts = build_artifacts()
         result = verify(args.manuscript.read_bytes())
     except (ValueError, KeyError, OSError) as exc:
         print(f'Manuscript verification failed: {exc}', file=sys.stderr)
         return 1
+    counts = json.loads(artifacts['counts.json'])
     print(json.dumps({'status': 'matched', 'included_works': len(result['included_works']),
-                      'detailed_examples': len(result['detailed_example_ids']),
+                      'detailed_examples': counts['detailed_analysis']['application_examples'],
+                      'detailed_membership_source': 'revisao/synthesis-evidence-matrix.csv',
                       'manuscript_sha256': result['manuscript_sha256']}))
     return 0
