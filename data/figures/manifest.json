@@ -1,6 +1,6 @@
 {
   "snapshot_date": "2026-11-04",
-  "manuscript_sha256": "58e33b7b9e26c940d85c42e3dc0c42612f542ffd9492c3f15904d7cf49f34937",
+  "manuscript_sha256": "58a0750732714f42027d0de624673800dd3a63da972d54a15fab92f9dd3216fd",
   "dataset_sha256": "80cd8d7b5938bf1c7b105e7b6518e9a87f52ec7da07a4fc180031a75039b96c8",
   "generator": "scripts/reproduce_plots.py",
   "python": "3.14.7",
@@ -19,7 +19,7 @@
     "historical-extraction.csv": "27a275574883afadf47e19dc23ceb195e2d0bc8fb7348e9bcb7859e1604474b4",
     "revisao/recent-extraction.csv": "5d4544f874c8cc396791fd7b411e72a80ee61b6669ea290617246129be2faee7",
     "revisao/synthesis-evidence-matrix.csv": "2998498430ce689f66bdb6dc1070a43c0c5d6e6fdf9b8a41d4bbb1d2d22c7de0",
-    "revisao/manuscript-inventory.tex": "a4dd742fe5d98d2bc48ba5e5eace54e4089ede2f628c8a9b703fc605b915b016",
+    "revisao/manuscript-inventory.tex": "e1646c7e7a89275b9142aaefaadf199380c929a0678df1a5dd7562c32f8b6770",
     "revisao/plot_technology_timeline.py": "0960877f43c519960f63fea371555a0d46f1b0fea160139a00bbb3801b59446a"
   },
   "outputs": {
