@@ -7,7 +7,7 @@
   "canonical_dataset_sha256": "80cd8d7b5938bf1c7b105e7b6518e9a87f52ec7da07a4fc180031a75039b96c8",
   "source_files": {
     "historical-extraction.csv": "27a275574883afadf47e19dc23ceb195e2d0bc8fb7348e9bcb7859e1604474b4",
-    "references-revised.bib": "fd1e61bca355e0c048266f7c7533949022254062da2ab5ceaffddfb62f0568b5",
+    "references-revised.bib": "d3254230b3f71475b4003d2bed1b6421b7c22cdf5b3de39dd72ecf1afd6e1493",
     "revisao/analysis-expansion-before.json": "3b4e0fc0b33861f199570bad5313adddad9855f82bdfb81a4eba172648277c9f",
     "revisao/analysis-expansion-preservation.json": "18c36ba3d2fd75057a039717f55f14480ef2f9500dcf6aac020748538c4f56b0",
     "revisao/architecture-context-sources.bib": "0be486bd0b29b5abaf25ba5db44f2a53d05cf01150c6665c314e8403157ac01f",
