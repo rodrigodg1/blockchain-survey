@@ -1,6 +1,6 @@
 {
   "snapshot_date": "2026-11-04",
-  "manuscript_sha256": "57f22bb9eac60d93fab074595e79b99af44f33001a4eabfab1bf722f9c2ca491",
+  "manuscript_sha256": "58e33b7b9e26c940d85c42e3dc0c42612f542ffd9492c3f15904d7cf49f34937",
   "publication_cutoff": "2026-09-30",
   "derivation": "Included identities, search-topic groups and table labels extracted from the six application-inventory tables; detailed application identities recorded in the synthesis matrix and checked against the included inventory; evaluation identities from three separate evaluation tables; RQs and objective citations from the current manuscript. This records membership and statements, not independent source validation.",
   "included_works": [
