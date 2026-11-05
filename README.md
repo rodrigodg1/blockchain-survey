@@ -1,6 +1,6 @@
-# Blockchain-Aided Data Sharing: A Survey of Privacy, Consent, and Identity
+# Blockchain-Aided Data Sharing: Dataset and Analyses of Privacy, Consent, and Identity Management
 
-Dataset, evidence records and plotting scripts for the manuscript of the same title.
+Dataset, evidence records and plotting scripts supporting the survey on privacy, consent, and identity management in blockchain-aided data sharing.
 
 Snapshot: **4 November 2026**. Publication cutoff: **30 September 2026**. This is a qualitative survey with selective retrieval and incomplete candidate screening.
 
