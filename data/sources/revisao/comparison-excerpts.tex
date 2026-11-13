@@ -1,0 +1,238 @@
+\label{sec:privacy-evaluation}
+
+The reviewed applications distinguish protecting records from unauthorized access from limiting what authorized recipients learn. Access policies, proxy re-encryption, and encrypted search support controlled retrieval and sharing of individual records~\cite{2021-system-medical-data-privacy,2018-towards-secure}, whereas homomorphic aggregation enables computation over encrypted inputs and release of combined results~\cite{2021-priv-iot-homo}. However, input confidentiality does not determine who can decrypt results or what information they reveal. Similarly, Fabric channels restrict data visibility among organizations, while pseudonymous identifiers do not necessarily prevent the linkage of activities~\cite{2020-privy-sharing,2017-provchain}.
+
+Decryption authority also depends on key custody throughout the sharing operation. In the design of \citet{updateRen2024DistributedKMS}, proxy re-encryption is distributed across nodes, but the authorized recipient recovers the master secret key before deriving an attribute key. Distributed key management therefore differs from threshold decryption without reconstructing the complete secret. Assessing privacy requires identifying which participants can ultimately obtain usable keys and plaintext.
+
+Federated learning raises a related distinction between keeping training records local and protecting exchanged model updates. In \citet{updateGupta2024LungFL}, signed updates provide authentication but not confidentiality, and prediction accuracy does not establish protection against information leakage. The model-trading design of \citet{updateHussain2025ZeroTrust} proposes noise addition for local differential privacy, but the examined description does not sufficiently specify the protected data contribution, noise calibration, or privacy accounting across repeated releases. These details are necessary to assess the claimed privacy guarantee independently of predictive accuracy or transaction performance~\cite{context-dwork-roth2014}.
+
+The reported evaluations also measure different properties. Encryption and search timings characterize computational costs rather than query-pattern leakage or subsequent use of disclosed records~\cite{updateGuan2025Healthcare}. Prevention percentages without sufficiently defined measures provide limited evidence of confidentiality~\cite{updateDhasaratha2024IoMT}. Performance comparisons also require consistency between the evaluated operations and the proposed architecture. Proof-of-work calculations do not characterize a Fabric/Composer workflow~\cite{updateMasood2024Patient}, while inconsistent gas figures and incomplete implementation details limit the reproducibility of the rollup comparison~\cite{updateMaZhang2024Rollup}. These limitations constrain the conclusions supported by the available evidence, without necessarily demonstrating failures in the proposed mechanisms.
+
+These comparisons highlight the importance of the information being shared when selecting a privacy approach. An application that needs only a combined statistic can use encrypted aggregation to keep individual inputs hidden from the aggregator, while an application that requires individual records needs controls over retrieval and usable decryption keys~\cite{2021-priv-iot-homo,2021-system-medical-data-privacy,2018-towards-secure}. Keeping training records local does not necessarily protect the model updates exchanged during training~\cite{updateGupta2024LungFL}. These approaches therefore address different sharing requirements and rely on different trust assumptions. Sections~\ref{sec:processing-result-release} and~\ref{sec:finding-evidence} further examine the implications for information disclosure and the supporting evaluation evidence.
+
+\subsection{Consent Management}
+
+\begin{longtable}{@{}>{\raggedright\arraybackslash}m{0.15\textwidth}>{\raggedright\arraybackslash}m{0.81\textwidth}@{}}
+\caption{Reported evaluations and evidence limits for selected consent and permission-management studies.}\label{tab:consent-evaluation} \\
+\toprule
+\textbf{Work} & \textbf{Reported evaluation / limits} \\
+\midrule
+\endfirsthead
+\multicolumn{2}{l}{\tablename\ \thetable\ (continued)} \\
+\toprule
+\textbf{Work} & \textbf{Reported evaluation / limits} \\
+\midrule
+\endhead
+\multicolumn{2}{r}{Continued on the next page} \\
+\endfoot
+\bottomrule
+\endlastfoot
+\cite{updateCan2024AuditableConsent} & Query and audit performance on synthetic data. Downstream-use enforcement not established. \\
+\addlinespace[5pt]
+\cite{updateJaved2024SecureConsent} & Four-node Istanbul Byzantine fault tolerance benchmark. Transaction latency differs from off-chain withdrawal propagation. \\
+\addlinespace[5pt]
+\cite{updateRohini2024SmartConsent} & Four-computer prototype with consent/access tests. Downstream use is not established. Ethereum-style gas units are not mapped to Fabric costs. \\
+\addlinespace[5pt]
+\cite{updateGhosh2024Banking} & Bank emulation with 4--10 nodes and 10--50 customer-count parameters. Supervision covers recorded gateway exchanges. It does not establish complete capture of other transfers or deletion by recipients. \\
+\addlinespace[5pt]
+\cite{updateRao2024Genomic} & Synthetic datasets of 10--1,000 records with encryption, key-generation, and storage measurements. Withdrawal has no specified key/ciphertext update that invalidates previously released data. Cryptographic timings do not establish legal compliance. \\
+\addlinespace[5pt]
+\cite{updateAyala2024DataConsent} & Eight synthetic block-count scenarios; 10 runs each; code available~\cite{softwareAyala2024Consent}. Distributed consensus not established. Withdrawal appends state without erasing earlier blocks or recalling released keys. \\
+\addlinespace[5pt]
+\cite{updateDeepthika2024ConsentLSTM} & Experiments on the CICIDS-2017 and NSL-KDD intrusion-detection datasets; consent-accuracy comparison. Intrusion datasets do not establish consent labels/ground truth. Predicted preferences are not explicit informed consent; hashing is not confidentiality. \\
+\addlinespace[5pt]
+\cite{updateGupta2024CertificatePermission} & Stakeholder interviews/surveys; descriptive forgery comparison. The examined material does not establish a reproducible attack evaluation, deployed topology, selective disclosure, or recipient confidentiality. \\
+\addlinespace[5pt]
+\cite{updateBarnes2025DemonstratedConsent} & Commentary proposing consent controls for biobanking; no working prototype or measured withdrawal/comprehension. Permission records alone do not constrain physical sample use or downstream copies. \\
+\addlinespace[5pt]
+\cite{updateBonotis2025CONSENT} & Proposed architecture with planned scenarios and metrics; no completed prototype or evaluation of comprehension or withdrawal propagation. Legal compliance is not established. \\
+\addlinespace[5pt]
+\cite{updateDauden2025RTBConsent} & Proposal; no prototype benchmark or propagation measurement is presented. Enforcement depends on participating websites, repositories, and advertising actors. \\
+\addlinespace[5pt]
+\cite{updateObodo2025MultiProviderConsent} & Conceptual model; cross-provider propagation/savings unmeasured; implemented identity, key services, and release controls unspecified. \\
+\addlinespace[5pt]
+\cite{updateOke2025FHIRConsent} & Conceptual workflow; adapter consistency/failure handling unmeasured; v2 unexamined. Ledger changes do not recall disclosed data. \\
+\addlinespace[5pt]
+\cite{updateTomaz2025PrivacHer} & Functional workflow and Locust load tests. Control after disclosure and regulatory endorsement not established. \\
+\addlinespace[5pt]
+\cite{updateQu2025ConsentEMR} & Transaction-load, user-count, record-size, and ring-signature tests. Patient mediation does not prevent copying or establish downstream deletion; signature results concern their stated relation. \\
+\addlinespace[5pt]
+\cite{updateFerreira2025MCPFHIR} & 300-request comparison, labelled illustrative in Table 3. Dataset and application descriptions inconsistent; hashes do not prove summary correctness or input completeness. Gateway, issuer, and cache behavior remain conditions. \\
+\addlinespace[5pt]
+\cite{updateLu2025RedactableEducation} & Conditional security arguments; primitive benchmarks over 100 runs. Partial review-role trust remains; editing does not establish score truth, external-copy erasure, or secondary-use consent. \\
+\addlinespace[5pt]
+\cite{updateFerreira2026SportsConsent} & Synthetic-workload prototype; verification metrics, issuer roles, and finality assumptions differ across sections. Hashes do not prove large language model (LLM) output correctness or input truth; optional zero-knowledge proofs are not evaluated. \\
+\addlinespace[5pt]
+\cite{updateAlSabahi2026AuthorshipConsent} & Formative questionnaire; extrapolated circuit costs; no measured deployment. Declared-affiliation relations do not establish complete absence of conflicts of interest. \\
+\addlinespace[5pt]
+\cite{updateCh2026ConsentOffloading} & Single-host contract tests; simulated scheduling. Edge sees plaintext; recipients obtain keys; consent records do not recall prior copies. \\
+\addlinespace[5pt]
+\cite{updateGupta2026ScalableConsent} & Single-host synthetic query/proof tests. Predicates do not certify all processing or legal compliance; processors receive raw data. \\
+\addlinespace[5pt]
+\cite{updateMiao2026PermissionSupervision} & Formal construction; primitive/audit analysis; fully trusted certificate authority. On-chain redaction does not establish off-chain deletion, patient consent, or full compliance. \\
+\addlinespace[5pt]
+\cite{updateNaghmouchi2026ClinConNet} & Single-host ledger/component tests under portal/cloud trust assumptions; timing excludes network/human delay. Proof revocation or local mapping deletion does not erase researchers' data. \\
+\addlinespace[5pt]
+\cite{updatePhuyal2026Architecture} & Conceptual design; no deployment or user evaluation; withdrawal concerns future access. \\
+\addlinespace[5pt]
+\cite{updateScaramuzza2026ZKConsent} & Functional requirements; single-machine cryptographic benchmarks. Stated limits: RSA-512, trusted setup, public participant links, trusted off-chain erasure. Proof does not establish actual data use. \\
+\addlinespace[5pt]
+\cite{updateHemlata2026DualCare} & Twenty test-network workflows; mean complete-workflow latency 12.824 s. Middleware-key removal does not invalidate recipient-recovered keys; relay/key-service enforcement remains necessary. \\
+\end{longtable}
+
+\begin{longtable}{@{}>{\raggedright\arraybackslash}m{0.15\textwidth}>{\raggedright\arraybackslash}m{0.81\textwidth}@{}}
+\caption{Evaluations and evidence limits for selected decentralized identity studies.}\label{tab:ssi-evaluation} \\
+\toprule
+\textbf{Work} & \textbf{Evaluation / limits} \\
+\midrule
+\endfirsthead
+\multicolumn{2}{l}{\tablename\ \thetable\ (continued)} \\
+\toprule
+\textbf{Work} & \textbf{Evaluation / limits} \\
+\midrule
+\endhead
+\multicolumn{2}{r}{Continued on the next page} \\
+\endfoot
+\bottomrule
+\endlastfoot
+\cite{updateAgarkar2024BADIMAC} & Design/contract excerpts; no identified repository. Zero-knowledge proof construction, empirical benchmarks, and retroactive erasure not established. \\
+\addlinespace[5pt]
+\cite{updateZeydan2024ABSIdentity} & Credential/message benchmarks on two virtual machines, four issuer containers. These do not establish multi-operator radio deployment, inference privacy, or control after disclosure. \\
+\addlinespace[5pt]
+\cite{updateZeydan2024SSI} & Four issuer nodes and 20/30/50 clients. Inference risks are acknowledged separately. \\
+\addlinespace[5pt]
+\cite{updateLiu2024SSDID} & 30--60 nodes/shard; Practical Byzantine Fault Tolerance (PBFT) and HotStuff comparators; highest simulated throughput in the study: 90,000 requests/s. Unforgeability/liveness depend on committee assumptions; use identifiers permit linkage; deactivation retains history. \\
+\addlinespace[5pt]
+\cite{updateRamirez2025IOTAIdentity} & Raspberry Pi proof of concept; simulated interactions; no DIDComm integration. Credential/channel tests do not recall prior data or establish large-scale security. \\
+\addlinespace[5pt]
+\cite{updateRen2025AIoTIdentity} & Local synthetic 10,000-user/20-attribute tests. Differential privacy and deployed downstream-use control not established. \\
+\addlinespace[5pt]
+\cite{updateSeidi2025HealthcareSSI} & 50 repetitions; 10 parallel sessions; DID/credential gas/timing tests. Hashes/signatures of personally identifiable information do not establish confidential attributes or cryptographic selective disclosure; issuer/administrator trust and regulatory validation remain. \\
+\end{longtable}
+
+This survey addresses three research questions (RQs): (RQ1) What mechanisms or strategies are used in blockchain applications to ensure privacy, consent management, and selective sharing among multiple stakeholders? (RQ2) How can individuals control their identity in a decentralized infrastructure? (RQ3) What blockchain platforms and protocols support user privacy and identity management?
+
+G1: Authentication and permission (RQ1/RQ2) \cite{updateLiu2024SSDID} & SS-DID authenticates credential messages; \citet{updateSeidi2025HealthcareSSI} apply role permissions. & Assess authorization separately from authentication, including trust in issuers, credential status services, and the component enforcing permission. \\
+
+G2: Permission rules and updates (RQ1) & \citet{updateCan2024AuditableConsent} match purposes; \citet{updateDauden2025RTBConsent} propose recipient consent-state checks. & Identify which permission record governs release for the requested data, purpose, operation, recipient, policy version, and time; assess cached decisions and earlier tokens. \\
+
+G3: Keys and data release (RQ1) \cite{2021-edge-light-smart-grid,updateHemlata2026DualCare} & DualCare releases keys through middleware; EBDA's center decrypts aggregates. & Trace data and key custody, release authority, key versions, and collusion assumptions through key rotation, recovery, and service failure. \\
+
+G4: Confidentiality and correctness (RQ1) & \citet{updateScaramuzza2026ZKConsent} implement a proof of knowledge of a committed secret; \citet{updateGupta2026ScalableConsent} verify negotiated conditions. & When independent result verification is needed, assess binding to the specified inputs and operation; state the proven statement, hidden values, verifier, and acceptance assumptions separately from release permission. \\
+
+G5: Audit and accountability (RQ1) & \citet{updateGhosh2024Banking} audit declared exchanges; \citet{updateLu2025RedactableEducation} permit authorized correction. & Assess log integrity, event coverage, reviewer access and responsibilities, and who authorizes and executes corrections. \\
+
+G6: Withdrawal and credential status (RQ1/RQ2) \cite{updateHemlata2026DualCare} & DualCare removes wrapped middleware keys; \citet{2021-did-prevent-secondary} use expiring retrieval URLs. & Assess withdrawal enforcement at release services and distinguish credential status changes from retained keys, tokens, ciphertexts, or plaintext that remain usable. \\
+
+G7: Information inferred from results (RQ1) & \citet{updateZeydan2024SSI} test federated learning authentication; \citet{updateHussain2025ZeroTrust} propose noisy updates. & Assess inference across repeated outputs using stated background information. For differential privacy claims, specify neighboring datasets, the protection unit, noise calibration, budget, and composition~\cite{context-dwork-roth2014}. \\
+
+G8: Input origin and accuracy (RQ1/RQ2) \cite{2021-priv-iot-homo} & PrivDA trusts measurements; \citet{updateAlSabahi2026AuthorshipConsent} use declared affiliations. & Assess input accuracy and completeness separately from authenticated origin and computation correctness; identify what is verified and which observations or declarations are assumed correct. \\
+
+\begin{longtable}{>{\raggedright\arraybackslash}m{0.11\textwidth}>{\raggedright\arraybackslash}m{0.23\textwidth}>{\raggedright\arraybackslash}m{0.28\textwidth}>{\raggedright\arraybackslash}m{0.30\textwidth}}
+\caption{Selected privacy protocols and execution services.}\label{tab:privacy-platforms}\\
+\toprule
+\textbf{System} & \textbf{Protected information} & \textbf{Mechanism and trust} & \textbf{Code and status} \\
+\midrule
+\endfirsthead
+\caption[]{Selected privacy protocols and execution services (continued).}\\
+\toprule
+\textbf{System} & \textbf{Protected information} & \textbf{Mechanism and trust} & \textbf{Code and status} \\
+\midrule
+\endhead
+Zcash & Shielded addresses, amounts, and spend links. Transparent transfers and net flows across pools are visible~\cite{platform-zcash-shielded,platform-zcash-nu63}. & Orchard uses Halo~2 without a trusted setup. Ironwood reuses its proof system and maintains separate pool state~\cite{platform-zcash-nu5,platform-ironwood2026}. & Public Zebra node code. \texttt{zcashd} support ended on 18 July 2026. NU6.3 activated Ironwood on mainnet on 28 July 2026~\cite{platform-zebra,platform-zcash-eol,platform-zcash-nu63}. \\
+\addlinespace[3pt]
+Tornado Cash Classic & The link between a withdrawal and its deposit in the same pool. Deposit and withdrawal transactions and pool denominations are public. & A zk-SNARK proves knowledge of the opening of a deposited commitment. The contract rejects reused nullifiers. The circuits use a trusted setup~\cite{platform-tornado-core}. & Archived \texttt{tornado-core} contracts and circuits for fixed-denomination ETH and ERC-20 pools~\cite{platform-tornado-core}. \\
+\addlinespace[3pt]
+Incognito Chain & Historical private transfers conceal amounts and recipient addresses and obscure the spent input. The Confidential Asset extension targets asset-type privacy~\cite{platform-incognito-core}. & Ring signatures, one-time recipient addresses, and confidential transactions based on commitments and range proofs~\cite{platform-incognito-design,platform-incognito-core}. & Public SDK repositories and a historical Go module snapshot. Current core repository access and live deployment could not be verified~\cite{platform-incognito-repositories,platform-incognito-core}. \\
+\addlinespace[3pt]
+Aztec Network & Private function inputs and notes. Public state, calls, and some transaction metadata remain visible~\cite{platform-aztec-docs,platform-aztec-limits}. & The client's Private Execution Environment executes and proves private functions. The network verifies proofs and runs public functions~\cite{platform-aztec-docs}. & Ethereum rollup with public Noir/Aztec.nr tooling and a dedicated VM. Alpha mainnet runs Tierra v6.0.0~\cite{platform-aztec-code,platform-aztec-status}. \\
+\addlinespace[3pt]
+Monero & Amounts and recipient addresses are concealed. The set of candidate spent outputs is public~\cite{platform-monero-privacy}. & Ring confidential transactions (RingCT) use ring signatures. Stealth addresses protect recipients. Dandelion++ limits origin exposure during relay~\cite{platform-monero-privacy}. & Public node code and release \href{https://github.com/monero-project/monero/releases/tag/v0.18.5.4}{v0.18.5.4}. FCMP++ was still tracked as an upgrade in development~\cite{platform-monero-code,platform-monero-fcmp-milestone}. \\
+\addlinespace[3pt]
+Secret Network & Secret Contract payloads, encrypted responses, and stored state. The transaction envelope is public~\cite{platform-secret-transactions,platform-secret-inputs}. & Intel Software Guard Extensions (SGX) enclaves decrypt and execute calls. Trust depends on isolation, attestation, and network keys~\cite{platform-secret-transactions,platform-secret-operators2026}. & Public node code. The operator guide specifies SGX with DCAP attestation for \texttt{secret-4}~\cite{platform-secret-code,platform-secret-operators2026}. \\
+\addlinespace[3pt]
+Grin & Transfer amounts. Aggregation and cut-through obscure some links, while relay observers can retain input--output associations~\cite{platform-grin-privacy}. & Mimblewimble uses commitments and range proofs. Grin uses a simplified Dandelion++ relay to reduce origin exposure~\cite{platform-grin-privacy,platform-grin-relay}. & Public Grin node code for the Mimblewimble mainnet~\cite{platform-grin-code}. \\
+\addlinespace[3pt]
+Beam & Amounts and supported asset types in confidential transfers. Contract disclosure depends on the application~\cite{platform-beam-assets,platform-beam-contracts}. & Mimblewimble, with Lelantus-MW for shielded spends. The WebAssembly-based BeamVM executes contract shaders~\cite{platform-beam-code,platform-beam-contracts}. & Public node and wallet code plus a shader SDK. \href{https://github.com/BeamMW/beam/releases/tag/beam-7.5.14548}{Release~7.5.14548} was published on 30 October 2026~\cite{platform-beam-contracts}. \\
+\addlinespace[3pt]
+RAILGUN & Shielded balances and transfers. Shielding, unshielding, and calls to external contracts can expose public data~\cite{platform-railgun2026,platform-railgun-calls}. & Wallets prove shielded spends with zk-SNARKs. External calls execute under the host chain's public rules~\cite{platform-railgun2026,platform-railgun-calls}. & Public EVM \href{https://github.com/Railgun-Privacy/contract}{contracts} and \href{https://github.com/Railgun-Community/engine}{wallet SDK}. \\
+\addlinespace[3pt]
+Privacy Pools (0xbow) & Which eligible deposit funded a private withdrawal. Deposits and withdrawals are visible on-chain~\cite{platform-pools2026,platform-pools-paper2024}. & Groth16 proves commitment ownership and association-set membership. The association-set provider controls inclusion. The original depositor can exit publicly~\cite{platform-pools-core,platform-pools-ragequit}. & Public contracts, circuits, and SDK. 0xbow lists an Ethereum mainnet deployment~\cite{platform-pools-core,platform-pools-deployments}. \\
+\addlinespace[3pt]
+Aleo & Private inputs, outputs, and records. Mappings and finalization data are public~\cite{platform-aleo2026,platform-aleo-transactions}. & Off-chain execution and proving. Validators verify proofs and run public finalization. Scoped viewing keys allow disclosure~\cite{platform-aleo2026,platform-aleo-transactions}. & Leo programs and public \href{https://github.com/aleo-labs-protocol/snarkOS}{snarkOS node code} for Aleo mainnet~\cite{platform-aleo-mainnet}. \\
+\addlinespace[3pt]
+Namada & Addresses, amounts, and asset types in shielded transfers. Pool entry and exit can be correlated~\cite{platform-namada2026}. & Sapling-derived multi-asset pool with a trusted setup. Viewing keys disclose balances and spending keys authorize transfers~\cite{platform-namada-setup,platform-namada-keys2026}. & Public \href{https://github.com/namada-net/namada}{Rust node code}. The project documents the mainnet rollout of shielded assets and transfers~\cite{platform-namada-mainnet}. \\
+\addlinespace[3pt]
+Midnight & Private circuit inputs and local state. The ledger contains public state and disclosed values. & Compact circuits support zero-knowledge proofs. A local proof server processes private witnesses~\cite{platform-midnight2026}. & Public \href{https://github.com/midnightntwrk/midnight-ledger/releases}{ledger and proof-server releases}. Mainnet upgraded to ledger~9 on 6 November 2026~\cite{platform-midnight-ledger9}. \\
+\addlinespace[3pt]
+Dusk (Phoenix) & Shielded DUSK balances and transfer details in Phoenix. Moonlight transfers are public~\cite{platform-dusk2026}. & Encrypted notes and zero-knowledge proofs. Viewing capabilities support disclosure~\cite{platform-dusk2026}. & Public \href{https://github.com/dusk-network/rusk}{Rusk node code}. Boreas paused new Phoenix transactions on mainnet on 10 June and testnet on 7 August 2026~\cite{platform-dusk-boreas2026}. \\
+\addlinespace[3pt]
+Zama Protocol & Encrypted contract values and intermediate results. Host-chain handles and operation events are visible~\cite{platform-zama2026}. & FHE coprocessors agree on results by majority. Access-control lists gate use and release. Threshold-MPC key management uses Nitro enclaves~\cite{platform-zama2026}. & Public \href{https://github.com/zama-ai/fhevm}{FHEVM code}. Zama lists Ethereum mainnet contracts~\cite{platform-zama-mainnet}. \\
+\addlinespace[3pt]
+Fhenix CoFHE & Encrypted inputs, state, and intermediate results. EVM handles and operation requests are public~\cite{platform-cofhe2026}. & Off-chain FHE with permits and access control. Launch used a trusted dealer and partner-held shares. Attested services gate share release and validate inputs~\cite{platform-cofhe-mainnet-trust}. & Public \href{https://github.com/FhenixProtocol/cofhe-contracts}{Solidity library} and client SDK. Mainnet deployment on Ethereum and Arbitrum required approval at launch~\cite{platform-cofhe-mainnet}. \\
+\addlinespace[3pt]
+Inco Lightning (EVM) & Encrypted contract values referenced by handles. Release policies govern which results become visible~\cite{platform-inco-decryption}. & A trusted execution environment (TEE) runs operations and checks decryption permissions. Contracts can verify signed results~\cite{platform-inco2026,platform-inco-decryption}. & Public \href{https://github.com/Inco-fhevm/lightning-rod}{Lightning development kit} for Solidity. Inco documents the EVM service on Base~\cite{platform-inco-mainnet}. \\
+\addlinespace[3pt]
+Arcium & Private inputs and intermediate values. Applications choose public or recipient-encrypted outputs~\cite{platform-arcium-encryption}. & Cerberus uses authenticated shares. At least one cluster member must be honest. Detected faults cause abort~\cite{platform-arcium2026}. & Public \href{https://github.com/arcium-hq/examples}{Arcis examples} and client tooling. Arcium documents a Solana mainnet deployment~\cite{platform-arcium-deployments}. \\
+\addlinespace[3pt]
+Oasis Sapphire & Encrypted storage and client-encrypted calldata. Gas, sizes, access patterns, and unencrypted events can disclose information~\cite{platform-sapphire2026}. & Attested execution. The Oasis key manager supplies state keys to the contract within an attested compute node~\cite{platform-sapphire2026}. & Public \href{https://github.com/oasisprotocol/sapphire-paratime}{Sapphire ParaTime} and Solidity tooling for mainnet. The project treats testnet data as public~\cite{platform-sapphire-networks}. \\
+\bottomrule
+\end{longtable}
+
+\begin{table*}[htbp]
+\centering
+\footnotesize
+\caption{Selected identity infrastructure and credential specifications, comparing their functions, ledger dependencies, and technical limitations.}
+\label{tab:ssi-platforms}
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.15}
+\begin{tabular}{>{\raggedright\arraybackslash}m{0.14\textwidth}>{\raggedright\arraybackslash}m{0.20\textwidth}>{\raggedright\arraybackslash}m{0.20\textwidth}>{\raggedright\arraybackslash}m{0.38\textwidth}}
+\toprule
+\textbf{Component} & \textbf{Role} & \textbf{Ledger dependency} & \textbf{Capabilities and limits} \\
+\midrule
+
+Credo &
+TypeScript library for credential issuance, reception, and verification. &
+Supports configurable DID methods; ledger use depends on the selected method. &
+Version 0.7.0 includes support for DIDComm, OpenID for Verifiable Credentials, AnonCreds, and SD-JWT VC. Compatibility depends on protocol versions and implementation configurations~\cite{platform-credo-code}. \\
+
+\addlinespace[5pt]
+
+Veramo &
+Modular library for decentralized identifiers and verifiable credentials. &
+Supports \texttt{did:ethr}, \texttt{did:web}, and \texttt{did:key} through plugins; blockchain use depends on the method. &
+Supports Node.js, browsers, and React Native~\cite{platform-veramo-code}. Privacy and interoperability depend on the selected plugins and credential formats~\cite{platform-veramo-agent,platform-veramo-plugins}. \\
+
+\addlinespace[5pt]
+
+Sovrin Network &
+Identity registry originally operated by multiple stewards. &
+Uses Hyperledger Indy for identity records rather than general-purpose smart contracts. &
+Sovrin MainNet is maintained as a read-only archive by a single caretaker steward. Existing records remain accessible, but new ledger transactions are not supported in this configuration~\cite{platform-sovrin-status,platform-indy-node}. \\
+
+\addlinespace[5pt]
+
+AnonCreds &
+Anonymous-credential specification supporting selective disclosure, predicates, and non-revocation proofs. &
+Uses registries for issuer verification information and, when supported, revocation status; no specific blockchain is required. &
+Defines cryptographic operations and credential presentation mechanisms. Privacy and revocation properties depend on the selected registry, wallet, and verifier implementations~\cite{platform-anoncreds}. \\
+
+\addlinespace[5pt]
+
+EUDI reference wallet &
+Android reference implementation for credential issuance, storage, and presentation. &
+Uses credential exchange protocols and certificate-based trust without requiring a blockchain. &
+Supports OpenID4VCI, OpenID4VP, and proximity presentation. The reference implementation includes demonstration services and does not establish production readiness or wallet certification~\cite{platform-eudi-wallet-code2026}. \\
+
+\addlinespace[5pt]
+
+Identity.com &
+Specification and reference implementation of the \texttt{did:sol} method. &
+Uses Solana programs to manage public DID documents. &
+Provides public reference code~\cite{platform-sol-did-code}. Persistent identifiers can enable correlation, and the DID method alone does not provide selective disclosure~\cite{platform-sol-did}. \\
+
+\bottomrule
+\end{tabular}
+\end{table*}
+
+\includegraphics[width=\textwidth]{imgs/technology-timeline.pdf}

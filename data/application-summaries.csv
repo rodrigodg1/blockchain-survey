@@ -1,0 +1,140 @@
+study_id,review_group,application,reported_approach,source_table
+2015-decentralizing-privacy,privacy,Personal data,"Personal-data management with encryption, off-chain storage, and access control.",tab:privacy-works
+2016-healthcare-data-gateways,privacy,Healthcare,"Patient-managed, purpose-specific access. MPC is discussed as a possible extension.",tab:privacy-works
+2017-provchain,privacy,Cloud storage,Cloud-data provenance and auditing with hashed user identifiers (pseudonymization).,tab:privacy-works
+2017-Medibchain,privacy,Healthcare,Patient-centered record management with encryption and access control.,tab:privacy-works
+2018-BPDS,privacy,Healthcare,"Cloud and blockchain storage of electronic medical records (EMRs), with public-key encryption and ciphertext-policy attribute-based encryption (CP-ABE) access control.",tab:privacy-works
+2018-towards-secure,privacy,Healthcare,Public-key encryption with keyword search for protected health records. Ethereum.,tab:privacy-works
+2020-privacy-remote-iot,privacy,IoT,Remote IoT data-integrity checking using lifted elliptic-curve ElGamal and bilinear pairings.,tab:privacy-works
+2020-privy-sharing,privacy,IoT,"IoT data sharing with encryption, channels, and smart contracts. Hyperledger Fabric.",tab:privacy-works
+2021-edge-light-smart-grid,privacy,Smart grid,Smart-grid data aggregation using homomorphic encryption.,tab:privacy-works
+2021-privacy-fog-iot,privacy,IoT,IoT access policies and encryption. Hyperledger Fabric.,tab:privacy-works
+2021-data-priv-iot,privacy,IoT,Encrypted IoT sharing using ring signatures and proxy re-encryption.,tab:privacy-works
+2021-data-sec-sharing,privacy,Industrial Internet of Things (IIoT),IIoT data protection using encryption and hidden-attribute authentication.,tab:privacy-works
+2021-drone-big-data,privacy,Unmanned aerial vehicle (UAV) big data,"UAV data protection using encryption, a threshold scheme, and NTRU, a ring-based public-key encryption scheme.",tab:privacy-works
+2021-homomo-enc-smart-grid,privacy,Smart grid,Blockchain and homomorphic encryption-based data aggregation (BHDA).,tab:privacy-works
+2021-hOCBS,privacy,Healthcare,Proposed modular on-chain/off-chain privacy framework for healthcare data management.,tab:privacy-works
+2021-sp-chain,privacy,Healthcare,Patient--doctor data sharing using proxy re-encryption.,tab:privacy-works
+2021-priv-gov-soc,privacy,Government,Consortium government data sharing with permissions evaluated by smart contracts. Hyperledger Fabric.,tab:privacy-works
+2021-data-privacy-based-iot,privacy,IoT,IoT device management with permissions evaluated by smart contracts. Ethereum.,tab:privacy-works
+2021-priv-iot-homo,privacy,IoT,IoT data aggregation using homomorphic encryption. Ethereum.,tab:privacy-works
+2021-system-medical-data-privacy,privacy,Healthcare,"Medical-data collection, storage, querying, and sharing using proxy re-encryption. Hyperledger Fabric.",tab:privacy-works
+2021-medical-data-sharing,privacy,Healthcare,"Medical-data sharing with k-anonymity, searchable encryption, and attribute-based access control. Hyperledger Fabric.",tab:privacy-works
+2020-covid-privacy,privacy,Healthcare,Storage and sharing of COVID-19 EMRs using ABE. Ethereum.,tab:privacy-works-2
+2022-enterprise-ds-fabric-iot,privacy,IIoT,IIoT data sharing with encryption and channels. Hyperledger Fabric.,tab:privacy-works-2
+2022-scalable-bc-model-ipfs,privacy,Healthcare,Electronic health record (EHR) management with encryption and patient permissions.,tab:privacy-works-2
+2021-cp-bdhca,privacy,Healthcare,Record protection using elliptic-curve cryptography and two-factor authentication.,tab:privacy-works-2
+2022-bc-based-privacy-pres-reward,privacy,IoT,"Deniable ring signatures and Monero, targeting prevention of behavior profiling and nonframeability. Hyperledger Fabric.",tab:privacy-works-2
+2021-medshare,privacy,Healthcare,ABE and implemented Boolean multi-keyword search over EHRs. Ethereum.,tab:privacy-works-2
+10.1109/tr.2022.3190932,privacy,Personal data,Homomorphic encryption.,tab:privacy-works-2
+10.1109/jiot.2023.3242959,privacy,Personal data,ElGamal commitments and a one-out-of-many proof.,tab:privacy-works-2
+10.1109/tifs.2023.3297327,privacy,IIoT,Sanitizable designated-verifier signatures.,tab:privacy-works-2
+10.1007/s12083-023-01521-w,privacy,Healthcare,Keyword-based and oblivious-transfer-based re-encryption.,tab:privacy-works-2
+10.1109/jiot.2023.3287636,privacy,Healthcare,Searchable encryption.,tab:privacy-works-2
+10.1109/jiot.2023.3295763,privacy,IoT,Federated learning.,tab:privacy-works-2
+10.1109/jiot.2021.3134755,privacy,IoT,Federated learning.,tab:privacy-works-2
+10.1109/jiot.2023.3247487,privacy,Smart grid,Homomorphic encryption.,tab:privacy-works-2
+10.1109/tsc.2022.3199111,privacy,Cloud outsourcing,Encrypted index storage and stealth authorization.,tab:privacy-works-2
+10.1109/tits.2022.3190487,privacy,Maritime transportation,zk-SNARKs and commitments.,tab:privacy-works-2
+10.1109/tc.2023.3251846,privacy,Data trading,"Attribute-based credentials, encryption, and zero-knowledge proofs.",tab:privacy-works-2
+10.1109/jiot.2023.3307073,privacy,IoT,Threshold encryption and an access-control list.,tab:privacy-works-2
+10.1109/jiot.2023.3296460,privacy,Flight operations,"Hash-based anonymous identity, zk-SNARKs, and proxy re-encryption.",tab:privacy-works-2
+updateDhasaratha2024IoMT,privacy,Internet of Medical Things learning,Proposed distributed reinforcement/federated learning and blockchain resource identification; ledger variant unspecified.,tab:privacy-works-2
+updateMaZhang2024Rollup,privacy,Health-record sharing,"Proposed RSA, InterPlanetary File System (IPFS) storage, batched rollup validity proofs, and main-chain references; Ethereum/IPFS.",tab:privacy-works-2
+updateMasood2024Patient,privacy,Patient-data sharing,Patient-controlled access lists; hospital-key distribution; administrator identity registration. Fabric/Composer.,tab:privacy-works-2
+updateGupta2024LungFL,privacy,Federated lung-disease detection,"DenseNet local training, hierarchical model aggregation, signed updates, and IPFS references; consortium/proof-of-authority (PoA) design with Ethereum-style contract pseudocode.",tab:privacy-works-2
+updateHu2024InvisiReveal,privacy,User-data sharing,InvisiReveal: anonymous authorization with zero-knowledge credentials and committed tags for conditional identification. Indexed primary description only.,tab:privacy-works-2
+updateRen2024DistributedKMS,privacy,User-data sharing,CP-ABE and verifiable threshold proxy re-encryption. The authorized recipient reconstructs the master secret in the described flow. Ethereum/Ganache; IPFS.,tab:privacy-works-2
+updateHussain2025ZeroTrust,privacy,IoT model trading,"Local training/noise, ledger bids, IPFS specifications, and participant authentication before model transfer; private Ethereum/PoA.",tab:privacy-works-2
+updateGuan2025Healthcare,privacy,Healthcare IoT records,"Paillier additive encryption, searchable encryption, Bloom indexes, and access policies; Hyperledger Fabric 2.2.",tab:privacy-works-2
+2016-medrec,consent,Healthcare,Decentralized EMR access with patient control. Ethereum.,tab:consent-works
+10.1109/ICCCI.2018.8441445,consent,Academic Records,Nested authorization lets school administrators grant third-party programs access. Hyperledger Fabric.,tab:consent-works
+2017-clinical-trials,consent,Healthcare (Clinical Trials),Proof-of-concept protocol for clinical-trial consent collection.,tab:consent-works
+10.1109/INISTA.2018.8466268,consent,IoT,Implemented Forms of Consent application connected to smart contracts. Ethereum.,tab:consent-works
+2018-double-blind,consent,Know-your-customer (KYC),"Consent-driven, double-blind corporate KYC data sharing. Hyperledger Fabric.",tab:consent-works
+2019-unichain-blockchain-acad-records,consent,Academic Records,Electronic academic record management. Ethereum.,tab:consent-works
+2019-medchain,consent,Healthcare,Medical-record management with incentives and access control. Ethereum.,tab:consent-works
+2018-advocate,consent,IoT,User-centered consent design addressing GDPR requirements. Ethereum.,tab:consent-works
+2019-blockchain-permission-iot,consent,IoT,IoT permission delegation and access control. Hyperledger Fabric.,tab:consent-works
+2020-blockchain-assisted-living,consent,Active Assisted Living,Conceptual consent model for active assisted living. Hyperledger Fabric.,tab:consent-works
+2020-consent-design-bc-based-consent-manag,consent,Healthcare,Patient-consent design addressing regulatory requirements. Hyperledger Fabric.,tab:consent-works
+2020-consent-health,consent,Healthcare,Consent representation combining the Data Use Ontology and Automatable Discovery and Access Matrix. Ethereum.,tab:consent-works
+2020-patient-consent-e-health,consent,Healthcare,Proof of concept for patient-managed consent across institutions. Hyperledger Fabric.,tab:consent-works
+2020-consent-biobanking,consent,Healthcare,Dynamic consent for biobank participants. Hyperledger Fabric.,tab:consent-works
+2020-consent-clinical-trials,consent,Healthcare (Clinical Trials),Dynamic clinical-trial consent. Hyperledger Fabric.,tab:consent-works
+10.1109/ICICT50521.2020.00054,consent,Online Social Networks,Comparison of GDPR requirements and social-network consent practices.,tab:consent-works
+10.1109/COMSNETS51098.2021.9352817,consent,Data Sharing in General,"Data-trading protocol addressing consent, traceability, and fairness. Ethereum.",tab:consent-works
+10.1007/978-3-030-78621-2_54,consent,Data Sharing in General,On-chain permission management with time-based and active revocation mechanisms.,tab:consent-works
+10.1109/QRS-C55045.2021.00159,consent,Data Sharing in General,Consent-management and data-transparency model.,tab:consent-works
+10.1109/SMDS53860.2021.00015,consent,Financial Services,Automated consent management for financial services.,tab:consent-works
+10.1136/medethics-2019-105963,consent,Healthcare,"``Prosent'' model for pseudonymous, proactive consent in medical research.",tab:consent-works
+10.3837/tiis.2021.12.008,consent,Healthcare,Patient-controlled personal health records. Hyperledger Fabric.,tab:consent-works
+2021-dynamic-consent-genomic,consent,Healthcare,Clinical genomic-data sharing. Ethereum.,tab:consent-works
+2021-dynamichain,consent,Healthcare,Dynamic consent for health-examination data. Hyperledger Fabric.,tab:consent-works
+10.1007/978-981-15-9317-8_3,consent,Open Banking,Customer consent in open banking. Hyperledger Fabric.,tab:consent-works
+10.1145/3511616.3513100,consent,Fitness Ecosystem,Review of privacy policies and consent practices in fitness applications; no blockchain-based consent system evaluated.,tab:consent-works
+10.1016/j.hcc.2022.100084,consent,Healthcare,Multi-hop permission delegation using PRE and ABE. Ethereum.,tab:consent-works
+10.3389/fmed.2022.837197,consent,Healthcare,Dynamic clinical-trial consent platform. Hyperledger Fabric.,tab:consent-works
+2022-crowmedII-consent,consent,Healthcare,Health-data management with access rights. Ethereum.,tab:consent-works
+2022-BDSS-blockchain-data-sharing,consent,Healthcare,Fine-grained access control and permission revocation.,tab:consent-works
+10.1145/3576842.3582379,consent,IoT,Multi-phase IoT consent using asymmetric cryptography.,tab:consent-works
+10.1016/j.jlamp.2023.100886,consent,Healthcare,Event-B formal model and SmartDataTrust proof of concept.,tab:consent-works
+10.1109/ICOIN56518.2023.10048920,consent,Healthcare,Consent design addressing GDPR requirements.,tab:consent-works
+updateCan2024AuditableConsent,consent,Personal-data sharing,Purpose-tree authorization; PostgreSQL consent records and on-chain Merkle hashes for auditing/recovery; Hyperledger Fabric.,tab:consent-works-2
+updateJaved2024SecureConsent,consent,Genomic-data sharing,Patient-updated contract permissions; signed JSON Web Tokens (JWTs) for repository access; Hyperledger Besu consortium with public Ethereum Virtual Machine (EVM) audit anchoring.,tab:consent-works-2
+updateRohini2024SmartConsent,consent,Health exchange,Purpose-based consent and authorization through chaincode. Off-chain records with ledger references. Hyperledger Fabric.,tab:consent-works-2
+updateGhosh2024Banking,consent,Open-banking customer data,Bank gateway with consent-based authorization; recorded exchanges and regulatory comparison of authorized fields with fields supplied by the gateway; Corda Enterprise 4.,tab:consent-works-2
+updateRao2024Genomic,consent,Genomic-data sharing,"Attribute-authority keys, encrypted IPFS records, recipient tokens, and contract evaluation of consent. Solidity/Ganache/Remix proof of concept.",tab:consent-works-2
+updateAyala2024DataConsent,consent,Personal-data consent records,Global/company-specific hash-linked consent states and described key release; React/Node.js/MongoDB proof of concept.,tab:consent-works-2
+updateDeepthika2024ConsentLSTM,consent,Health-data sharing and predicted permissions,Proposed Fabric-based authentication and authorization with long short-term memory prediction of consent preferences.,tab:consent-works-2
+updateGupta2024CertificatePermission,consent,Educational and professional certificates,"Authorized issuers; contract-based issuance, verification, and revocation; hashes and signatures; Hyperledger Fabric proposal.",tab:consent-works-2
+updateBarnes2025DemonstratedConsent,consent,Biobanking,"Proposed non-fungible-token sample records, authorization through contracts, laboratory information management system history, and donor portal; commentary.",tab:consent-works-2
+updateBonotis2025CONSENT,consent,Health consent,"Proposed three-layer CONSENT design: interface, artificial intelligence (AI) assistance, and permissioned consent-event ledger.",tab:consent-works-2
+updateDauden2025RTBConsent,consent,Advertising,Preferences and collection/processing contracts; eXtensible Access Control Markup Language (XACML) decision/enforcement points consulting ledger state; phone-based permission changes.,tab:consent-works-2
+updateObodo2025MultiProviderConsent,consent,Multi-provider health,Proposed recipient/data/time permissions before off-chain access; logged grant/update/withdrawal events.,tab:consent-works-2
+updateOke2025FHIRConsent,consent,Oncology,"Proposed bridge between Fast Healthcare Interoperability Resources (FHIR) Consent and Substitutable Medical Applications, Reusable Technologies (SMART) on FHIR, linking ledger state to server authorization before release; TechRxiv preprint v1.",tab:consent-works-2
+updateTomaz2025PrivacHer,consent,Femtech sharing,Consent-manager authorization before data-service retrieval. Encrypted fragmented cloud records and ledger audit. Hyperledger Fabric.,tab:consent-works-2
+updateQu2025ConsentEMR,consent,Patient-mediated medical-record sharing,"Patient decryption/re-encryption of IPFS records and temporary-key release; traceable ring signatures recording stages; Ethereum, Solidity, Ganache, Remix.",tab:consent-works-2
+updateFerreira2025MCPFHIR,consent,Model Context Protocol (MCP)-mediated FHIR record access,"DID/VC identity, issuer allowlists, purpose/time permissions, bundle hashes, and provenance logs; Fabric/EVM layer-2 alternatives, inconsistent deployment identification.",tab:consent-works-2
+updateLu2025RedactableEducation,consent,Educational records and anonymous disputes,Linkable-claimable ring signatures; tripartite permission for chameleon-hash editing; custom construction/EVM simulation.,tab:consent-works-2
+updateFerreira2026SportsConsent,consent,Athlete-data sharing,"MCP retrieval with VC scope validation and status checks, consent contracts, and bundle-hash anchoring; permissioned consortium design.",tab:consent-works-2
+updateAlSabahi2026AuthorshipConsent,consent,Academic publishing,"Manuscript-bound consent VCs, status checks, attested-affiliation zero-knowledge non-intersection proofs, and permissioned receipts.",tab:consent-works-2
+updateCh2026ConsentOffloading,consent,Medical IoT,AES-encrypted data; edge decryption and processing; IPFS re-encryption and patient-approved key release; Hyperledger Besu.,tab:consent-works-2
+updateGupta2026ScalableConsent,consent,Healthcare cohorts,"Hierarchical consent, Fabric anchors, synchronized purpose lookups, and RISC0 predicates over processor-supplied data.",tab:consent-works-2
+updateMiao2026PermissionSupervision,consent,Ledger redaction,User-requested chameleon-hash redaction; rotating redactors; trusted-certificate-authority correction/revocation; light-node audit tags.,tab:consent-works-2
+updateNaghmouchi2026ClinConNet,consent,Clinical research,"DIDs, encrypted DID Communication (DIDComm) forms, and contract consent-proof status; Fabric/Veramo proof of concept; arXiv preprint v1.",tab:consent-works-2
+updatePhuyal2026Architecture,consent,Secondary health-data use,"DID/VC wallets, FHIR consent resources, gateway authorization, off-chain records, and on-chain audit references; Ethereum-compatible design.",tab:consent-works-2
+updateScaramuzza2026ZKConsent,consent,Personal-data permission records,"Contract permission states; zk-SNARK proving knowledge of a Pedersen-committed secret; Ethereum, Circom/snarkjs, Ganache, Truffle.",tab:consent-works-2
+updateHemlata2026DualCare,consent,Cross-network medical-record sharing,"Hospital/patient approvals, event relay, role permissions, encrypted MinIO records, and RSA-wrapped AES keys; two Fabric test networks.",tab:consent-works-2
+2018-bc-ssi,identity,Passport-level attributes,SSI for passport-level attributes.,tab:ssi-works-part-1
+2019-everssdi,identity,N/A,Smart-contract SSI with recovery using social networking services and Ethereum oracles. Ethereum.,tab:ssi-works-part-1
+2019-ssi-digital-identity-bc,identity,Biometric Traits,Dynamic SSI model that allows identity changes over time.,tab:ssi-works-part-1
+10.1109/ACCESS.2019.2931173,identity,N/A,Formal mathematical model of SSI.,tab:ssi-works-part-1
+2020-emission-vehicles-ssi,identity,IoT,SSI for IoT and smart vehicles. Hyperledger Indy.,tab:ssi-works-part-1
+2020-uport-ims-ssi,identity,N/A,Open-source identity management using smart contracts. Ethereum.,tab:ssi-works-part-1
+10.1109/MobileCloud48802.2020.00021,identity,N/A,Specifications for evaluating SSI systems.,tab:ssi-works-part-1
+10.1109/ISSE49799.2020.9272212,identity,uPort and Sovrin ecosystems,SSI governance principles used to assess uPort and Sovrin.,tab:ssi-works-part-1
+2020-bbm-ssi,identity,Open Banking,SSI management for open banking.,tab:ssi-works-part-1
+2020-enhancing-ssi,identity,Personal Data Disclosure,Attribute-sensitivity model for credential exchange. Hyperledger Indy.,tab:ssi-works-part-1
+2021-ssi-public-transport,identity,Public Transportation,SSI model supporting multiple travel credentials. Hyperledger Indy.,tab:ssi-works-part-1
+2021-an-innovative-did,identity,Certificate Management,SSI and certificate management using elliptic-curve cryptography.,tab:ssi-works-part-1
+2021-did-prevent-secondary,identity,Healthcare,Decentralized identity with Cheon--Kim--Kim--Song (CKKS) fully homomorphic encryption (FHE). Hyperledger Indy.,tab:ssi-works-part-1
+2021-health-ID-decentralized-id,identity,Healthcare,Patient-identity management using smart contracts. Ethereum.,tab:ssi-works-part-1
+2021-dec-cross-net-idm,identity,N/A,Ledger-independent identity model and protocols. Hyperledger Indy.,tab:ssi-works-part-1
+2021-SSI-food-supply-chain,identity,Supply Chain,SSI for food-supply-chain processes and certifications. Ethereum.,tab:ssi-works-part-1
+10.1109/ISCC53001.2021.9631518,identity,N/A,SSI platform for user-managed identities. Hyperledger Fabric.,tab:ssi-works-part-2
+2021-ssi-cyber-threat,identity,Cyber Threat Information,SSI for cyber-threat information sharing. Rahasak with Aplos smart contracts.,tab:ssi-works-part-2
+2022-ssi-kyc,identity,KYC,SSI for KYC.,tab:ssi-works-part-2
+2022-a-ssi-idm-bc,identity,N/A,"SSI with encryption, blockchain, and IPFS storage.",tab:ssi-works-part-2
+2022-ssi-patient-centric-healthcare,identity,Healthcare,Patient-centered identity wallet. Hyperledger Indy.,tab:ssi-works-part-2
+2022-towards-ssi-privacy-fl,identity,Healthcare,SSI with differential privacy and federated learning.,tab:ssi-works-part-2
+10.1109/LCN53696.2022.9843700,identity,IIoT,Decentralized IIoT identity management. Ethereum and Hyperledger Indy.,tab:ssi-works-part-2
+2022-hei-bct-ssi,identity,Education Institutions,SSI for student credentials.,tab:ssi-works-part-2
+10.15439/2022F194,identity,Pharmaceutical Supply Chain,SSI for inter-organizational pharmaceutical supply-chain processes. Ethereum.,tab:ssi-works-part-2
+updateAgarkar2024BADIMAC,identity,Identity-data sharing,"Proposed encrypted on-chain documents, holder-approved disclosure, signed challenges, and service-issued JWTs; Ethereum.",tab:ssi-works-part-2
+updateZeydan2024ABSIdentity,identity,Base-station identity,"Indy/Aries credentials, DIDComm, and issuer revocation; proposed aerial/ground operator authentication and handover.",tab:ssi-works-part-2
+updateZeydan2024SSI,identity,Vehicular federated learning,"SSI registration and credentials for participant authentication, distinct from model-update privacy; Hyperledger Indy.",tab:ssi-works-part-2
+updateLiu2024SSDID,identity,Cross-shard credential verification,"Sharded DID/credential events, aggregate Byzantine fault-tolerant certificates, and Merkle cross-field proofs; permissioned sharding simulation.",tab:ssi-works-part-2
+updateRamirez2025IOTAIdentity,identity,IoT channels,"IOTA credentials, Streams encrypted channels, Stronghold key custody, and issuer revocation; Tangle distributed ledger technology.",tab:ssi-works-part-2
+updateRen2025AIoTIdentity,identity,Artificial intelligence of Things access,"Selective disclosure, user/key-generation-center keys, and context/lifetime permissions; blockchain registry proposal.",tab:ssi-works-part-2
+updateSeidi2025HealthcareSSI,identity,Medical credentials and prescriptions,"DID/VC/presentation signatures, administrator role permissions, and IPFS records; Ethereum Sepolia/Veramo.",tab:ssi-works-part-2

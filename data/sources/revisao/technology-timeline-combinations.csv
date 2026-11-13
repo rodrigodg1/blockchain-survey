@@ -1,0 +1,29 @@
+features,combination,period_start,period_end,count,publication_years,citation_keys,plot_label
+HE;SSI;CREDENTIAL;INDY,Homomorphic encryption + DID/SSI + credentials + Indy/Aries,2015,2017,0,,,"Homomorphic encryption + DID/SSI
++ credentials + Indy/Aries"
+HE;SSI;CREDENTIAL;INDY,Homomorphic encryption + DID/SSI + credentials + Indy/Aries,2018,2020,0,,,"Homomorphic encryption + DID/SSI
++ credentials + Indy/Aries"
+HE;SSI;CREDENTIAL;INDY,Homomorphic encryption + DID/SSI + credentials + Indy/Aries,2021,2023,1,2021,2021-did-prevent-secondary,"Homomorphic encryption + DID/SSI
++ credentials + Indy/Aries"
+HE;SSI;CREDENTIAL;INDY,Homomorphic encryption + DID/SSI + credentials + Indy/Aries,2024,2026,0,,,"Homomorphic encryption + DID/SSI
++ credentials + Indy/Aries"
+FL;DP;SSI,Federated learning + differential privacy + DID/SSI,2015,2017,0,,,"Federated learning + differential privacy
++ DID/SSI"
+FL;DP;SSI,Federated learning + differential privacy + DID/SSI,2018,2020,0,,,"Federated learning + differential privacy
++ DID/SSI"
+FL;DP;SSI,Federated learning + differential privacy + DID/SSI,2021,2023,1,2022,2022-towards-ssi-privacy-fl,"Federated learning + differential privacy
++ DID/SSI"
+FL;DP;SSI,Federated learning + differential privacy + DID/SSI,2024,2026,1,2025,updateHussain2025ZeroTrust,"Federated learning + differential privacy
++ DID/SSI"
+ZK;CREDENTIAL,Zero-knowledge + credentials,2015,2017,0,,,Zero-knowledge + credentials
+ZK;CREDENTIAL,Zero-knowledge + credentials,2018,2020,0,,,Zero-knowledge + credentials
+ZK;CREDENTIAL,Zero-knowledge + credentials,2021,2023,1,2023,10.1109/tc.2023.3251846,Zero-knowledge + credentials
+ZK;CREDENTIAL,Zero-knowledge + credentials,2024,2026,2,2024;2026,updateHu2024InvisiReveal;updateAlSabahi2026AuthorshipConsent,Zero-knowledge + credentials
+FL;SSI;CREDENTIAL;INDY,Federated learning + DID/SSI + credentials + Indy/Aries,2015,2017,0,,,"Federated learning + DID/SSI
++ credentials + Indy/Aries"
+FL;SSI;CREDENTIAL;INDY,Federated learning + DID/SSI + credentials + Indy/Aries,2018,2020,0,,,"Federated learning + DID/SSI
++ credentials + Indy/Aries"
+FL;SSI;CREDENTIAL;INDY,Federated learning + DID/SSI + credentials + Indy/Aries,2021,2023,0,,,"Federated learning + DID/SSI
++ credentials + Indy/Aries"
+FL;SSI;CREDENTIAL;INDY,Federated learning + DID/SSI + credentials + Indy/Aries,2024,2026,1,2024,updateZeydan2024SSI,"Federated learning + DID/SSI
++ credentials + Indy/Aries"

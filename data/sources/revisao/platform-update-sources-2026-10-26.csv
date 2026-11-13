@@ -1,0 +1,21 @@
+citation_key,organization,title,primary_url,evidence_scope,access_date,application_counted
+platform-ironwood2026,Zcash Developers,The Ironwood Book: Concepts,https://zcash.github.io/ironwood/concepts.html,Pool-state and Orchard-protocol distinction,2026-10-26,no
+platform-railgun2026,RAILGUN Contributors,RAILGUN: Overview,https://docs.railgun.org/wiki,Protocol and developer-tool documentation,2026-10-26,no
+platform-pools2026,0xbow,What is Privacy Pools?,https://docs.privacypools.com/,"Contract, proof, association-set, and public-exit descriptions",2026-10-26,no
+platform-aleo2026,Aleo,Public and Private State,https://docs.aleo.org/learn/core-concepts/public-and-private-state/index.html,Official documentation; indexed primary text consulted; direct retrieval restricted,2026-10-26,no
+platform-namada2026,Namada,The Multi-Asset Shielded Pool,https://docs.namada.net/users/shielded-accounts,MASP scope and anonymity-set limits,2026-10-26,no
+platform-namada-keys2026,Namada,MASP Key Management,https://docs.namada.net/users/shielded-accounts/masp-keys,Spending and viewing keys,2026-10-26,no
+platform-midnight2026,Midnight,How to Build a Private Smart Contract,https://docs.midnight.network/guides/build-a-private-smart-contract,"Compact private state, public ledger, and proof-server boundary",2026-10-26,no
+platform-dusk2026,Dusk,Privacy on Dusk,https://docs.dusk.network/learn/privacy-on-dusk/,Phoenix transaction-model description,2026-10-26,no
+platform-dusk-boreas2026,Dusk,Boreas,https://docs.dusk.network/updates/network/boreas/,Rusk 1.7; network-specific Phoenix admission pause,2026-10-26,no
+platform-zama2026,Zama,Zama Confidential Blockchain Protocol Litepaper,https://docs.zama.org/protocol/zama-protocol-litepaper,"FHE evaluation, replication, threshold KMS, and enclave assumptions",2026-10-26,no
+platform-cofhe2026,Fhenix,"CoFHE Architecture: Scalable, Queue-Driven Encrypted Execution for Ethereum",https://www.fhenix.io/blog/cofhe-architecture,Architecture revision dated 20 April 2026; not a deployment audit,2026-10-26,no
+platform-inco2026,Inco,Architecture: Components,https://docs.inco.org/architecture/components,Lightning TEE computation and decryption architecture,2026-10-26,no
+platform-arcium2026,Arcium,MPC Protocols,https://docs.arcium.com/multi-party-execution-environments-mxes/mpc-protocols,Cerberus assumptions and abort behavior,2026-10-26,no
+platform-sapphire2026,Oasis Protocol Foundation,Sapphire: Concepts,https://docs.oasis.io/build/sapphire/develop/concept/,Page updated 9 June 2026; access-pattern and event disclosure,2026-10-26,no
+platform-kohaku2026,Ethereum Contributors,Kohaku Wallet,https://github.com/ethereum/kohaku-extension/blob/main/README.MD,Reference wallet; work in progress; Sepolia demonstration,2026-10-26,no
+platform-secret-operators2026,Secret Network,Requirements for Secret Network Nodes,https://docs.scrt.network/operators/requirements/,Intel SGX with DCAP requirements; documentation updated 6 October 2026,2026-10-26,no
+platform-tor2026,The Tor Project,What is Tor?,https://support.torproject.org/about-tor/introduction/what-is-tor/,Communication-relay function; no claim about deployment of a particular relay cipher,2026-10-26,no
+platform-i2p2026,I2P Project,I2P: A Scalable Framework for Anonymous Communication,https://i2p.net/en/docs/overview/intro/,Anonymous communication and tunnel architecture,2026-10-26,no
+platform-nym2026,Nym Technologies,Nym Network Overview,https://nym.com/docs/network/overview,Metadata protection and network components; documentation updated 22 October 2026,2026-10-26,no
+platform-pools-paper2024,Buterin et al.,Blockchain privacy and regulatory compliance: Towards a practical equilibrium,https://doi.org/10.1016/j.bcra.2023.100176,Published proposal; distinct from current deployed implementation,2026-10-26,no

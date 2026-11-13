@@ -1,0 +1,782 @@
+{
+  "privacy": [
+    {
+      "system": "Zcash",
+      "protected_information": "Shielded addresses, amounts, and spend links. Transparent transfers and net flows across pools are visible.",
+      "mechanism_and_trust": "Orchard uses Halo 2 without a trusted setup. Ironwood reuses its proof system and maintains separate pool state.",
+      "code_and_status": "Public Zebra node code. zcashd support ended on 18 July 2026. NU6.3 activated Ironwood on mainnet on 28 July 2026.",
+      "reference_ids": [
+        "platform-zcash-shielded",
+        "platform-zcash-nu63",
+        "platform-zcash-nu5",
+        "platform-ironwood2026",
+        "platform-zebra",
+        "platform-zcash-eol"
+      ],
+      "direct_urls": [],
+      "references": [
+        {
+          "id": "platform-zcash-shielded",
+          "title": "What Is the Difference Between Shielded and Transparent {Zcash}?",
+          "url": "https://z.cash/learn/what-is-the-difference-between-shielded-and-transparent-zcash/",
+          "note": "Accessed 13 November 2026"
+        },
+        {
+          "id": "platform-zcash-nu63",
+          "title": "Network Upgrade 6.3",
+          "url": "https://z.cash/upgrade/nu6-3/",
+          "note": "Mainnet activation of Ironwood on 28 July 2026. Accessed 13 November 2026"
+        },
+        {
+          "id": "platform-zcash-nu5",
+          "title": "Network Upgrade 5",
+          "url": "https://z.cash/upgrade/nu5/",
+          "note": "Official protocol-upgrade documentation; accessed 30 September 2026"
+        },
+        {
+          "id": "platform-ironwood2026",
+          "title": "{The Ironwood Book: Concepts}",
+          "url": "https://zcash.github.io/ironwood/concepts.html",
+          "note": "Pool-state and Orchard-protocol distinction. Accessed 26 October 2026"
+        },
+        {
+          "id": "platform-zebra",
+          "title": "Zebra: Zcash Full Node",
+          "url": "https://github.com/ZcashFoundation/zebra",
+          "note": "Source repository. Accessed 30 September 2026"
+        },
+        {
+          "id": "platform-zcash-eol",
+          "title": "{zcashd} End of Life",
+          "url": "https://zcash.github.io/zcash/user/end-of-life.html",
+          "note": "End-of-support halt of version 6.20.0 on 18 July 2026. Accessed 13 November 2026"
+        }
+      ]
+    },
+    {
+      "system": "Tornado Cash Classic",
+      "protected_information": "The link between a withdrawal and its deposit in the same pool. Deposit and withdrawal transactions and pool denominations are public.",
+      "mechanism_and_trust": "A zk-SNARK proves knowledge of the opening of a deposited commitment. The contract rejects reused nullifiers. The circuits use a trusted setup.",
+      "code_and_status": "Archived tornado-core contracts and circuits for fixed-denomination ETH and ERC-20 pools.",
+      "reference_ids": [
+        "platform-tornado-core"
+      ],
+      "direct_urls": [],
+      "references": [
+        {
+          "id": "platform-tornado-core",
+          "title": "Tornado Cash Core",
+          "url": "https://github.com/tornadocash/tornado-core",
+          "note": "Archived source repository and protocol description. Accessed 30 September 2026"
+        }
+      ]
+    },
+    {
+      "system": "Incognito Chain",
+      "protected_information": "Historical private transfers conceal amounts and recipient addresses and obscure the spent input. The Confidential Asset extension targets asset-type privacy.",
+      "mechanism_and_trust": "Ring signatures, one-time recipient addresses, and confidential transactions based on commitments and range proofs.",
+      "code_and_status": "Public SDK repositories and a historical Go module snapshot. Current core repository access and live deployment could not be verified.",
+      "reference_ids": [
+        "platform-incognito-core",
+        "platform-incognito-design",
+        "platform-incognito-repositories"
+      ],
+      "direct_urls": [],
+      "references": [
+        {
+          "id": "platform-incognito-core",
+          "title": "Incognito Chain Go Module",
+          "url": "https://pkg.go.dev/github.com/incognitochain/incognito-chain",
+          "note": "Historical Go module documentation. Accessed 13 November 2026"
+        },
+        {
+          "id": "platform-incognito-design",
+          "title": "Introducing Incognito",
+          "url": "https://medium.com/incognito-chain/incognito-8b12d6d76a2f",
+          "note": "Original team description of payment privacy. Accessed 13 November 2026"
+        },
+        {
+          "id": "platform-incognito-repositories",
+          "title": "Incognito Blockchain Public Repositories",
+          "url": "https://github.com/incognitochain",
+          "note": "Repository inventory only; current core protocol and deployment not verified. Accessed 30 September 2026"
+        }
+      ]
+    },
+    {
+      "system": "Aztec Network",
+      "protected_information": "Private function inputs and notes. Public state, calls, and some transaction metadata remain visible.",
+      "mechanism_and_trust": "The client's Private Execution Environment executes and proves private functions. The network verifies proofs and runs public functions.",
+      "code_and_status": "Ethereum rollup with public Noir/Aztec.nr tooling and a dedicated VM. Alpha mainnet runs Tierra v6.0.0.",
+      "reference_ids": [
+        "platform-aztec-docs",
+        "platform-aztec-limits",
+        "platform-aztec-code",
+        "platform-aztec-status"
+      ],
+      "direct_urls": [],
+      "references": [
+        {
+          "id": "platform-aztec-docs",
+          "title": "Aztec Documentation",
+          "url": "https://docs.aztec.network/",
+          "note": "Official architecture and developer documentation. Accessed 30 September 2026"
+        },
+        {
+          "id": "platform-aztec-limits",
+          "title": "Limitations",
+          "url": "https://docs.aztec.network/developers/docs/resources/considerations/limitations",
+          "note": "Aztec Tierra v6.0.0 documentation. Accessed 13 November 2026"
+        },
+        {
+          "id": "platform-aztec-code",
+          "title": "Aztec Packages",
+          "url": "https://github.com/AztecProtocol/aztec-packages",
+          "note": "Source repository. Accessed 30 September 2026"
+        },
+        {
+          "id": "platform-aztec-status",
+          "title": "Network Status",
+          "url": "https://aztec.network/network/status",
+          "note": "Aztec Tierra v6.0.0 status reviewed by the project on 1 November 2026. Accessed 13 November 2026"
+        }
+      ]
+    },
+    {
+      "system": "Monero",
+      "protected_information": "Amounts and recipient addresses are concealed. The set of candidate spent outputs is public.",
+      "mechanism_and_trust": "Ring confidential transactions (RingCT) use ring signatures. Stealth addresses protect recipients. Dandelion++ limits origin exposure during relay.",
+      "code_and_status": "Public node code and release v0.18.5.4 (https://github.com/monero-project/monero/releases/tag/v0.18.5.4). FCMP++ was still tracked as an upgrade in development.",
+      "reference_ids": [
+        "platform-monero-privacy",
+        "platform-monero-code",
+        "platform-monero-fcmp-milestone"
+      ],
+      "direct_urls": [
+        "https://github.com/monero-project/monero/releases/tag/v0.18.5.4"
+      ],
+      "references": [
+        {
+          "id": "platform-monero-privacy",
+          "title": "Monero Technical Specification",
+          "url": "https://docs.getmonero.org/technical-specs/",
+          "note": "Ledger and network privacy properties. Accessed 13 November 2026"
+        },
+        {
+          "id": "platform-monero-code",
+          "title": "Monero node source code",
+          "url": "https://github.com/monero-project/monero",
+          "note": "Repository cited as implementation evidence; code availability does not establish current deployment or maintenance. Accessed 13 November 2026"
+        },
+        {
+          "id": "platform-monero-fcmp-milestone",
+          "title": "{FCMP++} Network Upgrade Milestone",
+          "url": "https://github.com/monero-project/monero/milestone/1",
+          "note": "Project development tracker. Accessed 13 November 2026"
+        }
+      ]
+    },
+    {
+      "system": "Secret Network",
+      "protected_information": "Secret Contract payloads, encrypted responses, and stored state. The transaction envelope is public.",
+      "mechanism_and_trust": "Intel Software Guard Extensions (SGX) enclaves decrypt and execute calls. Trust depends on isolation, attestation, and network keys.",
+      "code_and_status": "Public node code. The operator guide specifies SGX with DCAP attestation for secret-4.",
+      "reference_ids": [
+        "platform-secret-transactions",
+        "platform-secret-inputs",
+        "platform-secret-operators2026",
+        "platform-secret-code"
+      ],
+      "direct_urls": [],
+      "references": [
+        {
+          "id": "platform-secret-transactions",
+          "title": "Private Transactions: A Quick Summary",
+          "url": "https://github.com/SecretFoundation/docs/blob/6ed4f467c782078370466610487c4b6ee58e1eb8/introduction/secret-network-techstack/consensus-for-secret-transactions.md",
+          "note": "Repository snapshot dated 2 September 2026. Official documentation. Accessed 4 November 2026"
+        },
+        {
+          "id": "platform-secret-inputs",
+          "title": "Trusted and Untrusted Data",
+          "url": "https://github.com/SecretFoundation/docs/blob/6ed4f467c782078370466610487c4b6ee58e1eb8/development/development-concepts/secret-contract-fundamentals/secret-contracts.md",
+          "note": "Repository snapshot dated 2 September 2026. Official contract-privacy documentation. Accessed 4 November 2026"
+        },
+        {
+          "id": "platform-secret-operators2026",
+          "title": "{Requirements for Secret Network Nodes}",
+          "url": "https://docs.scrt.network/operators/requirements/",
+          "note": "Intel SGX with DCAP requirements; documentation updated 6 October 2026; accessed 26 October 2026"
+        },
+        {
+          "id": "platform-secret-code",
+          "title": "Secret Network node source code",
+          "url": "https://github.com/scrtlabs/SecretNetwork",
+          "note": "Repository cited as implementation evidence; code availability does not establish current deployment or maintenance. Accessed 13 November 2026"
+        }
+      ]
+    },
+    {
+      "system": "Grin",
+      "protected_information": "Transfer amounts. Aggregation and cut-through obscure some links, while relay observers can retain input--output associations.",
+      "mechanism_and_trust": "Mimblewimble uses commitments and range proofs. Grin uses a simplified Dandelion++ relay to reduce origin exposure.",
+      "code_and_status": "Public Grin node code for the Mimblewimble mainnet.",
+      "reference_ids": [
+        "platform-grin-privacy",
+        "platform-grin-relay",
+        "platform-grin-code"
+      ],
+      "direct_urls": [],
+      "references": [
+        {
+          "id": "platform-grin-privacy",
+          "title": "Grin/Mimblewimble for Bitcoiners",
+          "url": "https://github.com/mimblewimble/grin/blob/master/doc/grin4bitcoiners.md",
+          "note": "Updated 10 September 2020. Official protocol documentation. Accessed 30 September 2026"
+        },
+        {
+          "id": "platform-grin-relay",
+          "title": "Dandelion",
+          "url": "https://docs.grin.mw/wiki/miscellaneous/dandelion/",
+          "note": "Accessed 13 November 2026"
+        },
+        {
+          "id": "platform-grin-code",
+          "title": "Grin node source code",
+          "url": "https://github.com/mimblewimble/grin",
+          "note": "Repository cited as implementation evidence; code availability does not establish current deployment or maintenance. Accessed 13 November 2026"
+        }
+      ]
+    },
+    {
+      "system": "Beam",
+      "protected_information": "Amounts and supported asset types in confidential transfers. Contract disclosure depends on the application.",
+      "mechanism_and_trust": "Mimblewimble, with Lelantus-MW for shielded spends. The WebAssembly-based BeamVM executes contract shaders.",
+      "code_and_status": "Public node and wallet code plus a shader SDK. Release 7.5.14548 (https://github.com/BeamMW/beam/releases/tag/beam-7.5.14548) was published on 30 October 2026.",
+      "reference_ids": [
+        "platform-beam-assets",
+        "platform-beam-contracts",
+        "platform-beam-code"
+      ],
+      "direct_urls": [
+        "https://github.com/BeamMW/beam/releases/tag/beam-7.5.14548"
+      ],
+      "references": [
+        {
+          "id": "platform-beam-assets",
+          "title": "Confidential Assets",
+          "url": "https://github.com/BeamMW/beam/wiki/Confidential-assets",
+          "note": "Updated 10 June 2024. Accessed 13 November 2026"
+        },
+        {
+          "id": "platform-beam-contracts",
+          "title": "Beam Smart Contracts",
+          "url": "https://github.com/BeamMW/shader-sdk/wiki/Beam-Smart-Contracts",
+          "note": "Updated 19 July 2021. Accessed 13 November 2026"
+        },
+        {
+          "id": "platform-beam-code",
+          "title": "Beam: Confidential Cryptocurrency and DeFi Platform",
+          "url": "https://github.com/BeamMW/beam/",
+          "note": "Node and wallet implementation and feature documentation. Accessed 13 November 2026"
+        }
+      ]
+    },
+    {
+      "system": "RAILGUN",
+      "protected_information": "Shielded balances and transfers. Shielding, unshielding, and calls to external contracts can expose public data.",
+      "mechanism_and_trust": "Wallets prove shielded spends with zk-SNARKs. External calls execute under the host chain's public rules.",
+      "code_and_status": "Public EVM contracts (https://github.com/Railgun-Privacy/contract) and wallet SDK (https://github.com/Railgun-Community/engine).",
+      "reference_ids": [
+        "platform-railgun2026",
+        "platform-railgun-calls"
+      ],
+      "direct_urls": [
+        "https://github.com/Railgun-Privacy/contract",
+        "https://github.com/Railgun-Community/engine"
+      ],
+      "references": [
+        {
+          "id": "platform-railgun2026",
+          "title": "{RAILGUN: Overview}",
+          "url": "https://docs.railgun.org/wiki",
+          "note": "Updated 15 September 2026. Protocol and developer-tool documentation. Accessed 26 October 2026"
+        },
+        {
+          "id": "platform-railgun-calls",
+          "title": "Cross-Contract Calls",
+          "url": "https://docs.railgun.org/developer-guide/wallet/transactions/cross-contract-calls",
+          "note": "Updated 13 August 2025. Accessed 13 November 2026"
+        }
+      ]
+    },
+    {
+      "system": "Privacy Pools (0xbow)",
+      "protected_information": "Which eligible deposit funded a private withdrawal. Deposits and withdrawals are visible on-chain.",
+      "mechanism_and_trust": "Groth16 proves commitment ownership and association-set membership. The association-set provider controls inclusion. The original depositor can exit publicly.",
+      "code_and_status": "Public contracts, circuits, and SDK. 0xbow lists an Ethereum mainnet deployment.",
+      "reference_ids": [
+        "platform-pools2026",
+        "platform-pools-paper2024",
+        "platform-pools-core",
+        "platform-pools-ragequit",
+        "platform-pools-deployments"
+      ],
+      "direct_urls": [],
+      "references": [
+        {
+          "id": "platform-pools2026",
+          "title": "{What is Privacy Pools?}",
+          "url": "https://docs.privacypools.com/",
+          "note": "Contract, proof, association-set, and public-exit descriptions. Accessed 26 October 2026"
+        },
+        {
+          "id": "platform-pools-paper2024",
+          "title": "Blockchain Privacy and Regulatory Compliance: Towards a Practical Equilibrium",
+          "url": "https://doi.org/10.1016/j.bcra.2023.100176",
+          "note": "University of Basel repository record at https://edoc.unibas.ch/entities/publication/c7accf16-4638-48e3-8197-bb648a0be3ce"
+        },
+        {
+          "id": "platform-pools-core",
+          "title": "Privacy Pools Core",
+          "url": "https://github.com/0xbow-io/privacy-pools-core",
+          "note": "Accessed 13 November 2026"
+        },
+        {
+          "id": "platform-pools-ragequit",
+          "title": "Ragequit",
+          "url": "https://docs.privacypools.com/protocol/ragequit",
+          "note": "Accessed 13 November 2026"
+        },
+        {
+          "id": "platform-pools-deployments",
+          "title": "Privacy Pools Deployments",
+          "url": "https://docs.privacypools.com/deployments",
+          "note": "Updated 22 September 2026. Accessed 13 November 2026"
+        }
+      ]
+    },
+    {
+      "system": "Aleo",
+      "protected_information": "Private inputs, outputs, and records. Mappings and finalization data are public.",
+      "mechanism_and_trust": "Off-chain execution and proving. Validators verify proofs and run public finalization. Scoped viewing keys allow disclosure.",
+      "code_and_status": "Leo programs and public snarkOS node code (https://github.com/aleo-labs-protocol/snarkOS) for Aleo mainnet.",
+      "reference_ids": [
+        "platform-aleo2026",
+        "platform-aleo-transactions",
+        "platform-aleo-mainnet"
+      ],
+      "direct_urls": [
+        "https://github.com/aleo-labs-protocol/snarkOS"
+      ],
+      "references": [
+        {
+          "id": "platform-aleo2026",
+          "title": "Public & Private State",
+          "url": "https://docs.aleo.org/learn/core-concepts/public-and-private-state/",
+          "note": "Official documentation of private records, scoped viewing keys, and public mappings. Accessed 13 November 2026"
+        },
+        {
+          "id": "platform-aleo-transactions",
+          "title": "Transactions",
+          "url": "https://docs.aleo.org/learn/core-concepts/transactions/index.html",
+          "note": "Accessed 13 November 2026"
+        },
+        {
+          "id": "platform-aleo-mainnet",
+          "title": "Aleo Mainnet Is Here",
+          "url": "https://aleo.org/post/announcing-aleo-mainnet/",
+          "note": "Accessed 13 November 2026"
+        }
+      ]
+    },
+    {
+      "system": "Namada",
+      "protected_information": "Addresses, amounts, and asset types in shielded transfers. Pool entry and exit can be correlated.",
+      "mechanism_and_trust": "Sapling-derived multi-asset pool with a trusted setup. Viewing keys disclose balances and spending keys authorize transfers.",
+      "code_and_status": "Public Rust node code (https://github.com/namada-net/namada). The project documents the mainnet rollout of shielded assets and transfers.",
+      "reference_ids": [
+        "platform-namada2026",
+        "platform-namada-setup",
+        "platform-namada-keys2026",
+        "platform-namada-mainnet"
+      ],
+      "direct_urls": [
+        "https://github.com/namada-net/namada"
+      ],
+      "references": [
+        {
+          "id": "platform-namada2026",
+          "title": "{The Multi-Asset Shielded Pool}",
+          "url": "https://docs.namada.net/users/shielded-accounts",
+          "note": "MASP scope and anonymity-set limits. Accessed 26 October 2026"
+        },
+        {
+          "id": "platform-namada-setup",
+          "title": "Trusted Setup",
+          "url": "https://namada.net/trusted-setup",
+          "note": "Parameters for the multi-asset shielded pool. Accessed 13 November 2026"
+        },
+        {
+          "id": "platform-namada-keys2026",
+          "title": "An Introduction to Namada Addresses and Keys",
+          "url": "https://docs.namada.net/users/addresses",
+          "note": "Scope of spending and viewing keys. Accessed 13 November 2026"
+        },
+        {
+          "id": "platform-namada-mainnet",
+          "title": "Namada Roadmap",
+          "url": "https://namada.net/roadmap",
+          "note": "Mainnet rollout and shielded transfers. Accessed 13 November 2026"
+        }
+      ]
+    },
+    {
+      "system": "Midnight",
+      "protected_information": "Private circuit inputs and local state. The ledger contains public state and disclosed values.",
+      "mechanism_and_trust": "Compact circuits support zero-knowledge proofs. A local proof server processes private witnesses.",
+      "code_and_status": "Public ledger and proof-server releases (https://github.com/midnightntwrk/midnight-ledger/releases). Mainnet upgraded to ledger 9 on 6 November 2026.",
+      "reference_ids": [
+        "platform-midnight2026",
+        "platform-midnight-ledger9"
+      ],
+      "direct_urls": [
+        "https://github.com/midnightntwrk/midnight-ledger/releases"
+      ],
+      "references": [
+        {
+          "id": "platform-midnight2026",
+          "title": "{How to Build a Private Smart Contract}",
+          "url": "https://docs.midnight.network/guides/build-a-private-smart-contract",
+          "note": "Compact private state, public ledger, and proof-server boundary. Accessed 26 October 2026"
+        },
+        {
+          "id": "platform-midnight-ledger9",
+          "title": "Ledger 9 Upgrade",
+          "url": "https://docs.midnight.network/relnotes/ledger-9",
+          "note": "Accessed 13 November 2026"
+        }
+      ]
+    },
+    {
+      "system": "Dusk (Phoenix)",
+      "protected_information": "Shielded DUSK balances and transfer details in Phoenix. Moonlight transfers are public.",
+      "mechanism_and_trust": "Encrypted notes and zero-knowledge proofs. Viewing capabilities support disclosure.",
+      "code_and_status": "Public Rusk node code (https://github.com/dusk-network/rusk). Boreas paused new Phoenix transactions on mainnet on 10 June and testnet on 7 August 2026.",
+      "reference_ids": [
+        "platform-dusk2026",
+        "platform-dusk-boreas2026"
+      ],
+      "direct_urls": [
+        "https://github.com/dusk-network/rusk"
+      ],
+      "references": [
+        {
+          "id": "platform-dusk2026",
+          "title": "{Privacy on Dusk}",
+          "url": "https://docs.dusk.network/learn/privacy-on-dusk/",
+          "note": "Phoenix transaction-model description. Accessed 26 October 2026"
+        },
+        {
+          "id": "platform-dusk-boreas2026",
+          "title": "{Boreas}",
+          "url": "https://docs.dusk.network/updates/network/boreas/",
+          "note": "Rusk 1.7; network-specific Phoenix admission pause; accessed 26 October 2026"
+        }
+      ]
+    },
+    {
+      "system": "Zama Protocol",
+      "protected_information": "Encrypted contract values and intermediate results. Host-chain handles and operation events are visible.",
+      "mechanism_and_trust": "FHE coprocessors agree on results by majority. Access-control lists gate use and release. Threshold-MPC key management uses Nitro enclaves.",
+      "code_and_status": "Public FHEVM code (https://github.com/zama-ai/fhevm). Zama lists Ethereum mainnet contracts.",
+      "reference_ids": [
+        "platform-zama2026",
+        "platform-zama-mainnet"
+      ],
+      "direct_urls": [
+        "https://github.com/zama-ai/fhevm"
+      ],
+      "references": [
+        {
+          "id": "platform-zama2026",
+          "title": "{Zama Confidential Blockchain Protocol Litepaper}",
+          "url": "https://docs.zama.org/protocol/zama-protocol-litepaper",
+          "note": "Updated 2 February 2026. FHE evaluation, replication, threshold KMS, and enclave assumptions. Accessed 26 October 2026"
+        },
+        {
+          "id": "platform-zama-mainnet",
+          "title": "Ethereum Mainnet Contract Addresses",
+          "url": "https://docs.zama.org/protocol/protocol-apps/addresses/mainnet/ethereum",
+          "note": "Updated 14 September 2026. Accessed 13 November 2026"
+        }
+      ]
+    },
+    {
+      "system": "Fhenix CoFHE",
+      "protected_information": "Encrypted inputs, state, and intermediate results. EVM handles and operation requests are public.",
+      "mechanism_and_trust": "Off-chain FHE with permits and access control. Launch used a trusted dealer and partner-held shares. Attested services gate share release and validate inputs.",
+      "code_and_status": "Public Solidity library (https://github.com/FhenixProtocol/cofhe-contracts) and client SDK. Mainnet deployment on Ethereum and Arbitrum required approval at launch.",
+      "reference_ids": [
+        "platform-cofhe2026",
+        "platform-cofhe-mainnet-trust",
+        "platform-cofhe-mainnet"
+      ],
+      "direct_urls": [
+        "https://github.com/FhenixProtocol/cofhe-contracts"
+      ],
+      "references": [
+        {
+          "id": "platform-cofhe2026",
+          "title": "{CoFHE Architecture: Scalable, Queue-Driven Encrypted Execution for Ethereum}",
+          "url": "https://www.fhenix.io/blog/cofhe-architecture",
+          "note": "Architecture revision dated 20 April 2026; not a deployment audit; accessed 26 October 2026"
+        },
+        {
+          "id": "platform-cofhe-mainnet-trust",
+          "title": "Appendix A: {CoFHE} Mainnet {MVP} Trust Model",
+          "url": "https://www.fhenix.io/litepaper/appendix-a",
+          "note": "Launch-specific decryption, execution, and input-validation assumptions. Accessed 13 November 2026"
+        },
+        {
+          "id": "platform-cofhe-mainnet",
+          "title": "Fhenix {CoFHE} Goes Live on Arbitrum Mainnet",
+          "url": "https://www.fhenix.io/blog/fhenix-mainnet-goes-live-bringing-confidentiality-to-arbitrum",
+          "note": "Partner deployments on Ethereum and Arbitrum. Accessed 13 November 2026"
+        }
+      ]
+    },
+    {
+      "system": "Inco Lightning (EVM)",
+      "protected_information": "Encrypted contract values referenced by handles. Release policies govern which results become visible.",
+      "mechanism_and_trust": "A trusted execution environment (TEE) runs operations and checks decryption permissions. Contracts can verify signed results.",
+      "code_and_status": "Public Lightning development kit (https://github.com/Inco-fhevm/lightning-rod) for Solidity. Inco documents the EVM service on Base.",
+      "reference_ids": [
+        "platform-inco-decryption",
+        "platform-inco2026",
+        "platform-inco-mainnet"
+      ],
+      "direct_urls": [
+        "https://github.com/Inco-fhevm/lightning-rod"
+      ],
+      "references": [
+        {
+          "id": "platform-inco-decryption",
+          "title": "Decryption",
+          "url": "https://docs.inco.org/guide/decryption",
+          "note": "Updated 1 April 2026. Accessed 13 November 2026"
+        },
+        {
+          "id": "platform-inco2026",
+          "title": "{Architecture: Components}",
+          "url": "https://docs.inco.org/architecture/components",
+          "note": "Updated 8 September 2026. Lightning TEE computation and decryption architecture. Accessed 26 October 2026"
+        },
+        {
+          "id": "platform-inco-mainnet",
+          "title": "Inco Developer Documentation",
+          "url": "https://docs.inco.org/home",
+          "note": "Updated 6 August 2026. EVM availability on Base. Accessed 13 November 2026"
+        }
+      ]
+    },
+    {
+      "system": "Arcium",
+      "protected_information": "Private inputs and intermediate values. Applications choose public or recipient-encrypted outputs.",
+      "mechanism_and_trust": "Cerberus uses authenticated shares. At least one cluster member must be honest. Detected faults cause abort.",
+      "code_and_status": "Public Arcis examples (https://github.com/arcium-hq/examples) and client tooling. Arcium documents a Solana mainnet deployment.",
+      "reference_ids": [
+        "platform-arcium-encryption",
+        "platform-arcium2026",
+        "platform-arcium-deployments"
+      ],
+      "direct_urls": [
+        "https://github.com/arcium-hq/examples"
+      ],
+      "references": [
+        {
+          "id": "platform-arcium-encryption",
+          "title": "Encryption Overview",
+          "url": "https://docs.arcium.com/developers/encryption",
+          "note": "Updated 29 June 2026. Accessed 13 November 2026"
+        },
+        {
+          "id": "platform-arcium2026",
+          "title": "{MPC Protocols}",
+          "url": "https://docs.arcium.com/multi-party-execution-environments-mxes/mpc-protocols",
+          "note": "Updated 30 July 2026. Cerberus assumptions and abort behavior. Accessed 26 October 2026"
+        },
+        {
+          "id": "platform-arcium-deployments",
+          "title": "Deployment",
+          "url": "https://docs.arcium.com/developers/deployment",
+          "note": "Updated 23 September 2026. Deployment and cluster configuration on Solana mainnet. Accessed 13 November 2026"
+        }
+      ]
+    },
+    {
+      "system": "Oasis Sapphire",
+      "protected_information": "Encrypted storage and client-encrypted calldata. Gas, sizes, access patterns, and unencrypted events can disclose information.",
+      "mechanism_and_trust": "Attested execution. The Oasis key manager supplies state keys to the contract within an attested compute node.",
+      "code_and_status": "Public Sapphire ParaTime (https://github.com/oasisprotocol/sapphire-paratime) and Solidity tooling for mainnet. The project treats testnet data as public.",
+      "reference_ids": [
+        "platform-sapphire2026",
+        "platform-sapphire-networks"
+      ],
+      "direct_urls": [
+        "https://github.com/oasisprotocol/sapphire-paratime"
+      ],
+      "references": [
+        {
+          "id": "platform-sapphire2026",
+          "title": "{Sapphire: Concepts}",
+          "url": "https://docs.oasis.io/build/sapphire/develop/concept/",
+          "note": "Page updated 9 June 2026; access-pattern and event disclosure; accessed 26 October 2026"
+        },
+        {
+          "id": "platform-sapphire-networks",
+          "title": "Sapphire Network Information",
+          "url": "https://docs.oasis.io/build/sapphire/network/",
+          "note": "Updated 9 June 2026. Mainnet and testnet configurations and confidentiality assumptions. Accessed 13 November 2026"
+        }
+      ]
+    }
+  ],
+  "identity": [
+    {
+      "component": "Credo",
+      "role": "TypeScript library for credential issuance, reception, and verification.",
+      "ledger_dependency": "Supports configurable DID methods; ledger use depends on the selected method.",
+      "capabilities_and_limits": "Version 0.7.0 includes support for DIDComm, OpenID for Verifiable Credentials, AnonCreds, and SD-JWT VC. Compatibility depends on protocol versions and implementation configurations.",
+      "reference_ids": [
+        "platform-credo-code"
+      ],
+      "direct_urls": [],
+      "references": [
+        {
+          "id": "platform-credo-code",
+          "title": "Credo Agent Library, Version 0.7.0",
+          "url": "https://github.com/openwallet-foundation/credo-ts/tree/b3d9bd7fa4482076bfc0d59495b5733575624d80",
+          "note": "Released 29 April 2026. README and release metadata examined 1 October 2026"
+        }
+      ]
+    },
+    {
+      "component": "Veramo",
+      "role": "Modular library for decentralized identifiers and verifiable credentials.",
+      "ledger_dependency": "Supports did:ethr, did:web, and did:key through plugins; blockchain use depends on the method.",
+      "capabilities_and_limits": "Supports Node.js, browsers, and React Native. Privacy and interoperability depend on the selected plugins and credential formats.",
+      "reference_ids": [
+        "platform-veramo-code",
+        "platform-veramo-agent",
+        "platform-veramo-plugins"
+      ],
+      "direct_urls": [],
+      "references": [
+        {
+          "id": "platform-veramo-code",
+          "title": "Veramo agent source code",
+          "url": "https://github.com/decentralized-identity/veramo",
+          "note": "Repository cited as implementation evidence; code availability does not establish current deployment or maintenance. Accessed 13 November 2026"
+        },
+        {
+          "id": "platform-veramo-agent",
+          "title": "Veramo Agent",
+          "url": "https://veramo.io/docs/veramo_agent/introduction/",
+          "note": "Official documentation of agent functions and execution environments. Accessed 30 September 2026"
+        },
+        {
+          "id": "platform-veramo-plugins",
+          "title": "Veramo Plugins",
+          "url": "https://veramo.io/docs/veramo_agent/plugins/",
+          "note": "Official plugin documentation. Accessed 30 September 2026"
+        }
+      ]
+    },
+    {
+      "component": "Sovrin Network",
+      "role": "Identity registry originally operated by multiple stewards.",
+      "ledger_dependency": "Uses Hyperledger Indy for identity records rather than general-purpose smart contracts.",
+      "capabilities_and_limits": "Sovrin MainNet is maintained as a read-only archive by a single caretaker steward. Existing records remain accessible, but new ledger transactions are not supported in this configuration.",
+      "reference_ids": [
+        "platform-sovrin-status",
+        "platform-indy-node"
+      ],
+      "direct_urls": [],
+      "references": [
+        {
+          "id": "platform-sovrin-status",
+          "title": "The Sovrin Foundation Has Been Dissolved -- but Sovrin MainNet Remains",
+          "url": "https://sovrin.org/the-sovrin-foundation-has-been-dissolved-but-sovrin-mainnet-remains/",
+          "note": "20 January 2026; official notice describing MainNet as a read-only archive; accessed 30 September 2026"
+        },
+        {
+          "id": "platform-indy-node",
+          "title": "Indy Node: Distributed Ledger Purpose-Built for Decentralized Identity",
+          "url": "https://github.com/hyperledger-indy/indy-node",
+          "note": "Source repository. Accessed 30 September 2026"
+        }
+      ]
+    },
+    {
+      "component": "AnonCreds",
+      "role": "Anonymous-credential specification supporting selective disclosure, predicates, and non-revocation proofs.",
+      "ledger_dependency": "Uses registries for issuer verification information and, when supported, revocation status; no specific blockchain is required.",
+      "capabilities_and_limits": "Defines cryptographic operations and credential presentation mechanisms. Privacy and revocation properties depend on the selected registry, wallet, and verifier implementations.",
+      "reference_ids": [
+        "platform-anoncreds"
+      ],
+      "direct_urls": [],
+      "references": [
+        {
+          "id": "platform-anoncreds",
+          "title": "AnonCreds Specification",
+          "url": "https://hyperledger.github.io/anoncreds-spec/",
+          "note": "Project specification of anonymous credential operations and privacy boundaries. Accessed 30 September 2026"
+        }
+      ]
+    },
+    {
+      "component": "EUDI reference wallet",
+      "role": "Android reference implementation for credential issuance, storage, and presentation.",
+      "ledger_dependency": "Uses credential exchange protocols and certificate-based trust without requiring a blockchain.",
+      "capabilities_and_limits": "Supports OpenID4VCI, OpenID4VP, and proximity presentation. The reference implementation includes demonstration services and does not establish production readiness or wallet certification.",
+      "reference_ids": [
+        "platform-eudi-wallet-code2026"
+      ],
+      "direct_urls": [],
+      "references": [
+        {
+          "id": "platform-eudi-wallet-code2026",
+          "title": "{EUDI} Android Wallet Reference Application",
+          "url": "https://github.com/eu-digital-identity-wallet/eudi-app-android-wallet-ui/tree/43f362d2a720edb6d37a356b6a51b52b32c61f25",
+          "note": "Demo version 2026.09.42, released 10 September 2026. Reference code, not evidence of wallet certification"
+        }
+      ]
+    },
+    {
+      "component": "Identity.com",
+      "role": "Specification and reference implementation of the did:sol method.",
+      "ledger_dependency": "Uses Solana programs to manage public DID documents.",
+      "capabilities_and_limits": "Provides public reference code. Persistent identifiers can enable correlation, and the DID method alone does not provide selective disclosure.",
+      "reference_ids": [
+        "platform-sol-did-code",
+        "platform-sol-did"
+      ],
+      "direct_urls": [],
+      "references": [
+        {
+          "id": "platform-sol-did-code",
+          "title": "Solana DID reference implementation",
+          "url": "https://github.com/identity-com/sol-did",
+          "note": "Repository cited as implementation evidence; code availability does not establish current deployment or maintenance. Accessed 13 November 2026"
+        },
+        {
+          "id": "platform-sol-did",
+          "title": "The did:sol Method v3.0",
+          "url": "https://g.identity.com/sol-did/",
+          "note": "5 January 2023; method specification, not a W3C Recommendation; accessed 30 September 2026"
+        }
+      ]
+    }
+  ]
+}

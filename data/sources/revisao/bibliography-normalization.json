@@ -1,0 +1,40 @@
+{
+  "input_files": [
+    "related_surveys.bib",
+    "references.bib",
+    "consent_works.bib",
+    "privacy_works.bib",
+    "did_ssi_works.bib",
+    "machine_learning_works.bib",
+    "new-works-analysis.bib",
+    "revisao/revision-sources.bib",
+    "revisao/background-sources.bib",
+    "revisao/platform-sources.bib",
+    "revisao/literature-update.bib",
+    "revisao/protocol-platforms-candidates.bib",
+    "revisao/protocol-retry-included.bib",
+    "revisao/regulatory-sources.bib",
+    "revisao/governance-sources.bib",
+    "revisao/architecture-context-sources.bib",
+    "revisao/policy-context-sources.bib",
+    "revisao/contextual-verification-additions.bib",
+    "revisao/update-assessment-additions.bib"
+  ],
+  "original_entries": 338,
+  "consolidated_entries": 326,
+  "merged_aliases": {
+    "revision-gdpr": "bg-gdpr-law",
+    "revision-edpb-consent": "bg-edpb-consent",
+    "platform-did-core": "bg-did-core",
+    "platform-vc2": "bg-vc-data-model-2",
+    "platform-bbs2026": "bg-vc-di-bbs-2026",
+    "2022-blockchain-federated-ml-survey": "Li20224423",
+    "2020-dwarna": "2020-consent-biobanking",
+    "consent-clinical-trials": "2017-clinical-trials",
+    "consent-e-health": "2020-consent-design-bc-based-consent-manag",
+    "consent-health-data-sharing": "2020-consent-health",
+    "student-consent": "10.1109/ICCCI.2018.8441445",
+    "2021-health-id-did-healthcare": "2021-health-ID-decentralized-id"
+  },
+  "normalized_citations": {}
+}
