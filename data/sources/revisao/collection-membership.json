@@ -847,8 +847,8 @@
       "updateDauden2025RTBConsent"
     ],
     "G3": [
-      "2021-edge-light-smart-grid",
-      "updateHemlata2026DualCare"
+      "updateHemlata2026DualCare",
+      "2021-edge-light-smart-grid"
     ],
     "G4": [
       "updateScaramuzza2026ZKConsent",
@@ -860,10 +860,11 @@
     ],
     "G6": [
       "updateHemlata2026DualCare",
-      "2021-did-prevent-secondary"
+      "2021-did-prevent-secondary",
+      "updateRamirez2025IOTAIdentity"
     ],
     "G7": [
-      "updateZeydan2024SSI",
+      "updateLiu2024SSDID",
       "updateHussain2025ZeroTrust",
       "context-dwork-roth2014"
     ],
@@ -875,7 +876,7 @@
   "current_plot_files": [
     "technology-timeline.pdf"
   ],
-  "reference_source_sha256": "cc21a1a6796abf82338a2e42fdc122dad0560e84d75df2d259afb9e4ab6935ca",
+  "reference_source_sha256": "dea4d965ec676939c9c078991400bb1ce7db47694fbbe2c96dba354ffc14bbaa",
   "presented_evaluation_ids_by_group": {
     "privacy": [
       "updateRen2024DistributedKMS",

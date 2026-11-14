@@ -1,0 +1,106 @@
+\begin{longtable}{>{\raggedright\arraybackslash}m{0.11\textwidth}>{\raggedright\arraybackslash}m{0.23\textwidth}>{\raggedright\arraybackslash}m{0.28\textwidth}>{\raggedright\arraybackslash}m{0.30\textwidth}}
+\caption{Selected privacy protocols and execution services.}\label{tab:privacy-platforms}\\
+\toprule
+\textbf{System} & \textbf{Protected information} & \textbf{Mechanism and trust} & \textbf{Code and status} \\
+\midrule
+\endfirsthead
+\caption[]{Selected privacy protocols and execution services (continued).}\\
+\toprule
+\textbf{System} & \textbf{Protected information} & \textbf{Mechanism and trust} & \textbf{Code and status} \\
+\midrule
+\endhead
+Zcash & Shielded addresses, amounts, and spend links. Transparent transfers and net flows across pools are visible~\cite{platform-zcash}. & Orchard uses Halo~2 without a trusted setup. Ironwood reuses its proof system and maintains separate pool state~\cite{platform-zcash}. & Public Zebra node code. \texttt{zcashd} support ended on 18 July 2026. NU6.3 activated Ironwood on mainnet on 28 July 2026~\cite{platform-zcash}. \\
+\addlinespace[3pt]
+Tornado Cash Classic & The link between a withdrawal and its deposit in the same pool. Deposit and withdrawal transactions and pool denominations are public. & A zk-SNARK proves knowledge of the opening of a deposited commitment. The contract rejects reused nullifiers. The circuits use a trusted setup~\cite{platform-tornado}. & Archived \texttt{tornado-core} contracts and circuits for fixed-denomination ETH and ERC-20 pools~\cite{platform-tornado}. \\
+\addlinespace[3pt]
+Incognito Chain & Historical private transfers conceal amounts and recipient addresses and obscure the spent input. The Confidential Asset extension targets asset-type privacy~\cite{platform-incognito}. & Ring signatures, one-time recipient addresses, and confidential transactions based on commitments and range proofs~\cite{platform-incognito}. & Public SDK repositories and a historical Go module snapshot. Current core repository access and live deployment could not be verified~\cite{platform-incognito}. \\
+\addlinespace[3pt]
+Aztec Network & Private function inputs and notes. Public state, calls, and some transaction metadata remain visible~\cite{platform-aztec}. & The client's Private Execution Environment executes and proves private functions. The network verifies proofs and runs public functions~\cite{platform-aztec}. & Ethereum rollup with public Noir/Aztec.nr tooling and a dedicated VM. Alpha mainnet runs Tierra v6.0.0~\cite{platform-aztec}. \\
+\addlinespace[3pt]
+Monero & Amounts and recipient addresses are concealed. The set of candidate spent outputs is public~\cite{platform-monero}. & Ring confidential transactions (RingCT) use ring signatures. Stealth addresses protect recipients. Dandelion++ limits origin exposure during relay~\cite{platform-monero}. & Public node code and release \href{https://github.com/monero-project/monero}{v0.18.5.4}. FCMP++ was still tracked as an upgrade in development~\cite{platform-monero}. \\
+\addlinespace[3pt]
+Secret Network & Secret Contract payloads, encrypted responses, and stored state. The transaction envelope is public~\cite{platform-secret}. & Intel Software Guard Extensions (SGX) enclaves decrypt and execute calls. Trust depends on isolation, attestation, and network keys~\cite{platform-secret}. & Public node code. The operator guide specifies SGX with DCAP attestation for \texttt{secret-4}~\cite{platform-secret}. \\
+\addlinespace[3pt]
+Grin & Transfer amounts. Aggregation and cut-through obscure some links, while relay observers can retain input--output associations~\cite{platform-grin}. & Mimblewimble uses commitments and range proofs. Grin uses a simplified Dandelion++ relay to reduce origin exposure~\cite{platform-grin}. & Public Grin node code for the Mimblewimble mainnet~\cite{platform-grin}. \\
+\addlinespace[3pt]
+Beam & Amounts and supported asset types in confidential transfers. Contract disclosure depends on the application~\cite{platform-beam}. & Mimblewimble, with Lelantus-MW for shielded spends. The WebAssembly-based BeamVM executes contract shaders~\cite{platform-beam}. & Public node and wallet code plus a shader SDK. \href{https://github.com/BeamMW/beam}{Release~7.5.14548} was published on 30 October 2026~\cite{platform-beam}. \\
+\addlinespace[3pt]
+RAILGUN & Shielded balances and transfers. Shielding, unshielding, and calls to external contracts can expose public data~\cite{platform-railgun}. & Wallets prove shielded spends with zk-SNARKs. External calls execute under the host chain's public rules~\cite{platform-railgun}. & Public EVM \href{https://github.com/Railgun-Privacy/contract}{contracts} and \href{https://github.com/Railgun-Community/engine}{wallet SDK}. \\
+\addlinespace[3pt]
+Privacy Pools (0xbow) & Which eligible deposit funded a private withdrawal. Deposits and withdrawals are visible on-chain~\cite{platform-pools,platform-pools-paper2024}. & Groth16 proves commitment ownership and association-set membership. The association-set provider controls inclusion. The original depositor can exit publicly~\cite{platform-pools}. & Public contracts, circuits, and SDK. 0xbow lists an Ethereum mainnet deployment~\cite{platform-pools}. \\
+\addlinespace[3pt]
+Aleo & Private inputs, outputs, and records. Mappings and finalization data are public~\cite{platform-aleo}. & Off-chain execution and proving. Validators verify proofs and run public finalization. Scoped viewing keys allow disclosure~\cite{platform-aleo}. & Leo programs and public \href{https://github.com/aleo-labs-protocol/snarkOS}{snarkOS node code} for Aleo mainnet~\cite{platform-aleo}. \\
+\addlinespace[3pt]
+Namada & Addresses, amounts, and asset types in shielded transfers. Pool entry and exit can be correlated~\cite{platform-namada}. & Sapling-derived multi-asset pool with a trusted setup. Viewing keys disclose balances and spending keys authorize transfers~\cite{platform-namada}. & Public \href{https://github.com/namada-net/namada}{Rust node code}. The project documents the mainnet rollout of shielded assets and transfers~\cite{platform-namada}. \\
+\addlinespace[3pt]
+Midnight & Private circuit inputs and local state. The ledger contains public state and disclosed values. & Compact circuits support zero-knowledge proofs. A local proof server processes private witnesses~\cite{platform-midnight}. & Public \href{https://github.com/midnightntwrk/midnight-ledger}{ledger and proof-server releases}. Mainnet upgraded to ledger~9 on 6 November 2026~\cite{platform-midnight}. \\
+\addlinespace[3pt]
+Dusk (Phoenix) & Shielded DUSK balances and transfer details in Phoenix. Moonlight transfers are public~\cite{platform-dusk}. & Encrypted notes and zero-knowledge proofs. Viewing capabilities support disclosure~\cite{platform-dusk}. & Public \href{https://github.com/dusk-network/rusk}{Rusk node code}. Boreas paused new Phoenix transactions on mainnet on 10 June and testnet on 7 August 2026~\cite{platform-dusk}. \\
+\addlinespace[3pt]
+Zama Protocol & Encrypted contract values and intermediate results. Host-chain handles and operation events are visible~\cite{platform-zama}. & FHE coprocessors agree on results by majority. Access-control lists gate use and release. Threshold-MPC key management uses Nitro enclaves~\cite{platform-zama}. & Public \href{https://github.com/zama-ai/fhevm}{FHEVM code}. Zama lists Ethereum mainnet contracts~\cite{platform-zama}. \\
+\addlinespace[3pt]
+Fhenix CoFHE & Encrypted inputs, state, and intermediate results. EVM handles and operation requests are public~\cite{platform-cofhe}. & Off-chain FHE with permits and access control. Launch used a trusted dealer and partner-held shares. Attested services gate share release and validate inputs~\cite{platform-cofhe}. & Public \href{https://github.com/FhenixProtocol/cofhe-contracts}{Solidity library} and client SDK. Mainnet deployment on Ethereum and Arbitrum required approval at launch~\cite{platform-cofhe}. \\
+\addlinespace[3pt]
+Inco Lightning (EVM) & Encrypted contract values referenced by handles. Release policies govern which results become visible~\cite{platform-inco}. & A trusted execution environment (TEE) runs operations and evaluates decryption permissions. Contracts can verify signed results~\cite{platform-inco}. & Public \href{https://github.com/Inco-fhevm/lightning-rod}{Lightning development kit} for Solidity. Inco documents the EVM service on Base~\cite{platform-inco}. \\
+\addlinespace[3pt]
+Arcium & Private inputs and intermediate values. Applications choose public or recipient-encrypted outputs~\cite{platform-arcium}. & Cerberus uses authenticated shares. At least one cluster member must be honest. Detected faults cause abort~\cite{platform-arcium}. & Public \href{https://github.com/arcium-hq/examples}{Arcis examples} and client tooling. Arcium documents a Solana mainnet deployment~\cite{platform-arcium}. \\
+\addlinespace[3pt]
+Oasis Sapphire & Encrypted storage and client-encrypted calldata. Gas, sizes, access patterns, and unencrypted events can disclose information~\cite{platform-sapphire}. & Attested execution. The Oasis key manager supplies state keys to the contract within an attested compute node~\cite{platform-sapphire}. & Public \href{https://github.com/oasisprotocol/sapphire-paratime}{Sapphire ParaTime} and Solidity tooling for mainnet. The project treats testnet data as public~\cite{platform-sapphire}. \\
+\bottomrule
+\end{longtable}
+
+\begin{table*}[htbp]
+\centering
+\footnotesize
+\caption{Selected identity infrastructure and credential specifications, comparing their functions, ledger dependencies, and technical limitations.}
+\label{tab:ssi-platforms}
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.15}
+\begin{tabular}{>{\raggedright\arraybackslash}m{0.14\textwidth}>{\raggedright\arraybackslash}m{0.20\textwidth}>{\raggedright\arraybackslash}m{0.20\textwidth}>{\raggedright\arraybackslash}m{0.38\textwidth}}
+\toprule
+\textbf{Component} & \textbf{Role} & \textbf{Ledger dependency} & \textbf{Capabilities and limits} \\
+\midrule
+
+Credo &
+TypeScript library for credential issuance, reception, and verification. &
+Supports configurable DID methods; ledger use depends on the selected method. &
+Version 0.7.0 includes support for DIDComm, OpenID for Verifiable Credentials, AnonCreds, and SD-JWT VC. Compatibility depends on protocol versions and implementation configurations~\cite{platform-credo}. \\
+
+\addlinespace[5pt]
+
+Veramo &
+Modular library for decentralized identifiers and verifiable credentials. &
+Supports \texttt{did:ethr}, \texttt{did:web}, and \texttt{did:key} through plugins; blockchain use depends on the method. &
+Supports Node.js, browsers, and React Native~\cite{platform-veramo}. Privacy and interoperability depend on the selected plugins and credential formats~\cite{platform-veramo}. \\
+
+\addlinespace[5pt]
+
+Sovrin Network &
+Identity registry originally operated by multiple stewards. &
+Uses Hyperledger Indy for identity records, not general-purpose smart contracts. &
+Sovrin MainNet is maintained as a read-only archive by a single caretaker steward. Existing records remain accessible, but new ledger transactions are not supported in this configuration~\cite{platform-sovrin,platform-indy-node}. \\
+
+\addlinespace[5pt]
+
+AnonCreds &
+Anonymous-credential specification supporting selective disclosure, predicates, and non-revocation proofs. &
+Uses registries for issuer verification information and, when supported, revocation status; no specific blockchain is required. &
+Defines cryptographic operations and credential presentation mechanisms. Privacy and revocation properties depend on the selected registry, wallet, and verifier implementations~\cite{platform-anoncreds}. \\
+
+\addlinespace[5pt]
+
+EUDI reference wallet &
+Android reference implementation for credential issuance, storage, and presentation. &
+Uses credential exchange protocols and certificate-based trust without requiring a blockchain. &
+Supports OpenID4VCI, OpenID4VP, and proximity presentation. The reference implementation includes demonstration services and does not establish production readiness or wallet certification~\cite{platform-eudi-wallet}. \\
+
+\addlinespace[5pt]
+
+Identity.com &
+Specification and reference implementation of the \texttt{did:sol} method. &
+Uses Solana programs to manage public DID documents. &
+Provides public reference code~\cite{platform-sol-did}. Persistent identifiers can enable correlation, and the DID method alone does not provide selective disclosure~\cite{platform-sol-did}. \\
+
+\bottomrule
+\end{tabular}
+\end{table*}

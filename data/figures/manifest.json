@@ -1,6 +1,6 @@
 {
-  "snapshot_date": "2026-11-13",
-  "reference_source_sha256": "cc21a1a6796abf82338a2e42fdc122dad0560e84d75df2d259afb9e4ab6935ca",
+  "snapshot_date": "2026-11-14",
+  "reference_source_sha256": "dea4d965ec676939c9c078991400bb1ce7db47694fbbe2c96dba354ffc14bbaa",
   "dataset_sha256": "325b3f7b094f628066c471db4b067b3640cafa1c853e5f0c3901d9ea1d048372",
   "generator": "scripts/reproduce_plots.py",
   "python": "3.14.5",
@@ -19,11 +19,11 @@
   ],
   "excluded_plot_files_generated": [],
   "inputs": {
-    "references-revised.bib": "173a7645ce2af7b4be61814164726725ffd4981be56a8fb2084e9f6223f582db",
+    "references-revised.bib": "6c9d31af18d0627501459a57d83034556e90c02f650df20bc1c37df98fa6589e",
     "historical-extraction.csv": "e0247df22c2c6de842d19d5853eb2a890bd7cc43e7390bea39b07ea7c89ffbff",
     "revisao/recent-extraction.csv": "5d4544f874c8cc396791fd7b411e72a80ee61b6669ea290617246129be2faee7",
-    "revisao/synthesis-evidence-matrix.csv": "2998498430ce689f66bdb6dc1070a43c0c5d6e6fdf9b8a41d4bbb1d2d22c7de0",
-    "revisao/application-inventory.tex": "f3fa6669b53d0cf4cab0994f2273a08d0b8760ce430def631c39d230303cd401",
+    "revisao/synthesis-evidence-matrix.csv": "843ff002a462c56513a9ec4065b24c6e9e0f46a02fba1362b6e8997844cd9722",
+    "revisao/application-inventory.tex": "c7a26b20983b15f3788f3409faa5fb1ffa590c3d56c6f96035b27465209b1e12",
     "revisao/plot_technology_timeline.py": "40fe36a9eb636f370a35e09d64fdb293533bd442b11304da6596d4ac66382217"
   },
   "outputs": {

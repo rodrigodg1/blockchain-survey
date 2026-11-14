@@ -4,13 +4,13 @@ The publication cutoff is 30 September 2026.
 
 ## Review design and accounting
 
-The qualitative survey covers privacy, consent/permission management and decentralized identity. Its 139 included publications comprise 48 privacy, 59 consent and 32 identity records. Each publication is counted in one search-topic group. The analytical unit is a sharing or processing operation, and one publication may describe several operations.
+The qualitative survey covers privacy, consent/permission management and decentralized identity. Its 139 included publications comprise 48 privacy, 59 consent and 32 identity records. Each publication is counted in one search-topic group, and all contribute to the classification of applications and mechanisms. The qualitative synthesis examines selected data-sharing operations involving multiple stakeholders. One publication may describe several operations.
 
 RQ1 concerns privacy, consent and selective sharing. RQ2 concerns individual identity control. RQ3 concerns enabling platforms and protocols. The exact questions are recorded in [collection-membership.json](../data/sources/revisao/collection-membership.json), together with the six inventory memberships, evaluation extraction identities, and evaluation presentation locations.
 
 ## Title queries
 
-The collection spans publications available by the cutoff with no lower publication-year limit. Where applied, database filters covered 2024–2026.
+The collection spans publications available by the cutoff with no lower publication-year limit. Some retained [search records](../data/sources/revisao/protocol-search-records.csv) document a 2024–2026 filter for the corresponding retrievals; that filter is not a lower publication-year limit for the complete collection.
 
 | ID | Source | Reported query |
 |---|---|---|
@@ -36,9 +36,13 @@ The source bibliography classifies 137 works as journal articles, conference con
 
 ## Synthesis and figures
 
+The comparisons examine the participating entities, the services enforcing permissions, data and decryption-key custody, and the information disclosed to recipients. Reported evaluations are interpreted according to the operations and trust assumptions they address. Differences in study scope and reporting limit which dimensions can be compared. Each comparison identifies its supporting publications, and details are extracted only where supported by the sources.
+
 The [evidence matrix](../data/sources/revisao/synthesis-evidence-matrix.csv) links comparisons of sharing operations, enforcement points, trust assumptions, and reported evaluations to their sources. The [codebook](../data/sources/revisao/synthesis-codebook.md) defines the extraction fields. The [derivation register](../data/sources/revisao/requirement-derivation.csv) links individual observations to the evaluation objectives.
 
-The evaluation records describe the operations tested and the conditions reported by the included publications. The synthesis excerpts identify the evaluations discussed in each section.
+The synthesis distinguishes findings reported by the original studies from the authors' comparative interpretation. The qualitative comparisons inform the eight evaluation objectives, G1–G8; they do not establish new security guarantees. Evaluation records and presentation locations identify retained evidence, not uniform analytical coverage of all 139 publications.
+
+The platform comparison uses the documented versions and access dates of its sources, as recorded in the retained bibliography. It is qualitative, does not independently verify security claims, and does not rank platforms.
 
 The timeline counts explicit names in existing descriptions, using all 139 publications in its denominators. It does not measure adoption or effectiveness. The earlier two-study processing-cost illustration is excluded from the current figure set because it describes only two studies. Its retained inputs and original generator support optional historical reproduction. [Plot method](../data/sources/revisao/technology-timeline-method.md), [measurement records](../data/sources/revisao/processing-costs-data.json), [reproduction instructions](../REPRODUCE.md).
 

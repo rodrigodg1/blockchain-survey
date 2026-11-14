@@ -6,7 +6,9 @@ The [protocol](docs/protocol.md) records the publication cutoff, title queries, 
 
 ## Explore the collection
 
-The collection includes **139 publications**. Each publication is counted in one search-topic group.
+The collection includes **139 publications**: 48 on privacy protection, 59 on consent management, and 32 on decentralized identity. Each publication is counted in one search-topic group, and all contribute to the classification of applications and mechanisms.
+
+The qualitative synthesis compares selected data-sharing operations involving multiple stakeholders. It examines participating entities, permission enforcement, data and decryption-key custody, recipient disclosure, and the scope of reported evaluations. Study scope and reporting determine which dimensions can be compared; the 139 publications do not imply uniform coverage of every analytical dimension.
 
 Start with:
 

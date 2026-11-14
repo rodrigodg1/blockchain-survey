@@ -1,29 +1,29 @@
 {
-  "artifact_date": "2026-11-13",
+  "artifact_date": "2026-11-14",
   "title": "Blockchain-Aided Data Sharing: Dataset and Analyses of Privacy, Consent, and Identity Management",
-  "source_description": "The collection contains 139 publications. The chronology counts explicit approach mentions across the collection.",
+  "source_description": "The collection classifies 139 publications. Qualitative comparisons concern selected multi-stakeholder sharing operations with source-specific evidence limits; the chronology counts explicit approach mentions across the full collection.",
   "canonical_dataset_sha256": "325b3f7b094f628066c471db4b067b3640cafa1c853e5f0c3901d9ea1d048372",
   "source_files": {
     "historical-extraction.csv": "e0247df22c2c6de842d19d5853eb2a890bd7cc43e7390bea39b07ea7c89ffbff",
-    "references-revised.bib": "173a7645ce2af7b4be61814164726725ffd4981be56a8fb2084e9f6223f582db",
+    "references-revised.bib": "6c9d31af18d0627501459a57d83034556e90c02f650df20bc1c37df98fa6589e",
     "revisao/architecture-context-sources.bib": "0be486bd0b29b5abaf25ba5db44f2a53d05cf01150c6665c314e8403157ac01f",
     "revisao/bibliography-normalization.json": "46152324445eadbfb886ec8fe7475dfec698d7ecadab83db4bfbd84452246612",
     "revisao/contextual-verification-additions.bib": "27b390b1a57f0b31ad9100e05826ec5fb3feeaed76615e825b3b2ec7d4eb07c6",
-    "revisao/did-ssi-state-2026.md": "ee1130d2298dc35dc961383d9e505d20173dbbad7694d22802952e33b92d4174",
+    "revisao/did-ssi-state-2026.md": "60f20c5db6cb3c533773ec0493b7efc1e3383bf563b3bf70862c65d1867f0ce4",
     "revisao/governance-sources.bib": "7bac267a7fe148e54a3a87f830a450ffe805172064f2f685276eab853702f2f4",
     "revisao/policy-context-sources.bib": "e49436ee243d482ca764d353496dd4c8e9cbcb39ba3d76be53ca0d639941d457",
     "revisao/protocol-eligibility.csv": "98325b9e23e317fd20c1251713501f1824b841aa4a2cf2678805313390568cb2",
     "revisao/protocol-search-records.csv": "6d48a88c28adb42ea6f2d1cbb7ad88d01e12f1f7e170700324e7f1e7866cfb2f",
     "revisao/recent-extraction.csv": "5d4544f874c8cc396791fd7b411e72a80ee61b6669ea290617246129be2faee7",
-    "revisao/requirement-derivation.csv": "77521fcbfa13a3c44a0de92c6014757d2083333975c627788de6dbcdb72067eb",
+    "revisao/requirement-derivation.csv": "2601dc490840c861147e5b5306faeb293951777b18b2c0af1299a62e5cc73df8",
     "revisao/rq-application-comparisons.csv": "215eb7333ea802d2572bcfd3b2cece7b3f595d2a2504d1aa762eb2f8ae373ec3",
     "revisao/search-completion-inclusions.bib": "828858fdcd5f03361497dbb34298d87cabc49030ad64a8ab18a3a88f89a9b314",
     "revisao/search-completion-inclusions.csv": "1ba94fca9e7f069f50280467a9feb9c2ce1acee7c158da5f5c3d1f5e2f42044e",
     "revisao/search-completion-inclusions.json": "e8a48c2f93a82abec0cedf9729372f480dd2ef527583a59de273cf5654a0950b",
     "revisao/search-completion-primary-evidence.md": "98a62903df42de9cfb4f8029f2afea051d9efc21d3f7da6fe10069be8eb6d1c7",
-    "revisao/synthesis-codebook.md": "6b79fecec5cc07ab66abb7c43c3265378af8d2794b8dbedb89fa5d4048f52fe0",
-    "revisao/synthesis-evidence-matrix.csv": "2998498430ce689f66bdb6dc1070a43c0c5d6e6fdf9b8a41d4bbb1d2d22c7de0",
-    "revisao/synthesis-evidence-method.md": "3a1a9f0d5836a8b70e1331269b78e2af42dbaa65908822ced6231e3856f0022c",
+    "revisao/synthesis-codebook.md": "48d46bbcb3d38dd568f6c7d37744393be08fe0cb3e2144dfd6b10905741f4e47",
+    "revisao/synthesis-evidence-matrix.csv": "843ff002a462c56513a9ec4065b24c6e9e0f46a02fba1362b6e8997844cd9722",
+    "revisao/synthesis-evidence-method.md": "551b2d97dd6997464c2416cca2750bad08b169909e50058aeb1782fb7c69d2ce",
     "revisao/update-assessment-2026-10-01.csv": "d530c140e65c11f45b6cf41a02a3d0efc47d6542875319a01306cda4243b43f8",
     "revisao/update-assessment-2026-10-01.md": "d8b29a5fe7ca86789869f04c6ae41a7f15534b61f5c774da9758e695da00c5d2",
     "revisao/update-assessment-additions.bib": "5c3173682c094d410d7e0b86e88ae730ac08d27738404d6b2b7cd610f3082c7a",
@@ -43,10 +43,12 @@
     "revisao/technology-timeline-counts.csv": "0721deb62d9e80e042ff15c64792bb340429f0b483b9e533af1099f427f6f1eb",
     "revisao/technology-timeline-periods.csv": "2072f7b06b42235b7bc1054ad14066a3f3b3b37c2d7473cc1393a1c8e5565b3c",
     "revisao/technology-timeline-combinations.csv": "781a0090c712c2210c878e4ca816a4d66bc9f0e4d0b05ed1b4984199171edacc",
-    "revisao/collection-membership.json": "b9e0de80599725c7380ad3ed085a1a99484f7c6ee083b77be7894d36924922de",
-    "revisao/application-inventory.tex": "f3fa6669b53d0cf4cab0994f2273a08d0b8760ce430def631c39d230303cd401",
-    "revisao/comparison-excerpts.tex": "46e137a7f012e1c1814537091540012aa9d3ee0945fe520205c4a029da7b1447",
-    "revisao/scopus-included-records.csv": "bffd5fa80d9057694580d17ea6056dda10b8424fdcc06b0754b858e9aafa84a8"
+    "revisao/collection-membership.json": "a0bff7ff35a610f89b1e77f89fc268376a61e2a8756924465d1dcdfa3e15e43f",
+    "revisao/application-inventory.tex": "c7a26b20983b15f3788f3409faa5fb1ffa590c3d56c6f96035b27465209b1e12",
+    "revisao/comparison-excerpts.tex": "acaec05740ac7b5dcf3573a08a6e0911012054ad3ca6bfd1697b867e665b0876",
+    "revisao/scopus-included-records.csv": "bffd5fa80d9057694580d17ea6056dda10b8424fdcc06b0754b858e9aafa84a8",
+    "revisao/survey-method.tex": "81f7ab968fcfa7d6c339a3377807996c809a0152df04e95a50238e8d2e747117",
+    "revisao/reference-platforms.tex": "7d304b3561fb875bbd60f0e027e7924414f663ec2079d20efb1525b79a9c7e26"
   },
   "counts": {
     "historical": 98,
@@ -77,7 +79,7 @@
   "excluded_plot_files": [
     "synthesis-processing-costs.pdf"
   ],
-  "reference_source_sha256": "cc21a1a6796abf82338a2e42fdc122dad0560e84d75df2d259afb9e4ab6935ca",
+  "reference_source_sha256": "dea4d965ec676939c9c078991400bb1ce7db47694fbbe2c96dba354ffc14bbaa",
   "platform_counts": {
     "privacy": 19,
     "identity": 6

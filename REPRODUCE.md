@@ -1,6 +1,6 @@
 # Reproduce the dataset, comparisons, and figures
 
-These commands reconstruct the included-publication dataset, comparisons, and figures.
+These commands reconstruct the included-publication dataset, retained comparisons, and figures. They check the consistency of the retained artifacts; they do not rerun literature searches or reproduce the experiments reported by the cited studies.
 
 ## Requirements
 
@@ -26,7 +26,7 @@ python3 verify_source.py
 python3 -m unittest discover -s tests -v
 ```
 
-`run.py` validates source fingerprints, publication identities, table assignments, query provenance for included publications, detailed comparisons, and evaluation records before writing outputs. `--validate` reconstructs the expected outputs in memory and compares them with the retained files without rewriting them.
+`run.py` checks source fingerprints, publication identities, table assignments, recorded query provenance, comparison membership, and evaluation records before writing outputs. `--validate` reconstructs the expected outputs in memory and compares them with the retained files without rewriting them.
 
 Eight generated files appear under `data/`:
 
@@ -41,9 +41,11 @@ Eight generated files appear under `data/`:
 | `studies-by-year.csv` | Separate annual totals by extraction year and bibliography year |
 | `manifest.json` | Input and generated-file SHA-256 fingerprints |
 
-The rebuilt dataset contains **139 publications**.
+The rebuilt dataset contains **139 publications**, all contributing to the classification of applications and mechanisms. The qualitative synthesis compares selected multi-stakeholder data-sharing operations. Extraction fields and evaluation records reflect the information retained for each source, not uniform assessment of every analytical dimension across all publications.
 
-`verify_source.py` validates the retained inventory and comparison excerpts. It supports prose-based privacy synthesis and table-based consent and identity evaluations. All inputs required for its default command are included in this repository.
+`verify_source.py` validates the retained method, inventory, and comparison excerpts. It supports prose-based privacy synthesis and table-based consent and identity evaluations. All inputs required for its default command are included in this repository.
+
+Under `data/sources/revisao/`, `survey-method.tex` retains the source method and `reference-platforms.tex` retains the manuscript's platform-table form. The platform entries in `comparison-excerpts.tex` preserve the repository's specific source citations and direct documentation or release links. Their substantive descriptions agree with the manuscript, while citation keys and some wording and links differ. The optional external-source check uses `reference-platforms.tex`; default validation uses the repository's platform entries.
 
 ## 2. Generate and validate the chronology
 

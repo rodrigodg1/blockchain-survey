@@ -1,5 +1,6 @@
 """Read retained LaTeX tables and synthesis passages without executing LaTeX."""
 import hashlib
+from pathlib import PurePosixPath
 import re
 
 TABLE_GROUPS = {
@@ -57,6 +58,38 @@ def section_fragment(text, label):
     return text[start:end].strip()
 
 
+def survey_method_fragment(text):
+    text = without_comments(text)
+    heading = re.search(r'\\section\{Survey Method\}', text)
+    if not heading:
+        raise ValueError('Missing Survey Method section')
+    following = re.search(r'\\section\*?\{', text[heading.end():])
+    end = heading.end() + following.start() if following else len(text)
+    return text[heading.start():end].strip()
+
+
+def objective_sources(text):
+    objectives = {}
+    if r'\label{tab:architecture-requirements}' in text:
+        rows = table_rows(table_fragment(text, 'tab:architecture-requirements'))
+        entries = []
+        for cells in rows:
+            match = re.match(r'(?:\\textbf\{\s*)?(G[1-8])\s*:', cells[0])
+            if not match or len(cells) != 3:
+                raise ValueError('Invalid evaluation objective row')
+            entries.append((match[1], ' '.join(cells)))
+    else:
+        # Retained historical excerpts used one bare G-label per line.
+        entries = re.findall(r'^(G[1-8]):([^\n]+)', text, re.M)
+    for key, passage in entries:
+        if key in objectives:
+            raise ValueError('Duplicate evaluation objective: ' + key)
+        objectives[key] = citation_ids(passage)
+    if set(objectives) != {f'G{i}' for i in range(1, 9)}:
+        raise ValueError('Expected eight evaluation objectives')
+    return objectives
+
+
 def extract_membership(source, evaluation_candidates=None):
     text = without_comments(source.decode('utf-8'))
     works, fragments, summaries = [], [], []
@@ -103,16 +136,14 @@ def extract_membership(source, evaluation_candidates=None):
         questions[key] = question
     if set(questions) != {'RQ1', 'RQ2', 'RQ3'}:
         raise ValueError('Expected three research questions')
-    objectives = {m[1]: citation_ids(m[2])
-                  for m in re.finditer(r'^(G[1-8]):([^\n]+)', text, re.M)}
-    if set(objectives) != {f'G{i}' for i in range(1, 9)}:
-        raise ValueError('Expected eight evaluation objectives')
+    objectives = objective_sources(text)
     return {
         'reference_source_sha256': hashlib.sha256(source).hexdigest(),
         'included_works': works, 'presented_evaluation_ids_by_group': evaluations,
         'evaluation_locations': locations, 'research_questions': questions,
         'objective_source_ids': objectives,
-        'current_plot_files': re.findall(r'\\includegraphics(?:\[[^]]*\])?\{imgs/([^}]+\.pdf)\}', text),
+        'current_plot_files': [PurePosixPath(path).name for path in re.findall(
+            r'\\includegraphics(?:\[[^]]*\])?\{([^}]+\.pdf)\}', text)],
     }, '\n\n'.join(fragments), summaries
 
 

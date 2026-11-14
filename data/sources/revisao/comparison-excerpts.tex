@@ -2,11 +2,14 @@
 
 The reviewed applications distinguish protecting records from unauthorized access from limiting what authorized recipients learn. Access policies, proxy re-encryption, and encrypted search support controlled retrieval and sharing of individual records~\cite{2021-system-medical-data-privacy,2018-towards-secure}, whereas homomorphic aggregation enables computation over encrypted inputs and release of combined results~\cite{2021-priv-iot-homo}. However, input confidentiality does not determine who can decrypt results or what information they reveal. Similarly, Fabric channels restrict data visibility among organizations, while pseudonymous identifiers do not necessarily prevent the linkage of activities~\cite{2020-privy-sharing,2017-provchain}.
 
+
+These disclosure mechanisms have different limitations. Encrypted search may expose query or access patterns depending on the scheme~\cite{2018-towards-secure,10.1109/jiot.2023.3287636}. The protection offered by $k$-anonymity depends on the selected quasi-identifiers and auxiliary information~\cite{2021-medical-data-sharing}, while sanitizable signatures permit specified modifications without necessarily concealing the remaining information~\cite{10.1109/tifs.2023.3297327}. These mechanisms therefore address different disclosure risks rather than providing interchangeable confidentiality guarantees.
+
 Decryption authority also depends on key custody throughout the sharing operation. In the design of \citet{updateRen2024DistributedKMS}, proxy re-encryption is distributed across nodes, but the authorized recipient recovers the master secret key before deriving an attribute key. Distributed key management therefore differs from threshold decryption without reconstructing the complete secret. Assessing privacy requires identifying which participants can ultimately obtain usable keys and plaintext.
 
 Federated learning raises a related distinction between keeping training records local and protecting exchanged model updates. In \citet{updateGupta2024LungFL}, signed updates provide authentication but not confidentiality, and prediction accuracy does not establish protection against information leakage. The model-trading design of \citet{updateHussain2025ZeroTrust} proposes noise addition for local differential privacy, but the examined description does not sufficiently specify the protected data contribution, noise calibration, or privacy accounting across repeated releases. These details are necessary to assess the claimed privacy guarantee independently of predictive accuracy or transaction performance~\cite{context-dwork-roth2014}.
 
-The reported evaluations also measure different properties. Encryption and search timings characterize computational costs rather than query-pattern leakage or subsequent use of disclosed records~\cite{updateGuan2025Healthcare}. Prevention percentages without sufficiently defined measures provide limited evidence of confidentiality~\cite{updateDhasaratha2024IoMT}. Performance comparisons also require consistency between the evaluated operations and the proposed architecture. Proof-of-work calculations do not characterize a Fabric/Composer workflow~\cite{updateMasood2024Patient}, while inconsistent gas figures and incomplete implementation details limit the reproducibility of the rollup comparison~\cite{updateMaZhang2024Rollup}. These limitations constrain the conclusions supported by the available evidence, without necessarily demonstrating failures in the proposed mechanisms.
+The reported evaluations also measure different properties. Encryption and search timings characterize computational costs, but do not assess query-pattern leakage or subsequent use of disclosed records~\cite{updateGuan2025Healthcare}. Prevention percentages without sufficiently defined measures provide limited evidence of confidentiality~\cite{updateDhasaratha2024IoMT}. Performance comparisons also require consistency between the evaluated operations and the proposed architecture. Proof-of-work calculations do not characterize a Fabric/Composer workflow~\cite{updateMasood2024Patient}, while inconsistent gas figures and incomplete implementation details limit the reproducibility of the rollup comparison~\cite{updateMaZhang2024Rollup}. These limitations constrain the conclusions supported by the available evidence, without necessarily demonstrating failures in the proposed mechanisms.
 
 These comparisons highlight the importance of the information being shared when selecting a privacy approach. An application that needs only a combined statistic can use encrypted aggregation to keep individual inputs hidden from the aggregator, while an application that requires individual records needs controls over retrieval and usable decryption keys~\cite{2021-priv-iot-homo,2021-system-medical-data-privacy,2018-towards-secure}. Keeping training records local does not necessarily protect the model updates exchanged during training~\cite{updateGupta2024LungFL}. These approaches therefore address different sharing requirements and rely on different trust assumptions. Sections~\ref{sec:processing-result-release} and~\ref{sec:finding-evidence} further examine the implications for information disclosure and the supporting evaluation evidence.
 
@@ -110,23 +113,30 @@ These comparisons highlight the importance of the information being shared when 
 \cite{updateSeidi2025HealthcareSSI} & 50 repetitions; 10 parallel sessions; DID/credential gas/timing tests. Hashes/signatures of personally identifiable information do not establish confidential attributes or cryptographic selective disclosure; issuer/administrator trust and regulatory validation remain. \\
 \end{longtable}
 
-This survey addresses three research questions (RQs): (RQ1) What mechanisms or strategies are used in blockchain applications to ensure privacy, consent management, and selective sharing among multiple stakeholders? (RQ2) How can individuals control their identity in a decentralized infrastructure? (RQ3) What blockchain platforms and protocols support user privacy and identity management?
-
-G1: Authentication and permission (RQ1/RQ2) \cite{updateLiu2024SSDID} & SS-DID authenticates credential messages; \citet{updateSeidi2025HealthcareSSI} apply role permissions. & Assess authorization separately from authentication, including trust in issuers, credential status services, and the component enforcing permission. \\
-
-G2: Permission rules and updates (RQ1) & \citet{updateCan2024AuditableConsent} match purposes; \citet{updateDauden2025RTBConsent} propose recipient consent-state checks. & Identify which permission record governs release for the requested data, purpose, operation, recipient, policy version, and time; assess cached decisions and earlier tokens. \\
-
-G3: Keys and data release (RQ1) \cite{2021-edge-light-smart-grid,updateHemlata2026DualCare} & DualCare releases keys through middleware; EBDA's center decrypts aggregates. & Trace data and key custody, release authority, key versions, and collusion assumptions through key rotation, recovery, and service failure. \\
-
-G4: Confidentiality and correctness (RQ1) & \citet{updateScaramuzza2026ZKConsent} implement a proof of knowledge of a committed secret; \citet{updateGupta2026ScalableConsent} verify negotiated conditions. & When independent result verification is needed, assess binding to the specified inputs and operation; state the proven statement, hidden values, verifier, and acceptance assumptions separately from release permission. \\
-
-G5: Audit and accountability (RQ1) & \citet{updateGhosh2024Banking} audit declared exchanges; \citet{updateLu2025RedactableEducation} permit authorized correction. & Assess log integrity, event coverage, reviewer access and responsibilities, and who authorizes and executes corrections. \\
-
-G6: Withdrawal and credential status (RQ1/RQ2) \cite{updateHemlata2026DualCare} & DualCare removes wrapped middleware keys; \citet{2021-did-prevent-secondary} use expiring retrieval URLs. & Assess withdrawal enforcement at release services and distinguish credential status changes from retained keys, tokens, ciphertexts, or plaintext that remain usable. \\
-
-G7: Information inferred from results (RQ1) & \citet{updateZeydan2024SSI} test federated learning authentication; \citet{updateHussain2025ZeroTrust} propose noisy updates. & Assess inference across repeated outputs using stated background information. For differential privacy claims, specify neighboring datasets, the protection unit, noise calibration, budget, and composition~\cite{context-dwork-roth2014}. \\
-
-G8: Input origin and accuracy (RQ1/RQ2) \cite{2021-priv-iot-homo} & PrivDA trusts measurements; \citet{updateAlSabahi2026AuthorshipConsent} use declared affiliations. & Assess input accuracy and completeness separately from authenticated origin and computation correctness; identify what is verified and which observations or declarations are assumed correct. \\
+\begin{table*}[htbp]
+\setlength{\tabcolsep}{2pt}
+\centering
+\footnotesize
+\caption{Permission enforcement and verification in six application operations (RQ1 and RQ2).}
+\label{tab:worked-control-comparisons}
+\begin{tabular}{@{}>{\raggedright\arraybackslash}m{0.14\textwidth}>{\raggedright\arraybackslash}m{0.20\textwidth}>{\raggedright\arraybackslash}m{0.16\textwidth}>{\raggedright\arraybackslash}m{0.23\textwidth}>{\raggedright\arraybackslash}m{0.22\textwidth}@{}}
+\toprule
+Application / operation & Technology or policy & What the ledger records & Component and trust assumptions & Verification scope / evaluation evidence \\
+\midrule
+\citet{updateCan2024AuditableConsent}\newline Purpose queries & Purpose trees; Merkle/hash verification & Fabric consent hashes & Off-chain query/audit service; supplied records/events. & Records match consent hashes; synthetic tests. Omitted events/secondary use unverified. \\
+\addlinespace[5pt]
+\citet{updateGupta2026ScalableConsent}\newline Cohort selection & Hierarchical consent hashes; RISC0 condition evaluation & Fabric hash anchors & Off-chain consent/proof services; processor receives raw inputs. & Selected conditions; local synthetic benchmarks. Other processing and input accuracy unverified. \\
+\addlinespace[5pt]
+DualCare \cite{updateHemlata2026DualCare}\newline Record-key release & AES; RSA-wrapped keys; middleware roles & Approvals on two Fabric networks & Off-chain relay/key service; relayed permission updates and storage of encrypted keys. & Key-release workflows; test networks. Deletion cannot invalidate recovered keys. \\
+\addlinespace[5pt]
+\citet{2021-did-prevent-secondary}\newline Genomic access and learning & Indy/Aries; AES/FHE; temporary URL & Indy; exact ledger fields unextracted & Off-chain license distributor and data manager; trusted storage. & Access and encrypted-regression prototype. URL expiry leaves downloaded ciphertext. \\
+\addlinespace[5pt]
+SS-DID \cite{updateLiu2024SSDID}\newline Cross-shard credentials & Signed events; aggregate certificates; Merkle proofs & Credential events; main-chain management anchors & Ledger committees; authenticated channels; partial synchrony; Byzantine fraction $<1/3$. Data-release steps not extracted. & Message authenticity and liveness; shard simulation. Use identifiers remain linkable. \\
+\addlinespace[5pt]
+\citet{updateSeidi2025HealthcareSSI}\newline Credentials and roles & Signed presentations; role permissions & Sepolia DID documents and record identifiers & Off-chain Veramo/IPFS; relies on issuers, role administration, Veramo keys, and IPFS availability. & Presentation verification and role-based authorization; gas/timing tests. Confidential attributes and selective disclosure not established. \\
+\bottomrule
+\end{tabular}
+\end{table*}
 
 \begin{longtable}{>{\raggedright\arraybackslash}m{0.11\textwidth}>{\raggedright\arraybackslash}m{0.23\textwidth}>{\raggedright\arraybackslash}m{0.28\textwidth}>{\raggedright\arraybackslash}m{0.30\textwidth}}
 \caption{Selected privacy protocols and execution services.}\label{tab:privacy-platforms}\\
@@ -235,4 +245,68 @@ Provides public reference code~\cite{platform-sol-did-code}. Persistent identifi
 \end{tabular}
 \end{table*}
 
-\includegraphics[width=\textwidth]{imgs/technology-timeline.pdf}
+\begin{table*}[htbp]
+\centering
+\footnotesize
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.15}
+\caption{Eight evaluation objectives (G1--G8) derived from selected application comparisons, with supporting observations and aspects to assess.}
+\label{tab:architecture-requirements}
+\begin{tabular}{@{}>{\raggedright\arraybackslash}m{0.21\textwidth}>{\raggedright\arraybackslash}m{0.30\textwidth}>{\raggedright\arraybackslash}m{0.43\textwidth}@{}}
+\toprule
+\textbf{Objective} & \textbf{Application observation} & \textbf{Evaluation objective} \\
+\midrule
+
+\textbf{G1: Authentication and authorization (RQ1/RQ2)} &
+SS-DID authenticates credential messages~\cite{updateLiu2024SSDID}, while \citet{updateSeidi2025HealthcareSSI} use role-based permissions. &
+Assess credential verification separately from authorization to access data, including issuer trust, credential status, and the service responsible for applying permissions. \\
+
+\addlinespace[5pt]
+
+\textbf{G2: Permission rules and updates (RQ1)} &
+\citet{updateCan2024AuditableConsent} use purpose-based rules, while \citet{updateDauden2025RTBConsent} propose evaluation against recorded consent states. &
+Identify the permission governing each request, including data, purpose, operation, recipient, policy version, and validity period. Assess whether the relevant services apply this permission consistently. \\
+
+\addlinespace[5pt]
+
+\textbf{G3: Key custody and data release (RQ1)} &
+DualCare controls key delivery through middleware~\cite{updateHemlata2026DualCare}, while EBDA uses a center to decrypt aggregated results~\cite{2021-edge-light-smart-grid}. &
+Identify who stores data, holds or reconstructs decryption keys, and authorizes their release. Assess key recovery, collusion assumptions, and service failures. \\
+
+\addlinespace[5pt]
+
+\textbf{G4: Proof scope and computation correctness (RQ1)} &
+\citet{updateScaramuzza2026ZKConsent} prove knowledge of a committed secret, while \citet{updateGupta2026ScalableConsent} verify selected predicates over supplied data. &
+Specify the statement being proved, public inputs, verifier, and trust assumptions. When computation correctness is required, assess whether the evidence covers the specified inputs and operations, and identify steps that remain unverified. \\
+
+\addlinespace[5pt]
+
+\textbf{G5: Audit coverage and correction (RQ1)} &
+\citet{updateGhosh2024Banking} audit reported gateway exchanges, while \citet{updateLu2025RedactableEducation} support authorized record correction. &
+Assess log integrity and completeness, which events are captured, and who can inspect or modify records. Evaluate correction authority and the evidence supporting accepted changes. \\
+
+\addlinespace[5pt]
+
+\textbf{G6: Withdrawal and credential status (RQ1/RQ2)} &
+DualCare removes wrapped middleware keys~\cite{updateHemlata2026DualCare}. Expiring retrieval URLs restrict future access~\cite{2021-did-prevent-secondary}, while the IOTA identity design includes issuer revocation~\cite{updateRamirez2025IOTAIdentity}. &
+Assess how withdrawal and credential-status changes affect future access decisions. Distinguish these changes from previously released keys, tokens, ciphertexts, and plaintext that remain usable. \\
+
+\addlinespace[5pt]
+
+\textbf{G7: Privacy across repeated interactions (RQ1/RQ2)} &
+SS-DID retains linkable credential-use identifiers~\cite{updateLiu2024SSDID}, while \citet{updateHussain2025ZeroTrust} propose noisy model updates without sufficient privacy accounting. &
+Assess linkability across credential presentations and access records, as well as inference from repeated computation outputs. For differential privacy claims, specify neighboring datasets, the protection unit, privacy parameters, noise calibration, and composition~\cite{context-dwork-roth2014}. \\
+
+\addlinespace[5pt]
+
+\textbf{G8: Input origin and accuracy (RQ1/RQ2)} &
+PrivDA assumes legitimate measurements~\cite{2021-priv-iot-homo}, while \citet{updateAlSabahi2026AuthorshipConsent} rely on declared affiliations. &
+Assess input accuracy and completeness separately from authenticated origin and computation correctness. Identify which properties are verified and which depend on assumptions about the supplied information. \\
+
+\bottomrule
+\end{tabular}
+\end{table*}
+
+This survey addresses three research questions (RQs): (RQ1) What mechanisms or strategies are used in blockchain applications to ensure privacy, consent management, and selective sharing among multiple stakeholders? (RQ2) How can individuals control their identity in a decentralized infrastructure? (RQ3) What blockchain platforms and protocols support user privacy and identity management?
+
+\includegraphics[width=\textwidth]{technology-timeline.pdf}

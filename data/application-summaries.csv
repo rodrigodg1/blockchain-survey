@@ -5,7 +5,7 @@ study_id,review_group,application,reported_approach,source_table
 2017-Medibchain,privacy,Healthcare,Patient-centered record management with encryption and access control.,tab:privacy-works
 2018-BPDS,privacy,Healthcare,"Cloud and blockchain storage of electronic medical records (EMRs), with public-key encryption and ciphertext-policy attribute-based encryption (CP-ABE) access control.",tab:privacy-works
 2018-towards-secure,privacy,Healthcare,Public-key encryption with keyword search for protected health records. Ethereum.,tab:privacy-works
-2020-privacy-remote-iot,privacy,IoT,Remote IoT data-integrity checking using lifted elliptic-curve ElGamal and bilinear pairings.,tab:privacy-works
+2020-privacy-remote-iot,privacy,IoT,Remote IoT data-integrity verification using lifted elliptic-curve ElGamal and bilinear pairings.,tab:privacy-works
 2020-privy-sharing,privacy,IoT,"IoT data sharing with encryption, channels, and smart contracts. Hyperledger Fabric.",tab:privacy-works
 2021-edge-light-smart-grid,privacy,Smart grid,Smart-grid data aggregation using homomorphic encryption.,tab:privacy-works
 2021-privacy-fog-iot,privacy,IoT,IoT access policies and encryption. Hyperledger Fabric.,tab:privacy-works

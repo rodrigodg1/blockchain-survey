@@ -2,11 +2,13 @@
 
 This codebook defines the extraction and interpretation rules for the qualitative synthesis.
 
-## Analytical unit and source selection
+## Analytical unit and comparison scope
+
+The survey classifies 139 publications: 48 on privacy protection, 59 on consent management, and 32 on decentralized identity. The qualitative synthesis compares selected data-sharing operations involving multiple stakeholders. It examines the participating entities, permission-enforcing services, data and decryption-key custody, recipient disclosure, and the scope of reported evaluations. Differences in study scope, reporting, and source access limit which dimensions can be compared. Each comparison identifies its supporting publications; details remain unextracted where the sources do not establish them.
 
 The analytical unit is the sharing or processing operation described in a source, including the actors, protected information, decision, enforcing component, and observable result. A paper can describe several operations. One matrix row summarizes a source and its relevant operations; row counts therefore cannot estimate frequencies of operations or mutually exclusive capabilities.
 
-The evidence matrix supports contrasts in enforcement points and verified relations, including purpose queries, access tokens, policy gateways, credential verification, key release, encrypted processing, predicate proofs, and audit and correction.
+The evidence matrix supports contrasts in enforcement points and verified relations, including purpose queries, access tokens, policy gateways, credential verification, key release, encrypted processing, predicate proofs, and audit and correction. It also contains contextual sources used to interpret these operations. Matrix membership and row counts do not imply that every included publication supports the same comparison or that all fields were extracted uniformly.
 
 ## Research-question alignment
 

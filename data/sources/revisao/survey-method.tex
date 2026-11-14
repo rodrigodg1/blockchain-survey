@@ -1,0 +1,46 @@
+\section{Survey Method}
+\label{sec:methodology}
+\label{sec:update-method}
+\label{sec:qualitative-synthesis-method}
+
+
+This survey includes 139 publications on blockchain-aided data sharing: 48 on privacy protection, 59 on consent management, and 32 on decentralized identity. All included publications contribute to the classification of applications and mechanisms.
+
+We searched publication titles in Google Scholar, Scopus, and the Association for Computing Machinery (ACM) Digital Library using the queries in Table~\ref{tab:search-strings}. The survey includes publications available by 30 September 2026, without a lower publication-year limit. We included studies whose primary sources described proposed or implemented blockchain-assisted mechanisms for protecting, authorizing access to, sharing, or processing user data, including identity credentials. Duplicates and publications outside the scope or date limits were excluded. The available search and selection records are provided in the accompanying repository~\cite{our-github-survey}. Related reviews are discussed separately in  Section~\ref{sec:related-works}.
+
+The qualitative synthesis focuses on selected data-sharing operations involving multiple stakeholders, examining the techniques and mechanisms used to protect information and govern its exchange. The comparisons consider the participating entities, the services responsible for enforcing permissions, data and decryption-key custody, and the information disclosed to recipients. Reported evaluations are examined according to the operations and trust assumptions they address. Differences in study scope and reporting limit which dimensions can be compared across studies. Each comparison identifies its supporting publications, and details are extracted only where supported by the sources.
+
+Our analysis distinguishes the findings reported by the original studies from our comparative interpretation. Application mechanisms address RQ1, decentralized identity and credential management address RQ2, and platform comparisons address RQ3. The qualitative comparisons inform the evaluation objectives in Table~\ref{tab:architecture-requirements}.
+
+Our comparison of the reviewed platforms uses the documentation versions and access dates recorded in the references. The analysis is qualitative and does not independently verify security claims or rank the platforms.
+
+\begin{table*}[htbp]
+\setlength{\tabcolsep}{3pt}
+\centering
+\footnotesize
+\caption{Literature search queries applied to publication titles.}
+\label{tab:search-strings}
+\begin{tabular}{l>{\raggedright\arraybackslash}m{0.17\textwidth}>{\raggedright\arraybackslash}m{0.64\textwidth}}
+\toprule
+Identifier & Source & Query \\
+\midrule
+S01 & Google Scholar & \texttt{allintitle: blockchain data privacy} \\
+\addlinespace[5pt]
+S02 & Scopus & \texttt{TITLE(blockchain) AND TITLE(data) AND TITLE(privacy)} \\
+\addlinespace[5pt]
+S03 & ACM Digital Library & \texttt{[Title: blockchain] AND [Title: data] AND [Title: privacy]} \\
+\addlinespace[5pt]
+S04 & Google Scholar & \texttt{allintitle: blockchain (consent OR permission)} \\
+\addlinespace[5pt]
+S05 & Scopus & \texttt{TITLE(blockchain) AND (TITLE(consent) OR TITLE(permission))} \\
+\addlinespace[5pt]
+S06 & ACM Digital Library & \texttt{[Title: blockchain] AND [[Title: consent] OR [Title: permission]]} \\
+\addlinespace[5pt]
+S07 & Google Scholar & \texttt{allintitle: blockchain (decentralized OR self-sovereign) identity} \\
+\addlinespace[5pt]
+S08 & Scopus & \texttt{TITLE(blockchain) AND TITLE(decentralized OR self-sovereign) AND TITLE(identity)} \\
+\addlinespace[5pt]
+S09 & ACM Digital Library & \texttt{[Title: blockchain] AND [[Title: decentralized] OR [Title: self-sovereign]] AND [Title: identity]} \\
+\bottomrule
+\end{tabular}
+\end{table*}

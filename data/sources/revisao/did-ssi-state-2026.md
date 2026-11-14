@@ -37,6 +37,6 @@ Wallet approval is a technical choice in a disclosure workflow. It is not, by it
 
 ## Editorial and evidence limits
 
-The generic issuer–holder–verifier figure was removed from the manuscript without deleting its source image. The roles remain explained in prose, while the released space is used for current standards and regulated wallet responsibilities. No new manuscript section or application table was added. URLs appear through bibliography references in the implementation table. Contextual standardization maturity, implementation support, cryptographic privacy, and regulatory duties remain separate evidence categories.
+The manuscript includes an issuer–holder–verifier illustration and explains these roles in prose. The identity discussion distinguishes credential standards from implementation support and regulated wallet responsibilities. URLs appear through bibliography references in the implementation table. Contextual standardization maturity, implementation support, cryptographic privacy, and regulatory duties remain separate evidence categories.
 
 The contextual cutoff is 1 October 2026. The existing application search retains its 30 September 2026 publication cutoff. No new full PDF or unversioned vendor marketing claim was used to infer guarantees.
