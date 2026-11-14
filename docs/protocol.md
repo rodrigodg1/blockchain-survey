@@ -34,11 +34,11 @@ DOI matching uses nonempty normalized identifiers. Missing DOI is not a duplicat
 
 The source bibliography classifies 137 works as journal articles, conference contributions or book chapters, plus two preprints: ClinConNet arXiv v1 and the FHIR oncology consent proposal TechRxiv v1. Peer review was not individually verified for all 137 published records. Source access is distinct from independent reproduction or endorsement of a security claim.
 
-## Detailed synthesis and figures
+## Synthesis and figures
 
-The [evidence matrix](../data/sources/revisao/synthesis-evidence-matrix.csv) contains 53 included publications and 17 contextual sources. The detailed synthesis compares sharing operations, enforcement points, trust assumptions, and reported evaluations. The [codebook](../data/sources/revisao/synthesis-codebook.md) defines the extraction fields. The [derivation register](../data/sources/revisao/requirement-derivation.csv) links individual observations to the evaluation objectives.
+The [evidence matrix](../data/sources/revisao/synthesis-evidence-matrix.csv) links comparisons of sharing operations, enforcement points, trust assumptions, and reported evaluations to their sources. The [codebook](../data/sources/revisao/synthesis-codebook.md) defines the extraction fields. The [derivation register](../data/sources/revisao/requirement-derivation.csv) links individual observations to the evaluation objectives.
 
-Evaluation extraction contains 8 privacy, 26 consent, and 7 identity records. The privacy synthesis excerpt discusses seven of those eight records; the consent and identity evaluation tables present 26 and seven. The InvisiReveal extraction remains retained even though it is not separately discussed in that privacy passage. None of these records adds a publication to the inventory. Missing detail does not establish that a study has no evaluation.
+The evaluation records describe the operations tested and the conditions reported by the included publications. The synthesis excerpts identify the evaluations discussed in each section.
 
 The timeline counts explicit names in existing descriptions, using all 139 publications in its denominators. It does not measure adoption or effectiveness. The earlier two-study processing-cost illustration is excluded from the current figure set because it describes only two studies. Its retained inputs and original generator support optional historical reproduction. [Plot method](../data/sources/revisao/technology-timeline-method.md), [measurement records](../data/sources/revisao/processing-costs-data.json), [reproduction instructions](../REPRODUCE.md).
 

@@ -1,6 +1,6 @@
 # Maintain the retained collection
 
-The current snapshot contains 139 included publications (48/59/32), 53 detailed application comparisons, 17 contextual sources, 41 evaluation extraction records, and comparisons of 19 privacy systems and six identity components.
+The collection contains 139 included publications.
 
 ## Rebuild unchanged inputs
 

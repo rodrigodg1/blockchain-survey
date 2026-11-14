@@ -1,7 +1,7 @@
 {
   "artifact_date": "2026-11-13",
   "title": "Blockchain-Aided Data Sharing: Dataset and Analyses of Privacy, Consent, and Identity Management",
-  "source_description": "139 included publications: 48 privacy, 59 consent, and 32 identity. Detailed comparisons contain 53 included publications and 17 contextual sources. Evaluation summaries cover eight privacy, 26 consent, and seven identity publications. The chronology counts explicit approach mentions across all 139 publications.",
+  "source_description": "The collection contains 139 publications. The chronology counts explicit approach mentions across the collection.",
   "canonical_dataset_sha256": "325b3f7b094f628066c471db4b067b3640cafa1c853e5f0c3901d9ea1d048372",
   "source_files": {
     "historical-extraction.csv": "e0247df22c2c6de842d19d5853eb2a890bd7cc43e7390bea39b07ea7c89ffbff",
@@ -21,9 +21,9 @@
     "revisao/search-completion-inclusions.csv": "1ba94fca9e7f069f50280467a9feb9c2ce1acee7c158da5f5c3d1f5e2f42044e",
     "revisao/search-completion-inclusions.json": "e8a48c2f93a82abec0cedf9729372f480dd2ef527583a59de273cf5654a0950b",
     "revisao/search-completion-primary-evidence.md": "98a62903df42de9cfb4f8029f2afea051d9efc21d3f7da6fe10069be8eb6d1c7",
-    "revisao/synthesis-codebook.md": "a67b8d9f6c77d8f9552d7aebac561a7acf236fdac9db5fd69278b89845b71a00",
+    "revisao/synthesis-codebook.md": "6b79fecec5cc07ab66abb7c43c3265378af8d2794b8dbedb89fa5d4048f52fe0",
     "revisao/synthesis-evidence-matrix.csv": "2998498430ce689f66bdb6dc1070a43c0c5d6e6fdf9b8a41d4bbb1d2d22c7de0",
-    "revisao/synthesis-evidence-method.md": "bff21b0d123700bd2b36787484f3d4c633c2ba3d5647fef4885bfd68942d8f49",
+    "revisao/synthesis-evidence-method.md": "3a1a9f0d5836a8b70e1331269b78e2af42dbaa65908822ced6231e3856f0022c",
     "revisao/update-assessment-2026-10-01.csv": "d530c140e65c11f45b6cf41a02a3d0efc47d6542875319a01306cda4243b43f8",
     "revisao/update-assessment-2026-10-01.md": "d8b29a5fe7ca86789869f04c6ae41a7f15534b61f5c774da9758e695da00c5d2",
     "revisao/update-assessment-additions.bib": "5c3173682c094d410d7e0b86e88ae730ac08d27738404d6b2b7cd610f3082c7a",
@@ -57,7 +57,6 @@
       "consent": 59,
       "identity": 32
     },
-    "detailed_application_examples": 53,
     "contextual_sources": 17,
     "privacy_evaluation_summaries": 8,
     "scholar_inclusions": 38,

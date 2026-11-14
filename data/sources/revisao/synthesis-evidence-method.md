@@ -1,6 +1,6 @@
 # Source-linked derivation of the qualitative synthesis
 
-The cross-cutting synthesis compares authority, disclosure, processing, release, and oversight in blockchain-aided data sharing. The matrix covers 53 included publications and 17 contextual sources. Its comparisons use source locators, observed operations, and reported conditions.
+The cross-cutting synthesis compares authority, disclosure, processing, release, and oversight in blockchain-aided data sharing. The evidence matrix records source locators, observed operations, and reported conditions for the comparisons.
 
 ## Extraction and source access
 

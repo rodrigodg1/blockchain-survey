@@ -6,7 +6,7 @@ This codebook defines the extraction and interpretation rules for the qualitativ
 
 The analytical unit is the sharing or processing operation described in a source, including the actors, protected information, decision, enforcing component, and observable result. A paper can describe several operations. One matrix row summarizes a source and its relevant operations; row counts therefore cannot estimate frequencies of operations or mutually exclusive capabilities.
 
-The evidence matrix contains 53 included publications and 17 contextual sources. The 53 detailed examples support contrasts in enforcement points and verified relations, including purpose queries, access tokens, policy gateways, credential verification, key release, encrypted processing, predicate proofs, and audit and correction.
+The evidence matrix supports contrasts in enforcement points and verified relations, including purpose queries, access tokens, policy gateways, credential verification, key release, encrypted processing, predicate proofs, and audit and correction.
 
 ## Research-question alignment
 

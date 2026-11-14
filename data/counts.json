@@ -11,15 +11,7 @@
     "contextual_references_counted_as_application_studies": false
   },
   "detailed_analysis": {
-    "application_examples": 53,
     "contextual_sources": 17,
-    "matrix_records": 70,
-    "included_works_not_detailed": 86,
-    "application_examples_by_group": {
-      "consent": 28,
-      "privacy": 14,
-      "identity": 11
-    },
     "privacy_evaluation_summaries": 8,
     "evaluation_summaries_by_group": {
       "privacy": 8,
@@ -27,7 +19,6 @@
       "identity": 7
     },
     "contextual_sources_in_application_denominator": false,
-    "scope": "Source-linked qualitative comparisons; not uniform assessment of all included works",
     "presented_evaluation_summaries_by_group": {
       "privacy": 7,
       "consent": 26,

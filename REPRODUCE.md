@@ -41,7 +41,7 @@ Eight generated files appear under `data/`:
 | `studies-by-year.csv` | Separate annual totals by extraction year and bibliography year |
 | `manifest.json` | Input and generated-file SHA-256 fingerprints |
 
-Expected group totals are **48 privacy, 59 consent, and 32 identity**. Detailed comparisons contain 53 included publications and 17 contextual sources. Evaluation extraction contains 8/26/7 records; the retained synthesis excerpts present 7/26/7. These are different presentation scopes, not different included-publication totals.
+The rebuilt dataset contains **139 publications**.
 
 `verify_source.py` validates the retained inventory and comparison excerpts. It supports prose-based privacy synthesis and table-based consent and identity evaluations. All inputs required for its default command are included in this repository.
 

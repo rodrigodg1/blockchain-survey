@@ -6,21 +6,14 @@ The [protocol](docs/protocol.md) records the publication cutoff, title queries, 
 
 ## Explore the collection
 
-| Search-topic group | Included publications | Detailed comparisons | Evaluation records |
-|---|---:|---:|---:|
-| Privacy | 48 | 14 | 8 |
-| Consent and permission | 59 | 28 | 26 |
-| Decentralized identity | 32 | 11 | 7 |
-| **Total** | **139** | **53** | **41** |
-
-Each publication belongs to one group for counting. Its mechanisms may address more than one topic. Evaluation records describe publications already included in the collection. They do not add studies. The privacy synthesis excerpt discusses seven of the eight retained privacy evaluation records; the InvisiReveal extraction remains available in the dataset.
+The collection includes **139 publications**. Each publication is counted in one search-topic group.
 
 Start with:
 
 - [Application summaries](data/application-summaries.csv): application and approach descriptions for all 139 publications.
 - [Included-publication dataset](data/survey-dataset.csv): bibliographic identities, extraction fields, evaluation descriptions, source locations, and access limits. [Field definitions](docs/data-dictionary.json).
 - [Platform comparisons](data/platform-comparisons.json): 19 privacy systems and six identity components, with their roles, protected information, trust assumptions, limits, and reference URLs.
-- [Detailed evidence matrix](data/sources/revisao/synthesis-evidence-matrix.csv): 53 included publications and 17 contextual sources. Contextual sources are excluded from the 139-publication total.
+- [Evidence matrix](data/sources/revisao/synthesis-evidence-matrix.csv): source locators, reported mechanisms, evaluation conditions, and contextual references.
 - [Included-publication references](data/application-references.bib), [counts](data/counts.json), and [annual totals](data/studies-by-year.csv).
 
 ## Reproduce the results

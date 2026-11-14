@@ -160,22 +160,15 @@ def validate_source_membership(collection, matrix, recent, retained, snapshot, m
                 raise ValueError('Objective anchor lacks its recorded direct primary-text check')
 
     expected = snapshot['counts']
-    if (len(detailed_ids), len(contextual_ids), len(privacy_evaluation_ids)) != (
-            expected['detailed_application_examples'], expected['contextual_sources'],
-            expected['privacy_evaluation_summaries']):
-        raise ValueError('Snapshot detailed/contextual/evaluation counts disagree with membership')
+    if (len(contextual_ids), len(privacy_evaluation_ids)) != (
+            expected['contextual_sources'], expected['privacy_evaluation_summaries']):
+        raise ValueError('Snapshot contextual/evaluation counts disagree with membership')
 
     return {
-        'application_examples': len(detailed_ids),
         'contextual_sources': len(contextual_ids),
-        'matrix_records': len(matrix_ids),
-        'included_works_not_detailed': len(included_ids - detailed_ids),
-        'application_examples_by_group': dict(Counter(collection_by_id[key]['review_group']
-                                                     for key in sorted(detailed_ids))),
         'privacy_evaluation_summaries': len(privacy_evaluation_ids),
         'evaluation_summaries_by_group': evaluation_counts,
         'contextual_sources_in_application_denominator': False,
-        'scope': 'Source-linked qualitative comparisons; not uniform assessment of all included works',
     }
 
 
