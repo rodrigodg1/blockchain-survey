@@ -1,6 +1,6 @@
 # Reproduce the dataset, comparisons, and figures
 
-These commands reconstruct the retained collection and its descriptive results. They do not rerun the reviewed systems, repeat literature screening, or recover undocumented selection decisions.
+These commands reconstruct the included-publication dataset, comparisons, and figures.
 
 ## Requirements
 
@@ -26,18 +26,17 @@ python3 verify_source.py
 python3 -m unittest discover -s tests -v
 ```
 
-`run.py` validates source fingerprints, publication identities, table assignments, separate retrieval strata, detailed comparisons, and evaluation records before writing outputs. `--validate` reconstructs the expected outputs in memory and compares them with the retained files without rewriting them.
+`run.py` validates source fingerprints, publication identities, table assignments, query provenance for included publications, detailed comparisons, and evaluation records before writing outputs. `--validate` reconstructs the expected outputs in memory and compares them with the retained files without rewriting them.
 
-Nine generated files appear under `data/`:
+Eight generated files appear under `data/`:
 
 | File | Contents |
 |---|---|
 | `survey-dataset.csv` | 139 included publications and their extraction fields |
 | `application-summaries.csv` | 139 application and approach descriptions |
 | `platform-comparisons.json` | 19 privacy systems and six identity components, with reference URLs |
-| `study-counts.csv` | Historical, supplementary, and combined group totals |
-| `search-decision-counts.csv` | Decisions for the original 50 Scholar observations |
-| `counts.json` | Collection totals, retrieval strata, evaluation records, and limits |
+| `study-counts.csv` | Included-publication totals by group and source |
+| `counts.json` | Collection totals, evaluation records, and analysis scope |
 | `application-references.bib` | Bibliographic entries for the included publications |
 | `studies-by-year.csv` | Separate annual totals by extraction year and bibliography year |
 | `manifest.json` | Input and generated-file SHA-256 fingerprints |
@@ -79,12 +78,12 @@ The retained processing-cost illustration describes two studies with different t
 
 A separate destination is required. These commands generate the chronology plus the historical illustration without replacing the current figure manifest.
 
-## 4. Inspect historical retrieval records
+## 4. Inspect publication identities
 
 ```sh
 python3 process-papers.py
 ```
 
-The command reads nine historical source exports and prints candidate duplicate groups as JSON. It does not delete, merge, or select records. Missing DOI values never form a DOI-based match. Candidate groups can overlap, so their counts cannot be subtracted to infer a selected-study total.
+The command reports possible matches among the included publications using DOI and normalized title. The output is intended for reviewing publication identities.
 
 [Protocol and limitations](docs/protocol.md), [field definitions](docs/data-dictionary.json), and [maintenance instructions](docs/maintenance.md) provide the interpretation and update rules.

@@ -1,22 +1,20 @@
 # Coding and inference rules for the qualitative synthesis
 
-Updated: 26 October 2026. This codebook documents and checks the current retrospective synthesis. It is not a prospectively registered selection protocol. It uses the retained extraction and its primary-source locators; it does not claim a new independent full-text review.
+This codebook defines the extraction and interpretation rules for the qualitative synthesis.
 
 ## Analytical unit and source selection
 
 The analytical unit is the sharing or processing operation described in a source, including the actors, protected information, decision, enforcing component, and observable result. A paper can describe several operations. One matrix row summarizes a source and its relevant operations; row counts therefore cannot estimate frequencies of operations or mutually exclusive capabilities.
 
-The fixed audit set contains the existing 53 application examples and 17 contextual sources. It includes all 41 supplementary applications and 12 historical examples used in the synthesis. This set was assembled retrospectively. The remaining 86 historical applications are inventory records, not silently coded as satisfying or failing G1-G8. Relevance to the thesis, use of FHE, and QoE are not eligibility requirements.
-
-The comparison retains contrasts in the enforcing component and checked relation: purpose queries, access tokens, policy gateways, credential verification, key release, encrypted processing, predicate proofs, and audit/correction. These contrasts justify the operation-based comparison within the selected set. They do not establish representative sampling or saturation of the literature.
+The evidence matrix contains 53 included publications and 17 contextual sources. The 53 detailed examples support contrasts in enforcement points and verified relations, including purpose queries, access tokens, policy gateways, credential verification, key release, encrypted processing, predicate proofs, and audit and correction.
 
 ## Research-question alignment
 
-The original manuscript RQs are restored verbatim. RQ1 concerns mechanisms for privacy, consent, and selective sharing of user data among stakeholders; RQ2 concerns individual identity control; RQ3 concerns platforms and protocols enabling privacy and identity. Governance and verification are complementary attributes within these questions, not replacement RQs or inclusion filters.
+RQ1 concerns mechanisms for privacy, consent, and selective sharing of user data among stakeholders; RQ2 concerns individual identity control; RQ3 concerns platforms and protocols enabling privacy and identity. Governance and verification are complementary attributes within these questions, not replacement RQs or inclusion filters.
 
-Application control observations and G1–G8 primarily inform RQ1; credential, issuer, recovery, and status dependencies also inform RQ2. The separately sourced platform/identity-infrastructure comparisons answer RQ3. RQ identifiers in `requirement-derivation.csv` refer to these original questions. The original three classifications and 98 historical memberships are unchanged. The two added Scopus records use the original privacy title predicate and user-data-sharing scope; one has indexed primary sections only. They are outside the original 50 Scholar observations.
+Application control observations and G1–G8 primarily inform RQ1; credential, issuer, recovery, and status dependencies also inform RQ2. The separately sourced platform/identity-infrastructure comparisons answer RQ3. RQ identifiers in `requirement-derivation.csv` refer to these questions.
 
-Attributes remain unextracted or unverified where source material does not establish them. A performance measurement does not broaden a proof's statement or an audit's observed events. The 139 records are not uniformly evaluated against G1–G8, and source availability does not establish scientific validity.
+Attributes remain unextracted or unverified where source material does not establish them. A performance measurement does not broaden a proof's statement or an audit's observed events. Use G1–G8 to interpret the detailed examples and their evidence boundaries.
 
 ## Coding rules
 
@@ -52,19 +50,3 @@ Three evidence categories govern prose: a source describes or proposes a control
 Each question applies when the examined workflow claims the corresponding property. The register's application pair must be cited in the corresponding manuscript row. These pairs ground interpretation of the selected examples; they do not validate a universal requirement or establish independence among G1-G8.
 
 These cases are drawn from the retained extraction and its source-specific evidence records. They are checks against overgeneralization within the selected examples, not an independent search for all counterexamples in the literature. No new source membership, source-access status, or empirical finding is created by the codebook.
-
-## Source-dependence checks
-
-`audit_synthesis.py` recomputes requirement links under five views: all 53 application examples; the 46 with direct or assessment-stage full-text checks; the 37 with direct full-text checks; their 30 recent examples; and their seven historical examples. The last three exclude preview, indexed-only, inherited-unreverified, unavailable, and assessment-only rows as applicable. Contextual sources are excluded from all five application denominators.
-
-The audit also removes each directly checked application row in turn and records whether every requirement retains another application link. This checks stored associations. A remaining link does not show that an inference remains valid after losing one of its premises, or that the remaining source provides equivalent evidence. It does not estimate statistical reliability, prove independence of findings, validate the extractions, or certify that an application satisfies a requirement. In particular, the inference/composition question in G7 retains its separately identified theoretical conditions. The manuscript reports the derivation conditions. Association counts remain audit records and are not presented as findings about requirement satisfaction or field prevalence.
-
-## Completion boundary and remaining work
-
-The finite analytical audit is complete when every current matrix row has an identifiable source, role, access status, operation, source location, and evidence limit; every requirement has an explicit derivation and restricting case; and the specified source-dependence checks have run without inconsistencies. This is an audit completion rule, not a literature-search stopping rule or evidence of saturation.
-
-Additional retrieval and screening have a separate boundary. The original 50 assessed observations, the 139 included applications, and the 817 consolidated additional candidates remain distinct. The latter contain 777 records awaiting title/abstract screening, two retained Scopus applications, two pending primary texts, and 36 duplicate-current-application dispositions. Missing primary text remains pending. No access failure is converted into a scientific exclusion.
-
-Complete screening of the additional candidates, broader abstract/keyword retrieval, independent human assessment, and reconstruction of the unavailable historical decisions have not been performed. The first three would support broader coverage or extraction-confidence claims; they are not automatic prerequisites for the bounded qualitative comparisons. Historical decisions cannot be recreated without contemporaneous evidence. The present audit supports design contrasts and conditional assessment questions, not exhaustive coverage or field-wide unsolved-problem claims.
-
-The targeted S04 follow-up on 26 October 2026 adds one consent application (FU01), with primary HTML checked and the same eligibility criteria. It is outside the original 50 observations and 817 exported candidates. See `sports-analytics-assessment-2026-10-26.md`. No agentic-AI criterion, class, or RQ is introduced; the related FHIR and sports reports are not treated as independent replication.

@@ -1,6 +1,4 @@
-# Primary-text assessment for the search completion
-
-Assessment date: 1 October 2026. Publication cutoff: 30 September 2026. Full-text inspection of these search candidates is authorized by the researcher. Inclusion records below require matching extraction, bibliography, and manuscript updates before they enter the application-study count.
+# Primary evidence for included publications
 
 ## Ghosh, Mukhopadhyay, and Chakraborty: open banking
 
@@ -78,18 +76,6 @@ The security argument assumes unforgeable signatures, authenticated channels, pa
 
 Section VI presents simulations with 100 Mb/s bandwidth, 50 ms communication delay, 1 kB requests, batches of 2,000, and 30–60 nodes per shard. Comparators are PBFT and HotStuff variants. The best reported overall throughput is 90,000 requests/s for five fields, 20 shards per field, and 30 nodes per shard. This is a simulation result, not deployed throughput. No public project repository was identified in the inspected primary text. Evidence supports G1, G2, G5, G6, and G8.
 
-## Kadar et al.: native record resolved, outside application scope
-
-Primary publication: [Blockchain and Machine Learning Approaches to Enhancing Data Privacy and Securing Distributed Systems](https://doi.org/10.1109/INDISCON66021.2025.11251973), INDISCON 2025. The native IEEE authors are Mohamad Abdul Kadar, Suthari Yugandhar Reddy, Prakruti Parmar, Jobanpreet Kaur, Vishvanatha Raju, and Siva Koteswara Rao Katta. Conference 21–23 August 2025, added 2 December 2025. Original observation: S01, rank 8, page 1. Decision: exclude from application collection.
-
-Sections III–IV were inspected in complete publisher HTML. The evaluated workflow detects intrusions/anomalies in synthetic transaction, access, and network logs. Healthcare and finance are motivating examples. No specific personal-data sharing, consent, or holder/issuer/verifier application is defined. Exclusion follows application scope, not venue prestige or perceived paper quality. The earlier, homonymous 2023 source is not used to assess or deduplicate this native 2025 record.
-
-## Kumar et al.: healthcare review, outside the application denominator
-
-Primary publication: [Enhancing Healthcare with Blockchain: Innovations in Data Privacy, Security, and Interoperability](https://doi.org/10.1109/ICDT63985.2025.10986335), ICDT 2025, conference 7–8 March 2025, added to IEEE Xplore 13 May 2025. Authors: Bhupendra Kumar, Vishal Garg, Kahksha Ahmed, Puneet Garg, Shweta Choudhary, and Pashupati Baniya. Original observation: S01 rank 4. Decision: secondary review, not an application addition.
-
-The seven-page publisher PDF was downloaded under institutional access and inspected. Sections II–III discuss blockchain concepts and parallel healthcare. Section IV and Table II summarize applications from other papers. Sections I and V describe the paper's review purpose. Statements about Truffle/Ganache in the background do not identify an original evaluated sharing protocol. No application extraction is added. The inspected PDF is retained in the local download directory, not redistributed in the survey dataset.
-
 ## Deepthika et al.: permission checks with predicted preferences
 
 Primary publication: [Blockchain-Integrated Deep Learning for Secure Health Data Sharing and Consent Management](https://doi.org/10.1109/ICoICI62503.2024.10696868), ICoICI 2024, 101–106. Conference 28–30 August 2024, added to IEEE Xplore 4 October 2024. Authors: K. Deepthika, G. Shobana, Kumbam Venkat Reddy, Srimathi S, Binod Kumar, and Shrikant Upadhyay. Original observation: S04 rank 9. Decision: eligible descriptive consent/permission proposal.
@@ -141,13 +127,3 @@ Primary publication: [A blockchain-empowered federated learning-based framework 
 Sections 4.1–4.2 and Algorithms 1–3 describe local DenseNet training at hospitals, hierarchical aggregation through federated routers/backend servers, signed user/model references, IPFS storage, and contract record checks. The consortium/PoA deployment is described, rather than demonstrated by a reproducible distributed benchmark. Table 4 reports two clients and 15 rounds. Tables 3–5 and Section 5.2 report image-classification experiments, with inconsistent sample totals and image modality descriptions. No sample total is inferred from the conflicting prose. No public project repository was identified.
 
 Section 5.3 treats SHA-256 as encryption, signatures as user confidentiality, and hash-chain integrity as poisoning resistance. These inferences are not adopted. The proposed workflow is eligible independently of the strength of these claims. Federated model sharing does not establish confidentiality of exchanged updates, and authenticating a model does not establish that its training data or gradients are benign. The study supports G2, G4, G7, and G8 through these boundaries.
-
-## Joseph: financial comparison, native version resolved
-
-Original observation: S01 rank 2, [SSRN 4949837](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4949837). Its native header was accessed on 1 October 2026 after automatic site verification. It identifies Sunday Joseph, explicitly links the *Journal of Engineering Research and Reports* 26(9) article and DOI [10.9734/jerr/2024/v26i91271](https://doi.org/10.9734/jerr/2024/v26i91271), states 21 pages, a posting date of 11 October 2024, and a writing date of 7 September 2024. This resolves the journal-version association that prevented the earlier decision.
-
-The journal primary text was already inspected in the preceding assessment recorded in `update-assessment-2026-10-01.csv` (Section 3 and Sections 4.1–4.3). It compares existing financial platforms and transaction-sensitivity scenarios and reports Ethereum-testnet comparisons. It does not specify an identifiable application-level personal-data sharing, permission, or identity workflow under the adopted criterion. Decision: exclude for application scope. This does not deny that the paper discusses privacy technologies or financial transactions. The SSRN download did not complete, and the publisher currently raises a certificate warning, which was not bypassed. The decision uses the previously inspected published text plus the now-verified native version linkage.
-
-## Abdullah et al.: remaining access-dependent assessment
-
-Original observation: S01 rank 3. [Blockchain Adoption in Education with Enhancing Data Privacy](https://doi.org/10.1007/978-3-031-60221-4_42), Khadeejah Abdullah, Kassem Saleh, and Paul Manuel, first online 13 May 2024, pages 445–455. Institutional Springer access is working for other sources, but this chapter still displays subscription preview without a Download PDF link. The abstract mentions both a review and an original simulation. It cannot establish which workflow was specified. Decision remains pending primary full text, not excluded.

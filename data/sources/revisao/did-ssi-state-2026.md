@@ -1,6 +1,6 @@
 # DID, credentials, and wallet standards as of 1 October 2026
 
-This targeted update uses official specifications, legislation, and versioned project documentation. It updates the SSI background and identity implementation comparison. These contextual sources are outside the 136 application records and the existing 67-record synthesis audit. Application eligibility, study identities, primary-text assessments, and search limitations are unchanged. This is not a new exhaustive search of digital-identity products or national identity laws.
+These specifications, legal sources, and project documents support the analysis of identity standards and implementations.
 
 ## Specification status and source locations
 

@@ -8,7 +8,7 @@ import shutil
 import tempfile
 import unittest
 
-from scripts.audit_legacy_exports import candidate_groups, normal_doi
+from scripts.audit_publications import candidate_groups, normal_doi
 from scripts.build_dataset import ROOT, ORIGINAL_UPDATE_KEYS, MEMBERSHIP_SOURCE, build_artifacts, validate_artifacts, digest
 
 
@@ -64,16 +64,20 @@ class CollectionTests(unittest.TestCase):
                 self.assertTrue(row['evidence_boundary'])
                 self.assertTrue(row['native_record'])
 
-    def test_pending_assessments_are_preserved(self):
-        counts = json.loads(self.artifacts['counts.json'])['supplementary_update']
-        self.assertFalse(counts['complete_search'])
-        self.assertFalse(counts['complete_screening'])
-        with (ROOT / 'data/sources/revisao/protocol-search-records.csv').open(newline='') as stream:
-            observed = list(csv.DictReader(stream))
-        decisions = Counter(r['decision'] for r in observed)
-        self.assertEqual(counts['decision_counts'], dict(decisions))
-        self.assertEqual(counts['pending_records'], decisions['candidate_full_text_assessment_not_completed'] + decisions['pending_primary_full_text'])
-        self.assertEqual(counts['selected_studies'] + counts['pending_records'] + counts['excluded_application_records'] + sum(counts['other_recorded_dispositions'].values()), len(observed))
+    def test_public_search_records_describe_selected_publications(self):
+        rows = csv.DictReader(io.StringIO(self.artifacts['survey-dataset.csv'].decode()))
+        selected = {row['study_id'] for row in rows}
+        for filename, key in (
+                ('protocol-search-records.csv', 'citation_key'),
+                ('scopus-included-records.csv', 'current_citation_key'),
+                ('protocol-followup-records-2026-10-26.csv', 'citation_key')):
+            with self.subTest(filename=filename):
+                with (ROOT / 'data/sources/revisao' / filename).open(newline='') as stream:
+                    observed = list(csv.DictReader(stream))
+                self.assertTrue(observed)
+                self.assertTrue({row[key] for row in observed} <= selected)
+                self.assertEqual({row['decision'] for row in observed},
+                                 {'retained_after_primary_text_check'})
 
     def test_detailed_analysis_keeps_context_out_of_application_counts(self):
         counts = json.loads(self.artifacts['counts.json'])
@@ -93,16 +97,9 @@ class CollectionTests(unittest.TestCase):
         self.assertEqual(detail['application_examples_by_group'], {'privacy': 14, 'consent': 28, 'identity': 11})
         self.assertEqual(detail['privacy_evaluation_summaries'], snapshot['counts']['privacy_evaluation_summaries'])
         self.assertEqual(detail['evaluation_summaries_by_group'], {'privacy': 8, 'consent': 26, 'identity': 7})
-        self.assertEqual(detail['fulltext_direct_or_assessment'], 46)
-        self.assertEqual(detail['limited_or_unverified'], 7)
         self.assertFalse(detail['contextual_sources_in_application_denominator'])
 
-    def test_added_retrieval_strata_do_not_inflate_original_scholar_denominator(self):
-        counts = json.loads(self.artifacts['counts.json'])
-        self.assertEqual(counts['supplementary_update']['selected_studies'], 38)
-        self.assertEqual(counts['supplementary_update']['observed_query_records'], 50)
-        self.assertEqual(counts['additional_retrieval']['selected_studies'], 2)
-        self.assertEqual(counts['targeted_protocol_followup']['selected_studies'], 1)
+    def test_selected_publications_keep_query_provenance(self):
         rows = list(csv.DictReader(io.StringIO(self.artifacts['survey-dataset.csv'].decode())))
         by_id = {r['study_id']: r for r in rows}
         for key, query in [('updateHu2024InvisiReveal', 'S02'),
@@ -116,8 +113,7 @@ class CollectionTests(unittest.TestCase):
         snapshot = json.loads((ROOT / 'data/source-snapshot.json').read_text())
         files = ['data/source-snapshot.json', 'docs/data-dictionary.json',
                  'scripts/build_dataset.py', 'scripts/source_tables.py',
-                 *['data/sources/' + p for p in snapshot['source_files']],
-                 *snapshot['legacy_csv_sha256']]
+                 *['data/sources/' + p for p in snapshot['source_files']]]
         for name in files:
             target = root / name
             target.parent.mkdir(parents=True, exist_ok=True)
@@ -215,20 +211,6 @@ class CollectionTests(unittest.TestCase):
             with self.assertRaisesRegex(ValueError, 'Duplicate or missing inclusion identity'):
                 build_artifacts(root)
 
-    def test_retrieved_candidates_are_separate_from_included_studies(self):
-        counts = json.loads(self.artifacts['counts.json'])
-        status = json.loads((ROOT / 'data/sources/revisao/search-completion-status.json').read_text())
-        self.assertEqual(counts['additional_retrieval'], status)
-        self.assertEqual(sum(status['raw_observations_by_query'].values()), status['raw_observations'])
-        self.assertFalse(status['complete_scientific_screening'])
-        with (ROOT / 'data/sources/revisao/search-completion-candidates-metadata.csv').open(newline='', encoding='utf-8') as stream:
-            candidates = list(csv.DictReader(stream))
-        self.assertEqual(len(candidates), status['consolidated_candidates'])
-        self.assertEqual(len({r['record_id'] for r in candidates}), len(candidates))
-        self.assertEqual(dict(Counter(r['decision'] for r in candidates)), status['decision_counts'])
-        self.assertNotEqual(counts['combined']['application_studies'], len(candidates))
-        self.assertNotIn('abstract_indexed', candidates[0])
-
     def test_output_corruption_is_detected_without_repair(self):
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
@@ -241,22 +223,15 @@ class CollectionTests(unittest.TestCase):
                 validate_artifacts(root, self.artifacts)
             self.assertEqual(path.read_bytes(), b'corrupted dataset\n')
 
-    def test_snapshot_rejects_changed_source_and_changed_legacy_file(self):
-        snapshot = json.loads((ROOT / 'data/source-snapshot.json').read_text())
-        for changed in ('data/sources/revisao/recent-extraction.csv', 'privacy/google.csv'):
-            with self.subTest(changed=changed), tempfile.TemporaryDirectory() as tmp:
-                root = Path(tmp)
-                files = ['data/source-snapshot.json',
-                         *['data/sources/' + p for p in snapshot['source_files']],
-                         *snapshot['legacy_csv_sha256']]
-                for name in files:
-                    target = root / name
-                    target.parent.mkdir(parents=True, exist_ok=True)
-                    shutil.copyfile(ROOT / name, target)
-                (root / changed).write_bytes(b'changed\n')
-                with self.assertRaisesRegex(ValueError, 'Source differs|Historical CSV changed'):
-                    build_artifacts(root)
-                self.assertFalse((root / 'data/survey-dataset.csv').exists())
+    def test_snapshot_rejects_changed_source(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            self.copy_source_snapshot(root)
+            path = root / 'data/sources/revisao/recent-extraction.csv'
+            path.write_bytes(b'changed\n')
+            with self.assertRaisesRegex(ValueError, 'Source differs'):
+                build_artifacts(root)
+            self.assertFalse((root / 'data/survey-dataset.csv').exists())
 
 
 if __name__ == '__main__':

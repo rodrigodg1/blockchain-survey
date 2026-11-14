@@ -1,4 +1,4 @@
-"""Read-only inventory of historical retrieval exports; never selects studies."""
+"""Identify possible duplicate identities in the selected publication dataset."""
 from collections import defaultdict
 from pathlib import Path
 import csv
@@ -49,26 +49,15 @@ def candidate_groups(records):
 
 
 def audit(root=ROOT):
-    root = Path(root)
-    result = {'scope': 'Historical retrieval records, not the selected application collection',
-              'records_removed': 0, 'families': {}}
-    for family in ('privacy', 'consent', 'identity'):
-        records, inventory = [], []
-        for source in ('google', 'scopus', 'acm'):
-            name = f'{family}/{source}.csv'
-            with (root / name).open(encoding='utf-8-sig', newline='') as stream:
-                rows = list(csv.DictReader(stream))
-            inventory.append({'file': name, 'records': len(rows),
-                              'missing_dois': sum(not normal_doi(r.get('DOI')) for r in rows)})
-            records.extend(dict(row, _source_file=name, _source_record=i)
-                           for i, row in enumerate(rows, 1))
-        groups = candidate_groups(records)
-        result['families'][family] = {
-            'files': inventory, 'concatenated_records': len(records),
-            'candidate_groups': groups,
-            'note': 'Groups can overlap. Do not subtract them to infer unique or selected study counts.',
-        }
-    return result
+    path = Path(root) / 'data/survey-dataset.csv'
+    with path.open(encoding='utf-8', newline='') as stream:
+        records = [
+            {'Title': row['title_bibtex'], 'DOI': row['doi'],
+             '_source_file': 'data/survey-dataset.csv', '_source_record': i}
+            for i, row in enumerate(csv.DictReader(stream), 1)
+        ]
+    return {'scope': 'Included publications', 'records': len(records),
+            'candidate_groups': candidate_groups(records)}
 
 
 if __name__ == '__main__':

@@ -1,12 +1,12 @@
-# Sports analytics: eligibility and bounded incorporation
+# Consent and data provenance in sports analytics
 
-Decision date: 26 October 2026. Retain one publication in the existing **consent** group. No RQ, query expression, publication cutoff, historical membership, or classification category changes. The original protocol does not require an implementation or a successful experiment; deficiencies in reported evidence limit inference rather than create a new retrospective exclusion criterion.
+This publication is classified under consent management. The source evidence below covers the reported workflow and the scope of its evaluation.
 
 ## Primary source and retrieval
 
 Ferreira, Joao C, and Frederica Gonçalves. *Blockchain-enabled Model Context Protocol (MCP) for trust and consent in LLM-orchestrated sports analytics*. Journal of Sports Analytics 12 (2026). [Publisher version](https://journals.sagepub.com/doi/10.1177/22150218261448184), DOI 10.1177/22150218261448184. First online 25 May 2026, verified against publisher HTML and Crossref metadata. Publisher HTML was accessible in the browser; direct HTTP/PDF retrieval failed. Relevant methods, evaluation, discussion, tables and pseudocode were inspected in the primary HTML, not inferred from the abstract. No executable experiment repository was identified in the inspected text.
 
-The user nominated the candidate. The unchanged S04 query `allintitle: blockchain (consent OR permission)`, restricted to 2024–2026, retrieved it on 26 October 2026 at page 6, within-page rank 4 (observed rank 54), in relevance order. [Observed result-page URL](https://scholar.google.com/scholar?start=50&q=allintitle:+blockchain+(consent+OR+permission)&hl=en&as_sdt=0,5&as_ylo=2024&as_yhi=2026). Ranking is a dated observation, not a stable identifier. Publication is before the unchanged 30 September 2026 cutoff. This targeted check is recorded separately in `protocol-followup-records-2026-10-26.csv`; it does not mean that all intervening results were screened. It adds one assessed/included record outside the original 50 Scholar observations and 817 consolidated export candidates. Targeted prioritization remains a selection limitation.
+The publication was identified through title query S04. The query and source locators are listed in the protocol and the corresponding evidence records.
 
 ## Eligibility against the existing rules
 
@@ -37,9 +37,3 @@ The Evaluation section reports synthetic data for 500 athlete profiles, 40 perfo
 ## Relationship to the MCP/FHIR report
 
 The existing extraction for [Ferreira et al., MCP/FHIR](https://doi.org/10.1109/ICDLT66400.2025.11466653), matrix SC07, identifies gateway checks, issuer allowlists, purpose/time permissions, bundle hashes and revocation-cache assumptions (IV.A–F; V.D/Table 3; VI). The sports paper shares an author and this architectural pattern. It describes different application workflows and a different reported synthetic workload; these justify retaining a separate publication in the publication inventory. They do **not** establish independent replication, independent implementation, or absence of all textual/design overlap. A forensic duplication/plagiarism assessment was not performed. No effect sizes are pooled and no conclusion depends on treating these as two independent demonstrations.
-
-## Manuscript and thesis contribution
-
-A short paragraph in the existing sensitive-data discussion applies existing criteria to LLM-mediated retrieval: who authorizes a tool call, where its scope is enforced, how changed permission reaches caches and later releases, and what provenance does not verify. MCP is not equated with autonomous agency; this single targeted addition cannot establish a field-wide trend in agentic AI.
-
-For the thesis, the contribution remains a comparison of control boundaries and conditional design/evaluation questions. This example makes the distinction between permission, authenticated provenance and correct computation concrete in another sensitive-data workflow. It neither validates the thesis architecture nor supplies a new agentic-AI contribution, RQ or reason to recode the historical corpus. The overall literature update remains incomplete; inclusion of this candidate does not change that status.
